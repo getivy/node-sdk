@@ -21,7 +21,6 @@ export {
   type CheckoutsessionRetrieveParams,
   type CheckoutsessionExpireParams,
 } from './checkoutsession';
-export { Customer } from './customer/customer';
 export {
   Customers,
   type CustomerCreateResponse,
@@ -44,7 +43,14 @@ export {
   type OrderRetrieveParams,
   type OrderUpdateParams,
 } from './orders';
-export { Payouts } from './payouts/payouts';
+export {
+  Payouts,
+  type PublicUserPayout,
+  type PayoutListResponse,
+  type PayoutCreateParams,
+  type PayoutRetrieveParams,
+  type PayoutListParams,
+} from './payouts';
 export {
   Refunds,
   type RefundResponse,
@@ -52,6 +58,15 @@ export {
   type RefundCreateParams,
   type RefundBatchParams,
 } from './refunds';
+export {
+  Reports,
+  type PayoutReport,
+  type ReportCreateResponse,
+  type ReportRetrieveResponse,
+  type ReportCreateParams,
+  type ReportRetrieveParams,
+  type ReportDownloadParams,
+} from './reports';
 export {
   Subaccounts,
   type Subaccount,

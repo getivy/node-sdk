@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "getivy/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "getivy/*": ["src/*"],
-      "getivy": ["src/index.ts"]
+      "node-sdk/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "node-sdk/*": ["src/*"],
+      "node-sdk": ["src/index.ts"]
     },
     "noEmit": true,
 

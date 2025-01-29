@@ -7,9 +7,9 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^getivy$': '<rootDir>/src/index.ts',
-    '^getivy/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
-    '^getivy/(.*)$': '<rootDir>/src/$1',
+    '^node-sdk$': '<rootDir>/src/index.ts',
+    '^node-sdk/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
+    '^node-sdk/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',

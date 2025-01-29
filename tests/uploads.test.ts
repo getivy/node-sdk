@@ -1,6 +1,6 @@
 import fs from 'fs';
-import { toFile, type ResponseLike } from 'getivy/uploads';
-import { File } from 'getivy/_shims/index';
+import { toFile, type ResponseLike } from 'node-sdk/uploads';
+import { File } from 'node-sdk/_shims/index';
 
 class MyClass {
   name: string = 'foo';
