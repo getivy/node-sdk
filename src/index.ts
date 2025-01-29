@@ -18,14 +18,14 @@ import {
 import { Capabilities, CapabilityRetrieveParams, CapabilityRetrieveResponse } from './resources/capabilities';
 import { Charge, ChargeCreateParams, Charges } from './resources/charges';
 import {
-  CheckoutSession,
-  CheckoutSessionCreateParams,
-  CheckoutSessionCreateResponse,
-  CheckoutSessionExpireParams,
-  CheckoutSessionExpireResponse,
-  CheckoutSessionRetrieveParams,
-  CheckoutSessionRetrieveResponse,
-} from './resources/checkout-session';
+  Checkoutsession,
+  CheckoutsessionCreateParams,
+  CheckoutsessionCreateResponse,
+  CheckoutsessionExpireParams,
+  CheckoutsessionExpireResponse,
+  CheckoutsessionRetrieveParams,
+  CheckoutsessionRetrieveResponse,
+} from './resources/checkoutsession';
 import {
   CustomerCreateParams,
   CustomerCreateResponse,
@@ -201,7 +201,7 @@ export class Getivy extends Core.APIClient {
   }
 
   banks: API.Banks = new API.Banks(this);
-  checkoutSession: API.CheckoutSession = new API.CheckoutSession(this);
+  checkoutsession: API.Checkoutsession = new API.Checkoutsession(this);
   customers: API.Customers = new API.Customers(this);
   orders: API.Orders = new API.Orders(this);
   charges: API.Charges = new API.Charges(this);
@@ -250,7 +250,7 @@ export class Getivy extends Core.APIClient {
 }
 
 Getivy.Banks = Banks;
-Getivy.CheckoutSession = CheckoutSession;
+Getivy.Checkoutsession = Checkoutsession;
 Getivy.Customers = Customers;
 Getivy.Orders = Orders;
 Getivy.Charges = Charges;
@@ -275,13 +275,13 @@ export declare namespace Getivy {
   };
 
   export {
-    CheckoutSession as CheckoutSession,
-    type CheckoutSessionCreateResponse as CheckoutSessionCreateResponse,
-    type CheckoutSessionRetrieveResponse as CheckoutSessionRetrieveResponse,
-    type CheckoutSessionExpireResponse as CheckoutSessionExpireResponse,
-    type CheckoutSessionCreateParams as CheckoutSessionCreateParams,
-    type CheckoutSessionRetrieveParams as CheckoutSessionRetrieveParams,
-    type CheckoutSessionExpireParams as CheckoutSessionExpireParams,
+    Checkoutsession as Checkoutsession,
+    type CheckoutsessionCreateResponse as CheckoutsessionCreateResponse,
+    type CheckoutsessionRetrieveResponse as CheckoutsessionRetrieveResponse,
+    type CheckoutsessionExpireResponse as CheckoutsessionExpireResponse,
+    type CheckoutsessionCreateParams as CheckoutsessionCreateParams,
+    type CheckoutsessionRetrieveParams as CheckoutsessionRetrieveParams,
+    type CheckoutsessionExpireParams as CheckoutsessionExpireParams,
   };
 
   export {
