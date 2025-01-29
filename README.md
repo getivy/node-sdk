@@ -4,7 +4,7 @@
 
 This library provides convenient access to the Getivy REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found on [docs.getivy.com](https://docs.getivy.com). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [docs.getivy.de](https://docs.getivy.de). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainlessapi.com/).
 
@@ -25,7 +25,9 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import Getivy from 'getivy';
 
-const client = new Getivy();
+const client = new Getivy({
+  environment: 'sandbox', // defaults to 'production'
+});
 
 async function main() {
   const customer = await client.customers.create({ email: 'REPLACE_ME' });
@@ -44,7 +46,9 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import Getivy from 'getivy';
 
-const client = new Getivy();
+const client = new Getivy({
+  environment: 'sandbox', // defaults to 'production'
+});
 
 async function main() {
   const params: Getivy.CustomerCreateParams = { email: 'REPLACE_ME' };

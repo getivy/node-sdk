@@ -20,7 +20,7 @@ or products provided by Getivy please follow the respective company's security r
 
 ### Getivy Terms and Policies
 
-Please contact dev-feedback@getivy.com for any questions or concerns regarding security of our services.
+Please contact developer@getivy.de for any questions or concerns regarding security of our services.
 
 ---
 

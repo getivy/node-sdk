@@ -10,8 +10,17 @@ export {
   type BankListParams,
   type BankSearchParams,
 } from './banks';
+export { Capabilities, type CapabilityRetrieveResponse, type CapabilityRetrieveParams } from './capabilities';
 export { Charges, type Charge, type ChargeCreateParams } from './charges';
-export { Checkout } from './checkout/checkout';
+export {
+  CheckoutSession,
+  type CheckoutSessionCreateResponse,
+  type CheckoutSessionRetrieveResponse,
+  type CheckoutSessionExpireResponse,
+  type CheckoutSessionCreateParams,
+  type CheckoutSessionRetrieveParams,
+  type CheckoutSessionExpireParams,
+} from './checkout-session';
 export { Customer } from './customer/customer';
 export {
   Customers,
@@ -28,7 +37,6 @@ export {
   type MandateLookupParams,
   type MandateRevokeParams,
 } from './mandates';
-export { Merchant } from './merchant/merchant';
 export {
   Orders,
   type OrderRetrieveResponse,
@@ -36,6 +44,14 @@ export {
   type OrderRetrieveParams,
   type OrderUpdateParams,
 } from './orders';
+export { Payouts } from './payouts/payouts';
+export {
+  Refunds,
+  type RefundResponse,
+  type RefundBatchResponse,
+  type RefundCreateParams,
+  type RefundBatchParams,
+} from './refunds';
 export {
   Subaccounts,
   type Subaccount,

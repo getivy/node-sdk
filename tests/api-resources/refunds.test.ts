@@ -11,7 +11,7 @@ const client = new Getivy({
 describe('resource refunds', () => {
   // skipped: tests are disabled for the time being
   test.skip('create', async () => {
-    const responsePromise = client.merchant.payment.refunds.create({});
+    const responsePromise = client.refunds.create({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,7 +23,7 @@ describe('resource refunds', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('batch: only required params', async () => {
-    const responsePromise = client.merchant.payment.refunds.batch({ requestedRefunds: [{}] });
+    const responsePromise = client.refunds.batch({ requestedRefunds: [{}] });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -35,7 +35,7 @@ describe('resource refunds', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('batch: required and optional params', async () => {
-    const response = await client.merchant.payment.refunds.batch({
+    const response = await client.refunds.batch({
       requestedRefunds: [
         {
           amount: 0,

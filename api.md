@@ -12,21 +12,19 @@ Methods:
 - <code title="post /api/service/banks/list">client.banks.<a href="./src/resources/banks.ts">list</a>({ ...params }) -> BankListResponse</code>
 - <code title="post /api/service/banks/search">client.banks.<a href="./src/resources/banks.ts">search</a>({ ...params }) -> BankSearchResponse</code>
 
-# Checkout
-
-## Session
+# CheckoutSession
 
 Types:
 
-- <code><a href="./src/resources/checkout/session.ts">SessionCreateResponse</a></code>
-- <code><a href="./src/resources/checkout/session.ts">SessionRetrieveResponse</a></code>
-- <code><a href="./src/resources/checkout/session.ts">SessionExpireResponse</a></code>
+- <code><a href="./src/resources/checkout-session.ts">CheckoutSessionCreateResponse</a></code>
+- <code><a href="./src/resources/checkout-session.ts">CheckoutSessionRetrieveResponse</a></code>
+- <code><a href="./src/resources/checkout-session.ts">CheckoutSessionExpireResponse</a></code>
 
 Methods:
 
-- <code title="post /api/service/checkout/session/create">client.checkout.session.<a href="./src/resources/checkout/session.ts">create</a>({ ...params }) -> SessionCreateResponse</code>
-- <code title="post /api/service/checkout/session/details">client.checkout.session.<a href="./src/resources/checkout/session.ts">retrieve</a>({ ...params }) -> SessionRetrieveResponse</code>
-- <code title="post /api/service/checkout/session/expire">client.checkout.session.<a href="./src/resources/checkout/session.ts">expire</a>({ ...params }) -> SessionExpireResponse</code>
+- <code title="post /api/service/checkout/session/create">client.checkoutSession.<a href="./src/resources/checkout-session.ts">create</a>({ ...params }) -> CheckoutSessionCreateResponse</code>
+- <code title="post /api/service/checkout/session/details">client.checkoutSession.<a href="./src/resources/checkout-session.ts">retrieve</a>({ ...params }) -> CheckoutSessionRetrieveResponse</code>
+- <code title="post /api/service/checkout/session/expire">client.checkoutSession.<a href="./src/resources/checkout-session.ts">expire</a>({ ...params }) -> CheckoutSessionExpireResponse</code>
 
 # Customers
 
@@ -75,47 +73,43 @@ Methods:
 - <code title="post /api/service/mandate/lookup">client.mandates.<a href="./src/resources/mandates.ts">lookup</a>({ ...params }) -> MandateResponse</code>
 - <code title="post /api/service/mandate/revoke">client.mandates.<a href="./src/resources/mandates.ts">revoke</a>({ ...params }) -> MandateRevokeResponse</code>
 
-# Merchant
-
-## Capabilities
+# Capabilities
 
 Types:
 
-- <code><a href="./src/resources/merchant/capabilities.ts">CapabilityRetrieveResponse</a></code>
+- <code><a href="./src/resources/capabilities.ts">CapabilityRetrieveResponse</a></code>
 
 Methods:
 
-- <code title="post /api/service/merchant/capabilities/details">client.merchant.capabilities.<a href="./src/resources/merchant/capabilities.ts">retrieve</a>({ ...params }) -> CapabilityRetrieveResponse</code>
+- <code title="post /api/service/merchant/capabilities/details">client.capabilities.<a href="./src/resources/capabilities.ts">retrieve</a>({ ...params }) -> CapabilityRetrieveResponse</code>
 
-## Payment
-
-### Refunds
+# Refunds
 
 Types:
 
-- <code><a href="./src/resources/merchant/payment/refunds.ts">RefundResponse</a></code>
-- <code><a href="./src/resources/merchant/payment/refunds.ts">RefundBatchResponse</a></code>
+- <code><a href="./src/resources/refunds.ts">RefundResponse</a></code>
+- <code><a href="./src/resources/refunds.ts">RefundBatchResponse</a></code>
 
 Methods:
 
-- <code title="post /api/service/merchant/payment/refund">client.merchant.payment.refunds.<a href="./src/resources/merchant/payment/refunds.ts">create</a>({ ...params }) -> RefundResponse</code>
-- <code title="post /api/service/merchant/payment/refund/batch">client.merchant.payment.refunds.<a href="./src/resources/merchant/payment/refunds.ts">batch</a>({ ...params }) -> RefundBatchResponse</code>
+- <code title="post /api/service/merchant/payment/refund">client.refunds.<a href="./src/resources/refunds.ts">create</a>({ ...params }) -> RefundResponse</code>
+- <code title="post /api/service/merchant/payment/refund/batch">client.refunds.<a href="./src/resources/refunds.ts">batch</a>({ ...params }) -> RefundBatchResponse</code>
 
-## Payouts
+# Payouts
 
-### Reports
+## Reports
 
 Types:
 
-- <code><a href="./src/resources/merchant/payouts/reports.ts">PayoutReport</a></code>
-- <code><a href="./src/resources/merchant/payouts/reports.ts">ReportCreateResponse</a></code>
-- <code><a href="./src/resources/merchant/payouts/reports.ts">ReportRetrieveResponse</a></code>
+- <code><a href="./src/resources/payouts/reports.ts">PayoutReport</a></code>
+- <code><a href="./src/resources/payouts/reports.ts">ReportCreateResponse</a></code>
+- <code><a href="./src/resources/payouts/reports.ts">ReportRetrieveResponse</a></code>
 
 Methods:
 
-- <code title="post /api/service/merchant/payout/export/create">client.merchant.payouts.reports.<a href="./src/resources/merchant/payouts/reports.ts">create</a>({ ...params }) -> ReportCreateResponse</code>
-- <code title="post /api/service/merchant/payout/export/retrieve">client.merchant.payouts.reports.<a href="./src/resources/merchant/payouts/reports.ts">retrieve</a>({ ...params }) -> ReportRetrieveResponse</code>
-- <code title="post /api/service/merchant/payout/export/download">client.merchant.payouts.reports.<a href="./src/resources/merchant/payouts/reports.ts">download</a>({ ...params }) -> PayoutReport</code>
+- <code title="post /api/service/merchant/payout/export/create">client.payouts.reports.<a href="./src/resources/payouts/reports.ts">create</a>({ ...params }) -> ReportCreateResponse</code>
+- <code title="post /api/service/merchant/payout/export/retrieve">client.payouts.reports.<a href="./src/resources/payouts/reports.ts">retrieve</a>({ ...params }) -> ReportRetrieveResponse</code>
+- <code title="post /api/service/merchant/payout/export/download">client.payouts.reports.<a href="./src/resources/payouts/reports.ts">download</a>({ ...params }) -> PayoutReport</code>
 
 # Subaccounts
 
