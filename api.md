@@ -12,19 +12,19 @@ Methods:
 - <code title="post /api/service/banks/list">client.banks.<a href="./src/resources/banks.ts">list</a>({ ...params }) -> BankListResponse</code>
 - <code title="post /api/service/banks/search">client.banks.<a href="./src/resources/banks.ts">search</a>({ ...params }) -> BankSearchResponse</code>
 
-# CheckoutSession
+# Checkoutsession
 
 Types:
 
-- <code><a href="./src/resources/checkout-session.ts">CheckoutSessionCreateResponse</a></code>
-- <code><a href="./src/resources/checkout-session.ts">CheckoutSessionRetrieveResponse</a></code>
-- <code><a href="./src/resources/checkout-session.ts">CheckoutSessionExpireResponse</a></code>
+- <code><a href="./src/resources/checkoutsession.ts">CheckoutsessionCreateResponse</a></code>
+- <code><a href="./src/resources/checkoutsession.ts">CheckoutsessionRetrieveResponse</a></code>
+- <code><a href="./src/resources/checkoutsession.ts">CheckoutsessionExpireResponse</a></code>
 
 Methods:
 
-- <code title="post /api/service/checkout/session/create">client.checkoutSession.<a href="./src/resources/checkout-session.ts">create</a>({ ...params }) -> CheckoutSessionCreateResponse</code>
-- <code title="post /api/service/checkout/session/details">client.checkoutSession.<a href="./src/resources/checkout-session.ts">retrieve</a>({ ...params }) -> CheckoutSessionRetrieveResponse</code>
-- <code title="post /api/service/checkout/session/expire">client.checkoutSession.<a href="./src/resources/checkout-session.ts">expire</a>({ ...params }) -> CheckoutSessionExpireResponse</code>
+- <code title="post /api/service/checkout/session/create">client.checkoutsession.<a href="./src/resources/checkoutsession.ts">create</a>({ ...params }) -> CheckoutsessionCreateResponse</code>
+- <code title="post /api/service/checkout/session/details">client.checkoutsession.<a href="./src/resources/checkoutsession.ts">retrieve</a>({ ...params }) -> CheckoutsessionRetrieveResponse</code>
+- <code title="post /api/service/checkout/session/expire">client.checkoutsession.<a href="./src/resources/checkoutsession.ts">expire</a>({ ...params }) -> CheckoutsessionExpireResponse</code>
 
 # Customers
 

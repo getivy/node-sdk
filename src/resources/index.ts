@@ -13,14 +13,14 @@ export {
 export { Capabilities, type CapabilityRetrieveResponse, type CapabilityRetrieveParams } from './capabilities';
 export { Charges, type Charge, type ChargeCreateParams } from './charges';
 export {
-  CheckoutSession,
-  type CheckoutSessionCreateResponse,
-  type CheckoutSessionRetrieveResponse,
-  type CheckoutSessionExpireResponse,
-  type CheckoutSessionCreateParams,
-  type CheckoutSessionRetrieveParams,
-  type CheckoutSessionExpireParams,
-} from './checkout-session';
+  Checkoutsession,
+  type CheckoutsessionCreateResponse,
+  type CheckoutsessionRetrieveResponse,
+  type CheckoutsessionExpireResponse,
+  type CheckoutsessionCreateParams,
+  type CheckoutsessionRetrieveParams,
+  type CheckoutsessionExpireParams,
+} from './checkoutsession';
 export { Customer } from './customer/customer';
 export {
   Customers,

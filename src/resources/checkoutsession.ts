@@ -3,16 +3,16 @@
 import { APIResource } from '../resource';
 import * as Core from '../core';
 
-export class CheckoutSession extends APIResource {
+export class Checkoutsession extends APIResource {
   /**
    * Creates a Checkout Session for the merchant corresponding to the given API key.
    * See [the guide](https://docs.getivy.de/docs/payment-integration) for more
    * information.
    */
   create(
-    body: CheckoutSessionCreateParams,
+    body: CheckoutsessionCreateParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<CheckoutSessionCreateResponse> {
+  ): Core.APIPromise<CheckoutsessionCreateResponse> {
     return this._client.post('/api/service/checkout/session/create', { body, ...options });
   }
 
@@ -20,9 +20,9 @@ export class CheckoutSession extends APIResource {
    * Retrieve a Checkout Session and its details by Ivy id.
    */
   retrieve(
-    body: CheckoutSessionRetrieveParams,
+    body: CheckoutsessionRetrieveParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<CheckoutSessionRetrieveResponse> {
+  ): Core.APIPromise<CheckoutsessionRetrieveResponse> {
     return this._client.post('/api/service/checkout/session/details', { body, ...options });
   }
 
@@ -31,14 +31,14 @@ export class CheckoutSession extends APIResource {
    * not be able to access this Checkout Session anymore.
    */
   expire(
-    body: CheckoutSessionExpireParams,
+    body: CheckoutsessionExpireParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<CheckoutSessionExpireResponse> {
+  ): Core.APIPromise<CheckoutsessionExpireResponse> {
     return this._client.post('/api/service/checkout/session/expire', { body, ...options });
   }
 }
 
-export interface CheckoutSessionCreateResponse {
+export interface CheckoutsessionCreateResponse {
   /**
    * The unique identifier of the Checkout within Ivy.
    */
@@ -311,7 +311,7 @@ export interface CheckoutSessionCreateResponse {
    */
   expiresAt: number;
 
-  merchant: CheckoutSessionCreateResponse.Merchant;
+  merchant: CheckoutsessionCreateResponse.Merchant;
 
   /**
    * @deprecated Use merchant.appId instead
@@ -333,13 +333,13 @@ export interface CheckoutSessionCreateResponse {
    * initialization, but the actual transfer amount is rounded to 2 decimal places,
    * as this is the format accepted by most banks.
    */
-  price: CheckoutSessionCreateResponse.Price;
+  price: CheckoutsessionCreateResponse.Price;
 
   /**
    * Only applicable for express Checkout Sessions. The given fields will be required
    * input within the Ivy express Checkout.
    */
-  required: CheckoutSessionCreateResponse.Required;
+  required: CheckoutsessionCreateResponse.Required;
 
   status: 'open' | 'closed' | 'expired';
 
@@ -348,7 +348,7 @@ export interface CheckoutSessionCreateResponse {
   /**
    * The billing address of the customer. Required when handshake=true.
    */
-  billingAddress?: CheckoutSessionCreateResponse.BillingAddress;
+  billingAddress?: CheckoutsessionCreateResponse.BillingAddress;
 
   /**
    * The merchant category code or
@@ -368,7 +368,7 @@ export interface CheckoutSessionCreateResponse {
    */
   created?: number;
 
-  customer?: CheckoutSessionCreateResponse.Customer;
+  customer?: CheckoutsessionCreateResponse.Customer;
 
   /**
    * False by default. If set to true, customers cannot modify the pre-selected bank
@@ -415,7 +415,7 @@ export interface CheckoutSessionCreateResponse {
    */
   incentiveMode?: 'white_label' | 'sustainable';
 
-  lineItems?: Array<CheckoutSessionCreateResponse.LineItem>;
+  lineItems?: Array<CheckoutsessionCreateResponse.LineItem>;
 
   /**
    * The locale of the Checkout. If provided, the Checkout will be displayed in the
@@ -424,7 +424,7 @@ export interface CheckoutSessionCreateResponse {
    */
   locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk';
 
-  mandate?: CheckoutSessionCreateResponse.Mandate;
+  mandate?: CheckoutsessionCreateResponse.Mandate;
 
   /**
    * ISO 3166-1 alpha-2 country code. The market where the user of the Checkout is
@@ -700,7 +700,7 @@ export interface CheckoutSessionCreateResponse {
   /**
    * Use this to prefill data of the user in the Checkout.
    */
-  prefill?: CheckoutSessionCreateResponse.Prefill;
+  prefill?: CheckoutsessionCreateResponse.Prefill;
 
   /**
    * Only applicable for express Checkouts. Quote Callback requests will be sent to
@@ -719,9 +719,9 @@ export interface CheckoutSessionCreateResponse {
 
   selectedShippingMethodId?: string;
 
-  shippingAddress?: CheckoutSessionCreateResponse.ShippingAddress;
+  shippingAddress?: CheckoutsessionCreateResponse.ShippingAddress;
 
-  shippingMethods?: Array<CheckoutSessionCreateResponse.ShippingMethod>;
+  shippingMethods?: Array<CheckoutsessionCreateResponse.ShippingMethod>;
 
   /**
    * The logo of the shop provided as a URL.
@@ -739,7 +739,7 @@ export interface CheckoutSessionCreateResponse {
   updatedAt?: string;
 }
 
-export namespace CheckoutSessionCreateResponse {
+export namespace CheckoutsessionCreateResponse {
   export interface Merchant {
     id: string;
 
@@ -2133,11 +2133,11 @@ export namespace CheckoutSessionCreateResponse {
   }
 }
 
-export type CheckoutSessionRetrieveResponse =
-  | CheckoutSessionRetrieveResponse.PublicCheckoutSession
-  | CheckoutSessionRetrieveResponse.CheckoutSession;
+export type CheckoutsessionRetrieveResponse =
+  | CheckoutsessionRetrieveResponse.PublicCheckoutSession
+  | CheckoutsessionRetrieveResponse.CheckoutSession;
 
-export namespace CheckoutSessionRetrieveResponse {
+export namespace CheckoutsessionRetrieveResponse {
   export interface PublicCheckoutSession {
     /**
      * The unique identifier of the Checkout within Ivy.
@@ -5716,7 +5716,7 @@ export namespace CheckoutSessionRetrieveResponse {
   }
 }
 
-export interface CheckoutSessionExpireResponse {
+export interface CheckoutsessionExpireResponse {
   /**
    * The unique identifier of the Checkout within Ivy.
    */
@@ -5989,7 +5989,7 @@ export interface CheckoutSessionExpireResponse {
    */
   expiresAt: number;
 
-  merchant: CheckoutSessionExpireResponse.Merchant;
+  merchant: CheckoutsessionExpireResponse.Merchant;
 
   /**
    * @deprecated Use merchant.appId instead
@@ -6011,13 +6011,13 @@ export interface CheckoutSessionExpireResponse {
    * initialization, but the actual transfer amount is rounded to 2 decimal places,
    * as this is the format accepted by most banks.
    */
-  price: CheckoutSessionExpireResponse.Price;
+  price: CheckoutsessionExpireResponse.Price;
 
   /**
    * Only applicable for express Checkout Sessions. The given fields will be required
    * input within the Ivy express Checkout.
    */
-  required: CheckoutSessionExpireResponse.Required;
+  required: CheckoutsessionExpireResponse.Required;
 
   status: 'open' | 'closed' | 'expired';
 
@@ -6026,7 +6026,7 @@ export interface CheckoutSessionExpireResponse {
   /**
    * The billing address of the customer. Required when handshake=true.
    */
-  billingAddress?: CheckoutSessionExpireResponse.BillingAddress;
+  billingAddress?: CheckoutsessionExpireResponse.BillingAddress;
 
   /**
    * The merchant category code or
@@ -6046,7 +6046,7 @@ export interface CheckoutSessionExpireResponse {
    */
   created?: number;
 
-  customer?: CheckoutSessionExpireResponse.Customer;
+  customer?: CheckoutsessionExpireResponse.Customer;
 
   /**
    * False by default. If set to true, customers cannot modify the pre-selected bank
@@ -6093,7 +6093,7 @@ export interface CheckoutSessionExpireResponse {
    */
   incentiveMode?: 'white_label' | 'sustainable';
 
-  lineItems?: Array<CheckoutSessionExpireResponse.LineItem>;
+  lineItems?: Array<CheckoutsessionExpireResponse.LineItem>;
 
   /**
    * The locale of the Checkout. If provided, the Checkout will be displayed in the
@@ -6102,7 +6102,7 @@ export interface CheckoutSessionExpireResponse {
    */
   locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk';
 
-  mandate?: CheckoutSessionExpireResponse.Mandate;
+  mandate?: CheckoutsessionExpireResponse.Mandate;
 
   /**
    * ISO 3166-1 alpha-2 country code. The market where the user of the Checkout is
@@ -6378,7 +6378,7 @@ export interface CheckoutSessionExpireResponse {
   /**
    * Use this to prefill data of the user in the Checkout.
    */
-  prefill?: CheckoutSessionExpireResponse.Prefill;
+  prefill?: CheckoutsessionExpireResponse.Prefill;
 
   /**
    * Only applicable for express Checkouts. Quote Callback requests will be sent to
@@ -6397,9 +6397,9 @@ export interface CheckoutSessionExpireResponse {
 
   selectedShippingMethodId?: string;
 
-  shippingAddress?: CheckoutSessionExpireResponse.ShippingAddress;
+  shippingAddress?: CheckoutsessionExpireResponse.ShippingAddress;
 
-  shippingMethods?: Array<CheckoutSessionExpireResponse.ShippingMethod>;
+  shippingMethods?: Array<CheckoutsessionExpireResponse.ShippingMethod>;
 
   /**
    * The logo of the shop provided as a URL.
@@ -6417,7 +6417,7 @@ export interface CheckoutSessionExpireResponse {
   updatedAt?: string;
 }
 
-export namespace CheckoutSessionExpireResponse {
+export namespace CheckoutsessionExpireResponse {
   export interface Merchant {
     id: string;
 
@@ -7811,14 +7811,14 @@ export namespace CheckoutSessionExpireResponse {
   }
 }
 
-export interface CheckoutSessionCreateParams {
+export interface CheckoutsessionCreateParams {
   /**
    * The price to be paid by the user. All amounts are in decimals, i.e. 10.23
    * represents EUR 10.23. Any amount of decimal places can be provided on
    * initialization, but the actual transfer amount is rounded to 2 decimal places,
    * as this is the format accepted by most banks.
    */
-  price: CheckoutSessionCreateParams.Price;
+  price: CheckoutsessionCreateParams.Price;
 
   /**
    * An internal reference id which will be stored with the checkout & corresponding
@@ -7830,7 +7830,7 @@ export interface CheckoutSessionCreateParams {
   /**
    * The billing address of the user. Required when handshake=true.
    */
-  billingAddress?: CheckoutSessionCreateParams.BillingAddress;
+  billingAddress?: CheckoutsessionCreateParams.BillingAddress;
 
   /**
    * The merchant category code or
@@ -7853,7 +7853,7 @@ export interface CheckoutSessionCreateParams {
   /**
    * The customer of the merchant.
    */
-  customer?: CheckoutSessionCreateParams.Email | CheckoutSessionCreateParams.ID;
+  customer?: CheckoutsessionCreateParams.Email | CheckoutsessionCreateParams.ID;
 
   /**
    * False by default. If set to true, customers cannot modify the pre-selected bank
@@ -7865,7 +7865,7 @@ export interface CheckoutSessionCreateParams {
    * Relevant for e-commerce only. The already applied discounts of the Checkout.
    * Discounts will be shown in the lineItems after Checkout Session creation.
    */
-  discounts?: Array<CheckoutSessionCreateParams.Discount>;
+  discounts?: Array<CheckoutsessionCreateParams.Discount>;
 
   /**
    * The customer facing id. This id is displayed to the user during the checkout and
@@ -7916,7 +7916,7 @@ export interface CheckoutSessionCreateParams {
   /**
    * Relevant for e-commerce only. The line items of the Checkout.
    */
-  lineItems?: Array<CheckoutSessionCreateParams.LineItem>;
+  lineItems?: Array<CheckoutsessionCreateParams.LineItem>;
 
   /**
    * The locale of the Checkout. If provided, the Checkout will be displayed in the
@@ -7929,7 +7929,7 @@ export interface CheckoutSessionCreateParams {
    * The mandate setup for the payment. Relevant for
    * [Ivy on File](https://docs.getivy.de/docs/beta-ivy-on-file)
    */
-  mandate?: CheckoutSessionCreateParams.Mandate;
+  mandate?: CheckoutsessionCreateParams.Mandate;
 
   /**
    * ISO 3166-1 alpha-2 country code. The market where the user of the Checkout is
@@ -8222,7 +8222,7 @@ export interface CheckoutSessionCreateParams {
   /**
    * Use this to prefill data of the user in the Checkout.
    */
-  prefill?: CheckoutSessionCreateParams.Prefill;
+  prefill?: CheckoutsessionCreateParams.Prefill;
 
   /**
    * Only applicable for express Checkouts. Quote Callback requests will be sent to
@@ -8234,7 +8234,7 @@ export interface CheckoutSessionCreateParams {
    * Only applicable for express Checkout Sessions. The given fields will be required
    * input within the Ivy express Checkout.
    */
-  required?: CheckoutSessionCreateParams.Required;
+  required?: CheckoutsessionCreateParams.Required;
 
   /**
    * If set to true, a [risk check](https://docs.getivy.de/docs/froud-prevention)
@@ -8247,12 +8247,12 @@ export interface CheckoutSessionCreateParams {
    * address of the merchant's direct payout destination will be used with a randomly
    * generated payment reference.
    */
-  settlementDestination?: CheckoutSessionCreateParams.SettlementDestination;
+  settlementDestination?: CheckoutsessionCreateParams.SettlementDestination;
 
   /**
    * The shipping methods of the Checkout.
    */
-  shippingMethods?: Array<CheckoutSessionCreateParams.ShippingMethod>;
+  shippingMethods?: Array<CheckoutsessionCreateParams.ShippingMethod>;
 
   /**
    * The logo of the shop provided as a URL.
@@ -8279,7 +8279,7 @@ export interface CheckoutSessionCreateParams {
   verificationToken?: string;
 }
 
-export namespace CheckoutSessionCreateParams {
+export namespace CheckoutsessionCreateParams {
   /**
    * The price to be paid by the user. All amounts are in decimals, i.e. 10.23
    * represents EUR 10.23. Any amount of decimal places can be provided on
@@ -9234,21 +9234,21 @@ export namespace CheckoutSessionCreateParams {
   }
 }
 
-export interface CheckoutSessionRetrieveParams {
+export interface CheckoutsessionRetrieveParams {
   id: string;
 }
 
-export interface CheckoutSessionExpireParams {
+export interface CheckoutsessionExpireParams {
   id: string;
 }
 
-export declare namespace CheckoutSession {
+export declare namespace Checkoutsession {
   export {
-    type CheckoutSessionCreateResponse as CheckoutSessionCreateResponse,
-    type CheckoutSessionRetrieveResponse as CheckoutSessionRetrieveResponse,
-    type CheckoutSessionExpireResponse as CheckoutSessionExpireResponse,
-    type CheckoutSessionCreateParams as CheckoutSessionCreateParams,
-    type CheckoutSessionRetrieveParams as CheckoutSessionRetrieveParams,
-    type CheckoutSessionExpireParams as CheckoutSessionExpireParams,
+    type CheckoutsessionCreateResponse as CheckoutsessionCreateResponse,
+    type CheckoutsessionRetrieveResponse as CheckoutsessionRetrieveResponse,
+    type CheckoutsessionExpireResponse as CheckoutsessionExpireResponse,
+    type CheckoutsessionCreateParams as CheckoutsessionCreateParams,
+    type CheckoutsessionRetrieveParams as CheckoutsessionRetrieveParams,
+    type CheckoutsessionExpireParams as CheckoutsessionExpireParams,
   };
 }
