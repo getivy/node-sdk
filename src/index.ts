@@ -78,6 +78,19 @@ import {
   SubaccountRetrieveParams,
   Subaccounts,
 } from './resources/subaccounts';
+import {
+  Webhooksubscription,
+  WebhooksubscriptionCreateParams,
+  WebhooksubscriptionCreateResponse,
+  WebhooksubscriptionDeleteParams,
+  WebhooksubscriptionDeleteResponse,
+  WebhooksubscriptionListParams,
+  WebhooksubscriptionListResponse,
+  WebhooksubscriptionPingParams,
+  WebhooksubscriptionPingResponse,
+  WebhooksubscriptionUpdateParams,
+  WebhooksubscriptionUpdateResponse,
+} from './resources/webhooksubscription';
 
 const environments = {
   production: 'https://api.getivy.de',
@@ -227,6 +240,7 @@ export class Ivy extends Core.APIClient {
   reports: API.Reports = new API.Reports(this);
   subaccounts: API.Subaccounts = new API.Subaccounts(this);
   balance: API.Balance = new API.Balance(this);
+  webhooksubscription: API.Webhooksubscription = new API.Webhooksubscription(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -276,6 +290,7 @@ Ivy.Payouts = Payouts;
 Ivy.Reports = Reports;
 Ivy.Subaccounts = Subaccounts;
 Ivy.Balance = Balance;
+Ivy.Webhooksubscription = Webhooksubscription;
 export declare namespace Ivy {
   export type RequestOptions = Core.RequestOptions;
 
@@ -370,6 +385,20 @@ export declare namespace Ivy {
     Balance as Balance,
     type BalanceRetrieveResponse as BalanceRetrieveResponse,
     type BalanceRetrieveParams as BalanceRetrieveParams,
+  };
+
+  export {
+    Webhooksubscription as Webhooksubscription,
+    type WebhooksubscriptionCreateResponse as WebhooksubscriptionCreateResponse,
+    type WebhooksubscriptionUpdateResponse as WebhooksubscriptionUpdateResponse,
+    type WebhooksubscriptionListResponse as WebhooksubscriptionListResponse,
+    type WebhooksubscriptionDeleteResponse as WebhooksubscriptionDeleteResponse,
+    type WebhooksubscriptionPingResponse as WebhooksubscriptionPingResponse,
+    type WebhooksubscriptionCreateParams as WebhooksubscriptionCreateParams,
+    type WebhooksubscriptionUpdateParams as WebhooksubscriptionUpdateParams,
+    type WebhooksubscriptionListParams as WebhooksubscriptionListParams,
+    type WebhooksubscriptionDeleteParams as WebhooksubscriptionDeleteParams,
+    type WebhooksubscriptionPingParams as WebhooksubscriptionPingParams,
   };
 }
 
