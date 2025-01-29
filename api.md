@@ -142,3 +142,21 @@ Types:
 Methods:
 
 - <code title="post /api/service/balance/retrieve">client.balance.<a href="./src/resources/balance.ts">retrieve</a>({ ...params }) -> BalanceRetrieveResponse</code>
+
+# Webhooksubscription
+
+Types:
+
+- <code><a href="./src/resources/webhooksubscription.ts">WebhooksubscriptionCreateResponse</a></code>
+- <code><a href="./src/resources/webhooksubscription.ts">WebhooksubscriptionUpdateResponse</a></code>
+- <code><a href="./src/resources/webhooksubscription.ts">WebhooksubscriptionListResponse</a></code>
+- <code><a href="./src/resources/webhooksubscription.ts">WebhooksubscriptionDeleteResponse</a></code>
+- <code><a href="./src/resources/webhooksubscription.ts">WebhooksubscriptionPingResponse</a></code>
+
+Methods:
+
+- <code title="post /api/service/webhook-subscription/create">client.webhooksubscription.<a href="./src/resources/webhooksubscription.ts">create</a>({ ...params }) -> WebhooksubscriptionCreateResponse</code>
+- <code title="post /api/service/webhook-subscription/update">client.webhooksubscription.<a href="./src/resources/webhooksubscription.ts">update</a>({ ...params }) -> WebhooksubscriptionUpdateResponse</code>
+- <code title="post /api/service/webhook-subscription/list">client.webhooksubscription.<a href="./src/resources/webhooksubscription.ts">list</a>({ ...params }) -> WebhooksubscriptionListResponse</code>
+- <code title="post /api/service/webhook-subscription/delete">client.webhooksubscription.<a href="./src/resources/webhooksubscription.ts">delete</a>({ ...params }) -> WebhooksubscriptionDeleteResponse</code>
+- <code title="post /api/service/webhook-subscription/ping">client.webhooksubscription.<a href="./src/resources/webhooksubscription.ts">ping</a>({ ...params }) -> WebhooksubscriptionPingResponse</code>
