@@ -103,7 +103,7 @@ export interface ClientOptions {
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
-   * Defaults to process.env['GETIVY_BASE_URL'].
+   * Defaults to process.env['IVY_BASE_URL'].
    */
   baseURL?: string | null | undefined;
 
@@ -158,19 +158,19 @@ export interface ClientOptions {
 }
 
 /**
- * API Client for interfacing with the Getivy API.
+ * API Client for interfacing with the Ivy API.
  */
-export class Getivy extends Core.APIClient {
+export class Ivy extends Core.APIClient {
   apiKey: string;
 
   private _options: ClientOptions;
 
   /**
-   * API Client for interfacing with the Getivy API.
+   * API Client for interfacing with the Ivy API.
    *
    * @param {string | undefined} [opts.apiKey=process.env['IVY_API_KEY'] ?? undefined]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
-   * @param {string} [opts.baseURL=process.env['GETIVY_BASE_URL'] ?? https://api.getivy.de] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['IVY_BASE_URL'] ?? https://api.getivy.de] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -179,13 +179,13 @@ export class Getivy extends Core.APIClient {
    * @param {Core.DefaultQuery} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
   constructor({
-    baseURL = Core.readEnv('GETIVY_BASE_URL'),
+    baseURL = Core.readEnv('IVY_BASE_URL'),
     apiKey = Core.readEnv('IVY_API_KEY'),
     ...opts
   }: ClientOptions = {}) {
     if (apiKey === undefined) {
-      throw new Errors.GetivyError(
-        "The IVY_API_KEY environment variable is missing or empty; either provide it, or instantiate the Getivy client with an apiKey option, like new Getivy({ apiKey: 'My API Key' }).",
+      throw new Errors.IvyError(
+        "The IVY_API_KEY environment variable is missing or empty; either provide it, or instantiate the Ivy client with an apiKey option, like new Ivy({ apiKey: 'My API Key' }).",
       );
     }
 
@@ -197,8 +197,8 @@ export class Getivy extends Core.APIClient {
     };
 
     if (baseURL && opts.environment) {
-      throw new Errors.GetivyError(
-        'Ambiguous URL; The `baseURL` option (or GETIVY_BASE_URL env var) and the `environment` option are given. If you want to use the environment you must pass baseURL: null',
+      throw new Errors.IvyError(
+        'Ambiguous URL; The `baseURL` option (or IVY_BASE_URL env var) and the `environment` option are given. If you want to use the environment you must pass baseURL: null',
       );
     }
 
@@ -243,10 +243,10 @@ export class Getivy extends Core.APIClient {
     return { 'X-Ivy-Api-Key': this.apiKey };
   }
 
-  static Getivy = this;
+  static Ivy = this;
   static DEFAULT_TIMEOUT = 60000; // 1 minute
 
-  static GetivyError = Errors.GetivyError;
+  static IvyError = Errors.IvyError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -264,19 +264,19 @@ export class Getivy extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-Getivy.Banks = Banks;
-Getivy.Checkoutsession = Checkoutsession;
-Getivy.Customers = Customers;
-Getivy.Orders = Orders;
-Getivy.Charges = Charges;
-Getivy.Mandates = Mandates;
-Getivy.Capabilities = Capabilities;
-Getivy.Refunds = Refunds;
-Getivy.Payouts = Payouts;
-Getivy.Reports = Reports;
-Getivy.Subaccounts = Subaccounts;
-Getivy.Balance = Balance;
-export declare namespace Getivy {
+Ivy.Banks = Banks;
+Ivy.Checkoutsession = Checkoutsession;
+Ivy.Customers = Customers;
+Ivy.Orders = Orders;
+Ivy.Charges = Charges;
+Ivy.Mandates = Mandates;
+Ivy.Capabilities = Capabilities;
+Ivy.Refunds = Refunds;
+Ivy.Payouts = Payouts;
+Ivy.Reports = Reports;
+Ivy.Subaccounts = Subaccounts;
+Ivy.Balance = Balance;
+export declare namespace Ivy {
   export type RequestOptions = Core.RequestOptions;
 
   export {
@@ -375,7 +375,7 @@ export declare namespace Getivy {
 
 export { toFile, fileFromPath } from './uploads';
 export {
-  GetivyError,
+  IvyError,
   APIError,
   APIConnectionError,
   APIConnectionTimeoutError,
@@ -390,4 +390,4 @@ export {
   UnprocessableEntityError,
 } from './error';
 
-export default Getivy;
+export default Ivy;
