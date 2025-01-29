@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import type { Getivy } from './index';
+import type { Ivy } from './index';
 
 export class APIResource {
-  protected _client: Getivy;
+  protected _client: Ivy;
 
-  constructor(client: Getivy) {
+  constructor(client: Ivy) {
     this._client = client;
   }
 }
