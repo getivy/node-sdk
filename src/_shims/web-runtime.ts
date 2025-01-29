@@ -9,9 +9,9 @@ export function getRuntime({ manuallyImported }: { manuallyImported?: boolean } 
   const recommendation =
     manuallyImported ?
       `You may need to use polyfills`
-    : `Add one of these imports before your first \`import … from 'node-sdk'\`:
-- \`import 'node-sdk/shims/node'\` (if you're running on Node)
-- \`import 'node-sdk/shims/web'\` (otherwise)
+    : `Add one of these imports before your first \`import … from '@getivy/node-sdk'\`:
+- \`import '@getivy/node-sdk/shims/node'\` (if you're running on Node)
+- \`import '@getivy/node-sdk/shims/web'\` (otherwise)
 `;
 
   let _fetch, _Request, _Response, _Headers;

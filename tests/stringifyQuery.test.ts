@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Getivy } from 'node-sdk';
+import { Getivy } from '@getivy/node-sdk';
 
 const { stringifyQuery } = Getivy.prototype as any;
 

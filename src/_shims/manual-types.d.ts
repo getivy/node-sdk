@@ -4,8 +4,8 @@
 /**
  * Types will get added to this namespace when you import one of the following:
  *
- *   import 'node-sdk/shims/node'
- *   import 'node-sdk/shims/web'
+ *   import '@getivy/node-sdk/shims/node'
+ *   import '@getivy/node-sdk/shims/web'
  *
  * Importing more than one will cause type and runtime errors.
  */

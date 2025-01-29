@@ -1,5 +1,5 @@
-import { createResponseHeaders } from 'node-sdk/core';
-import { Headers } from 'node-sdk/_shims/index';
+import { createResponseHeaders } from '@getivy/node-sdk/core';
+import { Headers } from '@getivy/node-sdk/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters

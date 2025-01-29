@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Getivy from 'node-sdk';
-import { APIUserAbortError } from 'node-sdk';
-import { Headers } from 'node-sdk/core';
+import Getivy from '@getivy/node-sdk';
+import { APIUserAbortError } from '@getivy/node-sdk';
+import { Headers } from '@getivy/node-sdk/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {
