@@ -97,19 +97,30 @@ Methods:
 
 # Payouts
 
-## Reports
-
 Types:
 
-- <code><a href="./src/resources/payouts/reports.ts">PayoutReport</a></code>
-- <code><a href="./src/resources/payouts/reports.ts">ReportCreateResponse</a></code>
-- <code><a href="./src/resources/payouts/reports.ts">ReportRetrieveResponse</a></code>
+- <code><a href="./src/resources/payouts.ts">PublicUserPayout</a></code>
+- <code><a href="./src/resources/payouts.ts">PayoutListResponse</a></code>
 
 Methods:
 
-- <code title="post /api/service/merchant/payout/export/create">client.payouts.reports.<a href="./src/resources/payouts/reports.ts">create</a>({ ...params }) -> ReportCreateResponse</code>
-- <code title="post /api/service/merchant/payout/export/retrieve">client.payouts.reports.<a href="./src/resources/payouts/reports.ts">retrieve</a>({ ...params }) -> ReportRetrieveResponse</code>
-- <code title="post /api/service/merchant/payout/export/download">client.payouts.reports.<a href="./src/resources/payouts/reports.ts">download</a>({ ...params }) -> PayoutReport</code>
+- <code title="post /api/service/payout/create">client.payouts.<a href="./src/resources/payouts.ts">create</a>({ ...params }) -> PublicUserPayout</code>
+- <code title="post /api/service/payout/retrieve">client.payouts.<a href="./src/resources/payouts.ts">retrieve</a>({ ...params }) -> PublicUserPayout</code>
+- <code title="post /api/service/payout/list">client.payouts.<a href="./src/resources/payouts.ts">list</a>({ ...params }) -> PayoutListResponse</code>
+
+# Reports
+
+Types:
+
+- <code><a href="./src/resources/reports.ts">PayoutReport</a></code>
+- <code><a href="./src/resources/reports.ts">ReportCreateResponse</a></code>
+- <code><a href="./src/resources/reports.ts">ReportRetrieveResponse</a></code>
+
+Methods:
+
+- <code title="post /api/service/merchant/payout/export/create">client.reports.<a href="./src/resources/reports.ts">create</a>({ ...params }) -> ReportCreateResponse</code>
+- <code title="post /api/service/merchant/payout/export/retrieve">client.reports.<a href="./src/resources/reports.ts">retrieve</a>({ ...params }) -> ReportRetrieveResponse</code>
+- <code title="post /api/service/merchant/payout/export/download">client.reports.<a href="./src/resources/reports.ts">download</a>({ ...params }) -> PayoutReport</code>
 
 # Subaccounts
 
@@ -131,18 +142,3 @@ Types:
 Methods:
 
 - <code title="post /api/service/balance/retrieve">client.balance.<a href="./src/resources/balance.ts">retrieve</a>({ ...params }) -> BalanceRetrieveResponse</code>
-
-# Customer
-
-## Payouts
-
-Types:
-
-- <code><a href="./src/resources/customer/payouts.ts">PublicUserPayout</a></code>
-- <code><a href="./src/resources/customer/payouts.ts">PayoutListResponse</a></code>
-
-Methods:
-
-- <code title="post /api/service/payout/create">client.customer.payouts.<a href="./src/resources/customer/payouts.ts">create</a>({ ...params }) -> PublicUserPayout</code>
-- <code title="post /api/service/payout/retrieve">client.customer.payouts.<a href="./src/resources/customer/payouts.ts">retrieve</a>({ ...params }) -> PublicUserPayout</code>
-- <code title="post /api/service/payout/list">client.customer.payouts.<a href="./src/resources/customer/payouts.ts">list</a>({ ...params }) -> PayoutListResponse</code>

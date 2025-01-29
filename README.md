@@ -1,6 +1,6 @@
 # Getivy Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/getivy.svg)](https://npmjs.org/package/getivy) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/getivy)
+[![NPM version](https://img.shields.io/npm/v/node-sdk.svg)](https://npmjs.org/package/node-sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/node-sdk)
 
 This library provides convenient access to the Getivy REST API from server-side TypeScript or JavaScript.
 
@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install getivy
+npm install node-sdk
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import Getivy from 'getivy';
+import Getivy from 'node-sdk';
 
 const client = new Getivy({
   environment: 'sandbox', // defaults to 'production'
@@ -41,7 +41,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import Getivy from 'getivy';
+import Getivy from 'node-sdk';
 
 const client = new Getivy({
   environment: 'sandbox', // defaults to 'production'
@@ -213,11 +213,11 @@ add the following import before your first import `from "Getivy"`:
 ```ts
 // Tell TypeScript and the package to use the global web fetch instead of node-fetch.
 // Note, despite the name, this does not add any polyfills, but expects them to be provided if needed.
-import 'getivy/shims/web';
-import Getivy from 'getivy';
+import 'node-sdk/shims/web';
+import Getivy from 'node-sdk';
 ```
 
-To do the inverse, add `import "getivy/shims/node"` (which does import polyfills).
+To do the inverse, add `import "node-sdk/shims/node"` (which does import polyfills).
 This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/getivy/node-sdk/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
@@ -227,7 +227,7 @@ which can be used to inspect or alter the `Request` or `Response` before/after e
 
 ```ts
 import { fetch } from 'undici'; // as one example
-import Getivy from 'getivy';
+import Getivy from 'node-sdk';
 
 const client = new Getivy({
   fetch: async (url: RequestInfo, init?: RequestInit): Promise<Response> => {

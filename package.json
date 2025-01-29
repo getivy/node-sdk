@@ -1,6 +1,6 @@
 {
-  "name": "getivy",
-  "version": "0.0.1-alpha.0",
+  "name": "node-sdk",
+  "version": "0.1.0-alpha.1",
   "description": "The official TypeScript library for the Getivy API",
   "author": "Getivy <developer@getivy.de>",
   "types": "dist/index.d.ts",
@@ -59,8 +59,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "getivy": ".",
-    "getivy/*": "./src/*"
+    "node-sdk": ".",
+    "node-sdk/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {

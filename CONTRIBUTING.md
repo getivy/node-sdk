@@ -55,12 +55,12 @@ $ cd node-sdk
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link getivy
+$ yarn link node-sdk
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global getivy
+$ pnpm link -—global node-sdk
 ```
 
 ## Running tests
