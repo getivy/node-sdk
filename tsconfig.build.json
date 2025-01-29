@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "node-sdk/*": ["dist/src/*"],
-      "node-sdk": ["dist/src/index.ts"],
+      "@getivy/node-sdk/*": ["dist/src/*"],
+      "@getivy/node-sdk": ["dist/src/index.ts"],
     },
     "noEmit": false,
     "declaration": true,
