@@ -11,7 +11,7 @@ const client = new Getivy({
 describe('resource reports', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: only required params', async () => {
-    const responsePromise = client.merchant.payouts.reports.create({ intervalEnd: 0, intervalStart: 0 });
+    const responsePromise = client.payouts.reports.create({ intervalEnd: 0, intervalStart: 0 });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,7 +23,7 @@ describe('resource reports', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('create: required and optional params', async () => {
-    const response = await client.merchant.payouts.reports.create({
+    const response = await client.payouts.reports.create({
       intervalEnd: 0,
       intervalStart: 0,
       currency: 'EUR',
@@ -33,7 +33,7 @@ describe('resource reports', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.merchant.payouts.reports.retrieve({ reportId: 'reportId' });
+    const responsePromise = client.payouts.reports.retrieve({ reportId: 'reportId' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -45,12 +45,12 @@ describe('resource reports', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.merchant.payouts.reports.retrieve({ reportId: 'reportId' });
+    const response = await client.payouts.reports.retrieve({ reportId: 'reportId' });
   });
 
   // skipped: tests are disabled for the time being
   test.skip('download: only required params', async () => {
-    const responsePromise = client.merchant.payouts.reports.download({ reportId: 'reportId' });
+    const responsePromise = client.payouts.reports.download({ reportId: 'reportId' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -62,6 +62,6 @@ describe('resource reports', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('download: required and optional params', async () => {
-    const response = await client.merchant.payouts.reports.download({ reportId: 'reportId', format: 'csv' });
+    const response = await client.payouts.reports.download({ reportId: 'reportId', format: 'csv' });
   });
 });

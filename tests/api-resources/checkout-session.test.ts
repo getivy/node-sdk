@@ -8,10 +8,10 @@ const client = new Getivy({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource session', () => {
+describe('resource checkoutSession', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: only required params', async () => {
-    const responsePromise = client.checkout.session.create({
+    const responsePromise = client.checkoutSession.create({
       price: { currency: 'EUR', total: 0 },
       referenceId: 'referenceId',
     });
@@ -26,7 +26,7 @@ describe('resource session', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('create: required and optional params', async () => {
-    const response = await client.checkout.session.create({
+    const response = await client.checkoutSession.create({
       price: { currency: 'EUR', total: 0, shipping: 0, subTotal: 0, totalNet: 0, vat: 0 },
       referenceId: 'referenceId',
       billingAddress: {
@@ -130,7 +130,7 @@ describe('resource session', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.checkout.session.retrieve({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
+    const responsePromise = client.checkoutSession.retrieve({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -142,12 +142,12 @@ describe('resource session', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.checkout.session.retrieve({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
+    const response = await client.checkoutSession.retrieve({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
   });
 
   // skipped: tests are disabled for the time being
   test.skip('expire: only required params', async () => {
-    const responsePromise = client.checkout.session.expire({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
+    const responsePromise = client.checkoutSession.expire({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -159,6 +159,6 @@ describe('resource session', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('expire: required and optional params', async () => {
-    const response = await client.checkout.session.expire({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
+    const response = await client.checkoutSession.expire({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
   });
 });
