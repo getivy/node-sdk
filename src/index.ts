@@ -49,6 +49,14 @@ import {
   Orders,
 } from './resources/orders';
 import {
+  PayoutCreateParams,
+  PayoutListParams,
+  PayoutListResponse,
+  PayoutRetrieveParams,
+  Payouts,
+  PublicUserPayout,
+} from './resources/payouts';
+import {
   RefundBatchParams,
   RefundBatchResponse,
   RefundCreateParams,
@@ -56,13 +64,20 @@ import {
   Refunds,
 } from './resources/refunds';
 import {
+  PayoutReport,
+  ReportCreateParams,
+  ReportCreateResponse,
+  ReportDownloadParams,
+  ReportRetrieveParams,
+  ReportRetrieveResponse,
+  Reports,
+} from './resources/reports';
+import {
   Subaccount,
   SubaccountCreateParams,
   SubaccountRetrieveParams,
   Subaccounts,
 } from './resources/subaccounts';
-import { Customer } from './resources/customer/customer';
-import { Payouts } from './resources/payouts/payouts';
 
 const environments = {
   production: 'https://api.getivy.de',
@@ -209,9 +224,9 @@ export class Getivy extends Core.APIClient {
   capabilities: API.Capabilities = new API.Capabilities(this);
   refunds: API.Refunds = new API.Refunds(this);
   payouts: API.Payouts = new API.Payouts(this);
+  reports: API.Reports = new API.Reports(this);
   subaccounts: API.Subaccounts = new API.Subaccounts(this);
   balance: API.Balance = new API.Balance(this);
-  customer: API.Customer = new API.Customer(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -258,9 +273,9 @@ Getivy.Mandates = Mandates;
 Getivy.Capabilities = Capabilities;
 Getivy.Refunds = Refunds;
 Getivy.Payouts = Payouts;
+Getivy.Reports = Reports;
 Getivy.Subaccounts = Subaccounts;
 Getivy.Balance = Balance;
-Getivy.Customer = Customer;
 export declare namespace Getivy {
   export type RequestOptions = Core.RequestOptions;
 
@@ -325,7 +340,24 @@ export declare namespace Getivy {
     type RefundBatchParams as RefundBatchParams,
   };
 
-  export { Payouts as Payouts };
+  export {
+    Payouts as Payouts,
+    type PublicUserPayout as PublicUserPayout,
+    type PayoutListResponse as PayoutListResponse,
+    type PayoutCreateParams as PayoutCreateParams,
+    type PayoutRetrieveParams as PayoutRetrieveParams,
+    type PayoutListParams as PayoutListParams,
+  };
+
+  export {
+    Reports as Reports,
+    type PayoutReport as PayoutReport,
+    type ReportCreateResponse as ReportCreateResponse,
+    type ReportRetrieveResponse as ReportRetrieveResponse,
+    type ReportCreateParams as ReportCreateParams,
+    type ReportRetrieveParams as ReportRetrieveParams,
+    type ReportDownloadParams as ReportDownloadParams,
+  };
 
   export {
     Subaccounts as Subaccounts,
@@ -339,8 +371,6 @@ export declare namespace Getivy {
     type BalanceRetrieveResponse as BalanceRetrieveResponse,
     type BalanceRetrieveParams as BalanceRetrieveParams,
   };
-
-  export { Customer as Customer };
 }
 
 export { toFile, fileFromPath } from './uploads';
