@@ -73,3 +73,16 @@ export {
   type SubaccountCreateParams,
   type SubaccountRetrieveParams,
 } from './subaccounts';
+export {
+  Webhooksubscription,
+  type WebhooksubscriptionCreateResponse,
+  type WebhooksubscriptionUpdateResponse,
+  type WebhooksubscriptionListResponse,
+  type WebhooksubscriptionDeleteResponse,
+  type WebhooksubscriptionPingResponse,
+  type WebhooksubscriptionCreateParams,
+  type WebhooksubscriptionUpdateParams,
+  type WebhooksubscriptionListParams,
+  type WebhooksubscriptionDeleteParams,
+  type WebhooksubscriptionPingParams,
+} from './webhooksubscription';
