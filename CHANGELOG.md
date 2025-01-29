@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-01-29)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Features
+
+* **api:** update via SDK Studio ([#2](https://github.com/getivy/node-sdk/issues/2)) ([def3270](https://github.com/getivy/node-sdk/commit/def3270e9556a85a40abb5687309fe249bf5525a))
+
+
+### Chores
+
+* update SDK settings ([#4](https://github.com/getivy/node-sdk/issues/4)) ([f5b1aaf](https://github.com/getivy/node-sdk/commit/f5b1aaf9ab20470c4ddefabee0626f49cd79d90e))
+
 ## 0.1.0-alpha.1 (2025-01-29)
 
 Full Changelog: [v0.0.1-alpha.0...v0.1.0-alpha.1](https://github.com/getivy/node-sdk/compare/v0.0.1-alpha.0...v0.1.0-alpha.1)
