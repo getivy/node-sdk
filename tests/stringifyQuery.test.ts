@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Getivy } from '@getivy/node-sdk';
+import { Ivy } from '@getivy/node-sdk';
 
-const { stringifyQuery } = Getivy.prototype as any;
+const { stringifyQuery } = Ivy.prototype as any;
 
 describe(stringifyQuery, () => {
   for (const [input, expected] of [
