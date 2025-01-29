@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Getivy from 'getivy';
+import Getivy from 'node-sdk';
 import { Response } from 'node-fetch';
 
 const client = new Getivy({
@@ -8,10 +8,10 @@ const client = new Getivy({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource payouts', () => {
+describe('resource reports', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: only required params', async () => {
-    const responsePromise = client.customer.payouts.create({ amount: 0, currency: 'EUR', destination: {} });
+    const responsePromise = client.reports.create({ intervalEnd: 0, intervalStart: 0 });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,31 +23,17 @@ describe('resource payouts', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('create: required and optional params', async () => {
-    const response = await client.customer.payouts.create({
-      amount: 0,
+    const response = await client.reports.create({
+      intervalEnd: 0,
+      intervalStart: 0,
       currency: 'EUR',
-      destination: {
-        financialAddress: {
-          type: 'type',
-          bankCode: { accountHolderName: 'accountHolderName', accountNumber: 'accountNumber', code: 'code' },
-          bban: { accountHolderName: 'accountHolderName', bban: 'bban', bic: 'bic' },
-          iban: { accountHolderName: 'accountHolderName', iban: 'iban', bic: 'bic' },
-          sortCode: {
-            accountHolderName: 'accountHolderName',
-            accountNumber: 'accountNumber',
-            sortCode: 'sortCode',
-          },
-        },
-        orderId: 'orderId',
-      },
-      metadata: { foo: 'bar' },
-      paymentReference: 'paymentReference',
+      webhookUrl: 'webhookUrl',
     });
   });
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.customer.payouts.retrieve({ id: 'id' });
+    const responsePromise = client.reports.retrieve({ reportId: 'reportId' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -59,12 +45,12 @@ describe('resource payouts', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.customer.payouts.retrieve({ id: 'id' });
+    const response = await client.reports.retrieve({ reportId: 'reportId' });
   });
 
   // skipped: tests are disabled for the time being
-  test.skip('list', async () => {
-    const responsePromise = client.customer.payouts.list({});
+  test.skip('download: only required params', async () => {
+    const responsePromise = client.reports.download({ reportId: 'reportId' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -72,5 +58,10 @@ describe('resource payouts', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('download: required and optional params', async () => {
+    const response = await client.reports.download({ reportId: 'reportId', format: 'csv' });
   });
 });

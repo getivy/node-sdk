@@ -42,11 +42,13 @@ export let isFsReadStream: Shims['isFsReadStream'] | undefined = undefined;
 export function setShims(shims: Shims, options: { auto: boolean } = { auto: false }) {
   if (auto) {
     throw new Error(
-      `you must \`import 'getivy/shims/${shims.kind}'\` before importing anything else from getivy`,
+      `you must \`import 'node-sdk/shims/${shims.kind}'\` before importing anything else from node-sdk`,
     );
   }
   if (kind) {
-    throw new Error(`can't \`import 'getivy/shims/${shims.kind}'\` after \`import 'getivy/shims/${kind}'\``);
+    throw new Error(
+      `can't \`import 'node-sdk/shims/${shims.kind}'\` after \`import 'node-sdk/shims/${kind}'\``,
+    );
   }
   auto = options.auto;
   kind = shims.kind;

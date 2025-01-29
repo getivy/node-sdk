@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from 'getivy/core';
-import { Blob } from 'getivy/_shims/index';
-import { toFile } from 'getivy';
+import { multipartFormRequestOptions, createForm } from 'node-sdk/core';
+import { Blob } from 'node-sdk/_shims/index';
+import { toFile } from 'node-sdk';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {
