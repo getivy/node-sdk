@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2025-02-14)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Features
+
+* **client:** send `X-Stainless-Timeout` header ([#13](https://github.com/getivy/node-sdk/issues/13)) ([10e28f6](https://github.com/getivy/node-sdk/commit/10e28f6b1367a97d270886934ff39373a729deda))
+
+
+### Bug Fixes
+
+* **client:** fix export map for index exports ([#15](https://github.com/getivy/node-sdk/issues/15)) ([08099f5](https://github.com/getivy/node-sdk/commit/08099f5c46df5d9c3123365f13ef0aca7e933c45))
+
 ## 0.1.0-alpha.4 (2025-01-29)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
