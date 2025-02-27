@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.6 (2025-02-22)
+
+Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
+
+### Chores
+
+* **internal:** fix devcontainers setup ([#17](https://github.com/getivy/node-sdk/issues/17)) ([90840e8](https://github.com/getivy/node-sdk/commit/90840e8eebdae48b5e243a5a86dc332107afbd72))
+
 ## 0.1.0-alpha.5 (2025-02-14)
 
 Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
