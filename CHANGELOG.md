@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2025-02-28)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Features
+
+* **api:** api update ([#21](https://github.com/getivy/node-sdk/issues/21)) ([c25ee4f](https://github.com/getivy/node-sdk/commit/c25ee4f9c9e0bdf251551a04f473bc941cebf943))
+
+
+### Documentation
+
+* update URLs from stainlessapi.com to stainless.com ([#20](https://github.com/getivy/node-sdk/issues/20)) ([6ee5acd](https://github.com/getivy/node-sdk/commit/6ee5acdd016a35a2cab1024eacde67440bde79d8))
+
 ## 0.1.0-alpha.6 (2025-02-22)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
