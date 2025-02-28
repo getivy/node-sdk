@@ -39,19 +39,14 @@ describe('resource checkoutsession', () => {
         line2: 'line2',
         region: 'region',
       },
-      category: 'category',
       completeCallbackUrl: 'completeCallbackUrl',
       created: 0,
       customer: { email: 'dev@stainless.com' },
       disableBankSelection: true,
-      discounts: [{ amount: 0, code: 'code' }],
       displayId: 'displayId',
       errorCallbackUrl: 'errorCallbackUrl',
       expiresAt: 0,
       express: true,
-      guest: true,
-      handshake: true,
-      incentiveMode: 'white_label',
       lineItems: [
         {
           amount: 0,
@@ -76,10 +71,8 @@ describe('resource checkoutsession', () => {
       metadata: [{ foo: 'bar' }],
       paymentMode: 'settlement',
       paymentSchemeSelection: 'instant_preferred',
-      plugin: 'plugin',
       prefill: {
         bankId: 'bankId',
-        email: 'email',
         payerFinancialAddress: {
           type: 'type',
           bankCode: { accountNumber: 'accountNumber', code: 'code', accountHolderName: 'accountHolderName' },
@@ -91,11 +84,8 @@ describe('resource checkoutsession', () => {
             accountHolderName: 'accountHolderName',
           },
         },
-        phone: 'phone',
       },
       quoteCallbackUrl: 'quoteCallbackUrl',
-      required: { phone: true },
-      riskCheck: true,
       settlementDestination: {
         reference: 'reference',
         financialAddress: {
@@ -110,21 +100,8 @@ describe('resource checkoutsession', () => {
           },
         },
       },
-      shippingMethods: [
-        {
-          name: 'name',
-          price: 0,
-          id: 'E1CB97d8EBbDbaAae6d9B1ca',
-          countries: ['AF'],
-          deliveryEstimate: { maximum: { unit: 'hour', value: 0 }, minimum: { unit: 'hour', value: 0 } },
-          reference: 'reference',
-          timeFrame: 'timeFrame',
-        },
-      ],
-      shopLogo: 'shopLogo',
       subaccountId: 'subaccountId',
       successCallbackUrl: 'successCallbackUrl',
-      verificationToken: 'verificationToken',
     });
   });
 
