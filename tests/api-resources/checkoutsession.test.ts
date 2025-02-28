@@ -42,7 +42,7 @@ describe('resource checkoutsession', () => {
       category: 'category',
       completeCallbackUrl: 'completeCallbackUrl',
       created: 0,
-      customer: { email: 'dev@stainlessapi.com' },
+      customer: { email: 'dev@stainless.com' },
       disableBankSelection: true,
       discounts: [{ amount: 0, code: 'code' }],
       displayId: 'displayId',
