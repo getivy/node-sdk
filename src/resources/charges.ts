@@ -69,25 +69,12 @@ export namespace ChargeCreateParams {
      */
     total: number;
 
-    /**
-     * The shipping amount.
-     */
     shipping?: number;
 
-    /**
-     * The subtotal amount, i.e. the total amount without VAT and shipping.
-     */
     subTotal?: number;
 
-    /**
-     * The total net amount, i.e. the total amount without VAT. This value is rounded
-     * to 2 decimal places for the actual transfer.
-     */
     totalNet?: number;
 
-    /**
-     * The VAT amount.
-     */
     vat?: number;
   }
 

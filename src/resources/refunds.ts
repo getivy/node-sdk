@@ -42,7 +42,6 @@ export interface RefundResponse {
     | 'failed'
     | 'canceled'
     | 'processing'
-    | 'in_handshake'
     | 'waiting_for_payment'
     | 'paid'
     | 'in_refund'

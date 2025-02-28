@@ -54,7 +54,7 @@ export interface OrderRetrieveResponse {
   merchantId: string;
 
   /**
-   * The price to be paid by the user. All amounts are in decimals, i.e. 10.23
+   * The amount to be paid by the user. The amounts is in decimals, i.e. 10.23
    * represents EUR 10.23. Any amount of decimal places can be provided on
    * initialization, but the actual transfer amount is rounded to 2 decimal places,
    * as this is the format accepted by most banks.
@@ -81,7 +81,6 @@ export interface OrderRetrieveResponse {
     | 'failed'
     | 'canceled'
     | 'processing'
-    | 'in_handshake'
     | 'waiting_for_payment'
     | 'paid'
     | 'in_refund'
@@ -270,7 +269,7 @@ export interface OrderRetrieveResponse {
 
 export namespace OrderRetrieveResponse {
   /**
-   * The price to be paid by the user. All amounts are in decimals, i.e. 10.23
+   * The amount to be paid by the user. The amounts is in decimals, i.e. 10.23
    * represents EUR 10.23. Any amount of decimal places can be provided on
    * initialization, but the actual transfer amount is rounded to 2 decimal places,
    * as this is the format accepted by most banks.
@@ -283,25 +282,12 @@ export namespace OrderRetrieveResponse {
      */
     total: number;
 
-    /**
-     * The shipping amount.
-     */
     shipping?: number;
 
-    /**
-     * The subtotal amount, i.e. the total amount without VAT and shipping.
-     */
     subTotal?: number;
 
-    /**
-     * The total net amount, i.e. the total amount without VAT. This value is rounded
-     * to 2 decimal places for the actual transfer.
-     */
     totalNet?: number;
 
-    /**
-     * The VAT amount.
-     */
     vat?: number;
   }
 
@@ -1542,7 +1528,6 @@ export namespace OrderRetrieveResponse {
       | 'failed'
       | 'canceled'
       | 'processing'
-      | 'in_handshake'
       | 'waiting_for_payment'
       | 'paid'
       | 'in_refund'
@@ -1566,7 +1551,6 @@ export namespace OrderRetrieveResponse {
       | 'failed'
       | 'canceled'
       | 'processing'
-      | 'in_handshake'
       | 'waiting_for_payment'
       | 'paid'
       | 'in_refund'
@@ -1613,7 +1597,7 @@ export interface OrderUpdateResponse {
   merchantId: string;
 
   /**
-   * The price to be paid by the user. All amounts are in decimals, i.e. 10.23
+   * The amount to be paid by the user. The amounts is in decimals, i.e. 10.23
    * represents EUR 10.23. Any amount of decimal places can be provided on
    * initialization, but the actual transfer amount is rounded to 2 decimal places,
    * as this is the format accepted by most banks.
@@ -1640,7 +1624,6 @@ export interface OrderUpdateResponse {
     | 'failed'
     | 'canceled'
     | 'processing'
-    | 'in_handshake'
     | 'waiting_for_payment'
     | 'paid'
     | 'in_refund'
@@ -1829,7 +1812,7 @@ export interface OrderUpdateResponse {
 
 export namespace OrderUpdateResponse {
   /**
-   * The price to be paid by the user. All amounts are in decimals, i.e. 10.23
+   * The amount to be paid by the user. The amounts is in decimals, i.e. 10.23
    * represents EUR 10.23. Any amount of decimal places can be provided on
    * initialization, but the actual transfer amount is rounded to 2 decimal places,
    * as this is the format accepted by most banks.
@@ -1842,25 +1825,12 @@ export namespace OrderUpdateResponse {
      */
     total: number;
 
-    /**
-     * The shipping amount.
-     */
     shipping?: number;
 
-    /**
-     * The subtotal amount, i.e. the total amount without VAT and shipping.
-     */
     subTotal?: number;
 
-    /**
-     * The total net amount, i.e. the total amount without VAT. This value is rounded
-     * to 2 decimal places for the actual transfer.
-     */
     totalNet?: number;
 
-    /**
-     * The VAT amount.
-     */
     vat?: number;
   }
 
@@ -3101,7 +3071,6 @@ export namespace OrderUpdateResponse {
       | 'failed'
       | 'canceled'
       | 'processing'
-      | 'in_handshake'
       | 'waiting_for_payment'
       | 'paid'
       | 'in_refund'
@@ -3125,7 +3094,6 @@ export namespace OrderUpdateResponse {
       | 'failed'
       | 'canceled'
       | 'processing'
-      | 'in_handshake'
       | 'waiting_for_payment'
       | 'paid'
       | 'in_refund'
@@ -3173,7 +3141,6 @@ export interface OrderUpdateParams {
     | 'failed'
     | 'canceled'
     | 'processing'
-    | 'in_handshake'
     | 'waiting_for_payment'
     | 'paid'
     | 'in_refund'
