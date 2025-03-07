@@ -308,6 +308,11 @@ export interface BankRetrieveResponse {
   name: string;
 
   /**
+   * The payment schemes supported by the bank.
+   */
+  supportedPaymentSchemes: Array<'SEPA_INSTANT' | 'FASTER_PAYMENTS' | 'SEPA' | 'ELIXIR' | 'EXPRESS_ELIXIR'>;
+
+  /**
    * If true, the bank is only available in test (sandbox) mode.
    */
   test: boolean;
@@ -615,6 +620,11 @@ export namespace BankListResponse {
      * Customer-facing name of the bank.
      */
     name: string;
+
+    /**
+     * The payment schemes supported by the bank.
+     */
+    supportedPaymentSchemes: Array<'SEPA_INSTANT' | 'FASTER_PAYMENTS' | 'SEPA' | 'ELIXIR' | 'EXPRESS_ELIXIR'>;
 
     /**
      * If true, the bank is only available in test (sandbox) mode.
@@ -925,6 +935,11 @@ export namespace BankSearchResponse {
      * Customer-facing name of the bank.
      */
     name: string;
+
+    /**
+     * The payment schemes supported by the bank.
+     */
+    supportedPaymentSchemes: Array<'SEPA_INSTANT' | 'FASTER_PAYMENTS' | 'SEPA' | 'ELIXIR' | 'EXPRESS_ELIXIR'>;
 
     /**
      * If true, the bank is only available in test (sandbox) mode.
