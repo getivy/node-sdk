@@ -94,6 +94,11 @@ export interface OrderRetrieveResponse {
   updatedAt: string;
 
   /**
+   * The unique identifier of the customer's bank.
+   */
+  bankId?: string;
+
+  /**
    * The bank statement reference of the payment for the order. This is the reference
    * that will be visible on the bank statement.
    */
@@ -1635,6 +1640,11 @@ export interface OrderUpdateResponse {
     | 'refused';
 
   updatedAt: string;
+
+  /**
+   * The unique identifier of the customer's bank.
+   */
+  bankId?: string;
 
   /**
    * The bank statement reference of the payment for the order. This is the reference
