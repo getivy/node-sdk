@@ -94,7 +94,8 @@ export interface OrderRetrieveResponse {
   updatedAt: string;
 
   /**
-   * The unique identifier of the customer's bank.
+   * The unique identifier of Ivy of the chosen bank to make the payment. Not there,
+   * if no payment was made.
    */
   bankId?: string;
 
@@ -1642,7 +1643,8 @@ export interface OrderUpdateResponse {
   updatedAt: string;
 
   /**
-   * The unique identifier of the customer's bank.
+   * The unique identifier of Ivy of the chosen bank to make the payment. Not there,
+   * if no payment was made.
    */
   bankId?: string;
 
