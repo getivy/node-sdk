@@ -71,20 +71,7 @@ describe('resource checkoutsession', () => {
       metadata: [{ foo: 'bar' }],
       paymentMode: 'settlement',
       paymentSchemeSelection: 'instant_preferred',
-      prefill: {
-        bankId: 'bankId',
-        payerFinancialAddress: {
-          type: 'type',
-          bankCode: { accountNumber: 'accountNumber', code: 'code', accountHolderName: 'accountHolderName' },
-          bban: { bban: 'bban', accountHolderName: 'accountHolderName', bic: 'bic' },
-          iban: { iban: 'iban', accountHolderName: 'accountHolderName', bic: 'bic' },
-          sortCode: {
-            accountNumber: 'accountNumber',
-            sortCode: 'sortCode',
-            accountHolderName: 'accountHolderName',
-          },
-        },
-      },
+      prefill: { bankId: 'bankId' },
       quoteCallbackUrl: 'quoteCallbackUrl',
       settlementDestination: {
         reference: 'reference',
