@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2025-03-17)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Features
+
+* add SKIP_BREW env var to ./scripts/bootstrap ([#30](https://github.com/getivy/node-sdk/issues/30)) ([0009679](https://github.com/getivy/node-sdk/commit/0009679eeba8b6654193ffc65c7895e12ad31bf6))
+* **api:** api update ([#34](https://github.com/getivy/node-sdk/issues/34)) ([6e52bc0](https://github.com/getivy/node-sdk/commit/6e52bc0fef3a20aa9d810750267f9d1385925560))
+* **client:** accept RFC6838 JSON content types ([#32](https://github.com/getivy/node-sdk/issues/32)) ([3943434](https://github.com/getivy/node-sdk/commit/3943434a79f0492a270f447ed5706db33f467493))
+
+
+### Chores
+
+* **internal:** remove extra empty newlines ([#33](https://github.com/getivy/node-sdk/issues/33)) ([3c11c3d](https://github.com/getivy/node-sdk/commit/3c11c3d7971818ed0c96e75be16401f9f6160e87))
+
 ## 0.1.0-alpha.9 (2025-03-10)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
