@@ -32,14 +32,65 @@ export interface CustomerCreateResponse {
 }
 
 /**
- * Returns the id, email and the merchantId of the customer
+ * Returns the id, email, merchantId of the customer and array of banks remembered
+ * by customer
  */
 export interface CustomerRetrieveResponse {
+  /**
+   * Customer id
+   */
   id: string;
 
+  /**
+   * List of bank accounts rememberd by customer
+   */
+  bankAccounts: Array<CustomerRetrieveResponse.BankAccount>;
+
+  /**
+   * Customer email address
+   */
   emailAddress: string;
 
+  /**
+   * Id of the merchant to which the customer belongs
+   */
   merchantId: string;
+}
+
+export namespace CustomerRetrieveResponse {
+  export interface BankAccount {
+    /**
+     * Bank details
+     */
+    bank: BankAccount.Bank;
+  }
+
+  export namespace BankAccount {
+    /**
+     * Bank details
+     */
+    export interface Bank {
+      /**
+       * Bank id used to initiate checkout session with preselected bank
+       */
+      id: string;
+
+      /**
+       * Bank name
+       */
+      name: string;
+
+      /**
+       * Name of the branch if bank belongs to a group
+       */
+      branchName?: string;
+
+      /**
+       * Bank logo url
+       */
+      logo?: string;
+    }
+  }
 }
 
 export interface CustomerCreateParams {
