@@ -31,10 +31,6 @@ export interface CustomerCreateResponse {
   email: string;
 }
 
-/**
- * Returns the id, email, merchantId of the customer and array of banks remembered
- * by customer
- */
 export interface CustomerRetrieveResponse {
   /**
    * Customer id
@@ -42,7 +38,7 @@ export interface CustomerRetrieveResponse {
   id: string;
 
   /**
-   * List of bank accounts rememberd by customer
+   * List of remembered bank accounts for this Customer
    */
   bankAccounts: Array<CustomerRetrieveResponse.BankAccount>;
 
@@ -50,11 +46,6 @@ export interface CustomerRetrieveResponse {
    * Customer email address
    */
   emailAddress: string;
-
-  /**
-   * Id of the merchant to which the customer belongs
-   */
-  merchantId: string;
 }
 
 export namespace CustomerRetrieveResponse {
@@ -63,6 +54,11 @@ export namespace CustomerRetrieveResponse {
      * Bank details
      */
     bank: BankAccount.Bank;
+
+    /**
+     * Last 4 digits of remembered account number
+     */
+    last4digits?: string;
   }
 
   export namespace BankAccount {
@@ -71,22 +67,17 @@ export namespace CustomerRetrieveResponse {
      */
     export interface Bank {
       /**
-       * Bank id used to initiate checkout session with preselected bank
+       * Ivy bank id used to initiate checkout session with preselected bank
        */
       id: string;
 
       /**
-       * Bank name
+       * The customer-facing name of the Bank.
        */
       name: string;
 
       /**
-       * Name of the branch if bank belongs to a group
-       */
-      branchName?: string;
-
-      /**
-       * Bank logo url
+       * The Bank Logo as a URL
        */
       logo?: string;
     }
