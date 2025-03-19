@@ -6425,6 +6425,12 @@ export interface CheckoutsessionCreateParams {
    * successful payment attempt.
    */
   successCallbackUrl?: string;
+
+  /**
+   * The theme variant which will be used in checkout. If not provided, the default
+   * light theme will be used.
+   */
+  themeVariant?: 'light' | 'dark';
 }
 
 export namespace CheckoutsessionCreateParams {
