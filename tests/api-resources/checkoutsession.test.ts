@@ -89,6 +89,7 @@ describe('resource checkoutsession', () => {
       },
       subaccountId: 'subaccountId',
       successCallbackUrl: 'successCallbackUrl',
+      themeVariant: 'light',
     });
   });
 
