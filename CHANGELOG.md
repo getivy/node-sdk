@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.13 (2025-03-22)
+
+Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
+
+### Bug Fixes
+
+* avoid type error in certain environments ([#45](https://github.com/getivy/node-sdk/issues/45)) ([11bfff3](https://github.com/getivy/node-sdk/commit/11bfff38b058a21983ff0dbbd5a549b78468a82f))
+
+
+### Chores
+
+* **exports:** cleaner resource index imports ([#42](https://github.com/getivy/node-sdk/issues/42)) ([07616a4](https://github.com/getivy/node-sdk/commit/07616a4bab7cfc6ebf10c63f01d12f9acbee2343))
+* **exports:** stop using path fallbacks ([#44](https://github.com/getivy/node-sdk/issues/44)) ([42c9fdf](https://github.com/getivy/node-sdk/commit/42c9fdfb7b28708f4e7fbd8fc974cf89ccd901d4))
+
 ## 0.1.0-alpha.12 (2025-03-19)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
