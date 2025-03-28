@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.14 (2025-03-28)
+
+Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
+
+### Bug Fixes
+
+* **internal:** work around https://github.com/vercel/next.js/issues/76881 ([#48](https://github.com/getivy/node-sdk/issues/48)) ([6f39951](https://github.com/getivy/node-sdk/commit/6f399518f7a8440ffed3b9914598ce244c337882))
+
+
+### Chores
+
+* sync repo ([5279e35](https://github.com/getivy/node-sdk/commit/5279e350838ba18149093dd03cbad5fa72f1a1b9))
+
 ## 0.1.0-alpha.13 (2025-03-22)
 
 Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
