@@ -209,7 +209,8 @@ export interface OrderRetrieveResponse {
     | 'refund_failed'
     | 'partially_refunded'
     | 'not_settled'
-    | 'disputed';
+    | 'disputed'
+    | 'frozen_due_to_aml';
 
   /**
    * The total amount in the currency of all successful refunds for this order
@@ -1758,7 +1759,8 @@ export interface OrderUpdateResponse {
     | 'refund_failed'
     | 'partially_refunded'
     | 'not_settled'
-    | 'disputed';
+    | 'disputed'
+    | 'frozen_due_to_aml';
 
   /**
    * The total amount in the currency of all successful refunds for this order
