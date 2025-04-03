@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.16 (2025-04-03)
+
+Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
+
+### Bug Fixes
+
+* **client:** send `X-Stainless-Timeout` in seconds ([#53](https://github.com/getivy/node-sdk/issues/53)) ([be0cdd9](https://github.com/getivy/node-sdk/commit/be0cdd9ea9f87eb340598ef2057747c0a0191f8f))
+
 ## 0.1.0-alpha.15 (2025-04-01)
 
 Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
