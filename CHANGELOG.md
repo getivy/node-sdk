@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.17 (2025-04-04)
+
+Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
+
+### Bug Fixes
+
+* **api:** improve type resolution when importing as a package ([#58](https://github.com/getivy/node-sdk/issues/58)) ([ff07294](https://github.com/getivy/node-sdk/commit/ff07294f2d4c61678dd6e4c13bb51071faf77648))
+
+
+### Chores
+
+* **internal:** add aliases for Record and Array ([#56](https://github.com/getivy/node-sdk/issues/56)) ([c732666](https://github.com/getivy/node-sdk/commit/c7326668b1a15c39f7e66229b54f7014da8f77f9))
+
 ## 0.1.0-alpha.16 (2025-04-03)
 
 Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
