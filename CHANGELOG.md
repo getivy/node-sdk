@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.18 (2025-04-05)
+
+Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
+
+### Bug Fixes
+
+* **mcp:** remove unused tools.ts ([#60](https://github.com/getivy/node-sdk/issues/60)) ([a8760f5](https://github.com/getivy/node-sdk/commit/a8760f530c370cdb1330b7a7ac863ece7ef3b29a))
+
 ## 0.1.0-alpha.17 (2025-04-04)
 
 Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
