@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.19 (2025-04-11)
+
+Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
+
+### Chores
+
+* **internal:** reduce CI branch coverage ([58b3582](https://github.com/getivy/node-sdk/commit/58b358286e010d79632cb28c3899d6fb9f073fbf))
+* **internal:** upload builds and expand CI branch coverage ([4a4ef94](https://github.com/getivy/node-sdk/commit/4a4ef94db865d54ad808f3b660a9cda92a6f3ea4))
+
 ## 0.1.0-alpha.18 (2025-04-05)
 
 Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
