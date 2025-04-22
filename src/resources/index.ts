@@ -36,13 +36,7 @@ export {
   type MandateLookupParams,
   type MandateRevokeParams,
 } from './mandates';
-export {
-  Orders,
-  type OrderRetrieveResponse,
-  type OrderUpdateResponse,
-  type OrderRetrieveParams,
-  type OrderUpdateParams,
-} from './orders';
+export { Orders, type OrderRetrieveResponse, type OrderRetrieveParams } from './orders';
 export {
   Payouts,
   type PublicUserPayout,
