@@ -43,12 +43,10 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/orders.ts">OrderRetrieveResponse</a></code>
-- <code><a href="./src/resources/orders.ts">OrderUpdateResponse</a></code>
 
 Methods:
 
 - <code title="post /api/service/order/details">client.orders.<a href="./src/resources/orders.ts">retrieve</a>({ ...params }) -> OrderRetrieveResponse</code>
-- <code title="post /api/service/order/update">client.orders.<a href="./src/resources/orders.ts">update</a>({ ...params }) -> OrderUpdateResponse</code>
 
 # Charges
 
