@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.20 (2025-04-23)
+
+Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
+
+### Chores
+
+* **ci:** add timeout thresholds for CI jobs ([bd427a9](https://github.com/getivy/node-sdk/commit/bd427a996739ce322e2690f9be56d96b047be835))
+
 ## 0.1.0-alpha.19 (2025-04-22)
 
 Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
