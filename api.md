@@ -42,10 +42,12 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/orders.ts">OrderCreateResponse</a></code>
 - <code><a href="./src/resources/orders.ts">OrderRetrieveResponse</a></code>
 
 Methods:
 
+- <code title="post /api/service/order/create">client.orders.<a href="./src/resources/orders.ts">create</a>({ ...params }) -> OrderCreateResponse</code>
 - <code title="post /api/service/order/details">client.orders.<a href="./src/resources/orders.ts">retrieve</a>({ ...params }) -> OrderRetrieveResponse</code>
 
 # Charges
