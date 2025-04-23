@@ -41,7 +41,13 @@ import {
   MandateRevokeResponse,
   Mandates,
 } from './resources/mandates';
-import { OrderRetrieveParams, OrderRetrieveResponse, Orders } from './resources/orders';
+import {
+  OrderCreateParams,
+  OrderCreateResponse,
+  OrderRetrieveParams,
+  OrderRetrieveResponse,
+  Orders,
+} from './resources/orders';
 import {
   PayoutCreateParams,
   PayoutListParams,
@@ -318,7 +324,9 @@ export declare namespace Ivy {
 
   export {
     Orders as Orders,
+    type OrderCreateResponse as OrderCreateResponse,
     type OrderRetrieveResponse as OrderRetrieveResponse,
+    type OrderCreateParams as OrderCreateParams,
     type OrderRetrieveParams as OrderRetrieveParams,
   };
 
