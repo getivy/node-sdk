@@ -42,4 +42,21 @@ describe('resource customers', () => {
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.customers.retrieve({ id: 'id' });
   });
+
+  // skipped: tests are disabled for the time being
+  test.skip('search: only required params', async () => {
+    const responsePromise = client.customers.search({ email: 'email' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('search: required and optional params', async () => {
+    const response = await client.customers.search({ email: 'email', limit: 0, skip: 0 });
+  });
 });

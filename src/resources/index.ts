@@ -25,8 +25,10 @@ export {
   Customers,
   type CustomerCreateResponse,
   type CustomerRetrieveResponse,
+  type CustomerSearchResponse,
   type CustomerCreateParams,
   type CustomerRetrieveParams,
+  type CustomerSearchParams,
 } from './customers';
 export {
   Mandates,

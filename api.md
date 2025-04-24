@@ -32,11 +32,13 @@ Types:
 
 - <code><a href="./src/resources/customers.ts">CustomerCreateResponse</a></code>
 - <code><a href="./src/resources/customers.ts">CustomerRetrieveResponse</a></code>
+- <code><a href="./src/resources/customers.ts">CustomerSearchResponse</a></code>
 
 Methods:
 
 - <code title="post /api/service/customer/create">client.customers.<a href="./src/resources/customers.ts">create</a>({ ...params }) -> CustomerCreateResponse</code>
 - <code title="post /api/service/customer/retrieve">client.customers.<a href="./src/resources/customers.ts">retrieve</a>({ ...params }) -> CustomerRetrieveResponse</code>
+- <code title="post /api/service/customer/search">client.customers.<a href="./src/resources/customers.ts">search</a>({ ...params }) -> CustomerSearchResponse</code>
 
 # Orders
 

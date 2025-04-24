@@ -21,6 +21,13 @@ export class Customers extends APIResource {
   ): Core.APIPromise<CustomerRetrieveResponse> {
     return this._client.post('/api/service/customer/retrieve', { body, ...options });
   }
+
+  /**
+   * Search for customers you have previously created using filters, e.g. by email.
+   */
+  search(body: CustomerSearchParams, options?: Core.RequestOptions): Core.APIPromise<CustomerSearchResponse> {
+    return this._client.post('/api/service/customer/search', { body, ...options });
+  }
 }
 
 /**
@@ -91,6 +98,80 @@ export namespace CustomerRetrieveResponse {
   }
 }
 
+export interface CustomerSearchResponse {
+  /**
+   * The total number of items
+   */
+  count: number;
+
+  /**
+   * Whether there are more items to retrieve
+   */
+  hasNext: boolean;
+
+  items: Array<CustomerSearchResponse.Item>;
+
+  /**
+   * The number of items skipped
+   */
+  skip: number;
+}
+
+export namespace CustomerSearchResponse {
+  export interface Item {
+    /**
+     * Customer id
+     */
+    id: string;
+
+    /**
+     * List of remembered bank accounts for this Customer
+     */
+    bankAccounts: Array<Item.BankAccount>;
+
+    /**
+     * Customer email address
+     */
+    emailAddress: string;
+  }
+
+  export namespace Item {
+    export interface BankAccount {
+      /**
+       * Bank details
+       */
+      bank: BankAccount.Bank;
+
+      /**
+       * Last 4 digits of remembered account number
+       */
+      last4digits?: string;
+    }
+
+    export namespace BankAccount {
+      /**
+       * Bank details
+       */
+      export interface Bank {
+        /**
+         * Ivy bank id used to initiate checkout session with preselected bank
+         */
+        id: string;
+
+        /**
+         * The customer-facing name of the Bank.
+         */
+        name: string;
+
+        /**
+         * The Bank Logo as a URL
+         */
+        logo?: string;
+      }
+    }
+  }
+}
+
 export interface CustomerCreateParams {
   /**
    * The email address of the customer
@@ -105,11 +186,30 @@ export interface CustomerRetrieveParams {
   id: string;
 }
 
+export interface CustomerSearchParams {
+  /**
+   * Search for customers by email
+   */
+  email: string;
+
+  /**
+   * A limit on the number of objects to be returned.
+   */
+  limit?: number;
+
+  /**
+   * The number of items to skip
+   */
+  skip?: number;
+}
+
 export declare namespace Customers {
   export {
     type CustomerCreateResponse as CustomerCreateResponse,
     type CustomerRetrieveResponse as CustomerRetrieveResponse,
+    type CustomerSearchResponse as CustomerSearchResponse,
     type CustomerCreateParams as CustomerCreateParams,
     type CustomerRetrieveParams as CustomerRetrieveParams,
+    type CustomerSearchParams as CustomerSearchParams,
   };
 }
