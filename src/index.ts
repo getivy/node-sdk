@@ -31,6 +31,8 @@ import {
   CustomerCreateResponse,
   CustomerRetrieveParams,
   CustomerRetrieveResponse,
+  CustomerSearchParams,
+  CustomerSearchResponse,
   Customers,
 } from './resources/customers';
 import {
@@ -318,8 +320,10 @@ export declare namespace Ivy {
     Customers as Customers,
     type CustomerCreateResponse as CustomerCreateResponse,
     type CustomerRetrieveResponse as CustomerRetrieveResponse,
+    type CustomerSearchResponse as CustomerSearchResponse,
     type CustomerCreateParams as CustomerCreateParams,
     type CustomerRetrieveParams as CustomerRetrieveParams,
+    type CustomerSearchParams as CustomerSearchParams,
   };
 
   export {
