@@ -5,7 +5,11 @@ import * as Core from '../core';
 
 export class Orders extends APIResource {
   /**
-   * Create a new order
+   * Create a new order. By creating a new order, you will create a new settlement
+   * destination which you can use to settle expected incoming payments efficiently.
+   * After creating the order, Ivy provides you with a destination for the expected
+   * incoming payment. As soon as a payment with the same details arrives, Ivy will
+   * update the status of the order.
    */
   create(body: OrderCreateParams, options?: Core.RequestOptions): Core.APIPromise<OrderCreateResponse> {
     return this._client.post('/api/service/order/create', { body, ...options });
