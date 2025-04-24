@@ -46,11 +46,13 @@ Types:
 
 - <code><a href="./src/resources/orders.ts">OrderCreateResponse</a></code>
 - <code><a href="./src/resources/orders.ts">OrderRetrieveResponse</a></code>
+- <code><a href="./src/resources/orders.ts">OrderExpireResponse</a></code>
 
 Methods:
 
 - <code title="post /api/service/order/create">client.orders.<a href="./src/resources/orders.ts">create</a>({ ...params }) -> OrderCreateResponse</code>
 - <code title="post /api/service/order/details">client.orders.<a href="./src/resources/orders.ts">retrieve</a>({ ...params }) -> OrderRetrieveResponse</code>
+- <code title="post /api/service/order/expire">client.orders.<a href="./src/resources/orders.ts">expire</a>({ ...params }) -> OrderExpireResponse</code>
 
 # Charges
 

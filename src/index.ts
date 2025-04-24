@@ -46,6 +46,8 @@ import {
 import {
   OrderCreateParams,
   OrderCreateResponse,
+  OrderExpireParams,
+  OrderExpireResponse,
   OrderRetrieveParams,
   OrderRetrieveResponse,
   Orders,
@@ -330,8 +332,10 @@ export declare namespace Ivy {
     Orders as Orders,
     type OrderCreateResponse as OrderCreateResponse,
     type OrderRetrieveResponse as OrderRetrieveResponse,
+    type OrderExpireResponse as OrderExpireResponse,
     type OrderCreateParams as OrderCreateParams,
     type OrderRetrieveParams as OrderRetrieveParams,
+    type OrderExpireParams as OrderExpireParams,
   };
 
   export { Charges as Charges, type Charge as Charge, type ChargeCreateParams as ChargeCreateParams };

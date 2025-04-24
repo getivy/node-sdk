@@ -42,8 +42,10 @@ export {
   Orders,
   type OrderCreateResponse,
   type OrderRetrieveResponse,
+  type OrderExpireResponse,
   type OrderCreateParams,
   type OrderRetrieveParams,
+  type OrderExpireParams,
 } from './orders';
 export {
   Payouts,
