@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.22 (2025-04-24)
+
+Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
+
+### Features
+
+* **api:** add customer search ([7f0c75c](https://github.com/getivy/node-sdk/commit/7f0c75cb548e6189b56dcfa3e14176aefc038337))
+* **api:** add order expire ([e4c4681](https://github.com/getivy/node-sdk/commit/e4c468189f89f6e2af64921339784eba065cdf06))
+* **api:** api update ([007bdc0](https://github.com/getivy/node-sdk/commit/007bdc0e9a117ebff13542b7ac4bf88d86e45c11))
+
+
+### Chores
+
+* **ci:** only use depot for staging repos ([a497b6c](https://github.com/getivy/node-sdk/commit/a497b6c3f76b0b702c31ddc2f692020268d25537))
+* **internal:** codegen related update ([210d0e9](https://github.com/getivy/node-sdk/commit/210d0e90f332533ac2d44872b9f6e22687e2483b))
+
 ## 0.1.0-alpha.21 (2025-04-23)
 
 Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
