@@ -5,14 +5,15 @@ import * as Core from '../core';
 
 export class Customers extends APIResource {
   /**
-   * This endpoint allows merchants to create a new customer with email
+   * Create a new Customer representing your Customers. You can use the Customer to
+   * simplify the checkout process for returning journeys.
    */
   create(body: CustomerCreateParams, options?: Core.RequestOptions): Core.APIPromise<CustomerCreateResponse> {
     return this._client.post('/api/service/customer/create', { body, ...options });
   }
 
   /**
-   * This endpoint allows merchants to retrieve the customer info by id
+   * Retrieve a Customer Object by its id.
    */
   retrieve(
     body: CustomerRetrieveParams,
@@ -26,8 +27,14 @@ export class Customers extends APIResource {
  * Returns the id and email of the created customer
  */
 export interface CustomerCreateResponse {
+  /**
+   * The id of the created customer
+   */
   id: string;
 
+  /**
+   * The email address of the created customer
+   */
   email: string;
 }
 
@@ -85,10 +92,16 @@ export namespace CustomerRetrieveResponse {
 }
 
 export interface CustomerCreateParams {
+  /**
+   * The email address of the customer
+   */
   email: string;
 }
 
 export interface CustomerRetrieveParams {
+  /**
+   * The id of the customer
+   */
   id: string;
 }
 
