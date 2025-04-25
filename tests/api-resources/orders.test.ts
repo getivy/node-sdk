@@ -49,21 +49,4 @@ describe('resource orders', () => {
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.orders.retrieve({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
   });
-
-  // skipped: tests are disabled for the time being
-  test.skip('expire: only required params', async () => {
-    const responsePromise = client.orders.expire({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // skipped: tests are disabled for the time being
-  test.skip('expire: required and optional params', async () => {
-    const response = await client.orders.expire({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
-  });
 });

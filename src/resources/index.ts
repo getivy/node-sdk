@@ -25,10 +25,8 @@ export {
   Customers,
   type CustomerCreateResponse,
   type CustomerRetrieveResponse,
-  type CustomerSearchResponse,
   type CustomerCreateParams,
   type CustomerRetrieveParams,
-  type CustomerSearchParams,
 } from './customers';
 export {
   Mandates,
@@ -42,10 +40,8 @@ export {
   Orders,
   type OrderCreateResponse,
   type OrderRetrieveResponse,
-  type OrderExpireResponse,
   type OrderCreateParams,
   type OrderRetrieveParams,
-  type OrderExpireParams,
 } from './orders';
 export {
   Payouts,
