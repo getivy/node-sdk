@@ -6046,8 +6046,8 @@ export interface CheckoutsessionCreateParams {
   billingAddress?: CheckoutsessionCreateParams.BillingAddress;
 
   /**
-   * Only applicable for express Checkouts. Complete Callback requests will be sent
-   * to this URL.
+   * @deprecated Only applicable for express Checkouts. Complete Callback requests
+   * will be sent to this URL.
    */
   completeCallbackUrl?: string;
 
@@ -6089,13 +6089,13 @@ export interface CheckoutsessionCreateParams {
   expiresAt?: number;
 
   /**
-   * Relevant for e-commerce only. If true, the checkout session will be an express
-   * checkout session.
+   * @deprecated Relevant for e-commerce only. If true, the checkout session will be
+   * an express checkout session.
    */
   express?: boolean;
 
   /**
-   * Relevant for e-commerce only. The line items of the checkout.
+   * @deprecated Relevant for e-commerce only. The line items of the checkout.
    */
   lineItems?: Array<CheckoutsessionCreateParams.LineItem>;
 
@@ -6401,8 +6401,8 @@ export interface CheckoutsessionCreateParams {
   prefill?: CheckoutsessionCreateParams.Prefill;
 
   /**
-   * Only applicable for express Checkouts. Quote Callback requests will be sent to
-   * this URL.
+   * @deprecated Only applicable for express Checkouts. Quote Callback requests will
+   * be sent to this URL.
    */
   quoteCallbackUrl?: string;
 
