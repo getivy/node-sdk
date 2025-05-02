@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-alpha.25 (2025-05-02)
+
+Full Changelog: [v0.1.0-alpha.24...v0.1.0-alpha.25](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.24...v0.1.0-alpha.25)
+
+### Features
+
+* **api:** api update ([39d1733](https://github.com/getivy/node-sdk/commit/39d17337de062a6da18a8f8e9d39f49afa83c08b))
+
+
+### Chores
+
+* **docs:** add missing deprecation warnings ([24ce303](https://github.com/getivy/node-sdk/commit/24ce303c58a55763befb71dfb484e143639eb5a6))
+
+
+### Documentation
+
+* **readme:** fix typo ([2816371](https://github.com/getivy/node-sdk/commit/281637117079e2dd9e26979469cdc694ffe7674e))
+
 ## 0.1.0-alpha.24 (2025-04-30)
 
 Full Changelog: [v0.1.0-alpha.23...v0.1.0-alpha.24](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.23...v0.1.0-alpha.24)
