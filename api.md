@@ -26,6 +26,62 @@ Methods:
 - <code title="post /api/service/checkout/session/details">client.checkoutsession.<a href="./src/resources/checkoutsession.ts">retrieve</a>({ ...params }) -> CheckoutsessionRetrieveResponse</code>
 - <code title="post /api/service/checkout/session/expire">client.checkoutsession.<a href="./src/resources/checkoutsession.ts">expire</a>({ ...params }) -> CheckoutsessionExpireResponse</code>
 
+# Data
+
+## Session
+
+Types:
+
+- <code><a href="./src/resources/data/session.ts">SessionCreateResponse</a></code>
+- <code><a href="./src/resources/data/session.ts">SessionRetrieveResponse</a></code>
+
+Methods:
+
+- <code title="post /api/service/data/session/create">client.data.session.<a href="./src/resources/data/session.ts">create</a>({ ...params }) -> SessionCreateResponse</code>
+- <code title="post /api/service/data/session/details">client.data.session.<a href="./src/resources/data/session.ts">retrieve</a>({ ...params }) -> SessionRetrieveResponse</code>
+
+## Consent
+
+Types:
+
+- <code><a href="./src/resources/data/consent.ts">ConsentRetrieveResponse</a></code>
+- <code><a href="./src/resources/data/consent.ts">ConsentRevokeResponse</a></code>
+
+Methods:
+
+- <code title="post /api/service/data/consent/details">client.data.consent.<a href="./src/resources/data/consent.ts">retrieve</a>({ ...params }) -> ConsentRetrieveResponse</code>
+- <code title="post /api/service/data/consent/revoke">client.data.consent.<a href="./src/resources/data/consent.ts">revoke</a>({ ...params }) -> ConsentRevokeResponse</code>
+
+## Accounts
+
+Types:
+
+- <code><a href="./src/resources/data/accounts.ts">AccountListResponse</a></code>
+
+Methods:
+
+- <code title="post /api/service/data/accounts/list">client.data.accounts.<a href="./src/resources/data/accounts.ts">list</a>({ ...params }) -> AccountListResponse</code>
+
+## Transactions
+
+Types:
+
+- <code><a href="./src/resources/data/transactions.ts">TransactionListResponse</a></code>
+
+Methods:
+
+- <code title="post /api/service/data/transactions/list">client.data.transactions.<a href="./src/resources/data/transactions.ts">list</a>({ ...params }) -> TransactionListResponse</code>
+
+## Balances
+
+Types:
+
+- <code><a href="./src/resources/data/balances.ts">BalanceListResponse</a></code>
+
+Methods:
+
+- <code title="post /api/service/data/account-balances/list">client.data.balances.<a href="./src/resources/data/balances.ts">list</a>({ ...params }) -> BalanceListResponse</code>
+
 # Customers
 
 Types:
