@@ -91,6 +91,7 @@ import {
   WebhooksubscriptionUpdateParams,
   WebhooksubscriptionUpdateResponse,
 } from './resources/webhooksubscription';
+import { Data } from './resources/data/data';
 
 const environments = {
   production: 'https://api.getivy.de',
@@ -230,6 +231,7 @@ export class Ivy extends Core.APIClient {
 
   banks: API.Banks = new API.Banks(this);
   checkoutsession: API.Checkoutsession = new API.Checkoutsession(this);
+  data: API.Data = new API.Data(this);
   customers: API.Customers = new API.Customers(this);
   orders: API.Orders = new API.Orders(this);
   charges: API.Charges = new API.Charges(this);
@@ -280,6 +282,7 @@ export class Ivy extends Core.APIClient {
 
 Ivy.Banks = Banks;
 Ivy.Checkoutsession = Checkoutsession;
+Ivy.Data = Data;
 Ivy.Customers = Customers;
 Ivy.Orders = Orders;
 Ivy.Charges = Charges;
@@ -313,6 +316,8 @@ export declare namespace Ivy {
     type CheckoutsessionRetrieveParams as CheckoutsessionRetrieveParams,
     type CheckoutsessionExpireParams as CheckoutsessionExpireParams,
   };
+
+  export { Data as Data };
 
   export {
     Customers as Customers,
