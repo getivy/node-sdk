@@ -28,6 +28,7 @@ export {
   type CustomerCreateParams,
   type CustomerRetrieveParams,
 } from './customers';
+export { Data } from './data/data';
 export {
   Mandates,
   type MandateResponse,
