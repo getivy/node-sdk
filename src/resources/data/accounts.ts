@@ -36,7 +36,7 @@ export namespace AccountListResponse {
     /**
      * The currency of the account.
      */
-    currency: 'EUR' | 'GBP' | 'PLN' | 'USD' | 'CHF' | 'SEK' | 'DKK' | 'NOK' | 'HUF' | 'CZK' | 'BGN';
+    currency: string;
 
     financialAddress: Array<Account.FinancialAddress>;
 
