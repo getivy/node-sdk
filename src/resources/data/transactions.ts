@@ -37,7 +37,7 @@ export namespace TransactionListResponse {
     /**
      * The currency of the transaction.
      */
-    currency: 'EUR' | 'GBP' | 'PLN' | 'USD' | 'CHF' | 'SEK' | 'DKK' | 'NOK' | 'HUF' | 'CZK' | 'BGN';
+    currency: string;
 
     /**
      * The date and time when the transaction occurred.
