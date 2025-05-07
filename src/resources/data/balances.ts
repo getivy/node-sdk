@@ -31,7 +31,7 @@ export namespace BalanceListResponse {
     /**
      * The currency of the balance.
      */
-    currency: 'EUR' | 'GBP' | 'PLN' | 'USD' | 'CHF' | 'SEK' | 'DKK' | 'NOK' | 'HUF' | 'CZK' | 'BGN';
+    currency: string;
 
     /**
      * The current balance.
