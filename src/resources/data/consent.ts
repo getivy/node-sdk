@@ -36,7 +36,7 @@ export interface ConsentRetrieveResponse {
   /**
    * The current status of the consent.
    */
-  status: 'created' | 'authorised' | 'revoked' | 'expired';
+  status: 'created' | 'authorised' | 'revoked' | 'expired' | 'failed';
 
   /**
    * The Epoch time in seconds when the consent was last updated.
