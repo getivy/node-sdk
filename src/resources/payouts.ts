@@ -32,7 +32,7 @@ export interface PublicUserPayout {
 
   amount: number;
 
-  currency: 'EUR' | 'GBP' | 'PLN';
+  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
    * The validation logic is based on the "type" field. For example, if "type" is set
@@ -156,7 +156,7 @@ export interface PayoutCreateParams {
   /**
    * The currency of the customer payout
    */
-  currency: 'EUR' | 'GBP' | 'PLN';
+  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
    * The destination of the customer payout.

@@ -288,7 +288,7 @@ export namespace OrderCreateResponse {
    * as this is the format accepted by most banks.
    */
   export interface Price {
-    currency: 'EUR' | 'GBP' | 'PLN';
+    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
     /**
      * The total amount to be paid.
@@ -793,7 +793,7 @@ export namespace OrderCreateResponse {
          */
         amount?: number;
 
-        currency?: 'EUR' | 'GBP' | 'PLN';
+        currency?: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
       }
     }
 
@@ -1929,7 +1929,7 @@ export namespace OrderRetrieveResponse {
    * as this is the format accepted by most banks.
    */
   export interface Price {
-    currency: 'EUR' | 'GBP' | 'PLN';
+    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
     /**
      * The total amount to be paid.
@@ -2434,7 +2434,7 @@ export namespace OrderRetrieveResponse {
          */
         amount?: number;
 
-        currency?: 'EUR' | 'GBP' | 'PLN';
+        currency?: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
       }
     }
 
@@ -3316,7 +3316,7 @@ export interface OrderCreateParams {
   /**
    * The currency code of the order
    */
-  currency: 'EUR' | 'GBP' | 'PLN';
+  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
    * The merchant's unique reference ID for the order
