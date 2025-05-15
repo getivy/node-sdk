@@ -38,7 +38,7 @@ export interface BankRetrieveResponse {
    */
   id: string;
 
-  currencies: Array<'EUR' | 'GBP' | 'PLN'>;
+  currencies: Array<'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK'>;
 
   /**
    * If true, the bank is part of the set of default banks for a given market.
@@ -310,7 +310,16 @@ export interface BankRetrieveResponse {
   /**
    * The payment schemes supported by the bank.
    */
-  supportedPaymentSchemes: Array<'SEPA_INSTANT' | 'FASTER_PAYMENTS' | 'SEPA' | 'ELIXIR' | 'EXPRESS_ELIXIR'>;
+  supportedPaymentSchemes: Array<
+    | 'SEPA_INSTANT'
+    | 'FASTER_PAYMENTS'
+    | 'SEPA'
+    | 'ELIXIR'
+    | 'EXPRESS_ELIXIR'
+    | 'SEK_ACCOUNT_TO_ACCOUNT'
+    | 'SUMCLEARING'
+    | 'STRAKSCLEARING'
+  >;
 
   /**
    * If true, the bank is only available in test (sandbox) mode.
@@ -352,7 +361,7 @@ export namespace BankListResponse {
      */
     id: string;
 
-    currencies: Array<'EUR' | 'GBP' | 'PLN'>;
+    currencies: Array<'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK'>;
 
     /**
      * If true, the bank is part of the set of default banks for a given market.
@@ -624,7 +633,16 @@ export namespace BankListResponse {
     /**
      * The payment schemes supported by the bank.
      */
-    supportedPaymentSchemes: Array<'SEPA_INSTANT' | 'FASTER_PAYMENTS' | 'SEPA' | 'ELIXIR' | 'EXPRESS_ELIXIR'>;
+    supportedPaymentSchemes: Array<
+      | 'SEPA_INSTANT'
+      | 'FASTER_PAYMENTS'
+      | 'SEPA'
+      | 'ELIXIR'
+      | 'EXPRESS_ELIXIR'
+      | 'SEK_ACCOUNT_TO_ACCOUNT'
+      | 'SUMCLEARING'
+      | 'STRAKSCLEARING'
+    >;
 
     /**
      * If true, the bank is only available in test (sandbox) mode.
@@ -667,7 +685,7 @@ export namespace BankSearchResponse {
      */
     id: string;
 
-    currencies: Array<'EUR' | 'GBP' | 'PLN'>;
+    currencies: Array<'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK'>;
 
     /**
      * If true, the bank is part of the set of default banks for a given market.
@@ -939,7 +957,16 @@ export namespace BankSearchResponse {
     /**
      * The payment schemes supported by the bank.
      */
-    supportedPaymentSchemes: Array<'SEPA_INSTANT' | 'FASTER_PAYMENTS' | 'SEPA' | 'ELIXIR' | 'EXPRESS_ELIXIR'>;
+    supportedPaymentSchemes: Array<
+      | 'SEPA_INSTANT'
+      | 'FASTER_PAYMENTS'
+      | 'SEPA'
+      | 'ELIXIR'
+      | 'EXPRESS_ELIXIR'
+      | 'SEK_ACCOUNT_TO_ACCOUNT'
+      | 'SUMCLEARING'
+      | 'STRAKSCLEARING'
+    >;
 
     /**
      * If true, the bank is only available in test (sandbox) mode.
@@ -979,7 +1006,7 @@ export interface BankListParams {
   /**
    * ISO 4217 currency code. Filter banks with provided currency only.
    */
-  currency?: 'EUR' | 'GBP' | 'PLN';
+  currency?: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
    * If provided the list will show banks in this group only. Groups are e.g.
@@ -1258,7 +1285,7 @@ export interface BankSearchParams {
   /**
    * ISO 4217 currency code. Filter banks with provided currency only.
    */
-  currency?: 'EUR' | 'GBP' | 'PLN';
+  currency?: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
    * If provided the list will show banks in this group only. Groups are e.g.

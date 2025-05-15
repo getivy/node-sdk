@@ -52,7 +52,7 @@ export namespace PayoutReport {
 
   export namespace Payout {
     export interface Transaction {
-      currency: 'EUR' | 'GBP' | 'PLN';
+      currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
       fee: number;
 
@@ -131,7 +131,7 @@ export interface ReportCreateParams {
    * If provided, the report will be generated for this currency only. If not
    * provided, the report will be generated for all currencies.
    */
-  currency?: 'EUR' | 'GBP' | 'PLN';
+  currency?: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
    * Optional URL of a webhook. If provided, the report, once generated, will be sent

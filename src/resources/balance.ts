@@ -33,12 +33,12 @@ export namespace BalanceRetrieveResponse {
     /**
      * The currency of the balance
      */
-    currency: 'EUR' | 'GBP' | 'PLN';
+    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
   }
 }
 
 export interface BalanceRetrieveParams {
-  currency: 'EUR' | 'GBP' | 'PLN';
+  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 }
 
 export declare namespace Balance {

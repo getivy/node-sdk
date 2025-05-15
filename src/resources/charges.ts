@@ -62,7 +62,7 @@ export namespace ChargeCreateParams {
    * The price to be charged.
    */
   export interface Price {
-    currency: 'EUR' | 'GBP' | 'PLN';
+    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
     /**
      * The total amount to be paid.
