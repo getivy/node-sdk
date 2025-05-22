@@ -349,6 +349,21 @@ export interface BankListResponse {
    * A list of banks.
    */
   banks: Array<BankListResponse.Bank>;
+
+  /**
+   * The total number of banks
+   */
+  count: number;
+
+  /**
+   * Whether there are more banks to retrieve
+   */
+  hasNext: boolean;
+
+  /**
+   * The number of banks skipped
+   */
+  skip: number;
 }
 
 export namespace BankListResponse {
@@ -673,6 +688,21 @@ export interface BankSearchResponse {
    * A list of banks.
    */
   banks: Array<BankSearchResponse.Bank>;
+
+  /**
+   * The total number of banks
+   */
+  count: number;
+
+  /**
+   * Whether there are more banks to retrieve
+   */
+  hasNext: boolean;
+
+  /**
+   * The number of banks skipped
+   */
+  skip: number;
 }
 
 export namespace BankSearchResponse {
@@ -1015,6 +1045,11 @@ export interface BankListParams {
   group?: string;
 
   /**
+   * The maximum number of banks to return (default 1000)
+   */
+  limit?: number;
+
+  /**
    * ISO 3166-1 alpha-2 country code. Filter banks with provided market only.
    */
   market?:
@@ -1273,6 +1308,11 @@ export interface BankListParams {
    * The internal checkout session id. For internal use only.
    */
   sessionId?: string;
+
+  /**
+   * The number of banks to skip
+   */
+  skip?: number;
 }
 
 export interface BankSearchParams {
@@ -1564,6 +1604,11 @@ export interface BankSearchParams {
    * The internal checkout session id. For internal use only.
    */
   sessionId?: string;
+
+  /**
+   * The number of banks to skip
+   */
+  skip?: number;
 }
 
 export declare namespace Banks {
