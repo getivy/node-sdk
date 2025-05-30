@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.31 (2025-05-30)
+
+Full Changelog: [v0.1.0-alpha.30...v0.1.0-alpha.31](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.30...v0.1.0-alpha.31)
+
+### Features
+
+* **api:** api update ([dde0722](https://github.com/getivy/node-sdk/commit/dde07222f71089c0a105554f4271ad19603f619c))
+* **api:** api update ([937e7f4](https://github.com/getivy/node-sdk/commit/937e7f406235c6b5151dc3cde621a5bd1fd3c5c1))
+* **api:** api update ([65b50a3](https://github.com/getivy/node-sdk/commit/65b50a36fc71894f5e98d4c9d3b53084954b7a80))
+
+
+### Chores
+
+* improve publish-npm script --latest tag logic ([1a25e56](https://github.com/getivy/node-sdk/commit/1a25e567236e112f03c5cd41095a77fcc0a03980))
+
 ## 0.1.0-alpha.30 (2025-05-22)
 
 Full Changelog: [v0.1.0-alpha.29...v0.1.0-alpha.30](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.29...v0.1.0-alpha.30)
