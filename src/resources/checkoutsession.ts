@@ -303,8 +303,8 @@ export interface CheckoutsessionCreateResponse {
   createdAt: string;
 
   /**
-   * The customer facing id. This id is displayed to the user during the checkout and
-   * in the merchant dashboard.
+   * @deprecated Currently only visible in the merchant dashboard. This id used to be
+   * displayed to the user during the checkout.
    */
   displayId: string;
 
@@ -2298,8 +2298,8 @@ export interface CheckoutsessionRetrieveResponse {
   createdAt: string;
 
   /**
-   * The customer facing id. This id is displayed to the user during the checkout and
-   * in the merchant dashboard.
+   * @deprecated Currently only visible in the merchant dashboard. This id used to be
+   * displayed to the user during the checkout.
    */
   displayId: string;
 
@@ -4293,8 +4293,8 @@ export interface CheckoutsessionExpireResponse {
   createdAt: string;
 
   /**
-   * The customer facing id. This id is displayed to the user during the checkout and
-   * in the merchant dashboard.
+   * @deprecated Currently only visible in the merchant dashboard. This id used to be
+   * displayed to the user during the checkout.
    */
   displayId: string;
 
@@ -6052,8 +6052,8 @@ export interface CheckoutsessionCreateParams {
   completeCallbackUrl?: string;
 
   /**
-   * The Epoch time in seconds at which the Checkout Session was created. By default,
-   * time of Checkout creation at Ivy.
+   * @deprecated The Epoch time in seconds at which the Checkout Session was created.
+   * By default, time of Checkout creation at Ivy.
    */
   created?: number;
 
@@ -6069,9 +6069,8 @@ export interface CheckoutsessionCreateParams {
   disableBankSelection?: boolean;
 
   /**
-   * The customer facing id. This id is displayed to the user during the checkout and
-   * in the merchant dashboard. It does not need to be unique and should be a
-   * customer-friendly id.
+   * @deprecated Currently only visible in the merchant dashboard. This id used to be
+   * displayed to the user during the checkout.
    */
   displayId?: string;
 
@@ -6083,8 +6082,8 @@ export interface CheckoutsessionCreateParams {
 
   /**
    * The Epoch time in seconds at which the Checkout Session will expire. It can be
-   * anywhere from 30 minutes to 24 hours after Checkout Session creation. By
-   * default, this value is 1 hour from creation.
+   * anywhere from 5 minutes to 6 days after Checkout Session creation. By default,
+   * this value is 1 hour from creation.
    */
   expiresAt?: number;
 
