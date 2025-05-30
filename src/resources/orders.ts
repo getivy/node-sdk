@@ -138,8 +138,8 @@ export interface OrderCreateResponse {
   destination?: OrderCreateResponse.Destination;
 
   /**
-   * The customer facing id. This id is displayed to the user during the checkout and
-   * in the merchant dashboard.
+   * @deprecated Currently only visible in the merchant dashboard. This id used to be
+   * displayed to the user during the checkout.
    */
   displayId?: string;
 
@@ -1779,8 +1779,8 @@ export interface OrderRetrieveResponse {
   destination?: OrderRetrieveResponse.Destination;
 
   /**
-   * The customer facing id. This id is displayed to the user during the checkout and
-   * in the merchant dashboard.
+   * @deprecated Currently only visible in the merchant dashboard. This id used to be
+   * displayed to the user during the checkout.
    */
   displayId?: string;
 
