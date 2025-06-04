@@ -295,7 +295,8 @@ export interface SessionCreateResponse {
   disableBankSelection: boolean;
 
   /**
-   * The display ID of the data session.
+   * @deprecated Currently only visible in the merchant dashboard. This id used to be
+   * displayed to the user during the checkout.
    */
   displayId: string;
 
@@ -633,7 +634,8 @@ export interface SessionRetrieveResponse {
   disableBankSelection: boolean;
 
   /**
-   * The display ID of the data session.
+   * @deprecated Currently only visible in the merchant dashboard. This id used to be
+   * displayed to the user during the checkout.
    */
   displayId: string;
 
@@ -969,9 +971,8 @@ export interface SessionCreateParams {
   disableBankSelection?: boolean;
 
   /**
-   * The customer facing id. This id is displayed to the user during the data session
-   * and in the merchant dashboard. It does not need to be unique and should be a
-   * customer-friendly id.
+   * @deprecated Currently only visible in the merchant dashboard. This id used to be
+   * displayed to the user during the checkout.
    */
   displayId?: string;
 
