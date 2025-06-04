@@ -47,7 +47,7 @@ export interface ChargeCreateParams {
   referenceId: string;
 
   /**
-   * Additional data to be stored with the charge.
+   * @deprecated Additional data to be stored with the charge.
    */
   metadata?: ChargeCreateParams.Metadata;
 
@@ -79,7 +79,7 @@ export namespace ChargeCreateParams {
   }
 
   /**
-   * Additional data to be stored with the charge.
+   * @deprecated Additional data to be stored with the charge.
    */
   export interface Metadata {
     /**
