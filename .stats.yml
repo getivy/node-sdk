@@ -1,4 +1,4 @@
 configured_endpoints: 38
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/ivy%2Fgetivy-532d567b16a8f269ebd214837f03904060996269cdc0bf26a4cc2269187ee8ea.yml
-openapi_spec_hash: 7d806d29e4363dc414c91a43e680401f
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/ivy%2Fgetivy-6c78c4ea14e5ea0dafbc36fda07492110655bedca2a86dd34e4f3d04004980e0.yml
+openapi_spec_hash: bddd0c9556256e1cd8815865338f3d46
 config_hash: 279607e9c3acabbd35a648b3551c79a9
