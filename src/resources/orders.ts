@@ -928,13 +928,30 @@ export namespace OrderCreateResponse {
      * Populated with the primary payment initiation failure classsification if
      * available.
      */
-    primary?: string;
+    primary: 'payment_authorisation_failed' | 'payment_execution_failed' | 'payment_abandoned';
 
     /**
      * Populated with the secondary payment initiation failure classsification if
      * available.
      */
-    secondary?: string;
+    secondary?:
+      | 'timeout'
+      | 'wrong_credentials'
+      | 'incorrect_2fa_response'
+      | 'payment_rejected'
+      | 'insufficient_funds'
+      | 'cancelled'
+      | 'connection_to_bank_failed'
+      | 'international_transfer_blocked'
+      | 'international_transfer_limit_exceeded'
+      | 'user_blocked'
+      | 'bank_error'
+      | 'instant_transfers_not_enabled'
+      | 'no_active_tan_methods_available'
+      | 'account_limit_exceeded'
+      | 'bank_under_maintenance'
+      | 'pin_blocked'
+      | 'payment_not_settled';
   }
 
   export interface StatusHistoryList {
@@ -1886,13 +1903,30 @@ export namespace OrderRetrieveResponse {
      * Populated with the primary payment initiation failure classsification if
      * available.
      */
-    primary?: string;
+    primary: 'payment_authorisation_failed' | 'payment_execution_failed' | 'payment_abandoned';
 
     /**
      * Populated with the secondary payment initiation failure classsification if
      * available.
      */
-    secondary?: string;
+    secondary?:
+      | 'timeout'
+      | 'wrong_credentials'
+      | 'incorrect_2fa_response'
+      | 'payment_rejected'
+      | 'insufficient_funds'
+      | 'cancelled'
+      | 'connection_to_bank_failed'
+      | 'international_transfer_blocked'
+      | 'international_transfer_limit_exceeded'
+      | 'user_blocked'
+      | 'bank_error'
+      | 'instant_transfers_not_enabled'
+      | 'no_active_tan_methods_available'
+      | 'account_limit_exceeded'
+      | 'bank_under_maintenance'
+      | 'pin_blocked'
+      | 'payment_not_settled';
   }
 
   export interface StatusHistoryList {
