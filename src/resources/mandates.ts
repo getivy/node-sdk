@@ -7,14 +7,17 @@ export class Mandates extends APIResource {
   /**
    * Retrieves a direct debit mandate with mandate id.
    */
-  retrieve(body: MandateRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<MandateResponse> {
+  retrieve(
+    body: MandateRetrieveParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<MandateRetrieveResponse> {
     return this._client.post('/api/service/mandate/retrieve', { body, ...options });
   }
 
   /**
    * Returns a Direct Debit Mandate when a valid mandate referenceId is given.
    */
-  lookup(body: MandateLookupParams, options?: Core.RequestOptions): Core.APIPromise<MandateResponse> {
+  lookup(body: MandateLookupParams, options?: Core.RequestOptions): Core.APIPromise<MandateLookupResponse> {
     return this._client.post('/api/service/mandate/lookup', { body, ...options });
   }
 
@@ -26,30 +29,27 @@ export class Mandates extends APIResource {
   }
 }
 
-export interface MandateResponse {
+export interface MandateRetrieveResponse {
   id: string;
 
-  creditor: MandateResponse.Creditor;
+  creditor: MandateRetrieveResponse.Creditor;
 
-  debtor: MandateResponse.Debtor;
+  debtor: MandateRetrieveResponse.Debtor;
 
   reference: string;
 
   referenceId: string;
 
-  signature: MandateResponse.Signature;
+  signature: MandateRetrieveResponse.Signature;
 
   status: 'pending' | 'active' | 'inactive';
 
-  userNotificationEmail: string;
+  revokedAt?: unknown;
 
-  /**
-   * Required if status is inactive
-   */
-  revokedAt?: string;
+  userNotificationEmail?: string;
 }
 
-export namespace MandateResponse {
+export namespace MandateRetrieveResponse {
   export interface Creditor {
     id: string;
 
@@ -76,9 +76,6 @@ export namespace MandateResponse {
 
   export namespace Debtor {
     export interface Account {
-      /**
-       * The name of the account holder.
-       */
       accountHolderName: string;
 
       iban: string;
@@ -92,11 +89,78 @@ export namespace MandateResponse {
 
     ip: string;
 
-    signedAt: string;
+    signedAt: unknown;
+  }
+}
+
+export interface MandateLookupResponse {
+  id: string;
+
+  creditor: MandateLookupResponse.Creditor;
+
+  debtor: MandateLookupResponse.Debtor;
+
+  reference: string;
+
+  referenceId: string;
+
+  signature: MandateLookupResponse.Signature;
+
+  status: 'pending' | 'active' | 'inactive';
+
+  revokedAt?: unknown;
+
+  userNotificationEmail?: string;
+}
+
+export namespace MandateLookupResponse {
+  export interface Creditor {
+    id: string;
+
+    address: Creditor.Address;
+
+    name: string;
+  }
+
+  export namespace Creditor {
+    export interface Address {
+      city: string;
+
+      country: string;
+
+      postalCode: string;
+
+      street: string;
+    }
+  }
+
+  export interface Debtor {
+    account: Debtor.Account;
+  }
+
+  export namespace Debtor {
+    export interface Account {
+      accountHolderName: string;
+
+      iban: string;
+
+      bic?: string;
+    }
+  }
+
+  export interface Signature {
+    token: string;
+
+    ip: string;
+
+    signedAt: unknown;
   }
 }
 
 export interface MandateRevokeResponse {
+  /**
+   * Indicates whether the mandate was successfully revoked
+   */
   success: boolean;
 }
 
@@ -126,7 +190,8 @@ export interface MandateRevokeParams {
 
 export declare namespace Mandates {
   export {
-    type MandateResponse as MandateResponse,
+    type MandateRetrieveResponse as MandateRetrieveResponse,
+    type MandateLookupResponse as MandateLookupResponse,
     type MandateRevokeResponse as MandateRevokeResponse,
     type MandateRetrieveParams as MandateRetrieveParams,
     type MandateLookupParams as MandateLookupParams,

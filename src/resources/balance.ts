@@ -16,10 +16,10 @@ export class Balance extends APIResource {
   }
 }
 
-/**
- * Returns the Balance of your Ivy account
- */
 export interface BalanceRetrieveResponse {
+  /**
+   * Array of balance information for different currencies
+   */
   balances: Array<BalanceRetrieveResponse.Balance>;
 }
 
@@ -38,6 +38,9 @@ export namespace BalanceRetrieveResponse {
 }
 
 export interface BalanceRetrieveParams {
+  /**
+   * The currency to retrieve the balance for
+   */
   currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 }
 

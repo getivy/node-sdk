@@ -17,19 +17,10 @@ export class Capabilities extends APIResource {
 }
 
 export interface CapabilityRetrieveResponse {
-  /**
-   * Either `'pis'` or `'ais'` or both. The capabilities of the merchant set in the
-   * merchant dashboard for the specific market. If no capabilities are set, the
-   * response will be an empty array. Check if `'pis'` is present in the array for
-   * payments capabilities.
-   */
-  capabilities: Array<'pis' | 'ais'>;
+  capabilities?: Array<'ais' | 'pis'>;
 }
 
 export interface CapabilityRetrieveParams {
-  /**
-   * The market for which you want to retrieve the capabilities.
-   */
   market:
     | 'AF'
     | 'AL'

@@ -8,14 +8,17 @@ export class Payouts extends APIResource {
    * Create a Customer Payout to a customer's bank account for withdrawals or similar
    * purposes.
    */
-  create(body: PayoutCreateParams, options?: Core.RequestOptions): Core.APIPromise<PublicUserPayout> {
+  create(body: PayoutCreateParams, options?: Core.RequestOptions): Core.APIPromise<PayoutCreateResponse> {
     return this._client.post('/api/service/payout/create', { body, ...options });
   }
 
   /**
    * Retrieve a Customer Payout by id
    */
-  retrieve(body: PayoutRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<PublicUserPayout> {
+  retrieve(
+    body: PayoutRetrieveParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<PayoutRetrieveResponse> {
     return this._client.post('/api/service/payout/retrieve', { body, ...options });
   }
 
@@ -27,50 +30,31 @@ export class Payouts extends APIResource {
   }
 }
 
-export interface PublicUserPayout {
+export interface PayoutCreateResponse {
   id: string;
 
   amount: number;
 
+  createdAt: unknown;
+
   currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
-  /**
-   * The validation logic is based on the "type" field. For example, if "type" is set
-   * to "iban", the "iban" object must be filled out.
-   */
-  destination: PublicUserPayout.Destination;
+  destination: PayoutCreateResponse.Destination;
 
-  status: 'paid' | 'pending' | 'failed';
+  status: 'pending' | 'paid' | 'failed';
 
-  createdAt?: string;
+  updatedAt: unknown;
 
-  /**
-   * Any key-value pairs, which will be stored to the object. See
-   * [here](https://docs.getivy.de/reference/metadata) for more info.
-   */
   metadata?: Record<string, unknown>;
 
-  updatedAt?: string;
+  paymentReference?: string;
 }
 
-export namespace PublicUserPayout {
-  /**
-   * The validation logic is based on the "type" field. For example, if "type" is set
-   * to "iban", the "iban" object must be filled out.
-   */
+export namespace PayoutCreateResponse {
   export interface Destination {
-    /**
-     * The type of the financial address. The actual destination is determined by this
-     * field which can be either "iban", "sortCode", "bankCode", or "bban". The
-     * validation will fail if you set e.g. type="iban", but then not fill any values
-     * in the "iban" object.
-     *
-     * - iban: The IBAN of the account
-     * - sort_code: The sort code of the account
-     * - bank_code: The bank code of the account
-     * - bban: The BBAN of the account
-     */
-    type: string;
+    psuData: Destination.PsuData | null;
+
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
     bankCode?: Destination.BankCode;
 
@@ -78,14 +62,29 @@ export namespace PublicUserPayout {
 
     iban?: Destination.Iban;
 
+    paymentReference?: string;
+
     sortCode?: Destination.SortCode;
   }
 
   export namespace Destination {
+    export interface PsuData {
+      branchNumber?: string;
+
+      clientId?: string;
+
+      ipAddress?: string;
+
+      oib?: string;
+
+      psuId?: string;
+
+      ssn?: string;
+
+      username?: string;
+    }
+
     export interface BankCode {
-      /**
-       * The name of the account holder.
-       */
       accountHolderName: string;
 
       accountNumber: string;
@@ -94,9 +93,6 @@ export namespace PublicUserPayout {
     }
 
     export interface Bban {
-      /**
-       * The name of the account holder.
-       */
       accountHolderName: string;
 
       bban: string;
@@ -105,9 +101,6 @@ export namespace PublicUserPayout {
     }
 
     export interface Iban {
-      /**
-       * The name of the account holder.
-       */
       accountHolderName: string;
 
       iban: string;
@@ -116,9 +109,94 @@ export namespace PublicUserPayout {
     }
 
     export interface SortCode {
-      /**
-       * The name of the account holder.
-       */
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      sortCode: string;
+    }
+  }
+}
+
+export interface PayoutRetrieveResponse {
+  id: string;
+
+  amount: number;
+
+  createdAt: unknown;
+
+  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+
+  destination: PayoutRetrieveResponse.Destination;
+
+  status: 'pending' | 'paid' | 'failed';
+
+  updatedAt: unknown;
+
+  metadata?: Record<string, unknown>;
+
+  paymentReference?: string;
+}
+
+export namespace PayoutRetrieveResponse {
+  export interface Destination {
+    psuData: Destination.PsuData | null;
+
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+
+    bankCode?: Destination.BankCode;
+
+    bban?: Destination.Bban;
+
+    iban?: Destination.Iban;
+
+    paymentReference?: string;
+
+    sortCode?: Destination.SortCode;
+  }
+
+  export namespace Destination {
+    export interface PsuData {
+      branchNumber?: string;
+
+      clientId?: string;
+
+      ipAddress?: string;
+
+      oib?: string;
+
+      psuId?: string;
+
+      ssn?: string;
+
+      username?: string;
+    }
+
+    export interface BankCode {
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      code: string;
+    }
+
+    export interface Bban {
+      accountHolderName: string;
+
+      bban: string;
+
+      bic?: string;
+    }
+
+    export interface Iban {
+      accountHolderName: string;
+
+      iban: string;
+
+      bic?: string;
+    }
+
+    export interface SortCode {
       accountHolderName: string;
 
       accountNumber: string;
@@ -139,12 +217,105 @@ export interface PayoutListResponse {
    */
   hasNext: boolean;
 
-  items: Array<PublicUserPayout>;
+  /**
+   * Array of Customer Payout objects
+   */
+  items: Array<PayoutListResponse.Item>;
 
   /**
    * The number of items skipped
    */
   skip: number;
+}
+
+export namespace PayoutListResponse {
+  export interface Item {
+    id: string;
+
+    amount: number;
+
+    createdAt: unknown;
+
+    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+
+    destination: Item.Destination;
+
+    status: 'pending' | 'paid' | 'failed';
+
+    updatedAt: unknown;
+
+    metadata?: Record<string, unknown>;
+
+    paymentReference?: string;
+  }
+
+  export namespace Item {
+    export interface Destination {
+      psuData: Destination.PsuData | null;
+
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+
+      bankCode?: Destination.BankCode;
+
+      bban?: Destination.Bban;
+
+      iban?: Destination.Iban;
+
+      paymentReference?: string;
+
+      sortCode?: Destination.SortCode;
+    }
+
+    export namespace Destination {
+      export interface PsuData {
+        branchNumber?: string;
+
+        clientId?: string;
+
+        ipAddress?: string;
+
+        oib?: string;
+
+        psuId?: string;
+
+        ssn?: string;
+
+        username?: string;
+      }
+
+      export interface BankCode {
+        accountHolderName: string;
+
+        accountNumber: string;
+
+        code: string;
+      }
+
+      export interface Bban {
+        accountHolderName: string;
+
+        bban: string;
+
+        bic?: string;
+      }
+
+      export interface Iban {
+        accountHolderName: string;
+
+        iban: string;
+
+        bic?: string;
+      }
+
+      export interface SortCode {
+        accountHolderName: string;
+
+        accountNumber: string;
+
+        sortCode: string;
+      }
+    }
+  }
 }
 
 export interface PayoutCreateParams {
@@ -197,18 +368,9 @@ export namespace PayoutCreateParams {
      * Used for open-loop customer payouts. Disabled by default for merchants.
      */
     export interface FinancialAddress {
-      /**
-       * The type of the financial address. The actual destination is determined by this
-       * field which can be either "iban", "sortCode", "bankCode", or "bban". The
-       * validation will fail if you set e.g. type="iban", but then not fill any values
-       * in the "iban" object.
-       *
-       * - iban: The IBAN of the account
-       * - sort_code: The sort code of the account
-       * - bank_code: The bank code of the account
-       * - bban: The BBAN of the account
-       */
-      type: string;
+      psuData: FinancialAddress.PsuData | null;
+
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
       bankCode?: FinancialAddress.BankCode;
 
@@ -216,14 +378,29 @@ export namespace PayoutCreateParams {
 
       iban?: FinancialAddress.Iban;
 
+      paymentReference?: string;
+
       sortCode?: FinancialAddress.SortCode;
     }
 
     export namespace FinancialAddress {
+      export interface PsuData {
+        branchNumber?: string;
+
+        clientId?: string;
+
+        ipAddress?: string;
+
+        oib?: string;
+
+        psuId?: string;
+
+        ssn?: string;
+
+        username?: string;
+      }
+
       export interface BankCode {
-        /**
-         * The name of the account holder.
-         */
         accountHolderName: string;
 
         accountNumber: string;
@@ -232,9 +409,6 @@ export namespace PayoutCreateParams {
       }
 
       export interface Bban {
-        /**
-         * The name of the account holder.
-         */
         accountHolderName: string;
 
         bban: string;
@@ -243,9 +417,6 @@ export namespace PayoutCreateParams {
       }
 
       export interface Iban {
-        /**
-         * The name of the account holder.
-         */
         accountHolderName: string;
 
         iban: string;
@@ -254,9 +425,6 @@ export namespace PayoutCreateParams {
       }
 
       export interface SortCode {
-        /**
-         * The name of the account holder.
-         */
         accountHolderName: string;
 
         accountNumber: string;
@@ -288,7 +456,8 @@ export interface PayoutListParams {
 
 export declare namespace Payouts {
   export {
-    type PublicUserPayout as PublicUserPayout,
+    type PayoutCreateResponse as PayoutCreateResponse,
+    type PayoutRetrieveResponse as PayoutRetrieveResponse,
     type PayoutListResponse as PayoutListResponse,
     type PayoutCreateParams as PayoutCreateParams,
     type PayoutRetrieveParams as PayoutRetrieveParams,
