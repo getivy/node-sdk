@@ -16,7 +16,7 @@ import {
   Banks,
 } from './resources/banks';
 import { Capabilities, CapabilityRetrieveParams, CapabilityRetrieveResponse } from './resources/capabilities';
-import { Charge, ChargeCreateParams, Charges } from './resources/charges';
+import { ChargeCreateParams, ChargeCreateResponse, Charges } from './resources/charges';
 import {
   Checkoutsession,
   CheckoutsessionCreateParams,
@@ -35,8 +35,9 @@ import {
 } from './resources/customers';
 import {
   MandateLookupParams,
-  MandateResponse,
+  MandateLookupResponse,
   MandateRetrieveParams,
+  MandateRetrieveResponse,
   MandateRevokeParams,
   MandateRevokeResponse,
   Mandates,
@@ -50,21 +51,21 @@ import {
 } from './resources/orders';
 import {
   PayoutCreateParams,
+  PayoutCreateResponse,
   PayoutListParams,
   PayoutListResponse,
   PayoutRetrieveParams,
+  PayoutRetrieveResponse,
   Payouts,
-  PublicUserPayout,
 } from './resources/payouts';
 import {
   RefundBatchParams,
   RefundBatchResponse,
   RefundCreateParams,
-  RefundResponse,
+  RefundCreateResponse,
   Refunds,
 } from './resources/refunds';
 import {
-  PayoutReport,
   ReportCreateParams,
   ReportCreateResponse,
   ReportDownloadParams,
@@ -73,24 +74,13 @@ import {
   Reports,
 } from './resources/reports';
 import {
-  Subaccount,
   SubaccountCreateParams,
+  SubaccountCreateResponse,
   SubaccountRetrieveParams,
+  SubaccountRetrieveResponse,
   Subaccounts,
 } from './resources/subaccounts';
-import {
-  Webhooksubscription,
-  WebhooksubscriptionCreateParams,
-  WebhooksubscriptionCreateResponse,
-  WebhooksubscriptionDeleteParams,
-  WebhooksubscriptionDeleteResponse,
-  WebhooksubscriptionListParams,
-  WebhooksubscriptionListResponse,
-  WebhooksubscriptionPingParams,
-  WebhooksubscriptionPingResponse,
-  WebhooksubscriptionUpdateParams,
-  WebhooksubscriptionUpdateResponse,
-} from './resources/webhooksubscription';
+import { Webhooksubscription } from './resources/webhooksubscription';
 import { Data } from './resources/data/data';
 
 const environments = {
@@ -335,11 +325,16 @@ export declare namespace Ivy {
     type OrderRetrieveParams as OrderRetrieveParams,
   };
 
-  export { Charges as Charges, type Charge as Charge, type ChargeCreateParams as ChargeCreateParams };
+  export {
+    Charges as Charges,
+    type ChargeCreateResponse as ChargeCreateResponse,
+    type ChargeCreateParams as ChargeCreateParams,
+  };
 
   export {
     Mandates as Mandates,
-    type MandateResponse as MandateResponse,
+    type MandateRetrieveResponse as MandateRetrieveResponse,
+    type MandateLookupResponse as MandateLookupResponse,
     type MandateRevokeResponse as MandateRevokeResponse,
     type MandateRetrieveParams as MandateRetrieveParams,
     type MandateLookupParams as MandateLookupParams,
@@ -354,7 +349,7 @@ export declare namespace Ivy {
 
   export {
     Refunds as Refunds,
-    type RefundResponse as RefundResponse,
+    type RefundCreateResponse as RefundCreateResponse,
     type RefundBatchResponse as RefundBatchResponse,
     type RefundCreateParams as RefundCreateParams,
     type RefundBatchParams as RefundBatchParams,
@@ -362,7 +357,8 @@ export declare namespace Ivy {
 
   export {
     Payouts as Payouts,
-    type PublicUserPayout as PublicUserPayout,
+    type PayoutCreateResponse as PayoutCreateResponse,
+    type PayoutRetrieveResponse as PayoutRetrieveResponse,
     type PayoutListResponse as PayoutListResponse,
     type PayoutCreateParams as PayoutCreateParams,
     type PayoutRetrieveParams as PayoutRetrieveParams,
@@ -371,7 +367,6 @@ export declare namespace Ivy {
 
   export {
     Reports as Reports,
-    type PayoutReport as PayoutReport,
     type ReportCreateResponse as ReportCreateResponse,
     type ReportRetrieveResponse as ReportRetrieveResponse,
     type ReportCreateParams as ReportCreateParams,
@@ -381,7 +376,8 @@ export declare namespace Ivy {
 
   export {
     Subaccounts as Subaccounts,
-    type Subaccount as Subaccount,
+    type SubaccountCreateResponse as SubaccountCreateResponse,
+    type SubaccountRetrieveResponse as SubaccountRetrieveResponse,
     type SubaccountCreateParams as SubaccountCreateParams,
     type SubaccountRetrieveParams as SubaccountRetrieveParams,
   };
@@ -392,19 +388,7 @@ export declare namespace Ivy {
     type BalanceRetrieveParams as BalanceRetrieveParams,
   };
 
-  export {
-    Webhooksubscription as Webhooksubscription,
-    type WebhooksubscriptionCreateResponse as WebhooksubscriptionCreateResponse,
-    type WebhooksubscriptionUpdateResponse as WebhooksubscriptionUpdateResponse,
-    type WebhooksubscriptionListResponse as WebhooksubscriptionListResponse,
-    type WebhooksubscriptionDeleteResponse as WebhooksubscriptionDeleteResponse,
-    type WebhooksubscriptionPingResponse as WebhooksubscriptionPingResponse,
-    type WebhooksubscriptionCreateParams as WebhooksubscriptionCreateParams,
-    type WebhooksubscriptionUpdateParams as WebhooksubscriptionUpdateParams,
-    type WebhooksubscriptionListParams as WebhooksubscriptionListParams,
-    type WebhooksubscriptionDeleteParams as WebhooksubscriptionDeleteParams,
-    type WebhooksubscriptionPingParams as WebhooksubscriptionPingParams,
-  };
+  export { Webhooksubscription as Webhooksubscription };
 }
 
 export { toFile, fileFromPath } from './uploads';

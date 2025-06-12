@@ -12,7 +12,7 @@ describe('resource checkoutsession', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: only required params', async () => {
     const responsePromise = client.checkoutsession.create({
-      price: { currency: 'EUR', total: 0 },
+      price: { currency: 'EUR', total: 1.01 },
       referenceId: 'referenceId',
     });
     const rawResponse = await responsePromise.asResponse();
@@ -27,21 +27,21 @@ describe('resource checkoutsession', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: required and optional params', async () => {
     const response = await client.checkoutsession.create({
-      price: { currency: 'EUR', total: 0, shipping: 0, subTotal: 0, totalNet: 0, vat: 0 },
+      price: { currency: 'EUR', total: 1.01, shipping: 0, subTotal: 0, totalNet: 0, vat: 0 },
       referenceId: 'referenceId',
       billingAddress: {
         city: 'city',
         country: 'AF',
-        line1: 'line1',
-        zipCode: 'zipCode',
         firstName: 'firstName',
         lastName: 'lastName',
+        line1: 'line1',
         line2: 'line2',
         region: 'region',
+        zipCode: 'zipCode',
       },
       completeCallbackUrl: 'completeCallbackUrl',
-      created: 0,
-      customer: { email: 'dev@stainless.com' },
+      created: 1,
+      customer: { id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', email: 'dev@stainless.com' },
       disableBankSelection: true,
       displayId: 'displayId',
       errorCallbackUrl: 'errorCallbackUrl',
@@ -51,40 +51,47 @@ describe('resource checkoutsession', () => {
         {
           amount: 0,
           name: 'name',
-          quantity: 0,
           singleNet: 0,
           singleVat: 0,
-          category: 'category',
+          category: '5045',
           EAN: 'EAN',
           image: 'image',
+          quantity: 0,
           referenceId: 'referenceId',
         },
       ],
       locale: 'de',
       mandate: {
-        setup: true,
         accountHolderName: 'accountHolderName',
+        additionalDisplayInformation: { cadence: 'BI_WEEKLY', price: { amount: 0, currency: 'EUR' } },
         referenceId: 'referenceId',
+        setup: true,
         userNotificationEmail: 'userNotificationEmail',
       },
       market: 'AF',
-      metadata: [{ foo: 'bar' }],
-      paymentMode: 'settlement',
+      metadata: { foo: 'bar' },
+      paymentMode: 'direct',
       paymentSchemeSelection: 'instant_preferred',
       prefill: { bankId: 'bankId' },
       quoteCallbackUrl: 'quoteCallbackUrl',
       settlementDestination: {
         reference: 'reference',
         financialAddress: {
-          type: 'type',
-          bankCode: { accountHolderName: 'accountHolderName', accountNumber: 'accountNumber', code: 'code' },
-          bban: { accountHolderName: 'accountHolderName', bban: 'bban', bic: 'bic' },
-          iban: { accountHolderName: 'accountHolderName', iban: 'iban', bic: 'bic' },
-          sortCode: {
-            accountHolderName: 'accountHolderName',
-            accountNumber: 'accountNumber',
-            sortCode: 'sortCode',
+          psuData: {
+            branchNumber: 'branchNumber',
+            clientId: 'clientId',
+            ipAddress: 'ipAddress',
+            oib: 'oib',
+            psuId: 'psuId',
+            ssn: 'ssn',
+            username: 'username',
           },
+          type: 'iban',
+          bankCode: { accountHolderName: 'x', accountNumber: 'accountNumber', code: 'code' },
+          bban: { accountHolderName: 'x', bban: 'bban', bic: 'bic' },
+          iban: { accountHolderName: 'x', iban: 'iban', bic: 'bic' },
+          paymentReference: 'paymentReference',
+          sortCode: { accountHolderName: 'x', accountNumber: '095', sortCode: '269125115713' },
         },
       },
       subaccountId: 'subaccountId',
@@ -95,7 +102,7 @@ describe('resource checkoutsession', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.checkoutsession.retrieve({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
+    const responsePromise = client.checkoutsession.retrieve({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -107,12 +114,12 @@ describe('resource checkoutsession', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.checkoutsession.retrieve({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
+    const response = await client.checkoutsession.retrieve({ id: 'id' });
   });
 
   // skipped: tests are disabled for the time being
   test.skip('expire: only required params', async () => {
-    const responsePromise = client.checkoutsession.expire({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
+    const responsePromise = client.checkoutsession.expire({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -124,6 +131,6 @@ describe('resource checkoutsession', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('expire: required and optional params', async () => {
-    const response = await client.checkoutsession.expire({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
+    const response = await client.checkoutsession.expire({ id: 'id' });
   });
 });

@@ -7,18 +7,30 @@ export class Charges extends APIResource {
   /**
    * Creates a Direct Debit Charge with a valid mandate.
    */
-  create(body: ChargeCreateParams, options?: Core.RequestOptions): Core.APIPromise<Charge> {
+  create(body: ChargeCreateParams, options?: Core.RequestOptions): Core.APIPromise<ChargeCreateResponse> {
     return this._client.post('/api/service/charge/create', { body, ...options });
   }
 }
 
-export interface Charge {
+export interface ChargeCreateResponse {
+  /**
+   * The unique identifier of the created charge
+   */
   id: string;
 
+  /**
+   * The mandate id used for the charge
+   */
   mandateId: string;
 
-  orderId?: string;
+  /**
+   * The order id associated with the charge
+   */
+  orderId?: unknown;
 
+  /**
+   * The subaccount id used for the charge
+   */
   subaccountId?: string;
 }
 
@@ -35,6 +47,11 @@ export interface ChargeCreateParams {
   mandateId: string;
 
   /**
+   * Additional data to be stored with the charge.
+   */
+  metadata: ChargeCreateParams.Metadata;
+
+  /**
    * The price to be charged.
    */
   price: ChargeCreateParams.Price;
@@ -47,11 +64,6 @@ export interface ChargeCreateParams {
   referenceId: string;
 
   /**
-   * @deprecated Additional data to be stored with the charge.
-   */
-  metadata?: ChargeCreateParams.Metadata;
-
-  /**
    * The subaccount id to be used for the charge.
    */
   subaccountId?: string;
@@ -59,14 +71,22 @@ export interface ChargeCreateParams {
 
 export namespace ChargeCreateParams {
   /**
+   * Additional data to be stored with the charge.
+   */
+  export interface Metadata {
+    /**
+     * A token to verify incoming webhooks. Used in the shopware plugin. Limited to 200
+     * characters.
+     */
+    verificationToken?: string;
+  }
+
+  /**
    * The price to be charged.
    */
   export interface Price {
     currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
-    /**
-     * The total amount to be paid.
-     */
     total: number;
 
     shipping?: number;
@@ -77,19 +97,8 @@ export namespace ChargeCreateParams {
 
     vat?: number;
   }
-
-  /**
-   * @deprecated Additional data to be stored with the charge.
-   */
-  export interface Metadata {
-    /**
-     * A token to verify incoming webhooks. Used in the shopware plugin. Limited to 200
-     * characters.
-     */
-    verificationToken?: string;
-  }
 }
 
 export declare namespace Charges {
-  export { type Charge as Charge, type ChargeCreateParams as ChargeCreateParams };
+  export { type ChargeCreateResponse as ChargeCreateResponse, type ChargeCreateParams as ChargeCreateParams };
 }

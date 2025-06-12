@@ -27,59 +27,49 @@ export class Orders extends APIResource {
 
 export interface OrderCreateResponse {
   /**
-   * The Ivy unique identifier for the order.
+   * The unique id for the order.
    */
   id: string;
 
   /**
-   * @deprecated The unique identifier for the merchantApp which initiated the order
-   * / payment attempt.
+   * The unique id for the merchantApp which initiated the order.
    */
   appId: string;
 
   /**
-   * The Ivy fee for the payment.
+   * The amount of application fee collected with the order.
    */
   applicationFeeAmount: number;
 
-  createdAt: string;
+  createdAt: unknown;
 
   instantPaymentScheme: boolean;
 
   /**
-   * @deprecated Deprecated in favor of `appId`.
+   * Same as appId
    */
   merchantAppId: string;
 
-  /**
-   * The unique identifier for the merchant which initiated the order / payment
-   * attempt.
-   */
   merchantId: string;
 
   /**
-   * The amount to be paid by the user. The amounts is in decimals, i.e. 10.23
-   * represents EUR 10.23. Any amount of decimal places can be provided on
-   * initialization, but the actual transfer amount is rounded to 2 decimal places,
-   * as this is the format accepted by most banks.
+   * The price object. All values in decimals, e.g. 0.13 for 13 cents.
    */
   price: OrderCreateResponse.Price;
 
   /**
-   * An internal reference id which will be stored with the checkout & corresponding
-   * order. Needs to be unique per shop per order and can be up to 200 characters.
+   * A unique id for the order which can be set when creating the checkoutSession.
    */
   referenceId: string;
 
   /**
-   * The name of the merchant which initiated the order.
+   * The legal name of the merchant which initiated the order.
    */
   shopName: string;
 
   /**
-   * The order status. This status symbolises the state of the user's payment
-   * attempt. See [the guide](https://docs.getivy.de/docs/payment-status) for more
-   * information.
+   * The status of the order. As soon as this value is 'paid', you can ship the
+   * order.
    */
   status:
     | 'failed'
@@ -95,80 +85,92 @@ export interface OrderCreateResponse {
     | 'disputed'
     | 'refused';
 
-  updatedAt: string;
+  updatedAt: unknown;
 
   /**
-   * The unique identifier of Ivy of the chosen bank to make the payment. Not there,
-   * if no payment was made.
+   * The unique identifier of the customer's bank.
    */
   bankId?: string;
 
   /**
-   * @deprecated The bank statement reference of the payment for the order. This is
-   * the reference that will be visible on the bank statement.
+   * The reference that will be shown on the bank statement of the customer. Only
+   * available after a successful DirectDebit initiation.
    */
   bankStatementReference?: string;
 
-  /**
-   * The billing address of the customer.
-   */
   billingAddress?: OrderCreateResponse.BillingAddress;
 
   /**
-   * The merchant category code or
-   * [MCC](https://en.wikipedia.org/wiki/Merchant_category_code).
+   * The merchant category code for the account. MCCs are used to classify businesses
+   * based on the goods or services they provide.
    */
   category?: string;
+
+  climateActionMode?: OrderCreateResponse.ClimateActionMode;
+
+  co2Grams?: number;
 
   /**
    * The unique identifier of the customer who placed the order.
    */
   customerId?: string;
 
+  /**
+   * The destination bank account and statement reference for the order.
+   */
   destination?: OrderCreateResponse.Destination;
 
   /**
-   * @deprecated Currently only visible in the merchant dashboard. This id used to be
-   * displayed to the user during the checkout.
+   * The customer-facing id of the order.
    */
   displayId?: string;
 
+  guest?: boolean;
+
+  impactOffsetProjects?: Array<unknown>;
+
   /**
-   * @deprecated The list of line items for the order.
+   * The list of line items sold with the order.
    */
   lineItems?: Array<OrderCreateResponse.LineItem>;
 
   mandate?: OrderCreateResponse.Mandate;
 
   /**
-   * @deprecated
+   * The financial address of the merchant associated with the order. Only available
+   * when requested via order/details and therefore requires authentication.
    */
   merchantFinancialAddress?: OrderCreateResponse.MerchantFinancialAddress;
 
   /**
-   * Any data which will be stored and returned for this checkout session and
-   * corresponding order. See [here](https://docs.getivy.de/reference/metadata) for
-   * more info.
+   * Set of key-value pairs that you can attach to an object. This can be useful for
+   * storing additional information about the object in a structured format.
    */
   metadata?: Record<string, unknown>;
 
   /**
-   * The source bank account where the money is send from.
+   * The project related to the order.
+   */
+  offsetProject?: string;
+
+  /**
+   * The financial address of the payer associated with the order. Only available
+   * after successful PIS flow.
    */
   payerFinancialAddress?: OrderCreateResponse.PayerFinancialAddress;
 
   paymentMethodType?: 'sepa_debit' | 'customer_balance' | 'manual_bank_transfer';
 
   /**
-   * The payment mode of the order. Can be either 'settlement' or 'direct'.
+   * The payment mode of the order. Can be either settlement or direct.
    */
-  paymentMode?: 'settlement' | 'direct';
+  paymentMode?: 'direct' | 'settlement';
 
   /**
-   * @deprecated Deprecated in favor of `status`. Do not use this field to trigger
-   * actions in your system.
+   * Deprecated. The status of the payment.
    */
   paymentStatus?:
+    | 'not_settled'
     | 'failed'
     | 'canceled'
     | 'processing'
@@ -178,7 +180,6 @@ export interface OrderCreateResponse {
     | 'refunded'
     | 'refund_failed'
     | 'partially_refunded'
-    | 'not_settled'
     | 'disputed';
 
   /**
@@ -187,54 +188,51 @@ export interface OrderCreateResponse {
   refundAmount?: number;
 
   /**
-   * The list of refunds connected to this order.
+   * All partial and total refunds of this order.
    */
   refunds?: Array<OrderCreateResponse.Refund>;
 
   /**
-   * The shopper object. Contains information collected from the user during the
-   * Checkout.
+   * If set to true, a payment mandate will be created for the user. This is
+   * currently in alpha and defaults to false.
+   */
+  setupPaymentMandate?: boolean;
+
+  shippingAddress?: OrderCreateResponse.ShippingAddress;
+
+  shopLogo?: string;
+
+  /**
+   * Information about the customer who finished the order.
    */
   shopper?: OrderCreateResponse.Shopper;
 
   /**
-   * @deprecated Deprecated in favor of `shopper.email`. The email of the user if
-   * collected in the Checkout.
+   * Deprecated. The email of the customer who completed the order.
    */
   shopperEmail?: string;
 
   statusClassification?: OrderCreateResponse.StatusClassification;
 
-  /**
-   * List of status history items for the order, used for logging every update on
-   * status.
-   */
   statusHistoryList?: Array<OrderCreateResponse.StatusHistoryList>;
 
   /**
-   * The subaccount id of the order.
+   * The subaccount id of the merchant.
    */
   subaccountId?: string;
 
-  /**
-   * The legal name of the subaccount
-   */
   subaccountLegalName?: string;
+
+  trees?: number;
 }
 
 export namespace OrderCreateResponse {
   /**
-   * The amount to be paid by the user. The amounts is in decimals, i.e. 10.23
-   * represents EUR 10.23. Any amount of decimal places can be provided on
-   * initialization, but the actual transfer amount is rounded to 2 decimal places,
-   * as this is the format accepted by most banks.
+   * The price object. All values in decimals, e.g. 0.13 for 13 cents.
    */
   export interface Price {
     currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
-    /**
-     * The total amount to be paid.
-     */
     total: number;
 
     shipping?: number;
@@ -246,16 +244,9 @@ export namespace OrderCreateResponse {
     vat?: number;
   }
 
-  /**
-   * The billing address of the customer.
-   */
   export interface BillingAddress {
     city: string;
 
-    /**
-     * The country code in
-     * [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format.
-     */
     country:
       | 'AF'
       | 'AL'
@@ -508,24 +499,29 @@ export namespace OrderCreateResponse {
       | 'SS'
       | 'XK';
 
+    firstName: string;
+
+    lastName: string;
+
     line1: string;
 
+    line2: string;
+
+    region: string;
+
     zipCode: string;
-
-    firstName?: string;
-
-    lastName?: string;
-
-    line2?: string;
-
-    region?: string;
   }
 
+  export interface ClimateActionMode {
+    amount: number;
+
+    type: 'transaction' | 'amount';
+  }
+
+  /**
+   * The destination bank account and statement reference for the order.
+   */
   export interface Destination {
-    /**
-     * The validation logic is based on the "type" field. For example, if "type" is set
-     * to "iban", the "iban" object must be filled out.
-     */
     bankAccount: Destination.BankAccount;
 
     /**
@@ -536,23 +532,8 @@ export namespace OrderCreateResponse {
   }
 
   export namespace Destination {
-    /**
-     * The validation logic is based on the "type" field. For example, if "type" is set
-     * to "iban", the "iban" object must be filled out.
-     */
     export interface BankAccount {
-      /**
-       * The type of the financial address. The actual destination is determined by this
-       * field which can be either "iban", "sortCode", "bankCode", or "bban". The
-       * validation will fail if you set e.g. type="iban", but then not fill any values
-       * in the "iban" object.
-       *
-       * - iban: The IBAN of the account
-       * - sort_code: The sort code of the account
-       * - bank_code: The bank code of the account
-       * - bban: The BBAN of the account
-       */
-      type: string;
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
       bankCode?: BankAccount.BankCode;
 
@@ -560,14 +541,13 @@ export namespace OrderCreateResponse {
 
       iban?: BankAccount.Iban;
 
+      paymentReference?: string;
+
       sortCode?: BankAccount.SortCode;
     }
 
     export namespace BankAccount {
       export interface BankCode {
-        /**
-         * The name of the account holder.
-         */
         accountHolderName: string;
 
         accountNumber: string;
@@ -576,9 +556,6 @@ export namespace OrderCreateResponse {
       }
 
       export interface Bban {
-        /**
-         * The name of the account holder.
-         */
         accountHolderName: string;
 
         bban: string;
@@ -587,9 +564,6 @@ export namespace OrderCreateResponse {
       }
 
       export interface Iban {
-        /**
-         * The name of the account holder.
-         */
         accountHolderName: string;
 
         iban: string;
@@ -598,9 +572,6 @@ export namespace OrderCreateResponse {
       }
 
       export interface SortCode {
-        /**
-         * The name of the account holder.
-         */
         accountHolderName: string;
 
         accountNumber: string;
@@ -612,107 +583,76 @@ export namespace OrderCreateResponse {
 
   export interface LineItem {
     /**
-     * The total amount of all line items, i.e. single amount \* quantity. Given in
-     * decimals, i.e. 10.23 represents EUR 10.23.
+     * Accumulated cost in decimals. For example, for a lineItem with total price 3.00
+     * and quantity 4, amount would be equal to 12.00.
      */
     amount: number;
 
     /**
-     * The name of the line item.
+     * Customer-facing name of the line item.
      */
     name: string;
 
-    /**
-     * The quantity of the line item.
-     */
-    quantity: number;
-
-    /**
-     * The net amount of a single item.
-     */
     singleNet: number;
 
-    /**
-     * The VAT amount of a single item.
-     */
     singleVat: number;
 
-    /**
-     * The category as [MCC](https://en.wikipedia.org/wiki/Merchant_category_code) of
-     * the line item.
-     */
-    category?: string;
+    category?:
+      | '5045'
+      | '5065'
+      | '5094'
+      | '5192'
+      | '5193'
+      | '5499'
+      | '5655'
+      | '5691'
+      | '5712'
+      | '5722'
+      | '5812'
+      | '5814'
+      | '5912'
+      | '5977'
+      | '5999'
+      | '7629';
 
-    /**
-     * The
-     * [EAN](https://en.wikipedia.org/wiki/International_Article_Number#:~:text=The%20International%20Article%20Number%20(also,configuration%2C%20from%20a%20specific%20manufacturer.)
-     * of the line item.
-     */
+    co2Grams?: number;
+
     EAN?: string;
 
     /**
-     * The image of the line item as a URL.
+     * An image of the line item. Valid URLs are accepted only.
      */
     image?: string;
 
     /**
-     * The internal unique identifier of the line item.
+     * Quantity of this lineItem.
+     */
+    quantity?: number;
+
+    /**
+     * An internal unique id stored to this line item.
      */
     referenceId?: string;
   }
 
   export interface Mandate {
-    /**
-     * The name of the account holder who signs the mandate.
-     */
-    accountHolderName?: string;
+    accountHolderName: string;
 
-    /**
-     * Additional information to display to the user during the mandate setup. This
-     * information is not used to setup any recurrence on the mandate. It is only
-     * displayed to the user during checkout.
-     */
     additionalDisplayInformation?: Mandate.AdditionalDisplayInformation;
 
-    /**
-     * Mandate creditor data
-     */
     creditor?: Mandate.Creditor;
 
-    /**
-     * The reference of the mandate going to be setup
-     */
     reference?: string;
 
-    /**
-     * The mandate referenceId. Set this to match incoming `mandate_setup_started`,
-     * `mandate_setup_succeeded` or `mandate_setup_failed` webhook events to your
-     * mandate setup request.
-     */
     referenceId?: string;
 
-    /**
-     * If true, a ready to use mandate will be set up after the payment flow.
-     */
     setup?: boolean;
 
-    /**
-     * The email of the user who signs the mandate.
-     */
     userNotificationEmail?: string;
   }
 
   export namespace Mandate {
-    /**
-     * Additional information to display to the user during the mandate setup. This
-     * information is not used to setup any recurrence on the mandate. It is only
-     * displayed to the user during checkout.
-     */
     export interface AdditionalDisplayInformation {
-      /**
-       * The intended cadence of charges used for displaying purpose only. On demand
-       * would be used for unscheduled charges.
-       */
       cadence?: 'BI_WEEKLY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'SEMI_ANNUAL' | 'ANNUAL' | 'ON_DEMAND';
 
       price?: AdditionalDisplayInformation.Price;
@@ -720,19 +660,12 @@ export namespace OrderCreateResponse {
 
     export namespace AdditionalDisplayInformation {
       export interface Price {
-        /**
-         * The amount displayed to the user as decimal e.g. 10.23 would be displayed as
-         * 10.23 EUR.
-         */
-        amount?: number;
+        amount: number;
 
-        currency?: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+        currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
       }
     }
 
-    /**
-     * Mandate creditor data
-     */
     export interface Creditor {
       id?: string;
 
@@ -741,42 +674,25 @@ export namespace OrderCreateResponse {
   }
 
   /**
-   * @deprecated
+   * The financial address of the merchant associated with the order. Only available
+   * when requested via order/details and therefore requires authentication.
    */
   export interface MerchantFinancialAddress {
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+
     bankCode?: MerchantFinancialAddress.BankCode;
 
     bban?: MerchantFinancialAddress.Bban;
 
     iban?: MerchantFinancialAddress.Iban;
 
-    /**
-     * The payment reference for the order. This is the reference that will be visible
-     * on the bank statement.
-     */
     paymentReference?: string;
 
     sortCode?: MerchantFinancialAddress.SortCode;
-
-    /**
-     * The type of the financial address. The actual destination is determined by this
-     * field which can be either "iban", "sortCode", "bankCode", or "bban". The
-     * validation will fail if you set e.g. type="iban", but then not fill any values
-     * in the "iban" object.
-     *
-     * - iban: The IBAN of the account
-     * - sort_code: The sort code of the account
-     * - bank_code: The bank code of the account
-     * - bban: The BBAN of the account
-     */
-    type?: string;
   }
 
   export namespace MerchantFinancialAddress {
     export interface BankCode {
-      /**
-       * The name of the account holder.
-       */
       accountHolderName: string;
 
       accountNumber: string;
@@ -785,9 +701,6 @@ export namespace OrderCreateResponse {
     }
 
     export interface Bban {
-      /**
-       * The name of the account holder.
-       */
       accountHolderName: string;
 
       bban: string;
@@ -796,9 +709,6 @@ export namespace OrderCreateResponse {
     }
 
     export interface Iban {
-      /**
-       * The name of the account holder.
-       */
       accountHolderName: string;
 
       iban: string;
@@ -807,9 +717,6 @@ export namespace OrderCreateResponse {
     }
 
     export interface SortCode {
-      /**
-       * The name of the account holder.
-       */
       accountHolderName: string;
 
       accountNumber: string;
@@ -819,21 +726,11 @@ export namespace OrderCreateResponse {
   }
 
   /**
-   * The source bank account where the money is send from.
+   * The financial address of the payer associated with the order. Only available
+   * after successful PIS flow.
    */
   export interface PayerFinancialAddress {
-    /**
-     * The type of the financial address. The actual destination is determined by this
-     * field which can be either "iban", "sortCode", "bankCode", or "bban". The
-     * validation will fail if you set e.g. type="iban", but then not fill any values
-     * in the "iban" object.
-     *
-     * - iban: The IBAN of the account
-     * - sort_code: The sort code of the account
-     * - bank_code: The bank code of the account
-     * - bban: The BBAN of the account
-     */
-    type: string;
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
     bankCode?: PayerFinancialAddress.BankCode;
 
@@ -850,18 +747,12 @@ export namespace OrderCreateResponse {
 
       code: string;
 
-      /**
-       * The name of the account holder.
-       */
       accountHolderName?: string;
     }
 
     export interface Bban {
       bban: string;
 
-      /**
-       * The name of the account holder.
-       */
       accountHolderName?: string;
 
       bic?: string;
@@ -870,9 +761,6 @@ export namespace OrderCreateResponse {
     export interface Iban {
       iban: string;
 
-      /**
-       * The name of the account holder.
-       */
       accountHolderName?: string;
 
       bic?: string;
@@ -883,39 +771,312 @@ export namespace OrderCreateResponse {
 
       sortCode: string;
 
-      /**
-       * The name of the account holder.
-       */
       accountHolderName?: string;
     }
   }
 
-  /**
-   * A Refund object. This corresponds to one Refund request.
-   */
   export interface Refund {
+    /**
+     * The unique id of this refund request.
+     */
     id: string;
 
+    /**
+     * The amount of the refund in decimals.
+     */
     amount: number;
 
-    createdAt: string;
+    createdAt: unknown;
 
+    /**
+     * The unique id of this refund request. This can be set when requesting the
+     * refund.
+     */
     referenceId: string;
 
     /**
-     * The status of the refund. Always use the status of the order as your source of
-     * truth to trigger actions in your dashboard.
+     * The current status of this refund.
      */
     status: 'pending' | 'succeeded' | 'failed' | 'requires_action' | 'partially_refunded';
 
-    updatedAt: string;
+    updatedAt: unknown;
 
+    /**
+     * The description of the refund.
+     */
     description?: string;
   }
 
+  export interface ShippingAddress {
+    city: string;
+
+    country:
+      | 'AF'
+      | 'AL'
+      | 'DZ'
+      | 'AS'
+      | 'AD'
+      | 'AO'
+      | 'AI'
+      | 'AQ'
+      | 'AG'
+      | 'AR'
+      | 'AM'
+      | 'AW'
+      | 'AU'
+      | 'AT'
+      | 'AZ'
+      | 'BS'
+      | 'BH'
+      | 'BD'
+      | 'BB'
+      | 'BY'
+      | 'BE'
+      | 'BZ'
+      | 'BJ'
+      | 'BM'
+      | 'BT'
+      | 'BO'
+      | 'BA'
+      | 'BW'
+      | 'BV'
+      | 'BR'
+      | 'IO'
+      | 'BN'
+      | 'BG'
+      | 'BF'
+      | 'BI'
+      | 'KH'
+      | 'CM'
+      | 'CA'
+      | 'CV'
+      | 'KY'
+      | 'CF'
+      | 'TD'
+      | 'CL'
+      | 'CN'
+      | 'CX'
+      | 'CC'
+      | 'CO'
+      | 'KM'
+      | 'CG'
+      | 'CD'
+      | 'CK'
+      | 'CR'
+      | 'CI'
+      | 'HR'
+      | 'CU'
+      | 'CY'
+      | 'CZ'
+      | 'DK'
+      | 'DJ'
+      | 'DM'
+      | 'DO'
+      | 'EC'
+      | 'EG'
+      | 'SV'
+      | 'GQ'
+      | 'ER'
+      | 'EE'
+      | 'ET'
+      | 'FK'
+      | 'FO'
+      | 'FJ'
+      | 'FI'
+      | 'FR'
+      | 'GF'
+      | 'PF'
+      | 'TF'
+      | 'GA'
+      | 'GM'
+      | 'GE'
+      | 'DE'
+      | 'GH'
+      | 'GI'
+      | 'GR'
+      | 'GL'
+      | 'GD'
+      | 'GP'
+      | 'GU'
+      | 'GT'
+      | 'GN'
+      | 'GW'
+      | 'GY'
+      | 'HT'
+      | 'HM'
+      | 'VA'
+      | 'HN'
+      | 'HK'
+      | 'HU'
+      | 'IS'
+      | 'IN'
+      | 'ID'
+      | 'IR'
+      | 'IQ'
+      | 'IE'
+      | 'IL'
+      | 'IT'
+      | 'JM'
+      | 'JP'
+      | 'JO'
+      | 'KZ'
+      | 'KE'
+      | 'KI'
+      | 'KP'
+      | 'KR'
+      | 'KW'
+      | 'KG'
+      | 'LA'
+      | 'LV'
+      | 'LB'
+      | 'LS'
+      | 'LR'
+      | 'LY'
+      | 'LI'
+      | 'LT'
+      | 'LU'
+      | 'MO'
+      | 'MG'
+      | 'MW'
+      | 'MY'
+      | 'MV'
+      | 'ML'
+      | 'MT'
+      | 'MH'
+      | 'MQ'
+      | 'MR'
+      | 'MU'
+      | 'YT'
+      | 'MX'
+      | 'FM'
+      | 'MD'
+      | 'MC'
+      | 'MN'
+      | 'MS'
+      | 'MA'
+      | 'MZ'
+      | 'MM'
+      | 'NA'
+      | 'NR'
+      | 'NP'
+      | 'NL'
+      | 'NC'
+      | 'NZ'
+      | 'NI'
+      | 'NE'
+      | 'NG'
+      | 'NU'
+      | 'NF'
+      | 'MP'
+      | 'MK'
+      | 'NO'
+      | 'OM'
+      | 'PK'
+      | 'PW'
+      | 'PS'
+      | 'PA'
+      | 'PG'
+      | 'PY'
+      | 'PE'
+      | 'PH'
+      | 'PN'
+      | 'PL'
+      | 'PT'
+      | 'PR'
+      | 'QA'
+      | 'RE'
+      | 'RO'
+      | 'RU'
+      | 'RW'
+      | 'SH'
+      | 'KN'
+      | 'LC'
+      | 'PM'
+      | 'VC'
+      | 'WS'
+      | 'SM'
+      | 'ST'
+      | 'SA'
+      | 'SN'
+      | 'SC'
+      | 'SL'
+      | 'SG'
+      | 'SK'
+      | 'SI'
+      | 'SB'
+      | 'SO'
+      | 'ZA'
+      | 'GS'
+      | 'ES'
+      | 'LK'
+      | 'SD'
+      | 'SR'
+      | 'SJ'
+      | 'SZ'
+      | 'SE'
+      | 'CH'
+      | 'SY'
+      | 'TW'
+      | 'TJ'
+      | 'TZ'
+      | 'TH'
+      | 'TL'
+      | 'TG'
+      | 'TK'
+      | 'TO'
+      | 'TT'
+      | 'TN'
+      | 'TR'
+      | 'TM'
+      | 'TC'
+      | 'TV'
+      | 'UG'
+      | 'UA'
+      | 'AE'
+      | 'GB'
+      | 'US'
+      | 'UM'
+      | 'UY'
+      | 'UZ'
+      | 'VU'
+      | 'VE'
+      | 'VN'
+      | 'VG'
+      | 'VI'
+      | 'WF'
+      | 'EH'
+      | 'YE'
+      | 'ZM'
+      | 'ZW'
+      | 'AX'
+      | 'BQ'
+      | 'CW'
+      | 'GG'
+      | 'IM'
+      | 'JE'
+      | 'ME'
+      | 'BL'
+      | 'MF'
+      | 'RS'
+      | 'SX'
+      | 'SS'
+      | 'XK';
+
+    firstName: string;
+
+    lastName: string;
+
+    line1: string;
+
+    line2: string;
+
+    region: string;
+
+    zipCode: string;
+  }
+
   /**
-   * The shopper object. Contains information collected from the user during the
-   * Checkout.
+   * Information about the customer who finished the order.
    */
   export interface Shopper {
     email?: string;
@@ -924,16 +1085,8 @@ export namespace OrderCreateResponse {
   }
 
   export interface StatusClassification {
-    /**
-     * Populated with the primary payment initiation failure classsification if
-     * available.
-     */
     primary: 'payment_authorisation_failed' | 'payment_execution_failed' | 'payment_abandoned';
 
-    /**
-     * Populated with the secondary payment initiation failure classsification if
-     * available.
-     */
     secondary?:
       | 'timeout'
       | 'wrong_credentials'
@@ -955,11 +1108,8 @@ export namespace OrderCreateResponse {
   }
 
   export interface StatusHistoryList {
-    /**
-     * The order status. This status symbolises the state of the user's payment
-     * attempt. See [the guide](https://docs.getivy.de/docs/payment-status) for more
-     * information.
-     */
+    createdAt: unknown;
+
     currentStatus:
       | 'failed'
       | 'canceled'
@@ -974,15 +1124,35 @@ export namespace OrderCreateResponse {
       | 'disputed'
       | 'refused';
 
-    reason: string;
+    reason:
+      | 'ORDER_CREATED'
+      | 'CHECKOUT_SESSION_ABORTED'
+      | 'PAYMENT_SUCCEEDED'
+      | 'PAYMENT_INITIATED'
+      | 'ORDER_CANCELED'
+      | 'ORDER_REFUND_INITIATED'
+      | 'ORDER_REFUNDED'
+      | 'REFUND_CHARGE_SUCCEEDED'
+      | 'REFUND_UPDATED'
+      | 'CHECKOUT_COMPLETED'
+      | 'PIS_PAYMENT_INITIATED'
+      | 'PIS_PAYMENT_UPDATED'
+      | 'PIS_PAYMENT_SUCCEEDED'
+      | 'PAYMENT_NOT_SETTLED'
+      | 'PAYMENT_INITIATION_FAILED'
+      | 'PAYMENT_CANCELED'
+      | 'PAYMENT_FAILED'
+      | 'CHECKOUT_SESSION_CREATED'
+      | 'EXPIRED_CHECKOUT_SESSION_ABORTED'
+      | 'DISPUTE'
+      | 'PENDING_PAYMENT_ATTEMPTS_FOUND'
+      | 'AML_FREEZE'
+      | 'MANUAL_FREEZE'
+      | 'MANUAL_UNFREEZE'
+      | 'ORDER_MANUALLY_REOPENED';
 
-    updatedAt: string;
+    updatedAt: unknown;
 
-    /**
-     * The order status. This status symbolises the state of the user's payment
-     * attempt. See [the guide](https://docs.getivy.de/docs/payment-status) for more
-     * information.
-     */
     previousStatus?:
       | 'failed'
       | 'canceled'
@@ -1002,59 +1172,49 @@ export namespace OrderCreateResponse {
 
 export interface OrderRetrieveResponse {
   /**
-   * The Ivy unique identifier for the order.
+   * The unique id for the order.
    */
   id: string;
 
   /**
-   * @deprecated The unique identifier for the merchantApp which initiated the order
-   * / payment attempt.
+   * The unique id for the merchantApp which initiated the order.
    */
   appId: string;
 
   /**
-   * The Ivy fee for the payment.
+   * The amount of application fee collected with the order.
    */
   applicationFeeAmount: number;
 
-  createdAt: string;
+  createdAt: unknown;
 
   instantPaymentScheme: boolean;
 
   /**
-   * @deprecated Deprecated in favor of `appId`.
+   * Same as appId
    */
   merchantAppId: string;
 
-  /**
-   * The unique identifier for the merchant which initiated the order / payment
-   * attempt.
-   */
   merchantId: string;
 
   /**
-   * The amount to be paid by the user. The amounts is in decimals, i.e. 10.23
-   * represents EUR 10.23. Any amount of decimal places can be provided on
-   * initialization, but the actual transfer amount is rounded to 2 decimal places,
-   * as this is the format accepted by most banks.
+   * The price object. All values in decimals, e.g. 0.13 for 13 cents.
    */
   price: OrderRetrieveResponse.Price;
 
   /**
-   * An internal reference id which will be stored with the checkout & corresponding
-   * order. Needs to be unique per shop per order and can be up to 200 characters.
+   * A unique id for the order which can be set when creating the checkoutSession.
    */
   referenceId: string;
 
   /**
-   * The name of the merchant which initiated the order.
+   * The legal name of the merchant which initiated the order.
    */
   shopName: string;
 
   /**
-   * The order status. This status symbolises the state of the user's payment
-   * attempt. See [the guide](https://docs.getivy.de/docs/payment-status) for more
-   * information.
+   * The status of the order. As soon as this value is 'paid', you can ship the
+   * order.
    */
   status:
     | 'failed'
@@ -1070,80 +1230,92 @@ export interface OrderRetrieveResponse {
     | 'disputed'
     | 'refused';
 
-  updatedAt: string;
+  updatedAt: unknown;
 
   /**
-   * The unique identifier of Ivy of the chosen bank to make the payment. Not there,
-   * if no payment was made.
+   * The unique identifier of the customer's bank.
    */
   bankId?: string;
 
   /**
-   * @deprecated The bank statement reference of the payment for the order. This is
-   * the reference that will be visible on the bank statement.
+   * The reference that will be shown on the bank statement of the customer. Only
+   * available after a successful DirectDebit initiation.
    */
   bankStatementReference?: string;
 
-  /**
-   * The billing address of the customer.
-   */
   billingAddress?: OrderRetrieveResponse.BillingAddress;
 
   /**
-   * The merchant category code or
-   * [MCC](https://en.wikipedia.org/wiki/Merchant_category_code).
+   * The merchant category code for the account. MCCs are used to classify businesses
+   * based on the goods or services they provide.
    */
   category?: string;
+
+  climateActionMode?: OrderRetrieveResponse.ClimateActionMode;
+
+  co2Grams?: number;
 
   /**
    * The unique identifier of the customer who placed the order.
    */
   customerId?: string;
 
+  /**
+   * The destination bank account and statement reference for the order.
+   */
   destination?: OrderRetrieveResponse.Destination;
 
   /**
-   * @deprecated Currently only visible in the merchant dashboard. This id used to be
-   * displayed to the user during the checkout.
+   * The customer-facing id of the order.
    */
   displayId?: string;
 
+  guest?: boolean;
+
+  impactOffsetProjects?: Array<unknown>;
+
   /**
-   * @deprecated The list of line items for the order.
+   * The list of line items sold with the order.
    */
   lineItems?: Array<OrderRetrieveResponse.LineItem>;
 
   mandate?: OrderRetrieveResponse.Mandate;
 
   /**
-   * @deprecated
+   * The financial address of the merchant associated with the order. Only available
+   * when requested via order/details and therefore requires authentication.
    */
   merchantFinancialAddress?: OrderRetrieveResponse.MerchantFinancialAddress;
 
   /**
-   * Any data which will be stored and returned for this checkout session and
-   * corresponding order. See [here](https://docs.getivy.de/reference/metadata) for
-   * more info.
+   * Set of key-value pairs that you can attach to an object. This can be useful for
+   * storing additional information about the object in a structured format.
    */
   metadata?: Record<string, unknown>;
 
   /**
-   * The source bank account where the money is send from.
+   * The project related to the order.
+   */
+  offsetProject?: string;
+
+  /**
+   * The financial address of the payer associated with the order. Only available
+   * after successful PIS flow.
    */
   payerFinancialAddress?: OrderRetrieveResponse.PayerFinancialAddress;
 
   paymentMethodType?: 'sepa_debit' | 'customer_balance' | 'manual_bank_transfer';
 
   /**
-   * The payment mode of the order. Can be either 'settlement' or 'direct'.
+   * The payment mode of the order. Can be either settlement or direct.
    */
-  paymentMode?: 'settlement' | 'direct';
+  paymentMode?: 'direct' | 'settlement';
 
   /**
-   * @deprecated Deprecated in favor of `status`. Do not use this field to trigger
-   * actions in your system.
+   * Deprecated. The status of the payment.
    */
   paymentStatus?:
+    | 'not_settled'
     | 'failed'
     | 'canceled'
     | 'processing'
@@ -1153,7 +1325,6 @@ export interface OrderRetrieveResponse {
     | 'refunded'
     | 'refund_failed'
     | 'partially_refunded'
-    | 'not_settled'
     | 'disputed';
 
   /**
@@ -1162,54 +1333,51 @@ export interface OrderRetrieveResponse {
   refundAmount?: number;
 
   /**
-   * The list of refunds connected to this order.
+   * All partial and total refunds of this order.
    */
   refunds?: Array<OrderRetrieveResponse.Refund>;
 
   /**
-   * The shopper object. Contains information collected from the user during the
-   * Checkout.
+   * If set to true, a payment mandate will be created for the user. This is
+   * currently in alpha and defaults to false.
+   */
+  setupPaymentMandate?: boolean;
+
+  shippingAddress?: OrderRetrieveResponse.ShippingAddress;
+
+  shopLogo?: string;
+
+  /**
+   * Information about the customer who finished the order.
    */
   shopper?: OrderRetrieveResponse.Shopper;
 
   /**
-   * @deprecated Deprecated in favor of `shopper.email`. The email of the user if
-   * collected in the Checkout.
+   * Deprecated. The email of the customer who completed the order.
    */
   shopperEmail?: string;
 
   statusClassification?: OrderRetrieveResponse.StatusClassification;
 
-  /**
-   * List of status history items for the order, used for logging every update on
-   * status.
-   */
   statusHistoryList?: Array<OrderRetrieveResponse.StatusHistoryList>;
 
   /**
-   * The subaccount id of the order.
+   * The subaccount id of the merchant.
    */
   subaccountId?: string;
 
-  /**
-   * The legal name of the subaccount
-   */
   subaccountLegalName?: string;
+
+  trees?: number;
 }
 
 export namespace OrderRetrieveResponse {
   /**
-   * The amount to be paid by the user. The amounts is in decimals, i.e. 10.23
-   * represents EUR 10.23. Any amount of decimal places can be provided on
-   * initialization, but the actual transfer amount is rounded to 2 decimal places,
-   * as this is the format accepted by most banks.
+   * The price object. All values in decimals, e.g. 0.13 for 13 cents.
    */
   export interface Price {
     currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
-    /**
-     * The total amount to be paid.
-     */
     total: number;
 
     shipping?: number;
@@ -1221,16 +1389,9 @@ export namespace OrderRetrieveResponse {
     vat?: number;
   }
 
-  /**
-   * The billing address of the customer.
-   */
   export interface BillingAddress {
     city: string;
 
-    /**
-     * The country code in
-     * [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format.
-     */
     country:
       | 'AF'
       | 'AL'
@@ -1483,24 +1644,29 @@ export namespace OrderRetrieveResponse {
       | 'SS'
       | 'XK';
 
+    firstName: string;
+
+    lastName: string;
+
     line1: string;
 
+    line2: string;
+
+    region: string;
+
     zipCode: string;
-
-    firstName?: string;
-
-    lastName?: string;
-
-    line2?: string;
-
-    region?: string;
   }
 
+  export interface ClimateActionMode {
+    amount: number;
+
+    type: 'transaction' | 'amount';
+  }
+
+  /**
+   * The destination bank account and statement reference for the order.
+   */
   export interface Destination {
-    /**
-     * The validation logic is based on the "type" field. For example, if "type" is set
-     * to "iban", the "iban" object must be filled out.
-     */
     bankAccount: Destination.BankAccount;
 
     /**
@@ -1511,23 +1677,8 @@ export namespace OrderRetrieveResponse {
   }
 
   export namespace Destination {
-    /**
-     * The validation logic is based on the "type" field. For example, if "type" is set
-     * to "iban", the "iban" object must be filled out.
-     */
     export interface BankAccount {
-      /**
-       * The type of the financial address. The actual destination is determined by this
-       * field which can be either "iban", "sortCode", "bankCode", or "bban". The
-       * validation will fail if you set e.g. type="iban", but then not fill any values
-       * in the "iban" object.
-       *
-       * - iban: The IBAN of the account
-       * - sort_code: The sort code of the account
-       * - bank_code: The bank code of the account
-       * - bban: The BBAN of the account
-       */
-      type: string;
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
       bankCode?: BankAccount.BankCode;
 
@@ -1535,14 +1686,13 @@ export namespace OrderRetrieveResponse {
 
       iban?: BankAccount.Iban;
 
+      paymentReference?: string;
+
       sortCode?: BankAccount.SortCode;
     }
 
     export namespace BankAccount {
       export interface BankCode {
-        /**
-         * The name of the account holder.
-         */
         accountHolderName: string;
 
         accountNumber: string;
@@ -1551,9 +1701,6 @@ export namespace OrderRetrieveResponse {
       }
 
       export interface Bban {
-        /**
-         * The name of the account holder.
-         */
         accountHolderName: string;
 
         bban: string;
@@ -1562,9 +1709,6 @@ export namespace OrderRetrieveResponse {
       }
 
       export interface Iban {
-        /**
-         * The name of the account holder.
-         */
         accountHolderName: string;
 
         iban: string;
@@ -1573,9 +1717,6 @@ export namespace OrderRetrieveResponse {
       }
 
       export interface SortCode {
-        /**
-         * The name of the account holder.
-         */
         accountHolderName: string;
 
         accountNumber: string;
@@ -1587,107 +1728,76 @@ export namespace OrderRetrieveResponse {
 
   export interface LineItem {
     /**
-     * The total amount of all line items, i.e. single amount \* quantity. Given in
-     * decimals, i.e. 10.23 represents EUR 10.23.
+     * Accumulated cost in decimals. For example, for a lineItem with total price 3.00
+     * and quantity 4, amount would be equal to 12.00.
      */
     amount: number;
 
     /**
-     * The name of the line item.
+     * Customer-facing name of the line item.
      */
     name: string;
 
-    /**
-     * The quantity of the line item.
-     */
-    quantity: number;
-
-    /**
-     * The net amount of a single item.
-     */
     singleNet: number;
 
-    /**
-     * The VAT amount of a single item.
-     */
     singleVat: number;
 
-    /**
-     * The category as [MCC](https://en.wikipedia.org/wiki/Merchant_category_code) of
-     * the line item.
-     */
-    category?: string;
+    category?:
+      | '5045'
+      | '5065'
+      | '5094'
+      | '5192'
+      | '5193'
+      | '5499'
+      | '5655'
+      | '5691'
+      | '5712'
+      | '5722'
+      | '5812'
+      | '5814'
+      | '5912'
+      | '5977'
+      | '5999'
+      | '7629';
 
-    /**
-     * The
-     * [EAN](https://en.wikipedia.org/wiki/International_Article_Number#:~:text=The%20International%20Article%20Number%20(also,configuration%2C%20from%20a%20specific%20manufacturer.)
-     * of the line item.
-     */
+    co2Grams?: number;
+
     EAN?: string;
 
     /**
-     * The image of the line item as a URL.
+     * An image of the line item. Valid URLs are accepted only.
      */
     image?: string;
 
     /**
-     * The internal unique identifier of the line item.
+     * Quantity of this lineItem.
+     */
+    quantity?: number;
+
+    /**
+     * An internal unique id stored to this line item.
      */
     referenceId?: string;
   }
 
   export interface Mandate {
-    /**
-     * The name of the account holder who signs the mandate.
-     */
-    accountHolderName?: string;
+    accountHolderName: string;
 
-    /**
-     * Additional information to display to the user during the mandate setup. This
-     * information is not used to setup any recurrence on the mandate. It is only
-     * displayed to the user during checkout.
-     */
     additionalDisplayInformation?: Mandate.AdditionalDisplayInformation;
 
-    /**
-     * Mandate creditor data
-     */
     creditor?: Mandate.Creditor;
 
-    /**
-     * The reference of the mandate going to be setup
-     */
     reference?: string;
 
-    /**
-     * The mandate referenceId. Set this to match incoming `mandate_setup_started`,
-     * `mandate_setup_succeeded` or `mandate_setup_failed` webhook events to your
-     * mandate setup request.
-     */
     referenceId?: string;
 
-    /**
-     * If true, a ready to use mandate will be set up after the payment flow.
-     */
     setup?: boolean;
 
-    /**
-     * The email of the user who signs the mandate.
-     */
     userNotificationEmail?: string;
   }
 
   export namespace Mandate {
-    /**
-     * Additional information to display to the user during the mandate setup. This
-     * information is not used to setup any recurrence on the mandate. It is only
-     * displayed to the user during checkout.
-     */
     export interface AdditionalDisplayInformation {
-      /**
-       * The intended cadence of charges used for displaying purpose only. On demand
-       * would be used for unscheduled charges.
-       */
       cadence?: 'BI_WEEKLY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'SEMI_ANNUAL' | 'ANNUAL' | 'ON_DEMAND';
 
       price?: AdditionalDisplayInformation.Price;
@@ -1695,19 +1805,12 @@ export namespace OrderRetrieveResponse {
 
     export namespace AdditionalDisplayInformation {
       export interface Price {
-        /**
-         * The amount displayed to the user as decimal e.g. 10.23 would be displayed as
-         * 10.23 EUR.
-         */
-        amount?: number;
+        amount: number;
 
-        currency?: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+        currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
       }
     }
 
-    /**
-     * Mandate creditor data
-     */
     export interface Creditor {
       id?: string;
 
@@ -1716,42 +1819,25 @@ export namespace OrderRetrieveResponse {
   }
 
   /**
-   * @deprecated
+   * The financial address of the merchant associated with the order. Only available
+   * when requested via order/details and therefore requires authentication.
    */
   export interface MerchantFinancialAddress {
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+
     bankCode?: MerchantFinancialAddress.BankCode;
 
     bban?: MerchantFinancialAddress.Bban;
 
     iban?: MerchantFinancialAddress.Iban;
 
-    /**
-     * The payment reference for the order. This is the reference that will be visible
-     * on the bank statement.
-     */
     paymentReference?: string;
 
     sortCode?: MerchantFinancialAddress.SortCode;
-
-    /**
-     * The type of the financial address. The actual destination is determined by this
-     * field which can be either "iban", "sortCode", "bankCode", or "bban". The
-     * validation will fail if you set e.g. type="iban", but then not fill any values
-     * in the "iban" object.
-     *
-     * - iban: The IBAN of the account
-     * - sort_code: The sort code of the account
-     * - bank_code: The bank code of the account
-     * - bban: The BBAN of the account
-     */
-    type?: string;
   }
 
   export namespace MerchantFinancialAddress {
     export interface BankCode {
-      /**
-       * The name of the account holder.
-       */
       accountHolderName: string;
 
       accountNumber: string;
@@ -1760,9 +1846,6 @@ export namespace OrderRetrieveResponse {
     }
 
     export interface Bban {
-      /**
-       * The name of the account holder.
-       */
       accountHolderName: string;
 
       bban: string;
@@ -1771,9 +1854,6 @@ export namespace OrderRetrieveResponse {
     }
 
     export interface Iban {
-      /**
-       * The name of the account holder.
-       */
       accountHolderName: string;
 
       iban: string;
@@ -1782,9 +1862,6 @@ export namespace OrderRetrieveResponse {
     }
 
     export interface SortCode {
-      /**
-       * The name of the account holder.
-       */
       accountHolderName: string;
 
       accountNumber: string;
@@ -1794,21 +1871,11 @@ export namespace OrderRetrieveResponse {
   }
 
   /**
-   * The source bank account where the money is send from.
+   * The financial address of the payer associated with the order. Only available
+   * after successful PIS flow.
    */
   export interface PayerFinancialAddress {
-    /**
-     * The type of the financial address. The actual destination is determined by this
-     * field which can be either "iban", "sortCode", "bankCode", or "bban". The
-     * validation will fail if you set e.g. type="iban", but then not fill any values
-     * in the "iban" object.
-     *
-     * - iban: The IBAN of the account
-     * - sort_code: The sort code of the account
-     * - bank_code: The bank code of the account
-     * - bban: The BBAN of the account
-     */
-    type: string;
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
     bankCode?: PayerFinancialAddress.BankCode;
 
@@ -1825,18 +1892,12 @@ export namespace OrderRetrieveResponse {
 
       code: string;
 
-      /**
-       * The name of the account holder.
-       */
       accountHolderName?: string;
     }
 
     export interface Bban {
       bban: string;
 
-      /**
-       * The name of the account holder.
-       */
       accountHolderName?: string;
 
       bic?: string;
@@ -1845,9 +1906,6 @@ export namespace OrderRetrieveResponse {
     export interface Iban {
       iban: string;
 
-      /**
-       * The name of the account holder.
-       */
       accountHolderName?: string;
 
       bic?: string;
@@ -1858,39 +1916,312 @@ export namespace OrderRetrieveResponse {
 
       sortCode: string;
 
-      /**
-       * The name of the account holder.
-       */
       accountHolderName?: string;
     }
   }
 
-  /**
-   * A Refund object. This corresponds to one Refund request.
-   */
   export interface Refund {
+    /**
+     * The unique id of this refund request.
+     */
     id: string;
 
+    /**
+     * The amount of the refund in decimals.
+     */
     amount: number;
 
-    createdAt: string;
+    createdAt: unknown;
 
+    /**
+     * The unique id of this refund request. This can be set when requesting the
+     * refund.
+     */
     referenceId: string;
 
     /**
-     * The status of the refund. Always use the status of the order as your source of
-     * truth to trigger actions in your dashboard.
+     * The current status of this refund.
      */
     status: 'pending' | 'succeeded' | 'failed' | 'requires_action' | 'partially_refunded';
 
-    updatedAt: string;
+    updatedAt: unknown;
 
+    /**
+     * The description of the refund.
+     */
     description?: string;
   }
 
+  export interface ShippingAddress {
+    city: string;
+
+    country:
+      | 'AF'
+      | 'AL'
+      | 'DZ'
+      | 'AS'
+      | 'AD'
+      | 'AO'
+      | 'AI'
+      | 'AQ'
+      | 'AG'
+      | 'AR'
+      | 'AM'
+      | 'AW'
+      | 'AU'
+      | 'AT'
+      | 'AZ'
+      | 'BS'
+      | 'BH'
+      | 'BD'
+      | 'BB'
+      | 'BY'
+      | 'BE'
+      | 'BZ'
+      | 'BJ'
+      | 'BM'
+      | 'BT'
+      | 'BO'
+      | 'BA'
+      | 'BW'
+      | 'BV'
+      | 'BR'
+      | 'IO'
+      | 'BN'
+      | 'BG'
+      | 'BF'
+      | 'BI'
+      | 'KH'
+      | 'CM'
+      | 'CA'
+      | 'CV'
+      | 'KY'
+      | 'CF'
+      | 'TD'
+      | 'CL'
+      | 'CN'
+      | 'CX'
+      | 'CC'
+      | 'CO'
+      | 'KM'
+      | 'CG'
+      | 'CD'
+      | 'CK'
+      | 'CR'
+      | 'CI'
+      | 'HR'
+      | 'CU'
+      | 'CY'
+      | 'CZ'
+      | 'DK'
+      | 'DJ'
+      | 'DM'
+      | 'DO'
+      | 'EC'
+      | 'EG'
+      | 'SV'
+      | 'GQ'
+      | 'ER'
+      | 'EE'
+      | 'ET'
+      | 'FK'
+      | 'FO'
+      | 'FJ'
+      | 'FI'
+      | 'FR'
+      | 'GF'
+      | 'PF'
+      | 'TF'
+      | 'GA'
+      | 'GM'
+      | 'GE'
+      | 'DE'
+      | 'GH'
+      | 'GI'
+      | 'GR'
+      | 'GL'
+      | 'GD'
+      | 'GP'
+      | 'GU'
+      | 'GT'
+      | 'GN'
+      | 'GW'
+      | 'GY'
+      | 'HT'
+      | 'HM'
+      | 'VA'
+      | 'HN'
+      | 'HK'
+      | 'HU'
+      | 'IS'
+      | 'IN'
+      | 'ID'
+      | 'IR'
+      | 'IQ'
+      | 'IE'
+      | 'IL'
+      | 'IT'
+      | 'JM'
+      | 'JP'
+      | 'JO'
+      | 'KZ'
+      | 'KE'
+      | 'KI'
+      | 'KP'
+      | 'KR'
+      | 'KW'
+      | 'KG'
+      | 'LA'
+      | 'LV'
+      | 'LB'
+      | 'LS'
+      | 'LR'
+      | 'LY'
+      | 'LI'
+      | 'LT'
+      | 'LU'
+      | 'MO'
+      | 'MG'
+      | 'MW'
+      | 'MY'
+      | 'MV'
+      | 'ML'
+      | 'MT'
+      | 'MH'
+      | 'MQ'
+      | 'MR'
+      | 'MU'
+      | 'YT'
+      | 'MX'
+      | 'FM'
+      | 'MD'
+      | 'MC'
+      | 'MN'
+      | 'MS'
+      | 'MA'
+      | 'MZ'
+      | 'MM'
+      | 'NA'
+      | 'NR'
+      | 'NP'
+      | 'NL'
+      | 'NC'
+      | 'NZ'
+      | 'NI'
+      | 'NE'
+      | 'NG'
+      | 'NU'
+      | 'NF'
+      | 'MP'
+      | 'MK'
+      | 'NO'
+      | 'OM'
+      | 'PK'
+      | 'PW'
+      | 'PS'
+      | 'PA'
+      | 'PG'
+      | 'PY'
+      | 'PE'
+      | 'PH'
+      | 'PN'
+      | 'PL'
+      | 'PT'
+      | 'PR'
+      | 'QA'
+      | 'RE'
+      | 'RO'
+      | 'RU'
+      | 'RW'
+      | 'SH'
+      | 'KN'
+      | 'LC'
+      | 'PM'
+      | 'VC'
+      | 'WS'
+      | 'SM'
+      | 'ST'
+      | 'SA'
+      | 'SN'
+      | 'SC'
+      | 'SL'
+      | 'SG'
+      | 'SK'
+      | 'SI'
+      | 'SB'
+      | 'SO'
+      | 'ZA'
+      | 'GS'
+      | 'ES'
+      | 'LK'
+      | 'SD'
+      | 'SR'
+      | 'SJ'
+      | 'SZ'
+      | 'SE'
+      | 'CH'
+      | 'SY'
+      | 'TW'
+      | 'TJ'
+      | 'TZ'
+      | 'TH'
+      | 'TL'
+      | 'TG'
+      | 'TK'
+      | 'TO'
+      | 'TT'
+      | 'TN'
+      | 'TR'
+      | 'TM'
+      | 'TC'
+      | 'TV'
+      | 'UG'
+      | 'UA'
+      | 'AE'
+      | 'GB'
+      | 'US'
+      | 'UM'
+      | 'UY'
+      | 'UZ'
+      | 'VU'
+      | 'VE'
+      | 'VN'
+      | 'VG'
+      | 'VI'
+      | 'WF'
+      | 'EH'
+      | 'YE'
+      | 'ZM'
+      | 'ZW'
+      | 'AX'
+      | 'BQ'
+      | 'CW'
+      | 'GG'
+      | 'IM'
+      | 'JE'
+      | 'ME'
+      | 'BL'
+      | 'MF'
+      | 'RS'
+      | 'SX'
+      | 'SS'
+      | 'XK';
+
+    firstName: string;
+
+    lastName: string;
+
+    line1: string;
+
+    line2: string;
+
+    region: string;
+
+    zipCode: string;
+  }
+
   /**
-   * The shopper object. Contains information collected from the user during the
-   * Checkout.
+   * Information about the customer who finished the order.
    */
   export interface Shopper {
     email?: string;
@@ -1899,16 +2230,8 @@ export namespace OrderRetrieveResponse {
   }
 
   export interface StatusClassification {
-    /**
-     * Populated with the primary payment initiation failure classsification if
-     * available.
-     */
     primary: 'payment_authorisation_failed' | 'payment_execution_failed' | 'payment_abandoned';
 
-    /**
-     * Populated with the secondary payment initiation failure classsification if
-     * available.
-     */
     secondary?:
       | 'timeout'
       | 'wrong_credentials'
@@ -1930,11 +2253,8 @@ export namespace OrderRetrieveResponse {
   }
 
   export interface StatusHistoryList {
-    /**
-     * The order status. This status symbolises the state of the user's payment
-     * attempt. See [the guide](https://docs.getivy.de/docs/payment-status) for more
-     * information.
-     */
+    createdAt: unknown;
+
     currentStatus:
       | 'failed'
       | 'canceled'
@@ -1949,15 +2269,35 @@ export namespace OrderRetrieveResponse {
       | 'disputed'
       | 'refused';
 
-    reason: string;
+    reason:
+      | 'ORDER_CREATED'
+      | 'CHECKOUT_SESSION_ABORTED'
+      | 'PAYMENT_SUCCEEDED'
+      | 'PAYMENT_INITIATED'
+      | 'ORDER_CANCELED'
+      | 'ORDER_REFUND_INITIATED'
+      | 'ORDER_REFUNDED'
+      | 'REFUND_CHARGE_SUCCEEDED'
+      | 'REFUND_UPDATED'
+      | 'CHECKOUT_COMPLETED'
+      | 'PIS_PAYMENT_INITIATED'
+      | 'PIS_PAYMENT_UPDATED'
+      | 'PIS_PAYMENT_SUCCEEDED'
+      | 'PAYMENT_NOT_SETTLED'
+      | 'PAYMENT_INITIATION_FAILED'
+      | 'PAYMENT_CANCELED'
+      | 'PAYMENT_FAILED'
+      | 'CHECKOUT_SESSION_CREATED'
+      | 'EXPIRED_CHECKOUT_SESSION_ABORTED'
+      | 'DISPUTE'
+      | 'PENDING_PAYMENT_ATTEMPTS_FOUND'
+      | 'AML_FREEZE'
+      | 'MANUAL_FREEZE'
+      | 'MANUAL_UNFREEZE'
+      | 'ORDER_MANUALLY_REOPENED';
 
-    updatedAt: string;
+    updatedAt: unknown;
 
-    /**
-     * The order status. This status symbolises the state of the user's payment
-     * attempt. See [the guide](https://docs.getivy.de/docs/payment-status) for more
-     * information.
-     */
     previousStatus?:
       | 'failed'
       | 'canceled'
@@ -1994,7 +2334,7 @@ export interface OrderCreateParams {
   /**
    * The customer of the merchant.
    */
-  customer?: OrderCreateParams.Email | OrderCreateParams.ID;
+  customer?: OrderCreateParams.Customer;
 
   /**
    * Optional expiration timestamp in seconds
@@ -2008,22 +2348,26 @@ export interface OrderCreateParams {
 }
 
 export namespace OrderCreateParams {
-  export interface Email {
-    /**
-     * The email of the customer.
-     */
-    email: string;
-  }
-
-  export interface ID {
+  /**
+   * The customer of the merchant.
+   */
+  export interface Customer {
     /**
      * The Ivy id of the customer.
      */
-    id: string;
+    id?: string;
+
+    /**
+     * The email of the customer.
+     */
+    email?: string;
   }
 }
 
 export interface OrderRetrieveParams {
+  /**
+   * You can put in either the Ivy id OR the referenceId of the order
+   */
   id: string;
 }
 

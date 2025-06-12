@@ -31,24 +31,17 @@ export class Banks extends APIResource {
 
 export interface BankRetrieveResponse {
   /**
-   * Unique identifier for the bank, conforming to the regex pattern
-   * /^[a-z]{2}-[a-z0-9+/-]{1,}$/. This pattern typically represents a country code
-   * followed by a bank-specific identifier, e.g.,
-   * 'de-alxingbruckergenossenschaftsbank'.
+   * Unique identifier of the bank.
    */
   id: string;
 
   currencies: Array<'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK'>;
 
   /**
-   * If true, the bank is part of the set of default banks for a given market.
+   * Whether the bank is a default bank.
    */
   default: boolean;
 
-  /**
-   * Array of ISO 3166-1 alpha-2 country codes. The markets where the bank is
-   * available.
-   */
   market: Array<
     | 'AF'
     | 'AL'
@@ -303,7 +296,7 @@ export interface BankRetrieveResponse {
   >;
 
   /**
-   * Customer-facing name of the bank.
+   * Name of the bank.
    */
   name: string;
 
@@ -322,26 +315,26 @@ export interface BankRetrieveResponse {
   >;
 
   /**
-   * If true, the bank is only available in test (sandbox) mode.
+   * Whether the bank is a test bank.
    */
   test: boolean;
 
   /**
-   * The capabilities of the bank. The capabilities determine which products the bank
-   * supports. `ais` for data products, `pis` for payment products.
+   * The capabilities of the bank.
    */
-  capabilities?: Array<'pis' | 'ais'>;
+  capabilities?: Array<'ais' | 'pis'>;
 
-  /**
-   * The group of the bank, e.g. "Sparkasse", i.e. a group of different bank branches
-   * of the same brand.
-   */
   group?: string;
 
   /**
-   * The logo of the bank provided as a URL.
+   * The logo in the form of an URL
    */
   logo?: string;
+
+  /**
+   * The URL of the bank's website.
+   */
+  url?: string;
 }
 
 export interface BankListResponse {
@@ -369,24 +362,17 @@ export interface BankListResponse {
 export namespace BankListResponse {
   export interface Bank {
     /**
-     * Unique identifier for the bank, conforming to the regex pattern
-     * /^[a-z]{2}-[a-z0-9+/-]{1,}$/. This pattern typically represents a country code
-     * followed by a bank-specific identifier, e.g.,
-     * 'de-alxingbruckergenossenschaftsbank'.
+     * Unique identifier of the bank.
      */
     id: string;
 
     currencies: Array<'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK'>;
 
     /**
-     * If true, the bank is part of the set of default banks for a given market.
+     * Whether the bank is a default bank.
      */
     default: boolean;
 
-    /**
-     * Array of ISO 3166-1 alpha-2 country codes. The markets where the bank is
-     * available.
-     */
     market: Array<
       | 'AF'
       | 'AL'
@@ -641,7 +627,7 @@ export namespace BankListResponse {
     >;
 
     /**
-     * Customer-facing name of the bank.
+     * Name of the bank.
      */
     name: string;
 
@@ -660,26 +646,26 @@ export namespace BankListResponse {
     >;
 
     /**
-     * If true, the bank is only available in test (sandbox) mode.
+     * Whether the bank is a test bank.
      */
     test: boolean;
 
     /**
-     * The capabilities of the bank. The capabilities determine which products the bank
-     * supports. `ais` for data products, `pis` for payment products.
+     * The capabilities of the bank.
      */
-    capabilities?: Array<'pis' | 'ais'>;
+    capabilities?: Array<'ais' | 'pis'>;
 
-    /**
-     * The group of the bank, e.g. "Sparkasse", i.e. a group of different bank branches
-     * of the same brand.
-     */
     group?: string;
 
     /**
-     * The logo of the bank provided as a URL.
+     * The logo in the form of an URL
      */
     logo?: string;
+
+    /**
+     * The URL of the bank's website.
+     */
+    url?: string;
   }
 }
 
@@ -708,24 +694,17 @@ export interface BankSearchResponse {
 export namespace BankSearchResponse {
   export interface Bank {
     /**
-     * Unique identifier for the bank, conforming to the regex pattern
-     * /^[a-z]{2}-[a-z0-9+/-]{1,}$/. This pattern typically represents a country code
-     * followed by a bank-specific identifier, e.g.,
-     * 'de-alxingbruckergenossenschaftsbank'.
+     * Unique identifier of the bank.
      */
     id: string;
 
     currencies: Array<'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK'>;
 
     /**
-     * If true, the bank is part of the set of default banks for a given market.
+     * Whether the bank is a default bank.
      */
     default: boolean;
 
-    /**
-     * Array of ISO 3166-1 alpha-2 country codes. The markets where the bank is
-     * available.
-     */
     market: Array<
       | 'AF'
       | 'AL'
@@ -980,7 +959,7 @@ export namespace BankSearchResponse {
     >;
 
     /**
-     * Customer-facing name of the bank.
+     * Name of the bank.
      */
     name: string;
 
@@ -999,30 +978,33 @@ export namespace BankSearchResponse {
     >;
 
     /**
-     * If true, the bank is only available in test (sandbox) mode.
+     * Whether the bank is a test bank.
      */
     test: boolean;
 
     /**
-     * The capabilities of the bank. The capabilities determine which products the bank
-     * supports. `ais` for data products, `pis` for payment products.
+     * The capabilities of the bank.
      */
-    capabilities?: Array<'pis' | 'ais'>;
+    capabilities?: Array<'ais' | 'pis'>;
 
-    /**
-     * The group of the bank, e.g. "Sparkasse", i.e. a group of different bank branches
-     * of the same brand.
-     */
     group?: string;
 
     /**
-     * The logo of the bank provided as a URL.
+     * The logo in the form of an URL
      */
     logo?: string;
+
+    /**
+     * The URL of the bank's website.
+     */
+    url?: string;
   }
 }
 
 export interface BankRetrieveParams {
+  /**
+   * The id is a unique identifier of the bank within Ivy.
+   */
   id: string;
 }
 
@@ -1307,7 +1289,7 @@ export interface BankListParams {
   /**
    * The internal checkout session id. For internal use only.
    */
-  sessionId?: string;
+  sessionId?: unknown;
 
   /**
    * The number of banks to skip
@@ -1603,7 +1585,7 @@ export interface BankSearchParams {
   /**
    * The internal checkout session id. For internal use only.
    */
-  sessionId?: string;
+  sessionId?: unknown;
 
   /**
    * The number of banks to skip
