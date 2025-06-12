@@ -421,7 +421,7 @@ export interface CheckoutsessionCreateResponse {
    * given language. Users can change the language in the Checkout. If not provided,
    * the language of the Checkout is determined by the browser's language.
    */
-  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk';
+  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
 
   mandate?: CheckoutsessionCreateResponse.Mandate;
 
@@ -1781,7 +1781,7 @@ export interface CheckoutsessionRetrieveResponse {
    * given language. Users can change the language in the Checkout. If not provided,
    * the language of the Checkout is determined by the browser's language.
    */
-  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk';
+  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
 
   mandate?: CheckoutsessionRetrieveResponse.Mandate;
 
@@ -3141,7 +3141,7 @@ export interface CheckoutsessionExpireResponse {
    * given language. Users can change the language in the Checkout. If not provided,
    * the language of the Checkout is determined by the browser's language.
    */
-  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk';
+  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
 
   mandate?: CheckoutsessionExpireResponse.Mandate;
 
@@ -4198,7 +4198,7 @@ export interface CheckoutsessionCreateParams {
    * change the language in the checkout. If not provided, the language of the
    * checkout is determined by the browser's language.
    */
-  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk';
+  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
 
   /**
    * The mandate setup for the payment. Relevant for
