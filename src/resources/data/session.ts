@@ -343,7 +343,7 @@ export interface SessionCreateResponse {
   /**
    * The locale of the data session.
    */
-  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk';
+  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
 
   /**
    * ISO 3166-1 alpha-2 country code of the market.
@@ -677,7 +677,7 @@ export interface SessionRetrieveResponse {
   /**
    * The locale of the data session.
    */
-  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk';
+  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
 
   /**
    * ISO 3166-1 alpha-2 country code of the market.
@@ -993,7 +993,7 @@ export interface SessionCreateParams {
    * The locale of the data session. If not provided, the default locale will be
    * used.
    */
-  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk';
+  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
 
   /**
    * ISO 3166-1 alpha-2 country code of the market. If set, the market's default
