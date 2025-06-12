@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.33 (2025-06-12)
+
+Full Changelog: [v0.1.0-alpha.32...v0.1.0-alpha.33](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.32...v0.1.0-alpha.33)
+
+### Features
+
+* **api:** api update ([450a864](https://github.com/getivy/node-sdk/commit/450a86437395a2b16ba7aef0a62dc9a8c768492d))
+
 ## 0.1.0-alpha.32 (2025-06-12)
 
 Full Changelog: [v0.1.0-alpha.31...v0.1.0-alpha.32](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.31...v0.1.0-alpha.32)
