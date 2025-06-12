@@ -23,9 +23,6 @@ export class Customers extends APIResource {
   }
 }
 
-/**
- * Returns the id and email of the created customer
- */
 export interface CustomerCreateResponse {
   /**
    * The id of the created customer
@@ -40,17 +37,17 @@ export interface CustomerCreateResponse {
 
 export interface CustomerRetrieveResponse {
   /**
-   * Customer id
+   * The id of the customer
    */
   id: string;
 
   /**
-   * List of remembered bank accounts for this Customer
+   * Array of bank accounts remembered by user
    */
   bankAccounts: Array<CustomerRetrieveResponse.BankAccount>;
 
   /**
-   * Customer email address
+   * The email address of the customer
    */
   emailAddress: string;
 }
@@ -58,33 +55,33 @@ export interface CustomerRetrieveResponse {
 export namespace CustomerRetrieveResponse {
   export interface BankAccount {
     /**
-     * Bank details
+     * Remembered bank details
      */
     bank: BankAccount.Bank;
 
     /**
      * Last 4 digits of remembered account number
      */
-    last4digits?: string;
+    last4digits: string;
   }
 
   export namespace BankAccount {
     /**
-     * Bank details
+     * Remembered bank details
      */
     export interface Bank {
       /**
-       * Ivy bank id used to initiate checkout session with preselected bank
+       * The id of the bank
        */
       id: string;
 
       /**
-       * The customer-facing name of the Bank.
+       * The name of the bank
        */
       name: string;
 
       /**
-       * The Bank Logo as a URL
+       * URL address of bank logo image
        */
       logo?: string;
     }

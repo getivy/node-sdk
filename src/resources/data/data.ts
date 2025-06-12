@@ -2,27 +2,15 @@
 
 import { APIResource } from '../../resource';
 import * as AccountsAPI from './accounts';
-import { AccountListParams, AccountListResponse, Accounts } from './accounts';
+import { Accounts } from './accounts';
 import * as BalancesAPI from './balances';
-import { BalanceListParams, BalanceListResponse, Balances } from './balances';
+import { Balances } from './balances';
 import * as ConsentAPI from './consent';
-import {
-  Consent,
-  ConsentRetrieveParams,
-  ConsentRetrieveResponse,
-  ConsentRevokeParams,
-  ConsentRevokeResponse,
-} from './consent';
+import { Consent } from './consent';
 import * as SessionAPI from './session';
-import {
-  Session,
-  SessionCreateParams,
-  SessionCreateResponse,
-  SessionRetrieveParams,
-  SessionRetrieveResponse,
-} from './session';
+import { Session } from './session';
 import * as TransactionsAPI from './transactions';
-import { TransactionListParams, TransactionListResponse, Transactions } from './transactions';
+import { Transactions } from './transactions';
 
 export class Data extends APIResource {
   session: SessionAPI.Session = new SessionAPI.Session(this._client);
@@ -39,37 +27,13 @@ Data.Transactions = Transactions;
 Data.Balances = Balances;
 
 export declare namespace Data {
-  export {
-    Session as Session,
-    type SessionCreateResponse as SessionCreateResponse,
-    type SessionRetrieveResponse as SessionRetrieveResponse,
-    type SessionCreateParams as SessionCreateParams,
-    type SessionRetrieveParams as SessionRetrieveParams,
-  };
+  export { Session as Session };
 
-  export {
-    Consent as Consent,
-    type ConsentRetrieveResponse as ConsentRetrieveResponse,
-    type ConsentRevokeResponse as ConsentRevokeResponse,
-    type ConsentRetrieveParams as ConsentRetrieveParams,
-    type ConsentRevokeParams as ConsentRevokeParams,
-  };
+  export { Consent as Consent };
 
-  export {
-    Accounts as Accounts,
-    type AccountListResponse as AccountListResponse,
-    type AccountListParams as AccountListParams,
-  };
+  export { Accounts as Accounts };
 
-  export {
-    Transactions as Transactions,
-    type TransactionListResponse as TransactionListResponse,
-    type TransactionListParams as TransactionListParams,
-  };
+  export { Transactions as Transactions };
 
-  export {
-    Balances as Balances,
-    type BalanceListResponse as BalanceListResponse,
-    type BalanceListParams as BalanceListParams,
-  };
+  export { Balances as Balances };
 }

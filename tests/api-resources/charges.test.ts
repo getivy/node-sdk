@@ -13,8 +13,9 @@ describe('resource charges', () => {
   test.skip('create: only required params', async () => {
     const responsePromise = client.charges.create({
       idempotencyKey: 'idempotencyKey',
-      mandateId: 'mandateId',
-      price: { currency: 'EUR', total: 0 },
+      mandateId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      metadata: {},
+      price: { currency: 'EUR', total: 1.01 },
       referenceId: 'referenceId',
     });
     const rawResponse = await responsePromise.asResponse();
@@ -30,11 +31,11 @@ describe('resource charges', () => {
   test.skip('create: required and optional params', async () => {
     const response = await client.charges.create({
       idempotencyKey: 'idempotencyKey',
-      mandateId: 'mandateId',
-      price: { currency: 'EUR', total: 0, shipping: 0, subTotal: 0, totalNet: 0, vat: 0 },
-      referenceId: 'referenceId',
+      mandateId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       metadata: { verificationToken: 'verificationToken' },
-      subaccountId: 'subaccountId',
+      price: { currency: 'EUR', total: 1.01, shipping: 0, subTotal: 0, totalNet: 0, vat: 0 },
+      referenceId: 'referenceId',
+      subaccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
   });
 });

@@ -8,32 +8,60 @@ export class Subaccounts extends APIResource {
    * Create a Subaccount which can be used to reconcile orders, refunds and payouts
    * more easily.
    */
-  create(body: SubaccountCreateParams, options?: Core.RequestOptions): Core.APIPromise<Subaccount> {
+  create(
+    body: SubaccountCreateParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<SubaccountCreateResponse> {
     return this._client.post('/api/service/subaccount/create', { body, ...options });
   }
 
   /**
    * Retrieve a Subaccount by id.
    */
-  retrieve(body: SubaccountRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<Subaccount> {
+  retrieve(
+    body: SubaccountRetrieveParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<SubaccountRetrieveResponse> {
     return this._client.post('/api/service/subaccount/retrieve', { body, ...options });
   }
 }
 
-export interface Subaccount {
+export interface SubaccountCreateResponse {
   id: string;
+
+  createdAt: unknown;
 
   legalName: string;
 
   mcc: string;
 
-  ownerId: string;
+  ownerId: unknown;
 
   status: 'active' | 'inactive';
 
-  createdAt?: string;
+  updatedAt: unknown;
 
-  updatedAt?: string;
+  themeName?: 'default' | 'kraken' | 'inpay';
+
+  websiteUrl?: string;
+}
+
+export interface SubaccountRetrieveResponse {
+  id: string;
+
+  createdAt: unknown;
+
+  legalName: string;
+
+  mcc: string;
+
+  ownerId: unknown;
+
+  status: 'active' | 'inactive';
+
+  updatedAt: unknown;
+
+  themeName?: 'default' | 'kraken' | 'inpay';
 
   websiteUrl?: string;
 }
@@ -66,7 +94,8 @@ export interface SubaccountRetrieveParams {
 
 export declare namespace Subaccounts {
   export {
-    type Subaccount as Subaccount,
+    type SubaccountCreateResponse as SubaccountCreateResponse,
+    type SubaccountRetrieveResponse as SubaccountRetrieveResponse,
     type SubaccountCreateParams as SubaccountCreateParams,
     type SubaccountRetrieveParams as SubaccountRetrieveParams,
   };

@@ -11,7 +11,7 @@ const client = new Ivy({
 describe('resource banks', () => {
   // skipped: tests are disabled for the time being
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.banks.retrieve({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
+    const responsePromise = client.banks.retrieve({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,7 +23,7 @@ describe('resource banks', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.banks.retrieve({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
+    const response = await client.banks.retrieve({ id: 'id' });
   });
 
   // skipped: tests are disabled for the time being

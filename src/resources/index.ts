@@ -11,7 +11,7 @@ export {
   type BankSearchParams,
 } from './banks';
 export { Capabilities, type CapabilityRetrieveResponse, type CapabilityRetrieveParams } from './capabilities';
-export { Charges, type Charge, type ChargeCreateParams } from './charges';
+export { Charges, type ChargeCreateResponse, type ChargeCreateParams } from './charges';
 export {
   Checkoutsession,
   type CheckoutsessionCreateResponse,
@@ -31,7 +31,8 @@ export {
 export { Data } from './data/data';
 export {
   Mandates,
-  type MandateResponse,
+  type MandateRetrieveResponse,
+  type MandateLookupResponse,
   type MandateRevokeResponse,
   type MandateRetrieveParams,
   type MandateLookupParams,
@@ -46,7 +47,8 @@ export {
 } from './orders';
 export {
   Payouts,
-  type PublicUserPayout,
+  type PayoutCreateResponse,
+  type PayoutRetrieveResponse,
   type PayoutListResponse,
   type PayoutCreateParams,
   type PayoutRetrieveParams,
@@ -54,14 +56,13 @@ export {
 } from './payouts';
 export {
   Refunds,
-  type RefundResponse,
+  type RefundCreateResponse,
   type RefundBatchResponse,
   type RefundCreateParams,
   type RefundBatchParams,
 } from './refunds';
 export {
   Reports,
-  type PayoutReport,
   type ReportCreateResponse,
   type ReportRetrieveResponse,
   type ReportCreateParams,
@@ -70,20 +71,9 @@ export {
 } from './reports';
 export {
   Subaccounts,
-  type Subaccount,
+  type SubaccountCreateResponse,
+  type SubaccountRetrieveResponse,
   type SubaccountCreateParams,
   type SubaccountRetrieveParams,
 } from './subaccounts';
-export {
-  Webhooksubscription,
-  type WebhooksubscriptionCreateResponse,
-  type WebhooksubscriptionUpdateResponse,
-  type WebhooksubscriptionListResponse,
-  type WebhooksubscriptionDeleteResponse,
-  type WebhooksubscriptionPingResponse,
-  type WebhooksubscriptionCreateParams,
-  type WebhooksubscriptionUpdateParams,
-  type WebhooksubscriptionListParams,
-  type WebhooksubscriptionDeleteParams,
-  type WebhooksubscriptionPingParams,
-} from './webhooksubscription';
+export { Webhooksubscription } from './webhooksubscription';

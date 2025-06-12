@@ -27,7 +27,7 @@ describe('resource orders', () => {
       amount: 0,
       currency: 'EUR',
       referenceId: 'referenceId',
-      customer: { email: 'dev@stainless.com' },
+      customer: { id: 'id', email: 'email' },
       expiresAt: 'expiresAt',
       subaccountId: 'subaccountId',
     });
@@ -35,7 +35,7 @@ describe('resource orders', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.orders.retrieve({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
+    const responsePromise = client.orders.retrieve({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -47,6 +47,6 @@ describe('resource orders', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.orders.retrieve({ id: 'E1CB97d8EBbDbaAae6d9B1ca' });
+    const response = await client.orders.retrieve({ id: 'id' });
   });
 });

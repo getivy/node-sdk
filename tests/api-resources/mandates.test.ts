@@ -11,7 +11,7 @@ const client = new Ivy({
 describe('resource mandates', () => {
   // skipped: tests are disabled for the time being
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.mandates.retrieve({ id: 'id' });
+    const responsePromise = client.mandates.retrieve({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,7 +23,7 @@ describe('resource mandates', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.mandates.retrieve({ id: 'id' });
+    const response = await client.mandates.retrieve({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
   });
 
   // skipped: tests are disabled for the time being
@@ -45,7 +45,7 @@ describe('resource mandates', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('revoke: only required params', async () => {
-    const responsePromise = client.mandates.revoke({ id: 'id' });
+    const responsePromise = client.mandates.revoke({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -57,6 +57,6 @@ describe('resource mandates', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('revoke: required and optional params', async () => {
-    const response = await client.mandates.revoke({ id: 'id' });
+    const response = await client.mandates.revoke({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
   });
 });
