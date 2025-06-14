@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.34 (2025-06-14)
+
+Full Changelog: [v0.1.0-alpha.33...v0.1.0-alpha.34](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.33...v0.1.0-alpha.34)
+
+### Bug Fixes
+
+* publish script — handle NPM errors correctly ([5155b3a](https://github.com/getivy/node-sdk/commit/5155b3a4722455788777b2e917fb3365b9abb588))
+
+
+### Chores
+
+* **internal:** make base APIResource abstract ([8506ff3](https://github.com/getivy/node-sdk/commit/8506ff331e86a5d61ad1616e5c4d3c02f1f3f3e1))
+
 ## 0.1.0-alpha.33 (2025-06-12)
 
 Full Changelog: [v0.1.0-alpha.32...v0.1.0-alpha.33](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.32...v0.1.0-alpha.33)
