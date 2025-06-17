@@ -11,7 +11,7 @@ const client = new Ivy({
 describe('resource orders', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: only required params', async () => {
-    const responsePromise = client.orders.create({ amount: 0, currency: 'EUR', referenceId: 'referenceId' });
+    const responsePromise = client.orders.create({ amount: 1.01, currency: 'EUR', destination: {} });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -24,12 +24,31 @@ describe('resource orders', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: required and optional params', async () => {
     const response = await client.orders.create({
-      amount: 0,
+      amount: 1.01,
       currency: 'EUR',
-      referenceId: 'referenceId',
-      customer: { id: 'id', email: 'email' },
-      expiresAt: 'expiresAt',
-      subaccountId: 'subaccountId',
+      destination: {
+        financialAddress: {
+          psuData: {
+            branchNumber: 'branchNumber',
+            clientId: 'clientId',
+            ipAddress: 'ipAddress',
+            oib: 'oib',
+            psuId: 'psuId',
+            ssn: 'ssn',
+            username: 'username',
+          },
+          type: 'iban',
+          bankCode: { accountHolderName: 'x', accountNumber: 'accountNumber', code: 'code' },
+          bban: { accountHolderName: 'x', bban: 'bban', bic: 'bic' },
+          iban: { accountHolderName: 'x', iban: 'iban', bic: 'bic' },
+          paymentReference: 'paymentReference',
+          sortCode: { accountHolderName: 'x', accountNumber: '095', sortCode: '269125115713' },
+        },
+        orderId: 'orderId',
+        type: 'beneficiary',
+      },
+      metadata: { foo: 'bar' },
+      paymentReference: 'paymentReference',
     });
   });
 
