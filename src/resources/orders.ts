@@ -82,8 +82,6 @@ export namespace OrderCreateResponse {
    * The payout destination
    */
   export interface Destination {
-    psuData: Destination.PsuData | null;
-
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
     bankCode?: Destination.BankCode;
@@ -92,28 +90,10 @@ export namespace OrderCreateResponse {
 
     iban?: Destination.Iban;
 
-    paymentReference?: string;
-
     sortCode?: Destination.SortCode;
   }
 
   export namespace Destination {
-    export interface PsuData {
-      branchNumber?: string;
-
-      clientId?: string;
-
-      ipAddress?: string;
-
-      oib?: string;
-
-      psuId?: string;
-
-      ssn?: string;
-
-      username?: string;
-    }
-
     export interface BankCode {
       accountHolderName: string;
 
@@ -1336,8 +1316,6 @@ export namespace OrderCreateParams {
 
   export namespace Destination {
     export interface FinancialAddress {
-      psuData: FinancialAddress.PsuData | null;
-
       type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
       bankCode?: FinancialAddress.BankCode;
@@ -1346,28 +1324,10 @@ export namespace OrderCreateParams {
 
       iban?: FinancialAddress.Iban;
 
-      paymentReference?: string;
-
       sortCode?: FinancialAddress.SortCode;
     }
 
     export namespace FinancialAddress {
-      export interface PsuData {
-        branchNumber?: string;
-
-        clientId?: string;
-
-        ipAddress?: string;
-
-        oib?: string;
-
-        psuId?: string;
-
-        ssn?: string;
-
-        username?: string;
-      }
-
       export interface BankCode {
         accountHolderName: string;
 
