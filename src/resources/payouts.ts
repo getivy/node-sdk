@@ -5,14 +5,14 @@ import * as Core from '../core';
 
 export class Payouts extends APIResource {
   /**
-   * Create a payout
+   * Create a payout for a merchant.
    */
   create(body: PayoutCreateParams, options?: Core.RequestOptions): Core.APIPromise<PayoutCreateResponse> {
     return this._client.post('/api/service/payout/create', { body, ...options });
   }
 
   /**
-   * Retrieve a payout
+   * Retrieve a payout object by id.
    */
   retrieve(
     body: PayoutRetrieveParams,
@@ -22,7 +22,7 @@ export class Payouts extends APIResource {
   }
 
   /**
-   * List payouts
+   * List payouts for a merchant.
    */
   list(body: PayoutListParams, options?: Core.RequestOptions): Core.APIPromise<PayoutListResponse> {
     return this._client.post('/api/service/payout/list', { body, ...options });
@@ -86,8 +86,6 @@ export namespace PayoutCreateResponse {
    * The payout destination
    */
   export interface Destination {
-    psuData: Destination.PsuData | null;
-
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
     bankCode?: Destination.BankCode;
@@ -96,28 +94,10 @@ export namespace PayoutCreateResponse {
 
     iban?: Destination.Iban;
 
-    paymentReference?: string;
-
     sortCode?: Destination.SortCode;
   }
 
   export namespace Destination {
-    export interface PsuData {
-      branchNumber?: string;
-
-      clientId?: string;
-
-      ipAddress?: string;
-
-      oib?: string;
-
-      psuId?: string;
-
-      ssn?: string;
-
-      username?: string;
-    }
-
     export interface BankCode {
       accountHolderName: string;
 
@@ -209,8 +189,6 @@ export namespace PayoutRetrieveResponse {
    * The payout destination
    */
   export interface Destination {
-    psuData: Destination.PsuData | null;
-
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
     bankCode?: Destination.BankCode;
@@ -219,28 +197,10 @@ export namespace PayoutRetrieveResponse {
 
     iban?: Destination.Iban;
 
-    paymentReference?: string;
-
     sortCode?: Destination.SortCode;
   }
 
   export namespace Destination {
-    export interface PsuData {
-      branchNumber?: string;
-
-      clientId?: string;
-
-      ipAddress?: string;
-
-      oib?: string;
-
-      psuId?: string;
-
-      ssn?: string;
-
-      username?: string;
-    }
-
     export interface BankCode {
       accountHolderName: string;
 
@@ -343,8 +303,6 @@ export namespace PayoutListResponse {
      * The payout destination
      */
     export interface Destination {
-      psuData: Destination.PsuData | null;
-
       type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
       bankCode?: Destination.BankCode;
@@ -353,28 +311,10 @@ export namespace PayoutListResponse {
 
       iban?: Destination.Iban;
 
-      paymentReference?: string;
-
       sortCode?: Destination.SortCode;
     }
 
     export namespace Destination {
-      export interface PsuData {
-        branchNumber?: string;
-
-        clientId?: string;
-
-        ipAddress?: string;
-
-        oib?: string;
-
-        psuId?: string;
-
-        ssn?: string;
-
-        username?: string;
-      }
-
       export interface BankCode {
         accountHolderName: string;
 
@@ -453,8 +393,6 @@ export namespace PayoutCreateParams {
 
   export namespace Destination {
     export interface FinancialAddress {
-      psuData: FinancialAddress.PsuData | null;
-
       type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
       bankCode?: FinancialAddress.BankCode;
@@ -463,28 +401,10 @@ export namespace PayoutCreateParams {
 
       iban?: FinancialAddress.Iban;
 
-      paymentReference?: string;
-
       sortCode?: FinancialAddress.SortCode;
     }
 
     export namespace FinancialAddress {
-      export interface PsuData {
-        branchNumber?: string;
-
-        clientId?: string;
-
-        ipAddress?: string;
-
-        oib?: string;
-
-        psuId?: string;
-
-        ssn?: string;
-
-        username?: string;
-      }
-
       export interface BankCode {
         accountHolderName: string;
 

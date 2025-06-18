@@ -77,20 +77,10 @@ describe('resource checkoutsession', () => {
       settlementDestination: {
         reference: 'reference',
         financialAddress: {
-          psuData: {
-            branchNumber: 'branchNumber',
-            clientId: 'clientId',
-            ipAddress: 'ipAddress',
-            oib: 'oib',
-            psuId: 'psuId',
-            ssn: 'ssn',
-            username: 'username',
-          },
           type: 'iban',
           bankCode: { accountHolderName: 'x', accountNumber: 'accountNumber', code: 'code' },
           bban: { accountHolderName: 'x', bban: 'bban', bic: 'bic' },
           iban: { accountHolderName: 'x', iban: 'iban', bic: 'bic' },
-          paymentReference: 'paymentReference',
           sortCode: { accountHolderName: 'x', accountNumber: '095', sortCode: '269125115713' },
         },
       },
