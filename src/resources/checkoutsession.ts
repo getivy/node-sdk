@@ -5337,8 +5337,6 @@ export namespace CheckoutsessionCreateParams {
 
   export namespace SettlementDestination {
     export interface FinancialAddress {
-      psuData: FinancialAddress.PsuData | null;
-
       type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
       bankCode?: FinancialAddress.BankCode;
@@ -5347,28 +5345,10 @@ export namespace CheckoutsessionCreateParams {
 
       iban?: FinancialAddress.Iban;
 
-      paymentReference?: string;
-
       sortCode?: FinancialAddress.SortCode;
     }
 
     export namespace FinancialAddress {
-      export interface PsuData {
-        branchNumber?: string;
-
-        clientId?: string;
-
-        ipAddress?: string;
-
-        oib?: string;
-
-        psuId?: string;
-
-        ssn?: string;
-
-        username?: string;
-      }
-
       export interface BankCode {
         accountHolderName: string;
 

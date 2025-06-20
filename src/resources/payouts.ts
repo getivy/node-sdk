@@ -5,15 +5,14 @@ import * as Core from '../core';
 
 export class Payouts extends APIResource {
   /**
-   * Create a Customer Payout to a customer's bank account for withdrawals or similar
-   * purposes.
+   * Create a payout for a merchant.
    */
   create(body: PayoutCreateParams, options?: Core.RequestOptions): Core.APIPromise<PayoutCreateResponse> {
     return this._client.post('/api/service/payout/create', { body, ...options });
   }
 
   /**
-   * Retrieve a Customer Payout by id
+   * Retrieve a payout object by id.
    */
   retrieve(
     body: PayoutRetrieveParams,
@@ -23,7 +22,7 @@ export class Payouts extends APIResource {
   }
 
   /**
-   * List all Customer Payouts made by this merchant account.
+   * List payouts for a merchant.
    */
   list(body: PayoutListParams, options?: Core.RequestOptions): Core.APIPromise<PayoutListResponse> {
     return this._client.post('/api/service/payout/list', { body, ...options });
@@ -31,29 +30,62 @@ export class Payouts extends APIResource {
 }
 
 export interface PayoutCreateResponse {
+  /**
+   * The payout ID
+   */
   id: string;
 
+  /**
+   * The payout amount
+   */
   amount: number;
 
+  /**
+   * The payout created at
+   */
   createdAt: unknown;
 
+  /**
+   * The payout currency
+   */
   currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
+  /**
+   * The payout destination
+   */
   destination: PayoutCreateResponse.Destination;
 
-  status: 'pending' | 'paid' | 'failed';
+  /**
+   * The payout status
+   */
+  status: 'paid' | 'pending' | 'in_transit' | 'failed' | 'canceled';
 
+  /**
+   * The payout type
+   */
+  type: 'beneficiary' | 'customer';
+
+  /**
+   * The payout updated at
+   */
   updatedAt: unknown;
 
+  /**
+   * The payout metadata
+   */
   metadata?: Record<string, unknown>;
 
+  /**
+   * The payout payment reference
+   */
   paymentReference?: string;
 }
 
 export namespace PayoutCreateResponse {
+  /**
+   * The payout destination
+   */
   export interface Destination {
-    psuData: Destination.PsuData | null;
-
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
     bankCode?: Destination.BankCode;
@@ -62,28 +94,10 @@ export namespace PayoutCreateResponse {
 
     iban?: Destination.Iban;
 
-    paymentReference?: string;
-
     sortCode?: Destination.SortCode;
   }
 
   export namespace Destination {
-    export interface PsuData {
-      branchNumber?: string;
-
-      clientId?: string;
-
-      ipAddress?: string;
-
-      oib?: string;
-
-      psuId?: string;
-
-      ssn?: string;
-
-      username?: string;
-    }
-
     export interface BankCode {
       accountHolderName: string;
 
@@ -119,29 +133,62 @@ export namespace PayoutCreateResponse {
 }
 
 export interface PayoutRetrieveResponse {
+  /**
+   * The payout ID
+   */
   id: string;
 
+  /**
+   * The payout amount
+   */
   amount: number;
 
+  /**
+   * The payout created at
+   */
   createdAt: unknown;
 
+  /**
+   * The payout currency
+   */
   currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
+  /**
+   * The payout destination
+   */
   destination: PayoutRetrieveResponse.Destination;
 
-  status: 'pending' | 'paid' | 'failed';
+  /**
+   * The payout status
+   */
+  status: 'paid' | 'pending' | 'in_transit' | 'failed' | 'canceled';
 
+  /**
+   * The payout type
+   */
+  type: 'beneficiary' | 'customer';
+
+  /**
+   * The payout updated at
+   */
   updatedAt: unknown;
 
+  /**
+   * The payout metadata
+   */
   metadata?: Record<string, unknown>;
 
+  /**
+   * The payout payment reference
+   */
   paymentReference?: string;
 }
 
 export namespace PayoutRetrieveResponse {
+  /**
+   * The payout destination
+   */
   export interface Destination {
-    psuData: Destination.PsuData | null;
-
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
     bankCode?: Destination.BankCode;
@@ -150,28 +197,10 @@ export namespace PayoutRetrieveResponse {
 
     iban?: Destination.Iban;
 
-    paymentReference?: string;
-
     sortCode?: Destination.SortCode;
   }
 
   export namespace Destination {
-    export interface PsuData {
-      branchNumber?: string;
-
-      clientId?: string;
-
-      ipAddress?: string;
-
-      oib?: string;
-
-      psuId?: string;
-
-      ssn?: string;
-
-      username?: string;
-    }
-
     export interface BankCode {
       accountHolderName: string;
 
@@ -207,52 +236,73 @@ export namespace PayoutRetrieveResponse {
 }
 
 export interface PayoutListResponse {
-  /**
-   * The total number of items
-   */
   count: number;
 
-  /**
-   * Whether there are more items to retrieve
-   */
   hasNext: boolean;
 
-  /**
-   * Array of Customer Payout objects
-   */
   items: Array<PayoutListResponse.Item>;
 
-  /**
-   * The number of items skipped
-   */
   skip: number;
 }
 
 export namespace PayoutListResponse {
   export interface Item {
+    /**
+     * The payout ID
+     */
     id: string;
 
+    /**
+     * The payout amount
+     */
     amount: number;
 
+    /**
+     * The payout created at
+     */
     createdAt: unknown;
 
+    /**
+     * The payout currency
+     */
     currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
+    /**
+     * The payout destination
+     */
     destination: Item.Destination;
 
-    status: 'pending' | 'paid' | 'failed';
+    /**
+     * The payout status
+     */
+    status: 'paid' | 'pending' | 'in_transit' | 'failed' | 'canceled';
 
+    /**
+     * The payout type
+     */
+    type: 'beneficiary' | 'customer';
+
+    /**
+     * The payout updated at
+     */
     updatedAt: unknown;
 
+    /**
+     * The payout metadata
+     */
     metadata?: Record<string, unknown>;
 
+    /**
+     * The payout payment reference
+     */
     paymentReference?: string;
   }
 
   export namespace Item {
+    /**
+     * The payout destination
+     */
     export interface Destination {
-      psuData: Destination.PsuData | null;
-
       type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
       bankCode?: Destination.BankCode;
@@ -261,28 +311,10 @@ export namespace PayoutListResponse {
 
       iban?: Destination.Iban;
 
-      paymentReference?: string;
-
       sortCode?: Destination.SortCode;
     }
 
     export namespace Destination {
-      export interface PsuData {
-        branchNumber?: string;
-
-        clientId?: string;
-
-        ipAddress?: string;
-
-        oib?: string;
-
-        psuId?: string;
-
-        ssn?: string;
-
-        username?: string;
-      }
-
       export interface BankCode {
         accountHolderName: string;
 
@@ -320,56 +352,47 @@ export namespace PayoutListResponse {
 
 export interface PayoutCreateParams {
   /**
-   * The amount of the customer payout
+   * The payout amount in decimal format. The minimum amount is 0.01.
    */
   amount: number;
 
   /**
-   * The currency of the customer payout
+   * The payout currency
    */
   currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
-   * The destination of the customer payout.
+   * The payout destination
    */
   destination: PayoutCreateParams.Destination;
 
   /**
-   * The metadata of the customer payout
+   * This can be used to store any additional information you need to associate with
+   * this payout.
    */
   metadata?: Record<string, unknown>;
 
   /**
-   * The payment reference of the customer payout. The customer will see this
-   * reference in their bank statement.
+   * The payout payment reference. This is visible to the receiving party, if
+   * possible.
    */
   paymentReference?: string;
 }
 
 export namespace PayoutCreateParams {
   /**
-   * The destination of the customer payout.
+   * The payout destination
    */
   export interface Destination {
-    /**
-     * Used for open-loop customer payouts. Disabled by default for merchants.
-     */
-    financialAddress?: Destination.FinancialAddress;
+    financialAddress?: Destination.FinancialAddress | null;
 
-    /**
-     * For closed-loop customer payouts. The destination account will be taken from the
-     * payer of this order.
-     */
     orderId?: string;
+
+    type?: 'beneficiary';
   }
 
   export namespace Destination {
-    /**
-     * Used for open-loop customer payouts. Disabled by default for merchants.
-     */
     export interface FinancialAddress {
-      psuData: FinancialAddress.PsuData | null;
-
       type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
 
       bankCode?: FinancialAddress.BankCode;
@@ -378,28 +401,10 @@ export namespace PayoutCreateParams {
 
       iban?: FinancialAddress.Iban;
 
-      paymentReference?: string;
-
       sortCode?: FinancialAddress.SortCode;
     }
 
     export namespace FinancialAddress {
-      export interface PsuData {
-        branchNumber?: string;
-
-        clientId?: string;
-
-        ipAddress?: string;
-
-        oib?: string;
-
-        psuId?: string;
-
-        ssn?: string;
-
-        username?: string;
-      }
-
       export interface BankCode {
         accountHolderName: string;
 
@@ -437,21 +442,17 @@ export namespace PayoutCreateParams {
 
 export interface PayoutRetrieveParams {
   /**
-   * The unique identifier of the Customer Payout
+   * The payout ID
    */
   id: string;
 }
 
 export interface PayoutListParams {
-  /**
-   * The number of items to retrieve
-   */
   limit?: number;
 
-  /**
-   * The number of items to skip
-   */
   skip?: number;
+
+  type?: 'customer-payout' | 'beneficiary-payout';
 }
 
 export declare namespace Payouts {

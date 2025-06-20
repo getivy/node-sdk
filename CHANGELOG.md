@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.35 (2025-06-20)
+
+Full Changelog: [v0.1.0-alpha.34...v0.1.0-alpha.35](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.34...v0.1.0-alpha.35)
+
+### Features
+
+* **api:** api update ([8392efe](https://github.com/getivy/node-sdk/commit/8392efede0e9e89538ddb94c7a139c7807484f98))
+* **api:** api update ([025e32c](https://github.com/getivy/node-sdk/commit/025e32cf9187e9531d85661856e54cf24166de0b))
+* **client:** add support for endpoint-specific base URLs ([a21ab1c](https://github.com/getivy/node-sdk/commit/a21ab1c5e027aa3fb06f9df4b6370197265816ee))
+
+
+### Chores
+
+* **ci:** enable for pull requests ([ba345e0](https://github.com/getivy/node-sdk/commit/ba345e0e07eac436a234b999b33aadcc75f461f3))
+
 ## 0.1.0-alpha.34 (2025-06-14)
 
 Full Changelog: [v0.1.0-alpha.33...v0.1.0-alpha.34](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.33...v0.1.0-alpha.34)
