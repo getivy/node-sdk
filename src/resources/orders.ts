@@ -1207,7 +1207,8 @@ export namespace OrderRetrieveResponse {
       | 'account_limit_exceeded'
       | 'bank_under_maintenance'
       | 'pin_blocked'
-      | 'payment_not_settled';
+      | 'payment_not_settled'
+      | 'unsupported_bank_account';
   }
 
   export interface StatusHistoryList {
