@@ -600,7 +600,7 @@ export interface CheckoutsessionCreateResponse {
     | 'SS'
     | 'XK';
 
-  metadata?: Record<string, unknown>;
+  metadata?: { [key: string]: unknown };
 
   offsetProject?: string;
 
@@ -2115,7 +2115,7 @@ export interface CheckoutsessionRetrieveResponse {
     | 'SS'
     | 'XK';
 
-  metadata?: Record<string, unknown>;
+  metadata?: { [key: string]: unknown };
 
   offsetProject?: string;
 
@@ -3630,7 +3630,7 @@ export interface CheckoutsessionExpireResponse {
     | 'SS'
     | 'XK';
 
-  metadata?: Record<string, unknown>;
+  metadata?: { [key: string]: unknown };
 
   offsetProject?: string;
 
@@ -4911,7 +4911,7 @@ export interface CheckoutsessionCreateParams {
    * Any data which will be stored and returned for this checkout session and
    * corresponding order
    */
-  metadata?: Record<string, unknown>;
+  metadata?: { [key: string]: unknown };
 
   /**
    * The mode in which the payment should be processed. If direct is used, you need

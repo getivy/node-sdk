@@ -69,7 +69,7 @@ export interface OrderCreateResponse {
   /**
    * The payout metadata
    */
-  metadata?: Record<string, unknown>;
+  metadata?: { [key: string]: unknown };
 
   /**
    * The payout payment reference
@@ -249,7 +249,7 @@ export interface OrderRetrieveResponse {
    * Set of key-value pairs that you can attach to an object. This can be useful for
    * storing additional information about the object in a structured format.
    */
-  metadata?: Record<string, unknown>;
+  metadata?: { [key: string]: unknown };
 
   /**
    * The project related to the order.
@@ -1294,7 +1294,7 @@ export interface OrderCreateParams {
    * This can be used to store any additional information you need to associate with
    * this payout.
    */
-  metadata?: Record<string, unknown>;
+  metadata?: { [key: string]: unknown };
 
   /**
    * The payout payment reference. This is visible to the receiving party, if
