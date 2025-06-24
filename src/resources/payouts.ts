@@ -73,7 +73,7 @@ export interface PayoutCreateResponse {
   /**
    * The payout metadata
    */
-  metadata?: Record<string, unknown>;
+  metadata?: { [key: string]: unknown };
 
   /**
    * The payout payment reference
@@ -176,7 +176,7 @@ export interface PayoutRetrieveResponse {
   /**
    * The payout metadata
    */
-  metadata?: Record<string, unknown>;
+  metadata?: { [key: string]: unknown };
 
   /**
    * The payout payment reference
@@ -290,7 +290,7 @@ export namespace PayoutListResponse {
     /**
      * The payout metadata
      */
-    metadata?: Record<string, unknown>;
+    metadata?: { [key: string]: unknown };
 
     /**
      * The payout payment reference
@@ -370,7 +370,7 @@ export interface PayoutCreateParams {
    * This can be used to store any additional information you need to associate with
    * this payout.
    */
-  metadata?: Record<string, unknown>;
+  metadata?: { [key: string]: unknown };
 
   /**
    * The payout payment reference. This is visible to the receiving party, if
