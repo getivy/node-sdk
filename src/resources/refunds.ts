@@ -9,6 +9,8 @@ export class Refunds extends APIResource {
    * Ivy's internal `orderId` or by the `referenceId` provided by the merchant during
    * checkout creation. If the refund should only be partial, you can specifiy this
    * with the `amount` parameter.
+   *
+   * @deprecated
    */
   create(body: RefundCreateParams, options?: Core.RequestOptions): Core.APIPromise<RefundCreateResponse> {
     return this._client.post('/api/service/merchant/payment/refund', { body, ...options });
@@ -20,6 +22,8 @@ export class Refunds extends APIResource {
    * ("referenceId"). If only a partial amount should be refunded the desired amount
    * can be set with the "amount" parameter. Additional information regarding the
    * refund can be provided through the "description" parameter.
+   *
+   * @deprecated
    */
   batch(body: RefundBatchParams, options?: Core.RequestOptions): Core.APIPromise<RefundBatchResponse> {
     return this._client.post('/api/service/merchant/payment/refund/batch', { body, ...options });
