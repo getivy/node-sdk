@@ -8,6 +8,8 @@ export class Reports extends APIResource {
    * Create a Payout Report for a given timerange. A Payout Report is generated
    * async. Please follow [this guide](https://docs.getivy.de/docs/payout-report-1)
    * to learn more in detail.
+   *
+   * @deprecated
    */
   create(body: ReportCreateParams, options?: Core.RequestOptions): Core.APIPromise<ReportCreateResponse> {
     return this._client.post('/api/service/merchant/payout/export/create', { body, ...options });
@@ -27,6 +29,8 @@ export class Reports extends APIResource {
   /**
    * Download the actual Payout Report once the creation succeeded with this
    * endpoint.
+   *
+   * @deprecated
    */
   download(body: ReportDownloadParams, options?: Core.RequestOptions): Core.APIPromise<void> {
     return this._client.post('/api/service/merchant/payout/export/download', {
