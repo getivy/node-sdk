@@ -23,6 +23,7 @@ The full API of this library can be found in [api.md](api.md).
 import Ivy from '@getivy/node-sdk';
 
 const client = new Ivy({
+  apiKey: process.env['IVY_API_KEY'], // This is the default and can be omitted
   environment: 'sandbox', // defaults to 'production'
 });
 
@@ -40,6 +41,7 @@ This library includes TypeScript definitions for all request params and response
 import Ivy from '@getivy/node-sdk';
 
 const client = new Ivy({
+  apiKey: process.env['IVY_API_KEY'], // This is the default and can be omitted
   environment: 'sandbox', // defaults to 'production'
 });
 
