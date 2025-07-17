@@ -31,56 +31,208 @@ export class Payouts extends APIResource {
 
 export interface PayoutCreateResponse {
   /**
-   * The unique Refund id
+   * The payout ID
    */
   id: string;
 
   /**
-   * The amount of the refund in decimals.
+   * The payout amount
    */
   amount: number;
 
   /**
-   * Refund's currency.
+   * The payout created at
+   */
+  createdAt: unknown;
+
+  /**
+   * The payout currency
    */
   currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
-   * The id of the refunded order
+   * The payout destination
    */
-  orderId: string;
+  destination: PayoutCreateResponse.Destination;
 
   /**
-   * The current status of this refund.
+   * The payout status
    */
-  status: 'initiated' | 'pending' | 'succeeded' | 'failed';
+  status: 'paid' | 'pending' | 'in_transit' | 'failed' | 'canceled';
+
+  /**
+   * The payout type
+   */
+  type: 'beneficiary' | 'customer';
+
+  /**
+   * The payout updated at
+   */
+  updatedAt: unknown;
+
+  /**
+   * The payout metadata
+   */
+  metadata?: { [key: string]: unknown };
+
+  /**
+   * The payout payment reference
+   */
+  paymentReference?: string;
+}
+
+export namespace PayoutCreateResponse {
+  /**
+   * The payout destination
+   */
+  export interface Destination {
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+
+    bankCode?: Destination.BankCode;
+
+    bban?: Destination.Bban;
+
+    iban?: Destination.Iban;
+
+    sortCode?: Destination.SortCode;
+  }
+
+  export namespace Destination {
+    export interface BankCode {
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      code: string;
+    }
+
+    export interface Bban {
+      accountHolderName: string;
+
+      bban: string;
+
+      bic?: string;
+    }
+
+    export interface Iban {
+      accountHolderName: string;
+
+      iban: string;
+
+      bic?: string;
+    }
+
+    export interface SortCode {
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      sortCode: string;
+    }
+  }
 }
 
 export interface PayoutRetrieveResponse {
   /**
-   * The unique Refund id
+   * The payout ID
    */
   id: string;
 
   /**
-   * The amount of the refund in decimals.
+   * The payout amount
    */
   amount: number;
 
   /**
-   * Refund's currency.
+   * The payout created at
+   */
+  createdAt: unknown;
+
+  /**
+   * The payout currency
    */
   currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
-   * The id of the refunded order
+   * The payout destination
    */
-  orderId: string;
+  destination: PayoutRetrieveResponse.Destination;
 
   /**
-   * The current status of this refund.
+   * The payout status
    */
-  status: 'initiated' | 'pending' | 'succeeded' | 'failed';
+  status: 'paid' | 'pending' | 'in_transit' | 'failed' | 'canceled';
+
+  /**
+   * The payout type
+   */
+  type: 'beneficiary' | 'customer';
+
+  /**
+   * The payout updated at
+   */
+  updatedAt: unknown;
+
+  /**
+   * The payout metadata
+   */
+  metadata?: { [key: string]: unknown };
+
+  /**
+   * The payout payment reference
+   */
+  paymentReference?: string;
+}
+
+export namespace PayoutRetrieveResponse {
+  /**
+   * The payout destination
+   */
+  export interface Destination {
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+
+    bankCode?: Destination.BankCode;
+
+    bban?: Destination.Bban;
+
+    iban?: Destination.Iban;
+
+    sortCode?: Destination.SortCode;
+  }
+
+  export namespace Destination {
+    export interface BankCode {
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      code: string;
+    }
+
+    export interface Bban {
+      accountHolderName: string;
+
+      bban: string;
+
+      bic?: string;
+    }
+
+    export interface Iban {
+      accountHolderName: string;
+
+      iban: string;
+
+      bic?: string;
+    }
+
+    export interface SortCode {
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      sortCode: string;
+    }
+  }
 }
 
 export interface PayoutListResponse {
