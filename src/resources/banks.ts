@@ -312,6 +312,9 @@ export interface BankRetrieveResponse {
     | 'SEK_ACCOUNT_TO_ACCOUNT'
     | 'SUMCLEARING'
     | 'STRAKSCLEARING'
+    | 'SWIFT'
+    | 'INTERNAL'
+    | 'TARGET'
   >;
 
   /**
@@ -643,6 +646,9 @@ export namespace BankListResponse {
       | 'SEK_ACCOUNT_TO_ACCOUNT'
       | 'SUMCLEARING'
       | 'STRAKSCLEARING'
+      | 'SWIFT'
+      | 'INTERNAL'
+      | 'TARGET'
     >;
 
     /**
@@ -975,6 +981,9 @@ export namespace BankSearchResponse {
       | 'SEK_ACCOUNT_TO_ACCOUNT'
       | 'SUMCLEARING'
       | 'STRAKSCLEARING'
+      | 'SWIFT'
+      | 'INTERNAL'
+      | 'TARGET'
     >;
 
     /**
