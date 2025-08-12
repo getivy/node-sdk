@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource charges', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.charges.create({
       idempotencyKey: 'idempotencyKey',
@@ -27,7 +27,7 @@ describe('resource charges', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.charges.create({
       idempotencyKey: 'idempotencyKey',

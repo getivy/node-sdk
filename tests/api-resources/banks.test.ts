@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource banks', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.banks.retrieve({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
@@ -21,12 +21,12 @@ describe('resource banks', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.banks.retrieve({ id: 'id' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.banks.list({});
     const rawResponse = await responsePromise.asResponse();
@@ -38,7 +38,7 @@ describe('resource banks', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('search', async () => {
     const responsePromise = client.banks.search({});
     const rawResponse = await responsePromise.asResponse();

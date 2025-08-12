@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource reports', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.reports.create({ intervalEnd: 0, intervalStart: 0 });
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource reports', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.reports.create({
       intervalEnd: 0,
@@ -31,7 +31,7 @@ describe('resource reports', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.reports.retrieve({ reportId: 'reportId' });
     const rawResponse = await responsePromise.asResponse();
@@ -43,12 +43,12 @@ describe('resource reports', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.reports.retrieve({ reportId: 'reportId' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('download: only required params', async () => {
     const responsePromise = client.reports.download({ reportId: 'reportId' });
     const rawResponse = await responsePromise.asResponse();
@@ -60,7 +60,7 @@ describe('resource reports', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('download: required and optional params', async () => {
     const response = await client.reports.download({ reportId: 'reportId', format: 'csv' });
   });
