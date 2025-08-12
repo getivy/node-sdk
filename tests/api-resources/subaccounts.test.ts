@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource subaccounts', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.subaccounts.create({ legalName: 'legalName', mcc: 'mcc' });
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource subaccounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.subaccounts.create({
       legalName: 'legalName',
@@ -30,7 +30,7 @@ describe('resource subaccounts', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.subaccounts.retrieve({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
@@ -42,7 +42,7 @@ describe('resource subaccounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.subaccounts.retrieve({ id: 'id' });
   });

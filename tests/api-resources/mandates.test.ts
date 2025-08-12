@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource mandates', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.mandates.retrieve({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
     const rawResponse = await responsePromise.asResponse();
@@ -21,12 +21,12 @@ describe('resource mandates', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.mandates.retrieve({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('lookup: only required params', async () => {
     const responsePromise = client.mandates.lookup({ referenceId: 'referenceId' });
     const rawResponse = await responsePromise.asResponse();
@@ -38,12 +38,12 @@ describe('resource mandates', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('lookup: required and optional params', async () => {
     const response = await client.mandates.lookup({ referenceId: 'referenceId' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('revoke: only required params', async () => {
     const responsePromise = client.mandates.revoke({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
     const rawResponse = await responsePromise.asResponse();
@@ -55,7 +55,7 @@ describe('resource mandates', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('revoke: required and optional params', async () => {
     const response = await client.mandates.revoke({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
   });
