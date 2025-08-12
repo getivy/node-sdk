@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource checkoutsession', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.checkoutsession.create({
       price: { currency: 'EUR', total: 1.01 },
@@ -24,7 +24,7 @@ describe('resource checkoutsession', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.checkoutsession.create({
       price: { currency: 'EUR', total: 1.01, shipping: 0, subTotal: 0, totalNet: 0, vat: 0 },
@@ -90,7 +90,7 @@ describe('resource checkoutsession', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.checkoutsession.retrieve({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
@@ -102,12 +102,12 @@ describe('resource checkoutsession', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.checkoutsession.retrieve({ id: 'id' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('expire: only required params', async () => {
     const responsePromise = client.checkoutsession.expire({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
@@ -119,7 +119,7 @@ describe('resource checkoutsession', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('expire: required and optional params', async () => {
     const response = await client.checkoutsession.expire({ id: 'id' });
   });
