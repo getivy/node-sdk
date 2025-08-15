@@ -41,8 +41,6 @@ export interface SubaccountCreateResponse {
 
   updatedAt: unknown;
 
-  themeName?: 'default' | 'kraken' | 'inpay';
-
   websiteUrl?: string;
 }
 
@@ -60,8 +58,6 @@ export interface SubaccountRetrieveResponse {
   status: 'active' | 'inactive';
 
   updatedAt: unknown;
-
-  themeName?: 'default' | 'kraken' | 'inpay';
 
   websiteUrl?: string;
 }
