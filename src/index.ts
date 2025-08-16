@@ -294,6 +294,7 @@ Ivy.Reports = Reports;
 Ivy.Subaccounts = Subaccounts;
 Ivy.Balance = Balance;
 Ivy.Webhooksubscription = Webhooksubscription;
+
 export declare namespace Ivy {
   export type RequestOptions = Core.RequestOptions;
 
