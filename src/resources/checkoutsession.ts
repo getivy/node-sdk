@@ -344,7 +344,7 @@ export interface CheckoutsessionCreateResponse {
 
   incentiveMode?: string;
 
-  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
+  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'fi' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
 
   mandate?: CheckoutsessionCreateResponse.Mandate;
 
@@ -1859,7 +1859,7 @@ export interface CheckoutsessionRetrieveResponse {
 
   incentiveMode?: string;
 
-  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
+  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'fi' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
 
   mandate?: CheckoutsessionRetrieveResponse.Mandate;
 
@@ -3374,7 +3374,7 @@ export interface CheckoutsessionExpireResponse {
 
   incentiveMode?: string;
 
-  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
+  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'fi' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
 
   mandate?: CheckoutsessionExpireResponse.Mandate;
 
@@ -4647,7 +4647,7 @@ export interface CheckoutsessionCreateParams {
    */
   lineItems?: Array<CheckoutsessionCreateParams.LineItem>;
 
-  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
+  locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'fi' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
 
   mandate?: CheckoutsessionCreateParams.Mandate;
 
