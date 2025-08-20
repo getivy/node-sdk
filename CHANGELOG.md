@@ -1,5 +1,49 @@
 # Changelog
 
+## 0.1.0-alpha.35 (2025-08-20)
+
+Full Changelog: [v0.1.0-alpha.34...v0.1.0-alpha.35](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.34...v0.1.0-alpha.35)
+
+### Features
+
+* **api:** api update ([9ea8d22](https://github.com/getivy/node-sdk/commit/9ea8d22962577e845cefc03fb0ca9d5577735d93))
+* **api:** api update ([3f0fce6](https://github.com/getivy/node-sdk/commit/3f0fce64d5f51e69cc5263c5177dfc7f4d8f4e2c))
+* **api:** api update ([d555cb4](https://github.com/getivy/node-sdk/commit/d555cb49b38b09e81acfd471becb7f4e720f34c7))
+* **api:** api update ([9ac025d](https://github.com/getivy/node-sdk/commit/9ac025d1085512e61b1ef2be5dc881201e58976f))
+* **api:** api update ([e3406a9](https://github.com/getivy/node-sdk/commit/e3406a9d9efc6362f7719296c9b056db32f509c8))
+* **api:** api update ([d7552fc](https://github.com/getivy/node-sdk/commit/d7552fc714c5c86259f7a00670d2bcefe4b9c315))
+* **api:** api update ([8ca2e12](https://github.com/getivy/node-sdk/commit/8ca2e12c4a7d4737045c5f9d8074594ddd0db021))
+* **api:** api update ([8392efe](https://github.com/getivy/node-sdk/commit/8392efede0e9e89538ddb94c7a139c7807484f98))
+* **api:** api update ([025e32c](https://github.com/getivy/node-sdk/commit/025e32cf9187e9531d85661856e54cf24166de0b))
+* clean up environment call outs ([e60ba00](https://github.com/getivy/node-sdk/commit/e60ba0025ef0910b90ce9faa176821ebcde8a0eb))
+* **client:** add support for endpoint-specific base URLs ([a21ab1c](https://github.com/getivy/node-sdk/commit/a21ab1c5e027aa3fb06f9df4b6370197265816ee))
+
+
+### Bug Fixes
+
+* **ci:** release-doctor — report correct token name ([cea50d8](https://github.com/getivy/node-sdk/commit/cea50d83fbda77622ed15c346d059ef48259ccf6))
+* **client:** don't send `Content-Type` for bodyless methods ([d168a40](https://github.com/getivy/node-sdk/commit/d168a4080c4d38d255327577eea59361ef2b461b))
+
+
+### Chores
+
+* **ci:** enable for pull requests ([ba345e0](https://github.com/getivy/node-sdk/commit/ba345e0e07eac436a234b999b33aadcc75f461f3))
+* **ci:** only run for pushes and fork pull requests ([eae26fe](https://github.com/getivy/node-sdk/commit/eae26feab3b77ab64fa2f046edb16127b4737eda))
+* **deps:** update dependency node-fetch to v2.6.13 ([d53000c](https://github.com/getivy/node-sdk/commit/d53000c550bdf280cbe54c17ec6b38beb3bdfae0))
+* **internal:** codegen related update ([06814eb](https://github.com/getivy/node-sdk/commit/06814ebbfe8949bc1c9d975bf2c91d55971a4933))
+* **internal:** formatting change ([b733c56](https://github.com/getivy/node-sdk/commit/b733c5651951288cfd86ccf09d1ed076d86c2bef))
+* **internal:** move publish config ([34ec54f](https://github.com/getivy/node-sdk/commit/34ec54fd87b739c842bdc6d5f82cac2cef26c421))
+* **internal:** remove redundant imports config ([25d968b](https://github.com/getivy/node-sdk/commit/25d968b7690beb7a54ab8b26cc2190058969ff3c))
+* **internal:** update comment in script ([0c9aa31](https://github.com/getivy/node-sdk/commit/0c9aa31bbe4faf98bf4daf2318ac60756a91713e))
+* make some internal functions async ([7f85119](https://github.com/getivy/node-sdk/commit/7f85119084db08792bc7b4744fc1ffae8c601e61))
+* mention unit type in timeout docs ([de12752](https://github.com/getivy/node-sdk/commit/de127529766dd7f2542ab3fecadfba6712169767))
+* update @stainless-api/prism-cli to v5.15.0 ([7c221bd](https://github.com/getivy/node-sdk/commit/7c221bd06808e1674d31aff20a511f7db7fc6d90))
+
+
+### Refactors
+
+* **types:** replace Record with mapped types ([fa906eb](https://github.com/getivy/node-sdk/commit/fa906ebd60f2b857cf9e7c778c4de94f63138e60))
+
 ## 0.1.0-alpha.34 (2025-06-14)
 
 Full Changelog: [v0.1.0-alpha.33...v0.1.0-alpha.34](https://github.com/getivy/node-sdk/compare/v0.1.0-alpha.33...v0.1.0-alpha.34)
