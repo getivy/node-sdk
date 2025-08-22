@@ -94,6 +94,8 @@ import {
   Subaccounts,
 } from './resources/subaccounts';
 import { TransactionListParams, TransactionListResponse, Transactions } from './resources/transactions';
+import { Data } from './resources/data/data';
+import { Webhook, WebhookTriggerParams, WebhookTriggerResponse } from './resources/webhook/webhook';
 
 const environments = {
   production: 'https://api.getivy.de',
@@ -236,6 +238,7 @@ export class Ivy extends Core.APIClient {
 
   banks: API.Banks = new API.Banks(this);
   checkoutsession: API.Checkoutsession = new API.Checkoutsession(this);
+  data: API.Data = new API.Data(this);
   customers: API.Customers = new API.Customers(this);
   orders: API.Orders = new API.Orders(this);
   charges: API.Charges = new API.Charges(this);
@@ -250,6 +253,7 @@ export class Ivy extends Core.APIClient {
   payouts: API.Payouts = new API.Payouts(this);
   subaccounts: API.Subaccounts = new API.Subaccounts(this);
   balance: API.Balance = new API.Balance(this);
+  webhook: API.Webhook = new API.Webhook(this);
 
   /**
    * Check whether the base URL is set to its default.
@@ -296,6 +300,7 @@ export class Ivy extends Core.APIClient {
 
 Ivy.Banks = Banks;
 Ivy.Checkoutsession = Checkoutsession;
+Ivy.Data = Data;
 Ivy.Customers = Customers;
 Ivy.Orders = Orders;
 Ivy.Charges = Charges;
@@ -310,6 +315,7 @@ Ivy.Refunds = Refunds;
 Ivy.Payouts = Payouts;
 Ivy.Subaccounts = Subaccounts;
 Ivy.Balance = Balance;
+Ivy.Webhook = Webhook;
 
 export declare namespace Ivy {
   export type RequestOptions = Core.RequestOptions;
@@ -333,6 +339,8 @@ export declare namespace Ivy {
     type CheckoutsessionRetrieveParams as CheckoutsessionRetrieveParams,
     type CheckoutsessionExpireParams as CheckoutsessionExpireParams,
   };
+
+  export { Data as Data };
 
   export {
     Customers as Customers,
@@ -436,6 +444,12 @@ export declare namespace Ivy {
     Balance as Balance,
     type BalanceRetrieveResponse as BalanceRetrieveResponse,
     type BalanceRetrieveParams as BalanceRetrieveParams,
+  };
+
+  export {
+    Webhook as Webhook,
+    type WebhookTriggerResponse as WebhookTriggerResponse,
+    type WebhookTriggerParams as WebhookTriggerParams,
   };
 }
 
