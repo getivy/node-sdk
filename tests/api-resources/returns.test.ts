@@ -8,10 +8,10 @@ const client = new Ivy({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource reports', () => {
+describe('resource returns', () => {
   // Prism tests are disabled
   test.skip('create: only required params', async () => {
-    const responsePromise = client.reports.create({ intervalEnd: 0, intervalStart: 0 });
+    const responsePromise = client.returns.create({ depositId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,17 +23,12 @@ describe('resource reports', () => {
 
   // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
-    const response = await client.reports.create({
-      intervalEnd: 0,
-      intervalStart: 0,
-      currency: 'EUR',
-      webhookUrl: 'webhookUrl',
-    });
+    const response = await client.returns.create({ depositId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
   });
 
   // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.reports.retrieve({ reportId: 'reportId' });
+    const responsePromise = client.returns.retrieve({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -45,23 +40,6 @@ describe('resource reports', () => {
 
   // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.reports.retrieve({ reportId: 'reportId' });
-  });
-
-  // Prism tests are disabled
-  test.skip('download: only required params', async () => {
-    const responsePromise = client.reports.download({ reportId: 'reportId' });
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // Prism tests are disabled
-  test.skip('download: required and optional params', async () => {
-    const response = await client.reports.download({ reportId: 'reportId', format: 'csv' });
+    const response = await client.returns.retrieve({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
   });
 });

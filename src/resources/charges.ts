@@ -7,12 +7,12 @@ export class Charges extends APIResource {
   /**
    * Creates a Direct Debit Charge with a valid mandate.
    */
-  create(body: ChargeCreateParams, options?: Core.RequestOptions): Core.APIPromise<ChargeCreateResponse> {
+  create(body: ChargeCreateParams, options?: Core.RequestOptions): Core.APIPromise<Charge> {
     return this._client.post('/api/service/charge/create', { body, ...options });
   }
 }
 
-export interface ChargeCreateResponse {
+export interface Charge {
   /**
    * The unique identifier of the created charge
    */
@@ -100,5 +100,5 @@ export namespace ChargeCreateParams {
 }
 
 export declare namespace Charges {
-  export { type ChargeCreateResponse as ChargeCreateResponse, type ChargeCreateParams as ChargeCreateParams };
+  export { type Charge as Charge, type ChargeCreateParams as ChargeCreateParams };
 }

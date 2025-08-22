@@ -8,32 +8,10 @@ const client = new Ivy({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource refunds', () => {
-  // Prism tests are disabled
-  test.skip('create: only required params', async () => {
-    const responsePromise = client.refunds.create({ amount: 0 });
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // Prism tests are disabled
-  test.skip('create: required and optional params', async () => {
-    const response = await client.refunds.create({
-      amount: 0,
-      bankStatementReference: 'bankStatementReference',
-      orderId: 'orderId',
-      referenceId: 'referenceId',
-    });
-  });
-
+describe('resource fx', () => {
   // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.refunds.retrieve({ id: 'id' });
+    const responsePromise = client.fx.retrieve({ fxId: 'fxId' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -45,6 +23,27 @@ describe('resource refunds', () => {
 
   // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.refunds.retrieve({ id: 'id' });
+    const response = await client.fx.retrieve({ fxId: 'fxId' });
+  });
+
+  // Prism tests are disabled
+  test.skip('retrieveRate: only required params', async () => {
+    const responsePromise = client.fx.retrieveRate({ sourceCurrency: 'EUR', targetCurrency: 'EUR' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('retrieveRate: required and optional params', async () => {
+    const response = await client.fx.retrieveRate({
+      sourceCurrency: 'EUR',
+      targetCurrency: 'EUR',
+      sourceAmount: 'sourceAmount',
+    });
   });
 });

@@ -10,8 +10,9 @@ export {
   type BankListParams,
   type BankSearchParams,
 } from './banks';
+export { BeneficiaryPayouts, type BeneficiaryPayoutCreateResponse } from './beneficiary-payouts';
 export { Capabilities, type CapabilityRetrieveResponse, type CapabilityRetrieveParams } from './capabilities';
-export { Charges, type ChargeCreateResponse, type ChargeCreateParams } from './charges';
+export { Charges, type Charge, type ChargeCreateParams } from './charges';
 export {
   Checkoutsession,
   type CheckoutsessionCreateResponse,
@@ -25,13 +26,22 @@ export {
   Customers,
   type CustomerCreateResponse,
   type CustomerRetrieveResponse,
+  type CustomerSearchResponse,
   type CustomerCreateParams,
   type CustomerRetrieveParams,
+  type CustomerSearchParams,
 } from './customers';
-export { Data } from './data/data';
+export { Deposits, type DepositRetrieveResponse, type DepositRetrieveParams } from './deposits';
+export {
+  Fx,
+  type FxRetrieveResponse,
+  type FxRetrieveRateResponse,
+  type FxRetrieveParams,
+  type FxRetrieveRateParams,
+} from './fx';
 export {
   Mandates,
-  type MandateRetrieveResponse,
+  type Mandate,
   type MandateLookupResponse,
   type MandateRevokeResponse,
   type MandateRetrieveParams,
@@ -42,12 +52,14 @@ export {
   Orders,
   type OrderCreateResponse,
   type OrderRetrieveResponse,
+  type OrderExpireResponse,
   type OrderCreateParams,
   type OrderRetrieveParams,
+  type OrderExpireParams,
 } from './orders';
 export {
   Payouts,
-  type PayoutCreateResponse,
+  type Payout,
   type PayoutRetrieveResponse,
   type PayoutListResponse,
   type PayoutCreateParams,
@@ -56,24 +68,24 @@ export {
 } from './payouts';
 export {
   Refunds,
+  type Refund,
   type RefundCreateResponse,
-  type RefundBatchResponse,
+  type RefundRetrieveResponse,
   type RefundCreateParams,
-  type RefundBatchParams,
+  type RefundRetrieveParams,
 } from './refunds';
 export {
-  Reports,
-  type ReportCreateResponse,
-  type ReportRetrieveResponse,
-  type ReportCreateParams,
-  type ReportRetrieveParams,
-  type ReportDownloadParams,
-} from './reports';
+  Returns,
+  type ReturnCreateResponse,
+  type ReturnRetrieveResponse,
+  type ReturnCreateParams,
+  type ReturnRetrieveParams,
+} from './returns';
 export {
   Subaccounts,
+  type Subaccount,
   type SubaccountCreateResponse,
-  type SubaccountRetrieveResponse,
   type SubaccountCreateParams,
   type SubaccountRetrieveParams,
 } from './subaccounts';
-export { Webhooksubscription } from './webhooksubscription';
+export { Transactions, type TransactionListResponse, type TransactionListParams } from './transactions';
