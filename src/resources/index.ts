@@ -31,6 +31,7 @@ export {
   type CustomerRetrieveParams,
   type CustomerSearchParams,
 } from './customers';
+export { Data } from './data/data';
 export { Deposits, type DepositRetrieveResponse, type DepositRetrieveParams } from './deposits';
 export {
   Fx,
@@ -89,3 +90,4 @@ export {
   type SubaccountRetrieveParams,
 } from './subaccounts';
 export { Transactions, type TransactionListResponse, type TransactionListParams } from './transactions';
+export { Webhook, type WebhookTriggerResponse, type WebhookTriggerParams } from './webhook/webhook';
