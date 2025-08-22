@@ -42,4 +42,21 @@ describe('resource customers', () => {
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.customers.retrieve({ id: 'id' });
   });
+
+  // Prism tests are disabled
+  test.skip('search: only required params', async () => {
+    const responsePromise = client.customers.search({ email: 'email' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('search: required and optional params', async () => {
+    const response = await client.customers.search({ email: 'email', limit: 1, skip: 1 });
+  });
 });

@@ -7,7 +7,7 @@ export class Payouts extends APIResource {
   /**
    * Create a payout for a merchant.
    */
-  create(body: PayoutCreateParams, options?: Core.RequestOptions): Core.APIPromise<PayoutCreateResponse> {
+  create(body: PayoutCreateParams, options?: Core.RequestOptions): Core.APIPromise<Payout> {
     return this._client.post('/api/service/payout/create', { body, ...options });
   }
 
@@ -29,7 +29,7 @@ export class Payouts extends APIResource {
   }
 }
 
-export interface PayoutCreateResponse {
+export interface Payout {
   /**
    * The payout ID
    */
@@ -53,7 +53,7 @@ export interface PayoutCreateResponse {
   /**
    * The payout destination
    */
-  destination: PayoutCreateResponse.Destination;
+  destination: Payout.Destination;
 
   /**
    * The payout status
@@ -81,7 +81,7 @@ export interface PayoutCreateResponse {
   paymentReference?: string;
 }
 
-export namespace PayoutCreateResponse {
+export namespace Payout {
   /**
    * The payout destination
    */
@@ -457,7 +457,7 @@ export interface PayoutListParams {
 
 export declare namespace Payouts {
   export {
-    type PayoutCreateResponse as PayoutCreateResponse,
+    type Payout as Payout,
     type PayoutRetrieveResponse as PayoutRetrieveResponse,
     type PayoutListResponse as PayoutListResponse,
     type PayoutCreateParams as PayoutCreateParams,
