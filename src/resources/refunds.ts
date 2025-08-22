@@ -5,32 +5,27 @@ import * as Core from '../core';
 
 export class Refunds extends APIResource {
   /**
-   * Initiates a refund for the specified order. The order can be specified either by
+   * Creates a refund for the specified order. The order can be specified either by
    * Ivy's internal `orderId` or by the `referenceId` provided by the merchant during
    * checkout creation. If the refund should only be partial, you can specifiy this
    * with the `amount` parameter.
-   *
-   * @deprecated
    */
   create(body: RefundCreateParams, options?: Core.RequestOptions): Core.APIPromise<RefundCreateResponse> {
-    return this._client.post('/api/service/merchant/payment/refund', { body, ...options });
+    return this._client.post('/api/service/refund/create', { body, ...options });
   }
 
   /**
-   * Initiates a batch refund for all provided orders. The orders can be specified
-   * either by Ivy's internal id ("orderId") or by id provided by the merchant
-   * ("referenceId"). If only a partial amount should be refunded the desired amount
-   * can be set with the "amount" parameter. Additional information regarding the
-   * refund can be provided through the "description" parameter.
-   *
-   * @deprecated
+   * Returns refund details and Id of refunded order.
    */
-  batch(body: RefundBatchParams, options?: Core.RequestOptions): Core.APIPromise<RefundBatchResponse> {
-    return this._client.post('/api/service/merchant/payment/refund/batch', { body, ...options });
+  retrieve(
+    body: RefundRetrieveParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<RefundRetrieveResponse> {
+    return this._client.post('/api/service/refund/retrieve', { body, ...options });
   }
 }
 
-export interface RefundCreateResponse {
+export interface Refund {
   orderId: string;
 
   orderStatus:
@@ -52,75 +47,96 @@ export interface RefundCreateResponse {
   refundStatus: 'pending' | 'succeeded' | 'failed' | 'requires_action' | 'partially_refunded';
 }
 
-export interface RefundBatchResponse {
-  requestedRefunds: Array<RefundBatchResponse.RequestedRefund>;
+export interface RefundCreateResponse {
+  /**
+   * The unique Refund id
+   */
+  id: string;
+
+  /**
+   * The amount of the refund in decimals.
+   */
+  amount: number;
+
+  /**
+   * Refund's currency.
+   */
+  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+
+  /**
+   * The id of the refunded order
+   */
+  orderId: string;
+
+  /**
+   * The current status of this refund.
+   */
+  status: 'initiated' | 'pending' | 'succeeded' | 'failed';
 }
 
-export namespace RefundBatchResponse {
-  export interface RequestedRefund {
-    orderId: unknown;
+export interface RefundRetrieveResponse {
+  /**
+   * The unique Refund id
+   */
+  id: string;
 
-    error?: string;
+  /**
+   * The amount of the refund in decimals.
+   */
+  amount: number;
 
-    orderStatus?:
-      | 'failed'
-      | 'canceled'
-      | 'processing'
-      | 'waiting_for_payment'
-      | 'paid'
-      | 'in_refund'
-      | 'refunded'
-      | 'refund_failed'
-      | 'partially_refunded'
-      | 'in_dispute'
-      | 'disputed'
-      | 'refused';
+  /**
+   * Refund's currency.
+   */
+  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
-    referenceId?: string;
+  /**
+   * The id of the refunded order
+   */
+  orderId: string;
 
-    refundStatus?: 'pending' | 'succeeded' | 'failed' | 'requires_action' | 'partially_refunded';
-  }
+  /**
+   * The current status of this refund.
+   */
+  status: 'initiated' | 'pending' | 'succeeded' | 'failed';
 }
 
 export interface RefundCreateParams {
   amount: number;
 
-  description?: string;
+  /**
+   * An optional custom text that will be shown on the customer's payment reference.
+   * Input has to be maximum 16 alpha-numeric characters. If not provided, a default
+   * Ivy refund referenceId will be shown.
+   */
+  bankStatementReference?: string;
 
-  displayedPaymentReference?: string;
+  /**
+   * The internal Ivy id of the order. Must be present in request body if referenceId
+   * is not provided
+   */
+  orderId?: string;
 
-  email?: string;
-
-  orderId?: unknown;
-
+  /**
+   * The external id set by the merchant during checkout creation. Required if
+   * orderId is not passed.
+   */
   referenceId?: string;
 }
 
-export interface RefundBatchParams {
-  requestedRefunds: Array<RefundBatchParams.RequestedRefund>;
-}
-
-export namespace RefundBatchParams {
-  export interface RequestedRefund {
-    amount: number;
-
-    description?: string;
-
-    displayedPaymentReference?: string;
-
-    email?: string;
-
-    orderId?: unknown;
-
-    referenceId?: string;
-  }
+export interface RefundRetrieveParams {
+  /**
+   * Id of refund to retrieve details
+   */
+  id: string;
 }
 
 export declare namespace Refunds {
   export {
+    type Refund as Refund,
     type RefundCreateResponse as RefundCreateResponse,
-    type RefundBatchResponse as RefundBatchResponse,
+    type RefundRetrieveResponse as RefundRetrieveResponse,
     type RefundCreateParams as RefundCreateParams,
-    type RefundBatchParams as RefundBatchParams,
+    type RefundRetrieveParams as RefundRetrieveParams,
   };
 }

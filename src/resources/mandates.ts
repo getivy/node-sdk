@@ -7,10 +7,7 @@ export class Mandates extends APIResource {
   /**
    * Retrieves a direct debit mandate with mandate id.
    */
-  retrieve(
-    body: MandateRetrieveParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<MandateRetrieveResponse> {
+  retrieve(body: MandateRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<Mandate> {
     return this._client.post('/api/service/mandate/retrieve', { body, ...options });
   }
 
@@ -29,18 +26,18 @@ export class Mandates extends APIResource {
   }
 }
 
-export interface MandateRetrieveResponse {
+export interface Mandate {
   id: string;
 
-  creditor: MandateRetrieveResponse.Creditor;
+  creditor: Mandate.Creditor;
 
-  debtor: MandateRetrieveResponse.Debtor;
+  debtor: Mandate.Debtor;
 
   reference: string;
 
   referenceId: string;
 
-  signature: MandateRetrieveResponse.Signature;
+  signature: Mandate.Signature;
 
   status: 'pending' | 'active' | 'inactive';
 
@@ -49,7 +46,7 @@ export interface MandateRetrieveResponse {
   userNotificationEmail?: string;
 }
 
-export namespace MandateRetrieveResponse {
+export namespace Mandate {
   export interface Creditor {
     id: string;
 
@@ -190,7 +187,7 @@ export interface MandateRevokeParams {
 
 export declare namespace Mandates {
   export {
-    type MandateRetrieveResponse as MandateRetrieveResponse,
+    type Mandate as Mandate,
     type MandateLookupResponse as MandateLookupResponse,
     type MandateRevokeResponse as MandateRevokeResponse,
     type MandateRetrieveParams as MandateRetrieveParams,

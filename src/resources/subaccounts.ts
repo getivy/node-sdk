@@ -18,15 +18,12 @@ export class Subaccounts extends APIResource {
   /**
    * Retrieve a Subaccount by id.
    */
-  retrieve(
-    body: SubaccountRetrieveParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<SubaccountRetrieveResponse> {
+  retrieve(body: SubaccountRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<Subaccount> {
     return this._client.post('/api/service/subaccount/retrieve', { body, ...options });
   }
 }
 
-export interface SubaccountCreateResponse {
+export interface Subaccount {
   id: string;
 
   createdAt: unknown;
@@ -44,7 +41,7 @@ export interface SubaccountCreateResponse {
   websiteUrl?: string;
 }
 
-export interface SubaccountRetrieveResponse {
+export interface SubaccountCreateResponse {
   id: string;
 
   createdAt: unknown;
@@ -90,8 +87,8 @@ export interface SubaccountRetrieveParams {
 
 export declare namespace Subaccounts {
   export {
+    type Subaccount as Subaccount,
     type SubaccountCreateResponse as SubaccountCreateResponse,
-    type SubaccountRetrieveResponse as SubaccountRetrieveResponse,
     type SubaccountCreateParams as SubaccountCreateParams,
     type SubaccountRetrieveParams as SubaccountRetrieveParams,
   };
