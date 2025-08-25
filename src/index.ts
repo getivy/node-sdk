@@ -17,7 +17,6 @@ import {
 } from './resources/banks';
 import { BeneficiaryPayoutCreateResponse, BeneficiaryPayouts } from './resources/beneficiary-payouts';
 import { Capabilities, CapabilityRetrieveParams, CapabilityRetrieveResponse } from './resources/capabilities';
-import { Charge, ChargeCreateParams, Charges } from './resources/charges';
 import {
   Checkoutsession,
   CheckoutsessionCreateParams,
@@ -44,15 +43,6 @@ import {
   FxRetrieveRateResponse,
   FxRetrieveResponse,
 } from './resources/fx';
-import {
-  Mandate,
-  MandateLookupParams,
-  MandateLookupResponse,
-  MandateRetrieveParams,
-  MandateRevokeParams,
-  MandateRevokeResponse,
-  Mandates,
-} from './resources/mandates';
 import {
   OrderCreateParams,
   OrderCreateResponse,
@@ -241,13 +231,11 @@ export class Ivy extends Core.APIClient {
   data: API.Data = new API.Data(this);
   customers: API.Customers = new API.Customers(this);
   orders: API.Orders = new API.Orders(this);
-  charges: API.Charges = new API.Charges(this);
   deposits: API.Deposits = new API.Deposits(this);
   returns: API.Returns = new API.Returns(this);
   fx: API.Fx = new API.Fx(this);
   beneficiaryPayouts: API.BeneficiaryPayouts = new API.BeneficiaryPayouts(this);
   transactions: API.Transactions = new API.Transactions(this);
-  mandates: API.Mandates = new API.Mandates(this);
   capabilities: API.Capabilities = new API.Capabilities(this);
   refunds: API.Refunds = new API.Refunds(this);
   payouts: API.Payouts = new API.Payouts(this);
@@ -303,13 +291,11 @@ Ivy.Checkoutsession = Checkoutsession;
 Ivy.Data = Data;
 Ivy.Customers = Customers;
 Ivy.Orders = Orders;
-Ivy.Charges = Charges;
 Ivy.Deposits = Deposits;
 Ivy.Returns = Returns;
 Ivy.Fx = Fx;
 Ivy.BeneficiaryPayouts = BeneficiaryPayouts;
 Ivy.Transactions = Transactions;
-Ivy.Mandates = Mandates;
 Ivy.Capabilities = Capabilities;
 Ivy.Refunds = Refunds;
 Ivy.Payouts = Payouts;
@@ -362,8 +348,6 @@ export declare namespace Ivy {
     type OrderExpireParams as OrderExpireParams,
   };
 
-  export { Charges as Charges, type Charge as Charge, type ChargeCreateParams as ChargeCreateParams };
-
   export {
     Deposits as Deposits,
     type DepositRetrieveResponse as DepositRetrieveResponse,
@@ -395,16 +379,6 @@ export declare namespace Ivy {
     Transactions as Transactions,
     type TransactionListResponse as TransactionListResponse,
     type TransactionListParams as TransactionListParams,
-  };
-
-  export {
-    Mandates as Mandates,
-    type Mandate as Mandate,
-    type MandateLookupResponse as MandateLookupResponse,
-    type MandateRevokeResponse as MandateRevokeResponse,
-    type MandateRetrieveParams as MandateRetrieveParams,
-    type MandateLookupParams as MandateLookupParams,
-    type MandateRevokeParams as MandateRevokeParams,
   };
 
   export {
