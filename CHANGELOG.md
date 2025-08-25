@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.2.0 (2025-08-25)
+
+Full Changelog: [v1.1.0...v1.2.0](https://github.com/getivy/node-sdk/compare/v1.1.0...v1.2.0)
+
+### Features
+
+* **api:** api update ([a5212f7](https://github.com/getivy/node-sdk/commit/a5212f763eb4e82376ecb16f3ac3d5386acdff43))
+
+
+### Chores
+
+* update CI script ([1d7ec46](https://github.com/getivy/node-sdk/commit/1d7ec46066110e4fead8f6398a7ff3cae1af22c9))
+
 ## 1.1.0 (2025-08-22)
 
 Full Changelog: [v1.0.0...v1.1.0](https://github.com/getivy/node-sdk/compare/v1.0.0...v1.1.0)

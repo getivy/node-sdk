@@ -110,16 +110,6 @@ Methods:
 - <code title="post /api/service/order/details">client.orders.<a href="./src/resources/orders.ts">retrieve</a>({ ...params }) -> OrderRetrieveResponse</code>
 - <code title="post /api/service/order/expire">client.orders.<a href="./src/resources/orders.ts">expire</a>({ ...params }) -> OrderExpireResponse</code>
 
-# Charges
-
-Types:
-
-- <code><a href="./src/resources/charges.ts">Charge</a></code>
-
-Methods:
-
-- <code title="post /api/service/charge/create">client.charges.<a href="./src/resources/charges.ts">create</a>({ ...params }) -> Charge</code>
-
 # Deposits
 
 Types:
@@ -173,20 +163,6 @@ Types:
 Methods:
 
 - <code title="post /api/service/transaction/list">client.transactions.<a href="./src/resources/transactions.ts">list</a>({ ...params }) -> TransactionListResponse</code>
-
-# Mandates
-
-Types:
-
-- <code><a href="./src/resources/mandates.ts">Mandate</a></code>
-- <code><a href="./src/resources/mandates.ts">MandateLookupResponse</a></code>
-- <code><a href="./src/resources/mandates.ts">MandateRevokeResponse</a></code>
-
-Methods:
-
-- <code title="post /api/service/mandate/retrieve">client.mandates.<a href="./src/resources/mandates.ts">retrieve</a>({ ...params }) -> Mandate</code>
-- <code title="post /api/service/mandate/lookup">client.mandates.<a href="./src/resources/mandates.ts">lookup</a>({ ...params }) -> MandateLookupResponse</code>
-- <code title="post /api/service/mandate/revoke">client.mandates.<a href="./src/resources/mandates.ts">revoke</a>({ ...params }) -> MandateRevokeResponse</code>
 
 # Capabilities
 

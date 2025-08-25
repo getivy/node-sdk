@@ -12,7 +12,6 @@ export {
 } from './banks';
 export { BeneficiaryPayouts, type BeneficiaryPayoutCreateResponse } from './beneficiary-payouts';
 export { Capabilities, type CapabilityRetrieveResponse, type CapabilityRetrieveParams } from './capabilities';
-export { Charges, type Charge, type ChargeCreateParams } from './charges';
 export {
   Checkoutsession,
   type CheckoutsessionCreateResponse,
@@ -40,15 +39,6 @@ export {
   type FxRetrieveParams,
   type FxRetrieveRateParams,
 } from './fx';
-export {
-  Mandates,
-  type Mandate,
-  type MandateLookupResponse,
-  type MandateRevokeResponse,
-  type MandateRetrieveParams,
-  type MandateLookupParams,
-  type MandateRevokeParams,
-} from './mandates';
 export {
   Orders,
   type OrderCreateResponse,
