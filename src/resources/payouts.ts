@@ -79,6 +79,11 @@ export interface Payout {
    * The payout payment reference
    */
   paymentReference?: string;
+
+  /**
+   * The payout transaction ID
+   */
+  transactionId?: string;
 }
 
 export namespace Payout {
@@ -182,6 +187,11 @@ export interface PayoutRetrieveResponse {
    * The payout payment reference
    */
   paymentReference?: string;
+
+  /**
+   * The payout transaction ID
+   */
+  transactionId?: string;
 }
 
 export namespace PayoutRetrieveResponse {
@@ -296,6 +306,11 @@ export namespace PayoutListResponse {
      * The payout payment reference
      */
     paymentReference?: string;
+
+    /**
+     * The payout transaction ID
+     */
+    transactionId?: string;
   }
 
   export namespace Item {

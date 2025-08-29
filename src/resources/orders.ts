@@ -90,7 +90,8 @@ export interface OrderCreateResponse {
     | 'partially_refunded'
     | 'in_dispute'
     | 'disputed'
-    | 'refused';
+    | 'refused'
+    | 'finalizing';
 
   updatedAt: unknown;
 
@@ -229,6 +230,11 @@ export interface OrderCreateResponse {
   subaccountId?: string;
 
   subaccountLegalName?: string;
+
+  /**
+   * The unique id of the transaction.
+   */
+  transactionId?: string;
 
   trees?: number;
 }
@@ -812,6 +818,11 @@ export namespace OrderCreateResponse {
      * The description of the refund.
      */
     description?: string;
+
+    /**
+     * The unique id of the transaction.
+     */
+    transactionId?: string;
   }
 
   export interface ShippingAddress {
@@ -1130,7 +1141,8 @@ export namespace OrderCreateResponse {
       | 'partially_refunded'
       | 'in_dispute'
       | 'disputed'
-      | 'refused';
+      | 'refused'
+      | 'finalizing';
 
     reason:
       | 'ORDER_CREATED'
@@ -1158,7 +1170,8 @@ export namespace OrderCreateResponse {
       | 'AML_FREEZE'
       | 'MANUAL_FREEZE'
       | 'MANUAL_UNFREEZE'
-      | 'ORDER_MANUALLY_REOPENED';
+      | 'ORDER_MANUALLY_REOPENED'
+      | 'ORDER_FINALIZATION_STARTED';
 
     updatedAt: unknown;
 
@@ -1175,6 +1188,7 @@ export namespace OrderCreateResponse {
       | 'in_dispute'
       | 'disputed'
       | 'refused'
+      | 'finalizing'
       | null;
   }
 }
@@ -1237,7 +1251,8 @@ export interface OrderRetrieveResponse {
     | 'partially_refunded'
     | 'in_dispute'
     | 'disputed'
-    | 'refused';
+    | 'refused'
+    | 'finalizing';
 
   updatedAt: unknown;
 
@@ -1376,6 +1391,11 @@ export interface OrderRetrieveResponse {
   subaccountId?: string;
 
   subaccountLegalName?: string;
+
+  /**
+   * The unique id of the transaction.
+   */
+  transactionId?: string;
 
   trees?: number;
 }
@@ -1959,6 +1979,11 @@ export namespace OrderRetrieveResponse {
      * The description of the refund.
      */
     description?: string;
+
+    /**
+     * The unique id of the transaction.
+     */
+    transactionId?: string;
   }
 
   export interface ShippingAddress {
@@ -2277,7 +2302,8 @@ export namespace OrderRetrieveResponse {
       | 'partially_refunded'
       | 'in_dispute'
       | 'disputed'
-      | 'refused';
+      | 'refused'
+      | 'finalizing';
 
     reason:
       | 'ORDER_CREATED'
@@ -2305,7 +2331,8 @@ export namespace OrderRetrieveResponse {
       | 'AML_FREEZE'
       | 'MANUAL_FREEZE'
       | 'MANUAL_UNFREEZE'
-      | 'ORDER_MANUALLY_REOPENED';
+      | 'ORDER_MANUALLY_REOPENED'
+      | 'ORDER_FINALIZATION_STARTED';
 
     updatedAt: unknown;
 
@@ -2322,6 +2349,7 @@ export namespace OrderRetrieveResponse {
       | 'in_dispute'
       | 'disputed'
       | 'refused'
+      | 'finalizing'
       | null;
   }
 }
@@ -2384,7 +2412,8 @@ export interface OrderExpireResponse {
     | 'partially_refunded'
     | 'in_dispute'
     | 'disputed'
-    | 'refused';
+    | 'refused'
+    | 'finalizing';
 
   updatedAt: unknown;
 
@@ -2523,6 +2552,11 @@ export interface OrderExpireResponse {
   subaccountId?: string;
 
   subaccountLegalName?: string;
+
+  /**
+   * The unique id of the transaction.
+   */
+  transactionId?: string;
 
   trees?: number;
 }
@@ -3106,6 +3140,11 @@ export namespace OrderExpireResponse {
      * The description of the refund.
      */
     description?: string;
+
+    /**
+     * The unique id of the transaction.
+     */
+    transactionId?: string;
   }
 
   export interface ShippingAddress {
@@ -3424,7 +3463,8 @@ export namespace OrderExpireResponse {
       | 'partially_refunded'
       | 'in_dispute'
       | 'disputed'
-      | 'refused';
+      | 'refused'
+      | 'finalizing';
 
     reason:
       | 'ORDER_CREATED'
@@ -3452,7 +3492,8 @@ export namespace OrderExpireResponse {
       | 'AML_FREEZE'
       | 'MANUAL_FREEZE'
       | 'MANUAL_UNFREEZE'
-      | 'ORDER_MANUALLY_REOPENED';
+      | 'ORDER_MANUALLY_REOPENED'
+      | 'ORDER_FINALIZATION_STARTED';
 
     updatedAt: unknown;
 
@@ -3469,6 +3510,7 @@ export namespace OrderExpireResponse {
       | 'in_dispute'
       | 'disputed'
       | 'refused'
+      | 'finalizing'
       | null;
   }
 }

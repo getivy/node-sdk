@@ -5,8 +5,9 @@ import * as Core from '../core';
 
 export class BeneficiaryPayouts extends APIResource {
   /**
-   * Perform a payout. This endpoint will be deprecated in favor of the new payout
-   * endpoint that will support more payout types.
+   * Payout all available balances of your account to the preconfigured beneficiary
+   * bank account or wallet. If you want to handle payouts in a more dynamic and
+   * granular way, please use the POST /payout/create endpoint.
    */
   create(options?: Core.RequestOptions): Core.APIPromise<BeneficiaryPayoutCreateResponse> {
     return this._client.post('/api/service/beneficiary-payout/create', options);
@@ -14,7 +15,7 @@ export class BeneficiaryPayouts extends APIResource {
 }
 
 /**
- * Array of payout objects
+ * Array of Beneficiary Payouts
  */
 export type BeneficiaryPayoutCreateResponse =
   Array<BeneficiaryPayoutCreateResponse.BeneficiaryPayoutCreateResponseItem>;
@@ -22,12 +23,12 @@ export type BeneficiaryPayoutCreateResponse =
 export namespace BeneficiaryPayoutCreateResponse {
   export interface BeneficiaryPayoutCreateResponseItem {
     /**
-     * The unique identifier of the payout
+     * The unique identifier of the beneficiary payout
      */
     id: string;
 
     /**
-     * The payout amount
+     * The beneficiary payout amount
      */
     amount: number;
 
@@ -37,7 +38,8 @@ export namespace BeneficiaryPayoutCreateResponse {
     createdAt: unknown;
 
     /**
-     * The currency of the payout
+     * The currency of the balance which was settled to the beneficiary bank account or
+     * wallet.
      */
     currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
