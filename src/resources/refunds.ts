@@ -40,7 +40,8 @@ export interface Refund {
     | 'partially_refunded'
     | 'in_dispute'
     | 'disputed'
-    | 'refused';
+    | 'refused'
+    | 'finalizing';
 
   referenceId: string;
 
@@ -72,6 +73,11 @@ export interface RefundCreateResponse {
    * The current status of this refund.
    */
   status: 'initiated' | 'pending' | 'succeeded' | 'failed';
+
+  /**
+   * The id of the transaction
+   */
+  transactionId?: string;
 }
 
 export interface RefundRetrieveResponse {
@@ -99,6 +105,11 @@ export interface RefundRetrieveResponse {
    * The current status of this refund.
    */
   status: 'initiated' | 'pending' | 'succeeded' | 'failed';
+
+  /**
+   * The id of the transaction
+   */
+  transactionId?: string;
 }
 
 export interface RefundCreateParams {
