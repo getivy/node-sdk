@@ -4632,8 +4632,8 @@ export interface CheckoutsessionCreateParams {
 
   /**
    * The Epoch time in seconds at which the Checkout Session will expire. It can be
-   * anywhere from 30 minutes to 24 hours after Checkout Session creation. By
-   * default, this value is 1 hour from creation.
+   * anywhere from 5 minutes to 6 days after Checkout Session creation. By default,
+   * this value is 1 hour from creation.
    */
   expiresAt?: number;
 
