@@ -5236,6 +5236,11 @@ export namespace CheckoutsessionCreateParams {
     id?: string;
 
     email?: string;
+
+    /**
+     * The phone number of the customer in international format (e.g., +491631234567)
+     */
+    phone?: string;
   }
 
   export interface LineItem {

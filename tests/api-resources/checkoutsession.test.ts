@@ -41,7 +41,7 @@ describe('resource checkoutsession', () => {
       },
       completeCallbackUrl: 'completeCallbackUrl',
       created: 1,
-      customer: { id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', email: 'dev@stainless.com' },
+      customer: { id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', email: 'dev@stainless.com', phone: 'phone' },
       disableBankSelection: true,
       displayId: 'displayId',
       errorCallbackUrl: 'errorCallbackUrl',

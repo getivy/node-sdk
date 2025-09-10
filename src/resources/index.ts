@@ -25,9 +25,13 @@ export {
   Customers,
   type CustomerCreateResponse,
   type CustomerRetrieveResponse,
+  type CustomerUpdateResponse,
+  type CustomerDeleteResponse,
   type CustomerSearchResponse,
   type CustomerCreateParams,
   type CustomerRetrieveParams,
+  type CustomerUpdateParams,
+  type CustomerDeleteParams,
   type CustomerSearchParams,
 } from './customers';
 export { Data } from './data/data';
