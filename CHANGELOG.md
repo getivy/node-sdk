@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.4.0 (2025-09-10)
+
+Full Changelog: [v1.3.0...v1.4.0](https://github.com/getivy/node-sdk/compare/v1.3.0...v1.4.0)
+
+### Features
+
+* **api:** api update ([e7b1c05](https://github.com/getivy/node-sdk/commit/e7b1c0578838413cdc97455eaf885a52f866de34))
+
+
+### Bug Fixes
+
+* coerce nullable values to undefined ([65b162a](https://github.com/getivy/node-sdk/commit/65b162aa65a99fee5328499ea486682e466a3411))
+
+
+### Chores
+
+* **internal:** codegen related update ([27f0573](https://github.com/getivy/node-sdk/commit/27f0573a6fbc32a524767bc8c5d92165d0a6a4e7))
+
 ## 1.3.0 (2025-08-29)
 
 Full Changelog: [v1.2.0...v1.3.0](https://github.com/getivy/node-sdk/compare/v1.2.0...v1.3.0)
