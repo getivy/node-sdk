@@ -29,10 +29,14 @@ import {
 import {
   CustomerCreateParams,
   CustomerCreateResponse,
+  CustomerDeleteParams,
+  CustomerDeleteResponse,
   CustomerRetrieveParams,
   CustomerRetrieveResponse,
   CustomerSearchParams,
   CustomerSearchResponse,
+  CustomerUpdateParams,
+  CustomerUpdateResponse,
   Customers,
 } from './resources/customers';
 import { DepositRetrieveParams, DepositRetrieveResponse, Deposits } from './resources/deposits';
@@ -332,9 +336,13 @@ export declare namespace Ivy {
     Customers as Customers,
     type CustomerCreateResponse as CustomerCreateResponse,
     type CustomerRetrieveResponse as CustomerRetrieveResponse,
+    type CustomerUpdateResponse as CustomerUpdateResponse,
+    type CustomerDeleteResponse as CustomerDeleteResponse,
     type CustomerSearchResponse as CustomerSearchResponse,
     type CustomerCreateParams as CustomerCreateParams,
     type CustomerRetrieveParams as CustomerRetrieveParams,
+    type CustomerUpdateParams as CustomerUpdateParams,
+    type CustomerDeleteParams as CustomerDeleteParams,
     type CustomerSearchParams as CustomerSearchParams,
   };
 
