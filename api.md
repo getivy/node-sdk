@@ -88,12 +88,16 @@ Types:
 
 - <code><a href="./src/resources/customers.ts">CustomerCreateResponse</a></code>
 - <code><a href="./src/resources/customers.ts">CustomerRetrieveResponse</a></code>
+- <code><a href="./src/resources/customers.ts">CustomerUpdateResponse</a></code>
+- <code><a href="./src/resources/customers.ts">CustomerDeleteResponse</a></code>
 - <code><a href="./src/resources/customers.ts">CustomerSearchResponse</a></code>
 
 Methods:
 
 - <code title="post /api/service/customer/create">client.customers.<a href="./src/resources/customers.ts">create</a>({ ...params }) -> CustomerCreateResponse</code>
 - <code title="post /api/service/customer/retrieve">client.customers.<a href="./src/resources/customers.ts">retrieve</a>({ ...params }) -> CustomerRetrieveResponse</code>
+- <code title="post /api/service/customer/update">client.customers.<a href="./src/resources/customers.ts">update</a>({ ...params }) -> CustomerUpdateResponse</code>
+- <code title="post /api/service/customer/delete">client.customers.<a href="./src/resources/customers.ts">delete</a>({ ...params }) -> CustomerDeleteResponse</code>
 - <code title="post /api/service/customer/search">client.customers.<a href="./src/resources/customers.ts">search</a>({ ...params }) -> CustomerSearchResponse</code>
 
 # Orders

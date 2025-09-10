@@ -27,7 +27,7 @@ describe('resource orders', () => {
       amount: 0,
       currency: 'EUR',
       referenceId: 'referenceId',
-      customer: { id: 'id', email: 'email' },
+      customer: { id: 'id', email: 'email', phone: 'phone' },
       expiresAt: 'expiresAt',
       subaccountId: 'subaccountId',
     });

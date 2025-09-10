@@ -10,8 +10,8 @@ const client = new Ivy({
 
 describe('resource customers', () => {
   // Prism tests are disabled
-  test.skip('create: only required params', async () => {
-    const responsePromise = client.customers.create({ email: 'email' });
+  test.skip('create', async () => {
+    const responsePromise = client.customers.create({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -19,11 +19,6 @@ describe('resource customers', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // Prism tests are disabled
-  test.skip('create: required and optional params', async () => {
-    const response = await client.customers.create({ email: 'email' });
   });
 
   // Prism tests are disabled
@@ -44,8 +39,8 @@ describe('resource customers', () => {
   });
 
   // Prism tests are disabled
-  test.skip('search: only required params', async () => {
-    const responsePromise = client.customers.search({ email: 'email' });
+  test.skip('update: only required params', async () => {
+    const responsePromise = client.customers.update({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -56,7 +51,51 @@ describe('resource customers', () => {
   });
 
   // Prism tests are disabled
-  test.skip('search: required and optional params', async () => {
-    const response = await client.customers.search({ email: 'email', limit: 1, skip: 1 });
+  test.skip('update: required and optional params', async () => {
+    const response = await client.customers.update({
+      id: 'id',
+      address: {
+        country: 'AF',
+        city: 'city',
+        line1: 'line1',
+        line2: 'line2',
+        region: '02',
+        zipCode: 'zipCode',
+      },
+      dateOfBirth: 'dateOfBirth',
+      email: 'email',
+      fullName: 'fullName',
+      metadata: { foo: 'bar' },
+      phone: 'phone',
+    });
+  });
+
+  // Prism tests are disabled
+  test.skip('delete: only required params', async () => {
+    const responsePromise = client.customers.delete({ id: 'id' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('delete: required and optional params', async () => {
+    const response = await client.customers.delete({ id: 'id' });
+  });
+
+  // Prism tests are disabled
+  test.skip('search', async () => {
+    const responsePromise = client.customers.search({});
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
   });
 });
