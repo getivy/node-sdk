@@ -37,7 +37,7 @@ export interface FxRetrieveResponse {
   /**
    * The source currency code
    */
-  sourceCurrency: 'EUR' | 'GBP';
+  sourceCurrency: 'EUR' | 'GBP' | 'USDC';
 
   /**
    * The status of the FX transaction.
@@ -47,7 +47,7 @@ export interface FxRetrieveResponse {
   /**
    * The target currency code
    */
-  targetCurrency: 'USDC';
+  targetCurrency: 'EUR' | 'GBP' | 'USDC';
 
   /**
    * Additional metadata.
@@ -95,12 +95,12 @@ export interface FxRetrieveRateParams {
   /**
    * The source currency code.
    */
-  sourceCurrency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+  sourceCurrency: 'EUR' | 'GBP' | 'USDC';
 
   /**
    * The target currency code.
    */
-  targetCurrency: 'EUR' | 'GBP' | 'PLN' | 'USDC' | 'SEK' | 'DKK';
+  targetCurrency: 'EUR' | 'GBP' | 'USDC';
 
   /**
    * The amount of source currency to convert. If not provided, only the rate will be
