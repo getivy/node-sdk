@@ -35,7 +35,7 @@ export {
   type CustomerSearchParams,
 } from './customers';
 export { Data } from './data/data';
-export { Deposits, type DepositRetrieveResponse, type DepositRetrieveParams } from './deposits';
+export { Deposits } from './deposits';
 export {
   Fx,
   type FxRetrieveResponse,
