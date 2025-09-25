@@ -39,7 +39,7 @@ import {
   CustomerUpdateResponse,
   Customers,
 } from './resources/customers';
-import { DepositRetrieveParams, DepositRetrieveResponse, Deposits } from './resources/deposits';
+import { Deposits } from './resources/deposits';
 import {
   Fx,
   FxRetrieveParams,
@@ -356,11 +356,7 @@ export declare namespace Ivy {
     type OrderExpireParams as OrderExpireParams,
   };
 
-  export {
-    Deposits as Deposits,
-    type DepositRetrieveResponse as DepositRetrieveResponse,
-    type DepositRetrieveParams as DepositRetrieveParams,
-  };
+  export { Deposits as Deposits };
 
   export {
     Returns as Returns,
