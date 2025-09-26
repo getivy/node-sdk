@@ -116,6 +116,14 @@ Methods:
 
 # Deposits
 
+Types:
+
+- <code><a href="./src/resources/deposits.ts">DepositRetrieveResponse</a></code>
+
+Methods:
+
+- <code title="post /api/service/deposit/retrieve">client.deposits.<a href="./src/resources/deposits.ts">retrieve</a>({ ...params }) -> DepositRetrieveResponse</code>
+
 # Returns
 
 Types:
