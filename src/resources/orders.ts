@@ -1123,7 +1123,8 @@ export namespace OrderCreateResponse {
       | 'bank_under_maintenance'
       | 'pin_blocked'
       | 'payment_not_settled'
-      | 'unsupported_bank_account';
+      | 'unsupported_bank_account'
+      | 'online_banking_login_required';
   }
 
   export interface StatusHistoryList {
@@ -2284,7 +2285,8 @@ export namespace OrderRetrieveResponse {
       | 'bank_under_maintenance'
       | 'pin_blocked'
       | 'payment_not_settled'
-      | 'unsupported_bank_account';
+      | 'unsupported_bank_account'
+      | 'online_banking_login_required';
   }
 
   export interface StatusHistoryList {
@@ -3445,7 +3447,8 @@ export namespace OrderExpireResponse {
       | 'bank_under_maintenance'
       | 'pin_blocked'
       | 'payment_not_settled'
-      | 'unsupported_bank_account';
+      | 'unsupported_bank_account'
+      | 'online_banking_login_required';
   }
 
   export interface StatusHistoryList {
