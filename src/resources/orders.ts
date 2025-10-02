@@ -142,8 +142,6 @@ export interface OrderCreateResponse {
    */
   lineItems?: Array<OrderCreateResponse.LineItem>;
 
-  mandate?: OrderCreateResponse.Mandate;
-
   /**
    * The financial address of the merchant associated with the order. Only available
    * when requested via order/details and therefore requires authentication.
@@ -167,7 +165,7 @@ export interface OrderCreateResponse {
    */
   payerFinancialAddress?: OrderCreateResponse.PayerFinancialAddress;
 
-  paymentMethodType?: 'sepa_debit' | 'customer_balance' | 'manual_bank_transfer';
+  paymentMethodType?: 'customer_balance' | 'manual_bank_transfer';
 
   /**
    * The payment mode of the order. Can be either settlement or direct.
@@ -199,12 +197,6 @@ export interface OrderCreateResponse {
    * All partial and total refunds of this order.
    */
   refunds?: Array<OrderCreateResponse.Refund>;
-
-  /**
-   * If set to true, a payment mandate will be created for the user. This is
-   * currently in alpha and defaults to false.
-   */
-  setupPaymentMandate?: boolean;
 
   shippingAddress?: OrderCreateResponse.ShippingAddress;
 
@@ -646,44 +638,6 @@ export namespace OrderCreateResponse {
      * An internal unique id stored to this line item.
      */
     referenceId?: string;
-  }
-
-  export interface Mandate {
-    accountHolderName: string;
-
-    additionalDisplayInformation?: Mandate.AdditionalDisplayInformation;
-
-    creditor?: Mandate.Creditor;
-
-    reference?: string;
-
-    referenceId?: string;
-
-    setup?: boolean;
-
-    userNotificationEmail?: string;
-  }
-
-  export namespace Mandate {
-    export interface AdditionalDisplayInformation {
-      cadence?: 'BI_WEEKLY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'SEMI_ANNUAL' | 'ANNUAL' | 'ON_DEMAND';
-
-      price?: AdditionalDisplayInformation.Price;
-    }
-
-    export namespace AdditionalDisplayInformation {
-      export interface Price {
-        amount: number;
-
-        currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
-      }
-    }
-
-    export interface Creditor {
-      id?: string;
-
-      name?: string;
-    }
   }
 
   /**
@@ -1304,8 +1258,6 @@ export interface OrderRetrieveResponse {
    */
   lineItems?: Array<OrderRetrieveResponse.LineItem>;
 
-  mandate?: OrderRetrieveResponse.Mandate;
-
   /**
    * The financial address of the merchant associated with the order. Only available
    * when requested via order/details and therefore requires authentication.
@@ -1329,7 +1281,7 @@ export interface OrderRetrieveResponse {
    */
   payerFinancialAddress?: OrderRetrieveResponse.PayerFinancialAddress;
 
-  paymentMethodType?: 'sepa_debit' | 'customer_balance' | 'manual_bank_transfer';
+  paymentMethodType?: 'customer_balance' | 'manual_bank_transfer';
 
   /**
    * The payment mode of the order. Can be either settlement or direct.
@@ -1361,12 +1313,6 @@ export interface OrderRetrieveResponse {
    * All partial and total refunds of this order.
    */
   refunds?: Array<OrderRetrieveResponse.Refund>;
-
-  /**
-   * If set to true, a payment mandate will be created for the user. This is
-   * currently in alpha and defaults to false.
-   */
-  setupPaymentMandate?: boolean;
 
   shippingAddress?: OrderRetrieveResponse.ShippingAddress;
 
@@ -1808,44 +1754,6 @@ export namespace OrderRetrieveResponse {
      * An internal unique id stored to this line item.
      */
     referenceId?: string;
-  }
-
-  export interface Mandate {
-    accountHolderName: string;
-
-    additionalDisplayInformation?: Mandate.AdditionalDisplayInformation;
-
-    creditor?: Mandate.Creditor;
-
-    reference?: string;
-
-    referenceId?: string;
-
-    setup?: boolean;
-
-    userNotificationEmail?: string;
-  }
-
-  export namespace Mandate {
-    export interface AdditionalDisplayInformation {
-      cadence?: 'BI_WEEKLY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'SEMI_ANNUAL' | 'ANNUAL' | 'ON_DEMAND';
-
-      price?: AdditionalDisplayInformation.Price;
-    }
-
-    export namespace AdditionalDisplayInformation {
-      export interface Price {
-        amount: number;
-
-        currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
-      }
-    }
-
-    export interface Creditor {
-      id?: string;
-
-      name?: string;
-    }
   }
 
   /**
@@ -2466,8 +2374,6 @@ export interface OrderExpireResponse {
    */
   lineItems?: Array<OrderExpireResponse.LineItem>;
 
-  mandate?: OrderExpireResponse.Mandate;
-
   /**
    * The financial address of the merchant associated with the order. Only available
    * when requested via order/details and therefore requires authentication.
@@ -2491,7 +2397,7 @@ export interface OrderExpireResponse {
    */
   payerFinancialAddress?: OrderExpireResponse.PayerFinancialAddress;
 
-  paymentMethodType?: 'sepa_debit' | 'customer_balance' | 'manual_bank_transfer';
+  paymentMethodType?: 'customer_balance' | 'manual_bank_transfer';
 
   /**
    * The payment mode of the order. Can be either settlement or direct.
@@ -2523,12 +2429,6 @@ export interface OrderExpireResponse {
    * All partial and total refunds of this order.
    */
   refunds?: Array<OrderExpireResponse.Refund>;
-
-  /**
-   * If set to true, a payment mandate will be created for the user. This is
-   * currently in alpha and defaults to false.
-   */
-  setupPaymentMandate?: boolean;
 
   shippingAddress?: OrderExpireResponse.ShippingAddress;
 
@@ -2970,44 +2870,6 @@ export namespace OrderExpireResponse {
      * An internal unique id stored to this line item.
      */
     referenceId?: string;
-  }
-
-  export interface Mandate {
-    accountHolderName: string;
-
-    additionalDisplayInformation?: Mandate.AdditionalDisplayInformation;
-
-    creditor?: Mandate.Creditor;
-
-    reference?: string;
-
-    referenceId?: string;
-
-    setup?: boolean;
-
-    userNotificationEmail?: string;
-  }
-
-  export namespace Mandate {
-    export interface AdditionalDisplayInformation {
-      cadence?: 'BI_WEEKLY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'SEMI_ANNUAL' | 'ANNUAL' | 'ON_DEMAND';
-
-      price?: AdditionalDisplayInformation.Price;
-    }
-
-    export namespace AdditionalDisplayInformation {
-      export interface Price {
-        amount: number;
-
-        currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
-      }
-    }
-
-    export interface Creditor {
-      id?: string;
-
-      name?: string;
-    }
   }
 
   /**
