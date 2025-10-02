@@ -61,13 +61,6 @@ describe('resource checkoutsession', () => {
         },
       ],
       locale: 'de',
-      mandate: {
-        accountHolderName: 'accountHolderName',
-        additionalDisplayInformation: { cadence: 'BI_WEEKLY', price: { amount: 0, currency: 'EUR' } },
-        referenceId: 'referenceId',
-        setup: true,
-        userNotificationEmail: 'userNotificationEmail',
-      },
       market: 'AF',
       metadata: { foo: 'bar' },
       paymentMode: 'direct',

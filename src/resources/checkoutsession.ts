@@ -346,8 +346,6 @@ export interface CheckoutsessionCreateResponse {
 
   locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'fi' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
 
-  mandate?: CheckoutsessionCreateResponse.Mandate;
-
   market?:
     | 'AF'
     | 'AL'
@@ -1252,34 +1250,6 @@ export namespace CheckoutsessionCreateResponse {
     id: string;
   }
 
-  export interface Mandate {
-    accountHolderName?: string;
-
-    additionalDisplayInformation?: Mandate.AdditionalDisplayInformation;
-
-    referenceId?: string;
-
-    setup?: boolean;
-
-    userNotificationEmail?: string;
-  }
-
-  export namespace Mandate {
-    export interface AdditionalDisplayInformation {
-      cadence?: 'BI_WEEKLY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'SEMI_ANNUAL' | 'ANNUAL' | 'ON_DEMAND';
-
-      price?: AdditionalDisplayInformation.Price;
-    }
-
-    export namespace AdditionalDisplayInformation {
-      export interface Price {
-        amount: number;
-
-        currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
-      }
-    }
-  }
-
   export interface Required {
     phone: boolean;
   }
@@ -1860,8 +1830,6 @@ export interface CheckoutsessionRetrieveResponse {
   incentiveMode?: string;
 
   locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'fi' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
-
-  mandate?: CheckoutsessionRetrieveResponse.Mandate;
 
   market?:
     | 'AF'
@@ -2767,34 +2735,6 @@ export namespace CheckoutsessionRetrieveResponse {
     id: string;
   }
 
-  export interface Mandate {
-    accountHolderName?: string;
-
-    additionalDisplayInformation?: Mandate.AdditionalDisplayInformation;
-
-    referenceId?: string;
-
-    setup?: boolean;
-
-    userNotificationEmail?: string;
-  }
-
-  export namespace Mandate {
-    export interface AdditionalDisplayInformation {
-      cadence?: 'BI_WEEKLY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'SEMI_ANNUAL' | 'ANNUAL' | 'ON_DEMAND';
-
-      price?: AdditionalDisplayInformation.Price;
-    }
-
-    export namespace AdditionalDisplayInformation {
-      export interface Price {
-        amount: number;
-
-        currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
-      }
-    }
-  }
-
   export interface Required {
     phone: boolean;
   }
@@ -3375,8 +3315,6 @@ export interface CheckoutsessionExpireResponse {
   incentiveMode?: string;
 
   locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'fi' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
-
-  mandate?: CheckoutsessionExpireResponse.Mandate;
 
   market?:
     | 'AF'
@@ -4282,34 +4220,6 @@ export namespace CheckoutsessionExpireResponse {
     id: string;
   }
 
-  export interface Mandate {
-    accountHolderName?: string;
-
-    additionalDisplayInformation?: Mandate.AdditionalDisplayInformation;
-
-    referenceId?: string;
-
-    setup?: boolean;
-
-    userNotificationEmail?: string;
-  }
-
-  export namespace Mandate {
-    export interface AdditionalDisplayInformation {
-      cadence?: 'BI_WEEKLY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'SEMI_ANNUAL' | 'ANNUAL' | 'ON_DEMAND';
-
-      price?: AdditionalDisplayInformation.Price;
-    }
-
-    export namespace AdditionalDisplayInformation {
-      export interface Price {
-        amount: number;
-
-        currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
-      }
-    }
-  }
-
   export interface Required {
     phone: boolean;
   }
@@ -4648,8 +4558,6 @@ export interface CheckoutsessionCreateParams {
   lineItems?: Array<CheckoutsessionCreateParams.LineItem>;
 
   locale?: 'de' | 'nl' | 'en' | 'fr' | 'es' | 'fi' | 'it' | 'pt' | 'sv' | 'pl' | 'sk' | 'lt';
-
-  mandate?: CheckoutsessionCreateParams.Mandate;
 
   /**
    * The market of the checkoutSession. Will show the market banks connected with
@@ -5293,34 +5201,6 @@ export namespace CheckoutsessionCreateParams {
      * An internal unique id stored to this line item.
      */
     referenceId?: string;
-  }
-
-  export interface Mandate {
-    accountHolderName?: string;
-
-    additionalDisplayInformation?: Mandate.AdditionalDisplayInformation;
-
-    referenceId?: string;
-
-    setup?: boolean;
-
-    userNotificationEmail?: string;
-  }
-
-  export namespace Mandate {
-    export interface AdditionalDisplayInformation {
-      cadence?: 'BI_WEEKLY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'SEMI_ANNUAL' | 'ANNUAL' | 'ON_DEMAND';
-
-      price?: AdditionalDisplayInformation.Price;
-    }
-
-    export namespace AdditionalDisplayInformation {
-      export interface Price {
-        amount: number;
-
-        currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
-      }
-    }
   }
 
   /**
