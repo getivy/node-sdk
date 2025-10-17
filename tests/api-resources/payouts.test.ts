@@ -33,6 +33,7 @@ describe('resource payouts', () => {
           bban: { accountHolderName: 'x', bban: 'bban', bic: 'bic' },
           iban: { accountHolderName: 'x', iban: 'iban', bic: 'bic' },
           sortCode: { accountHolderName: 'x', accountNumber: '095', sortCode: '269125115713' },
+          wallet: { address: 'address' },
         },
         orderId: 'orderId',
         type: 'beneficiary',

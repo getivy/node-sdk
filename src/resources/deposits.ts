@@ -29,7 +29,7 @@ export interface DepositRetrieveResponse {
   /**
    * The currency of the deposit
    */
-  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK' | 'USDC';
 
   /**
    * The payee account identifier
@@ -64,9 +64,31 @@ export interface DepositRetrieveResponse {
   bankStatementReference?: string;
 
   /**
-   * The payment rail used for the deposit
+   * The payment rail or blockchain used for the deposit
    */
-  rail?: string;
+  rail?:
+    | 'sepa_instant'
+    | 'faster_payments'
+    | 'sepa'
+    | 'elixir'
+    | 'express_elixir'
+    | 'sek_account_to_account'
+    | 'sumclearing'
+    | 'straksclearing'
+    | 'swift'
+    | 'internal'
+    | 'target'
+    | 'ETH'
+    | 'ETH-SEPOLIA'
+    | 'SOL'
+    | 'SOL-DEVNET'
+    | 'MATIC'
+    | 'MATIC-AMOY';
+
+  /**
+   * The transaction hash for crypto deposits
+   */
+  txHash?: string;
 }
 
 export namespace DepositRetrieveResponse {
@@ -74,7 +96,7 @@ export namespace DepositRetrieveResponse {
    * The payee account identifier
    */
   export interface Payee {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
     bankCode?: Payee.BankCode;
 
@@ -83,6 +105,8 @@ export namespace DepositRetrieveResponse {
     iban?: Payee.Iban;
 
     sortCode?: Payee.SortCode;
+
+    wallet?: Payee.Wallet;
   }
 
   export namespace Payee {
@@ -117,13 +141,20 @@ export namespace DepositRetrieveResponse {
 
       sortCode: string;
     }
+
+    export interface Wallet {
+      /**
+       * The blockchain wallet address
+       */
+      address: string;
+    }
   }
 
   /**
    * The payer account identifier
    */
   export interface Payer {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
     bankCode?: Payer.BankCode;
 
@@ -132,6 +163,8 @@ export namespace DepositRetrieveResponse {
     iban?: Payer.Iban;
 
     sortCode?: Payer.SortCode;
+
+    wallet?: Payer.Wallet;
   }
 
   export namespace Payer {
@@ -166,6 +199,13 @@ export namespace DepositRetrieveResponse {
 
       sortCode: string;
     }
+
+    export interface Wallet {
+      /**
+       * The blockchain wallet address
+       */
+      address: string;
+    }
   }
 
   export interface Return {
@@ -187,7 +227,7 @@ export namespace DepositRetrieveResponse {
     /**
      * The currency of the return
      */
-    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK' | 'USDC';
 
     /**
      * The ID of the associated deposit

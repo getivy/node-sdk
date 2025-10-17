@@ -96,7 +96,7 @@ export namespace TransactionListResponse {
       /**
        * Type of financial address
        */
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
       bankCode?: Creditor.BankCode;
 
@@ -148,7 +148,7 @@ export namespace TransactionListResponse {
       /**
        * Type of financial address
        */
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
       bankCode?: Debtor.BankCode;
 

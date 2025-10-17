@@ -91,7 +91,7 @@ export namespace Payout {
    * The payout destination
    */
   export interface Destination {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
     bankCode?: Destination.BankCode;
 
@@ -100,6 +100,8 @@ export namespace Payout {
     iban?: Destination.Iban;
 
     sortCode?: Destination.SortCode;
+
+    wallet?: Destination.Wallet;
   }
 
   export namespace Destination {
@@ -133,6 +135,13 @@ export namespace Payout {
       accountNumber: string;
 
       sortCode: string;
+    }
+
+    export interface Wallet {
+      /**
+       * The blockchain wallet address
+       */
+      address: string;
     }
   }
 }
@@ -199,7 +208,7 @@ export namespace PayoutRetrieveResponse {
    * The payout destination
    */
   export interface Destination {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
     bankCode?: Destination.BankCode;
 
@@ -208,6 +217,8 @@ export namespace PayoutRetrieveResponse {
     iban?: Destination.Iban;
 
     sortCode?: Destination.SortCode;
+
+    wallet?: Destination.Wallet;
   }
 
   export namespace Destination {
@@ -241,6 +252,13 @@ export namespace PayoutRetrieveResponse {
       accountNumber: string;
 
       sortCode: string;
+    }
+
+    export interface Wallet {
+      /**
+       * The blockchain wallet address
+       */
+      address: string;
     }
   }
 }
@@ -318,7 +336,7 @@ export namespace PayoutListResponse {
      * The payout destination
      */
     export interface Destination {
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
       bankCode?: Destination.BankCode;
 
@@ -327,6 +345,8 @@ export namespace PayoutListResponse {
       iban?: Destination.Iban;
 
       sortCode?: Destination.SortCode;
+
+      wallet?: Destination.Wallet;
     }
 
     export namespace Destination {
@@ -360,6 +380,13 @@ export namespace PayoutListResponse {
         accountNumber: string;
 
         sortCode: string;
+      }
+
+      export interface Wallet {
+        /**
+         * The blockchain wallet address
+         */
+        address: string;
       }
     }
   }
@@ -408,7 +435,7 @@ export namespace PayoutCreateParams {
 
   export namespace Destination {
     export interface FinancialAddress {
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
       bankCode?: FinancialAddress.BankCode;
 
@@ -417,6 +444,8 @@ export namespace PayoutCreateParams {
       iban?: FinancialAddress.Iban;
 
       sortCode?: FinancialAddress.SortCode;
+
+      wallet?: FinancialAddress.Wallet;
     }
 
     export namespace FinancialAddress {
@@ -450,6 +479,13 @@ export namespace PayoutCreateParams {
         accountNumber: string;
 
         sortCode: string;
+      }
+
+      export interface Wallet {
+        /**
+         * The blockchain wallet address
+         */
+        address: string;
       }
     }
   }
