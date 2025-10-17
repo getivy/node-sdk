@@ -5222,7 +5222,7 @@ export namespace CheckoutsessionCreateParams {
 
   export namespace SettlementDestination {
     export interface FinancialAddress {
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
       bankCode?: FinancialAddress.BankCode;
 
@@ -5231,6 +5231,8 @@ export namespace CheckoutsessionCreateParams {
       iban?: FinancialAddress.Iban;
 
       sortCode?: FinancialAddress.SortCode;
+
+      wallet?: FinancialAddress.Wallet;
     }
 
     export namespace FinancialAddress {
@@ -5264,6 +5266,13 @@ export namespace CheckoutsessionCreateParams {
         accountNumber: string;
 
         sortCode: string;
+      }
+
+      export interface Wallet {
+        /**
+         * The blockchain wallet address
+         */
+        address: string;
       }
     }
   }

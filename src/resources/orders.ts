@@ -538,7 +538,7 @@ export namespace OrderCreateResponse {
 
   export namespace Destination {
     export interface BankAccount {
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
       bankCode?: BankAccount.BankCode;
 
@@ -549,6 +549,8 @@ export namespace OrderCreateResponse {
       paymentReference?: string;
 
       sortCode?: BankAccount.SortCode;
+
+      wallet?: BankAccount.Wallet;
     }
 
     export namespace BankAccount {
@@ -582,6 +584,13 @@ export namespace OrderCreateResponse {
         accountNumber: string;
 
         sortCode: string;
+      }
+
+      export interface Wallet {
+        /**
+         * The blockchain wallet address
+         */
+        address: string;
       }
     }
   }
@@ -645,7 +654,7 @@ export namespace OrderCreateResponse {
    * when requested via order/details and therefore requires authentication.
    */
   export interface MerchantFinancialAddress {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
     bankCode?: MerchantFinancialAddress.BankCode;
 
@@ -656,6 +665,8 @@ export namespace OrderCreateResponse {
     paymentReference?: string;
 
     sortCode?: MerchantFinancialAddress.SortCode;
+
+    wallet?: MerchantFinancialAddress.Wallet;
   }
 
   export namespace MerchantFinancialAddress {
@@ -690,6 +701,13 @@ export namespace OrderCreateResponse {
 
       sortCode: string;
     }
+
+    export interface Wallet {
+      /**
+       * The blockchain wallet address
+       */
+      address: string;
+    }
   }
 
   /**
@@ -697,7 +715,7 @@ export namespace OrderCreateResponse {
    * after successful PIS flow.
    */
   export interface PayerFinancialAddress {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
     bankCode?: PayerFinancialAddress.BankCode;
 
@@ -706,6 +724,8 @@ export namespace OrderCreateResponse {
     iban?: PayerFinancialAddress.Iban;
 
     sortCode?: PayerFinancialAddress.SortCode;
+
+    wallet?: PayerFinancialAddress.Wallet;
   }
 
   export namespace PayerFinancialAddress {
@@ -739,6 +759,13 @@ export namespace OrderCreateResponse {
       sortCode: string;
 
       accountHolderName?: string;
+    }
+
+    export interface Wallet {
+      /**
+       * The blockchain wallet address
+       */
+      address: string;
     }
   }
 
@@ -1654,7 +1681,7 @@ export namespace OrderRetrieveResponse {
 
   export namespace Destination {
     export interface BankAccount {
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
       bankCode?: BankAccount.BankCode;
 
@@ -1665,6 +1692,8 @@ export namespace OrderRetrieveResponse {
       paymentReference?: string;
 
       sortCode?: BankAccount.SortCode;
+
+      wallet?: BankAccount.Wallet;
     }
 
     export namespace BankAccount {
@@ -1698,6 +1727,13 @@ export namespace OrderRetrieveResponse {
         accountNumber: string;
 
         sortCode: string;
+      }
+
+      export interface Wallet {
+        /**
+         * The blockchain wallet address
+         */
+        address: string;
       }
     }
   }
@@ -1761,7 +1797,7 @@ export namespace OrderRetrieveResponse {
    * when requested via order/details and therefore requires authentication.
    */
   export interface MerchantFinancialAddress {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
     bankCode?: MerchantFinancialAddress.BankCode;
 
@@ -1772,6 +1808,8 @@ export namespace OrderRetrieveResponse {
     paymentReference?: string;
 
     sortCode?: MerchantFinancialAddress.SortCode;
+
+    wallet?: MerchantFinancialAddress.Wallet;
   }
 
   export namespace MerchantFinancialAddress {
@@ -1806,6 +1844,13 @@ export namespace OrderRetrieveResponse {
 
       sortCode: string;
     }
+
+    export interface Wallet {
+      /**
+       * The blockchain wallet address
+       */
+      address: string;
+    }
   }
 
   /**
@@ -1813,7 +1858,7 @@ export namespace OrderRetrieveResponse {
    * after successful PIS flow.
    */
   export interface PayerFinancialAddress {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
     bankCode?: PayerFinancialAddress.BankCode;
 
@@ -1822,6 +1867,8 @@ export namespace OrderRetrieveResponse {
     iban?: PayerFinancialAddress.Iban;
 
     sortCode?: PayerFinancialAddress.SortCode;
+
+    wallet?: PayerFinancialAddress.Wallet;
   }
 
   export namespace PayerFinancialAddress {
@@ -1855,6 +1902,13 @@ export namespace OrderRetrieveResponse {
       sortCode: string;
 
       accountHolderName?: string;
+    }
+
+    export interface Wallet {
+      /**
+       * The blockchain wallet address
+       */
+      address: string;
     }
   }
 
@@ -2770,7 +2824,7 @@ export namespace OrderExpireResponse {
 
   export namespace Destination {
     export interface BankAccount {
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
       bankCode?: BankAccount.BankCode;
 
@@ -2781,6 +2835,8 @@ export namespace OrderExpireResponse {
       paymentReference?: string;
 
       sortCode?: BankAccount.SortCode;
+
+      wallet?: BankAccount.Wallet;
     }
 
     export namespace BankAccount {
@@ -2814,6 +2870,13 @@ export namespace OrderExpireResponse {
         accountNumber: string;
 
         sortCode: string;
+      }
+
+      export interface Wallet {
+        /**
+         * The blockchain wallet address
+         */
+        address: string;
       }
     }
   }
@@ -2877,7 +2940,7 @@ export namespace OrderExpireResponse {
    * when requested via order/details and therefore requires authentication.
    */
   export interface MerchantFinancialAddress {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
     bankCode?: MerchantFinancialAddress.BankCode;
 
@@ -2888,6 +2951,8 @@ export namespace OrderExpireResponse {
     paymentReference?: string;
 
     sortCode?: MerchantFinancialAddress.SortCode;
+
+    wallet?: MerchantFinancialAddress.Wallet;
   }
 
   export namespace MerchantFinancialAddress {
@@ -2922,6 +2987,13 @@ export namespace OrderExpireResponse {
 
       sortCode: string;
     }
+
+    export interface Wallet {
+      /**
+       * The blockchain wallet address
+       */
+      address: string;
+    }
   }
 
   /**
@@ -2929,7 +3001,7 @@ export namespace OrderExpireResponse {
    * after successful PIS flow.
    */
   export interface PayerFinancialAddress {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
 
     bankCode?: PayerFinancialAddress.BankCode;
 
@@ -2938,6 +3010,8 @@ export namespace OrderExpireResponse {
     iban?: PayerFinancialAddress.Iban;
 
     sortCode?: PayerFinancialAddress.SortCode;
+
+    wallet?: PayerFinancialAddress.Wallet;
   }
 
   export namespace PayerFinancialAddress {
@@ -2971,6 +3045,13 @@ export namespace OrderExpireResponse {
       sortCode: string;
 
       accountHolderName?: string;
+    }
+
+    export interface Wallet {
+      /**
+       * The blockchain wallet address
+       */
+      address: string;
     }
   }
 
