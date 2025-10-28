@@ -11,7 +11,7 @@ const client = new Ivy({
 describe('resource transactions', () => {
   // Prism tests are disabled
   test.skip('list: only required params', async () => {
-    const responsePromise = client.data.transactions.list({ from: 0, to: 0 });
+    const responsePromise = client.data.transactions.list({ sessionId: 'sessionId' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,6 +23,6 @@ describe('resource transactions', () => {
 
   // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
-    const response = await client.data.transactions.list({ from: 0, to: 0, afterCursor: 'x' });
+    const response = await client.data.transactions.list({ sessionId: 'sessionId' });
   });
 });

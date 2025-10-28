@@ -15,216 +15,60 @@ export class Transactions extends APIResource {
 
 export interface TransactionListResponse {
   /**
-   * Array of transactions
+   * Array of transactions for the given data session
    */
-  data: Array<TransactionListResponse.Data>;
-
-  /**
-   * Pagination information
-   */
-  paging: TransactionListResponse.Paging;
+  transactions: Array<TransactionListResponse.Transaction>;
 }
 
 export namespace TransactionListResponse {
-  export interface Data {
+  export interface Transaction {
     /**
-     * Transaction identifier
+     * The ID of the transaction.
      */
     id: string;
 
     /**
-     * Amount of the transaction
+     * The ID of the account the transaction belongs to.
+     */
+    accountId: string;
+
+    /**
+     * The amount of the transaction.
      */
     amount: string;
 
     /**
-     * Balance information
-     */
-    balance: Data.Balance;
-
-    /**
-     * Bank statement reference
-     */
-    bankStatementReference: string;
-
-    /**
-     * Creditor account details
-     */
-    creditor: Data.Creditor;
-
-    /**
-     * ISO 4217 currency code
+     * The currency of the transaction.
      */
     currency: string;
 
     /**
-     * Debtor account details
+     * The date and time when the transaction occurred.
      */
-    debtor: Data.Debtor;
+    timestamp: unknown;
 
     /**
-     * Side of the transaction
+     * The type of transaction (debit or credit).
      */
-    side: 'credit' | 'debit';
+    type: 'credit' | 'debit';
 
     /**
-     * Transaction date as unix timestamp
+     * The name of the counterparty (creditor or debtor) if available.
      */
-    transactionDate: number;
-  }
-
-  export namespace Data {
-    /**
-     * Balance information
-     */
-    export interface Balance {
-      /**
-       * Balance after the transaction
-       */
-      after: string;
-
-      /**
-       * Balance before the transaction
-       */
-      before: string;
-    }
+    counterpartyName?: string;
 
     /**
-     * Creditor account details
+     * The description of the transaction.
      */
-    export interface Creditor {
-      /**
-       * Type of financial address
-       */
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
-
-      bankCode?: Creditor.BankCode;
-
-      bban?: Creditor.Bban;
-
-      iban?: Creditor.Iban;
-
-      sortCode?: Creditor.SortCode;
-    }
-
-    export namespace Creditor {
-      export interface BankCode {
-        accountHolderName: string;
-
-        accountNumber: string;
-
-        code: string;
-      }
-
-      export interface Bban {
-        accountHolderName: string;
-
-        bban: string;
-
-        bic?: string;
-      }
-
-      export interface Iban {
-        accountHolderName: string;
-
-        iban: string;
-
-        bic?: string;
-      }
-
-      export interface SortCode {
-        accountHolderName: string;
-
-        accountNumber: string;
-
-        sortCode: string;
-      }
-    }
-
-    /**
-     * Debtor account details
-     */
-    export interface Debtor {
-      /**
-       * Type of financial address
-       */
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
-
-      bankCode?: Debtor.BankCode;
-
-      bban?: Debtor.Bban;
-
-      iban?: Debtor.Iban;
-
-      sortCode?: Debtor.SortCode;
-    }
-
-    export namespace Debtor {
-      export interface BankCode {
-        accountHolderName: string;
-
-        accountNumber: string;
-
-        code: string;
-      }
-
-      export interface Bban {
-        accountHolderName: string;
-
-        bban: string;
-
-        bic?: string;
-      }
-
-      export interface Iban {
-        accountHolderName: string;
-
-        iban: string;
-
-        bic?: string;
-      }
-
-      export interface SortCode {
-        accountHolderName: string;
-
-        accountNumber: string;
-
-        sortCode: string;
-      }
-    }
-  }
-
-  /**
-   * Pagination information
-   */
-  export interface Paging {
-    /**
-     * Whether there are more transactions available
-     */
-    hasNext: boolean;
-
-    /**
-     * Cursor for the next page of results
-     */
-    nextCursor?: string;
+    description?: string;
   }
 }
 
 export interface TransactionListParams {
   /**
-   * Start timestamp (inclusive) - unix timestamp
+   * The ID of the data session to retrieve transactions for.
    */
-  from: number;
-
-  /**
-   * End timestamp (exclusive) - unix timestamp
-   */
-  to: number;
-
-  /**
-   * Cursor for pagination
-   */
-  afterCursor?: string;
+  sessionId: string;
 }
 
 export declare namespace Transactions {
