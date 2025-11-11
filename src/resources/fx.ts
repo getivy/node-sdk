@@ -42,7 +42,7 @@ export interface FxRetrieveResponse {
   /**
    * The status of the FX transaction.
    */
-  status: 'success' | 'processing' | 'failed';
+  status: 'initiated' | 'succeeded' | 'failed';
 
   /**
    * The target currency code
