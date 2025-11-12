@@ -93,6 +93,9 @@ export interface SubscriptionCreateResponse {
     | 'return.succeeded'
     | 'return.failed'
     | 'return.returned'
+    | 'fx.initiated'
+    | 'fx.succeeded'
+    | 'fx.failed'
   >;
 
   merchant: unknown;
@@ -139,6 +142,9 @@ export interface SubscriptionUpdateResponse {
     | 'return.succeeded'
     | 'return.failed'
     | 'return.returned'
+    | 'fx.initiated'
+    | 'fx.succeeded'
+    | 'fx.failed'
   >;
 
   merchant: unknown;
@@ -208,6 +214,9 @@ export namespace SubscriptionListResponse {
       | 'return.succeeded'
       | 'return.failed'
       | 'return.returned'
+      | 'fx.initiated'
+      | 'fx.succeeded'
+      | 'fx.failed'
     >;
 
     merchant: unknown;
@@ -293,6 +302,9 @@ export interface SubscriptionCreateParams {
     | 'return.succeeded'
     | 'return.failed'
     | 'return.returned'
+    | 'fx.initiated'
+    | 'fx.succeeded'
+    | 'fx.failed'
   >;
 }
 
@@ -335,6 +347,9 @@ export interface SubscriptionUpdateParams {
     | 'return.succeeded'
     | 'return.failed'
     | 'return.returned'
+    | 'fx.initiated'
+    | 'fx.succeeded'
+    | 'fx.failed'
   >;
 
   /**
