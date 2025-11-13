@@ -14,60 +14,234 @@ export class Transactions extends APIResource {
 
 export interface TransactionListResponse {
   /**
-   * Array of transactions for the given data session
+   * Array of transactions
    */
-  transactions: Array<TransactionListResponse.Transaction>;
+  data: Array<TransactionListResponse.Data>;
+
+  /**
+   * Pagination information
+   */
+  paging: TransactionListResponse.Paging;
 }
 
 export namespace TransactionListResponse {
-  export interface Transaction {
+  export interface Data {
     /**
-     * The ID of the transaction.
+     * Transaction identifier
      */
     id: string;
 
     /**
-     * The ID of the account the transaction belongs to.
-     */
-    accountId: string;
-
-    /**
-     * The amount of the transaction.
+     * Amount of the transaction
      */
     amount: string;
 
     /**
-     * The currency of the transaction.
+     * Balance information
+     */
+    balance: Data.Balance;
+
+    /**
+     * Bank statement reference
+     */
+    bankStatementReference: string;
+
+    /**
+     * Creditor account details
+     */
+    creditor: Data.Creditor;
+
+    /**
+     * ISO 4217 currency code
      */
     currency: string;
 
     /**
-     * The date and time when the transaction occurred.
+     * Debtor account details
      */
-    timestamp: unknown;
+    debtor: Data.Debtor;
 
     /**
-     * The type of transaction (debit or credit).
+     * Side of the transaction
      */
-    type: 'credit' | 'debit';
+    side: 'credit' | 'debit';
 
     /**
-     * The name of the counterparty (creditor or debtor) if available.
+     * Transaction date as unix timestamp
      */
-    counterpartyName?: string;
+    transactionDate: number;
+  }
+
+  export namespace Data {
+    /**
+     * Balance information
+     */
+    export interface Balance {
+      /**
+       * Balance after the transaction
+       */
+      after: string;
+
+      /**
+       * Balance before the transaction
+       */
+      before: string;
+    }
 
     /**
-     * The description of the transaction.
+     * Creditor account details
      */
-    description?: string;
+    export interface Creditor {
+      /**
+       * Type of financial address
+       */
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+
+      bankCode?: Creditor.BankCode;
+
+      bban?: Creditor.Bban;
+
+      iban?: Creditor.Iban;
+
+      sortCode?: Creditor.SortCode;
+
+      wallet?: Creditor.Wallet;
+    }
+
+    export namespace Creditor {
+      export interface BankCode {
+        accountHolderName: string;
+
+        accountNumber: string;
+
+        code: string;
+      }
+
+      export interface Bban {
+        accountHolderName: string;
+
+        bban: string;
+
+        bic?: string;
+      }
+
+      export interface Iban {
+        accountHolderName: string;
+
+        iban: string;
+
+        bic?: string;
+      }
+
+      export interface SortCode {
+        accountHolderName: string;
+
+        accountNumber: string;
+
+        sortCode: string;
+      }
+
+      export interface Wallet {
+        /**
+         * The blockchain wallet address
+         */
+        address: string;
+      }
+    }
+
+    /**
+     * Debtor account details
+     */
+    export interface Debtor {
+      /**
+       * Type of financial address
+       */
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+
+      bankCode?: Debtor.BankCode;
+
+      bban?: Debtor.Bban;
+
+      iban?: Debtor.Iban;
+
+      sortCode?: Debtor.SortCode;
+
+      wallet?: Debtor.Wallet;
+    }
+
+    export namespace Debtor {
+      export interface BankCode {
+        accountHolderName: string;
+
+        accountNumber: string;
+
+        code: string;
+      }
+
+      export interface Bban {
+        accountHolderName: string;
+
+        bban: string;
+
+        bic?: string;
+      }
+
+      export interface Iban {
+        accountHolderName: string;
+
+        iban: string;
+
+        bic?: string;
+      }
+
+      export interface SortCode {
+        accountHolderName: string;
+
+        accountNumber: string;
+
+        sortCode: string;
+      }
+
+      export interface Wallet {
+        /**
+         * The blockchain wallet address
+         */
+        address: string;
+      }
+    }
+  }
+
+  /**
+   * Pagination information
+   */
+  export interface Paging {
+    /**
+     * Whether there are more transactions available
+     */
+    hasNext: boolean;
+
+    /**
+     * Cursor for the next page of results
+     */
+    nextCursor?: string;
   }
 }
 
 export interface TransactionListParams {
   /**
-   * The ID of the data session to retrieve transactions for.
+   * Start timestamp (inclusive) - unix timestamp
    */
-  sessionId: string;
+  from: number;
+
+  /**
+   * End timestamp (exclusive) - unix timestamp
+   */
+  to: number;
+
+  /**
+   * Cursor for pagination
+   */
+  afterCursor?: string;
 }
 
 export declare namespace Transactions {
