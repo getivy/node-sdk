@@ -950,17 +950,17 @@ export namespace CheckoutsessionCreateResponse {
         | 'SS'
         | 'XK';
 
-      firstName: string;
-
-      lastName: string;
-
       line1: string;
 
-      line2: string;
-
-      region: string;
-
       zipCode: string;
+
+      firstName?: string;
+
+      lastName?: string;
+
+      line2?: string;
+
+      region?: string;
     }
   }
 
@@ -1233,17 +1233,17 @@ export namespace CheckoutsessionCreateResponse {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 
   export interface Customer {
@@ -1509,17 +1509,17 @@ export namespace CheckoutsessionCreateResponse {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 }
 
@@ -2435,17 +2435,17 @@ export namespace CheckoutsessionRetrieveResponse {
         | 'SS'
         | 'XK';
 
-      firstName: string;
-
-      lastName: string;
-
       line1: string;
 
-      line2: string;
-
-      region: string;
-
       zipCode: string;
+
+      firstName?: string;
+
+      lastName?: string;
+
+      line2?: string;
+
+      region?: string;
     }
   }
 
@@ -2718,17 +2718,17 @@ export namespace CheckoutsessionRetrieveResponse {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 
   export interface Customer {
@@ -2994,17 +2994,17 @@ export namespace CheckoutsessionRetrieveResponse {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 }
 
@@ -3920,17 +3920,17 @@ export namespace CheckoutsessionExpireResponse {
         | 'SS'
         | 'XK';
 
-      firstName: string;
-
-      lastName: string;
-
       line1: string;
 
-      line2: string;
-
-      region: string;
-
       zipCode: string;
+
+      firstName?: string;
+
+      lastName?: string;
+
+      line2?: string;
+
+      region?: string;
     }
   }
 
@@ -4203,17 +4203,17 @@ export namespace CheckoutsessionExpireResponse {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 
   export interface Customer {
@@ -4479,17 +4479,17 @@ export namespace CheckoutsessionExpireResponse {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 }
 
@@ -5127,17 +5127,17 @@ export namespace CheckoutsessionCreateParams {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 
   export interface Customer {
