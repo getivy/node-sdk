@@ -504,17 +504,17 @@ export namespace OrderCreateResponse {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 
   export interface ClimateActionMode {
@@ -1061,17 +1061,17 @@ export namespace OrderCreateResponse {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 
   /**
@@ -1647,17 +1647,17 @@ export namespace OrderRetrieveResponse {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 
   export interface ClimateActionMode {
@@ -2204,17 +2204,17 @@ export namespace OrderRetrieveResponse {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 
   /**
@@ -2790,17 +2790,17 @@ export namespace OrderExpireResponse {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 
   export interface ClimateActionMode {
@@ -3347,17 +3347,17 @@ export namespace OrderExpireResponse {
       | 'SS'
       | 'XK';
 
-    firstName: string;
-
-    lastName: string;
-
     line1: string;
 
-    line2: string;
-
-    region: string;
-
     zipCode: string;
+
+    firstName?: string;
+
+    lastName?: string;
+
+    line2?: string;
+
+    region?: string;
   }
 
   /**
