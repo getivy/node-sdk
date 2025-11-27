@@ -27,6 +27,34 @@ describe('resource fx', () => {
   });
 
   // Prism tests are disabled
+  test.skip('execute: only required params', async () => {
+    const responsePromise = client.fx.execute({
+      idempotencyKey: 'idempotencyKey',
+      sourceAmount: 'sourceAmount',
+      sourceCurrency: 'EUR',
+      targetCurrency: 'EUR',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('execute: required and optional params', async () => {
+    const response = await client.fx.execute({
+      idempotencyKey: 'idempotencyKey',
+      sourceAmount: 'sourceAmount',
+      sourceCurrency: 'EUR',
+      targetCurrency: 'EUR',
+      metadata: { foo: 'bar' },
+    });
+  });
+
+  // Prism tests are disabled
   test.skip('retrieveRate: only required params', async () => {
     const responsePromise = client.fx.retrieveRate({ sourceCurrency: 'EUR', targetCurrency: 'EUR' });
     const rawResponse = await responsePromise.asResponse();

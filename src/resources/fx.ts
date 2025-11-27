@@ -12,6 +12,13 @@ export class Fx extends APIResource {
   }
 
   /**
+   * Execute a standalone foreign exchange transaction.
+   */
+  execute(body: FxExecuteParams, options?: Core.RequestOptions): Core.APIPromise<FxExecuteResponse> {
+    return this._client.post('/api/service/fx/execute', { body, ...options });
+  }
+
+  /**
    * Retrieve the current exchange rate for a given currency pair. The rate is not
    * guaranteed for any following transactions.
    */
@@ -24,6 +31,48 @@ export class Fx extends APIResource {
 }
 
 export interface FxRetrieveResponse {
+  /**
+   * The fxId attached to the transfer.
+   */
+  id: string;
+
+  /**
+   * The exchange rate for the given currency pair.
+   */
+  rate: string;
+
+  /**
+   * The source currency code
+   */
+  sourceCurrency: 'EUR' | 'GBP' | 'USDC';
+
+  /**
+   * The status of the FX transaction.
+   */
+  status: 'initiated' | 'succeeded' | 'failed';
+
+  /**
+   * The target currency code
+   */
+  targetCurrency: 'EUR' | 'GBP' | 'USDC';
+
+  /**
+   * Additional metadata.
+   */
+  metadata?: { [key: string]: unknown };
+
+  /**
+   * The amount of source currency to convert.
+   */
+  sourceAmount?: string;
+
+  /**
+   * The amount of the target currency for the given source amount.
+   */
+  targetAmount?: string;
+}
+
+export interface FxExecuteResponse {
   /**
    * The fxId attached to the transfer.
    */
@@ -91,6 +140,33 @@ export interface FxRetrieveParams {
   fxId: string;
 }
 
+export interface FxExecuteParams {
+  /**
+   * Idempotency key for the request.
+   */
+  idempotencyKey: string;
+
+  /**
+   * The amount of source currency to convert.
+   */
+  sourceAmount: string;
+
+  /**
+   * The source currency code.
+   */
+  sourceCurrency: 'EUR' | 'GBP' | 'USDC';
+
+  /**
+   * The target currency code.
+   */
+  targetCurrency: 'EUR' | 'GBP' | 'USDC';
+
+  /**
+   * Additional metadata.
+   */
+  metadata?: { [key: string]: unknown };
+}
+
 export interface FxRetrieveRateParams {
   /**
    * The source currency code.
@@ -112,8 +188,10 @@ export interface FxRetrieveRateParams {
 export declare namespace Fx {
   export {
     type FxRetrieveResponse as FxRetrieveResponse,
+    type FxExecuteResponse as FxExecuteResponse,
     type FxRetrieveRateResponse as FxRetrieveRateResponse,
     type FxRetrieveParams as FxRetrieveParams,
+    type FxExecuteParams as FxExecuteParams,
     type FxRetrieveRateParams as FxRetrieveRateParams,
   };
 }
