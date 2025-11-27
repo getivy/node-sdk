@@ -39,8 +39,10 @@ export { Deposits, type DepositRetrieveResponse, type DepositRetrieveParams } fr
 export {
   Fx,
   type FxRetrieveResponse,
+  type FxExecuteResponse,
   type FxRetrieveRateResponse,
   type FxRetrieveParams,
+  type FxExecuteParams,
   type FxRetrieveRateParams,
 } from './fx';
 export {

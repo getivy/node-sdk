@@ -42,6 +42,8 @@ import {
 import { DepositRetrieveParams, DepositRetrieveResponse, Deposits } from './resources/deposits';
 import {
   Fx,
+  FxExecuteParams,
+  FxExecuteResponse,
   FxRetrieveParams,
   FxRetrieveRateParams,
   FxRetrieveRateResponse,
@@ -373,8 +375,10 @@ export declare namespace Ivy {
   export {
     Fx as Fx,
     type FxRetrieveResponse as FxRetrieveResponse,
+    type FxExecuteResponse as FxExecuteResponse,
     type FxRetrieveRateResponse as FxRetrieveRateResponse,
     type FxRetrieveParams as FxRetrieveParams,
+    type FxExecuteParams as FxExecuteParams,
     type FxRetrieveRateParams as FxRetrieveRateParams,
   };
 
