@@ -1105,7 +1105,9 @@ export namespace OrderCreateResponse {
       | 'pin_blocked'
       | 'payment_not_settled'
       | 'unsupported_bank_account'
-      | 'online_banking_login_required';
+      | 'online_banking_login_required'
+      | 'deutsche_bank_psu_migration'
+      | 'out_of_operational_hours';
   }
 
   export interface StatusHistoryList {
@@ -2248,7 +2250,9 @@ export namespace OrderRetrieveResponse {
       | 'pin_blocked'
       | 'payment_not_settled'
       | 'unsupported_bank_account'
-      | 'online_banking_login_required';
+      | 'online_banking_login_required'
+      | 'deutsche_bank_psu_migration'
+      | 'out_of_operational_hours';
   }
 
   export interface StatusHistoryList {
@@ -3391,7 +3395,9 @@ export namespace OrderExpireResponse {
       | 'pin_blocked'
       | 'payment_not_settled'
       | 'unsupported_bank_account'
-      | 'online_banking_login_required';
+      | 'online_banking_login_required'
+      | 'deutsche_bank_psu_migration'
+      | 'out_of_operational_hours';
   }
 
   export interface StatusHistoryList {
