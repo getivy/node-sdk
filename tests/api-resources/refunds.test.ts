@@ -33,7 +33,7 @@ describe('resource refunds', () => {
 
   // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.refunds.retrieve({ id: 'id' });
+    const responsePromise = client.refunds.retrieve({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -45,6 +45,6 @@ describe('resource refunds', () => {
 
   // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.refunds.retrieve({ id: 'id' });
+    const response = await client.refunds.retrieve({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
   });
 });
