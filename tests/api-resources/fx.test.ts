@@ -11,7 +11,7 @@ const client = new Ivy({
 describe('resource fx', () => {
   // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.fx.retrieve({ fxId: 'fxId' });
+    const responsePromise = client.fx.retrieve({ fxId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,7 +23,7 @@ describe('resource fx', () => {
 
   // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.fx.retrieve({ fxId: 'fxId' });
+    const response = await client.fx.retrieve({ fxId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
   });
 
   // Prism tests are disabled
