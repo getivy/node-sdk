@@ -33,7 +33,7 @@ describe('resource session', () => {
       locale: 'de',
       market: 'AF',
       metadata: { foo: 'bar' },
-      prefill: { bankId: 'bankId' },
+      prefill: { bankId: 'se-k+' },
       successCallbackUrl: 'successCallbackUrl',
       themeVariant: 'light',
     });

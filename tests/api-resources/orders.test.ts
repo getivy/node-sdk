@@ -11,7 +11,7 @@ const client = new Ivy({
 describe('resource orders', () => {
   // Prism tests are disabled
   test.skip('create: only required params', async () => {
-    const responsePromise = client.orders.create({ amount: 0, currency: 'EUR', referenceId: 'referenceId' });
+    const responsePromise = client.orders.create({ amount: 1, currency: 'EUR', referenceId: 'x' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -24,12 +24,12 @@ describe('resource orders', () => {
   // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.orders.create({
-      amount: 0,
+      amount: 1,
       currency: 'EUR',
-      referenceId: 'referenceId',
-      customer: { id: 'id', email: 'email', phone: 'phone' },
+      referenceId: 'x',
+      customer: { id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', email: 'dev@stainless.com', phone: 'phone' },
       expiresAt: 'expiresAt',
-      subaccountId: 'subaccountId',
+      subaccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
   });
 

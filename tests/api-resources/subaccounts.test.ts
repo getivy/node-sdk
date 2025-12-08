@@ -11,7 +11,7 @@ const client = new Ivy({
 describe('resource subaccounts', () => {
   // Prism tests are disabled
   test.skip('create: only required params', async () => {
-    const responsePromise = client.subaccounts.create({ legalName: 'legalName', mcc: 'mcc' });
+    const responsePromise = client.subaccounts.create({ legalName: 'legalName', mcc: '7321' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,14 +25,14 @@ describe('resource subaccounts', () => {
   test.skip('create: required and optional params', async () => {
     const response = await client.subaccounts.create({
       legalName: 'legalName',
-      mcc: 'mcc',
+      mcc: '7321',
       websiteUrl: 'websiteUrl',
     });
   });
 
   // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.subaccounts.retrieve({ id: 'id' });
+    const responsePromise = client.subaccounts.retrieve({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -44,6 +44,6 @@ describe('resource subaccounts', () => {
 
   // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.subaccounts.retrieve({ id: 'id' });
+    const response = await client.subaccounts.retrieve({ id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
   });
 });
