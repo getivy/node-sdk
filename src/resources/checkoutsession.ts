@@ -608,7 +608,7 @@ export interface CheckoutsessionCreateResponse {
 
   plugin?: string;
 
-  prefill?: unknown;
+  prefill?: CheckoutsessionCreateResponse.Prefill;
 
   quoteCallbackUrl?: string;
 
@@ -1248,6 +1248,10 @@ export namespace CheckoutsessionCreateResponse {
 
   export interface Customer {
     id: string;
+  }
+
+  export interface Prefill {
+    bankId: string;
   }
 
   export interface Required {
@@ -2093,7 +2097,7 @@ export interface CheckoutsessionRetrieveResponse {
 
   plugin?: string;
 
-  prefill?: unknown;
+  prefill?: CheckoutsessionRetrieveResponse.Prefill;
 
   quoteCallbackUrl?: string;
 
@@ -2733,6 +2737,10 @@ export namespace CheckoutsessionRetrieveResponse {
 
   export interface Customer {
     id: string;
+  }
+
+  export interface Prefill {
+    bankId: string;
   }
 
   export interface Required {
@@ -3578,7 +3586,7 @@ export interface CheckoutsessionExpireResponse {
 
   plugin?: string;
 
-  prefill?: unknown;
+  prefill?: CheckoutsessionExpireResponse.Prefill;
 
   quoteCallbackUrl?: string;
 
@@ -4218,6 +4226,10 @@ export namespace CheckoutsessionExpireResponse {
 
   export interface Customer {
     id: string;
+  }
+
+  export interface Prefill {
+    bankId: string;
   }
 
   export interface Required {
