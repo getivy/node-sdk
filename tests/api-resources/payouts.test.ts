@@ -40,6 +40,7 @@ describe('resource payouts', () => {
       },
       metadata: { foo: 'bar' },
       paymentReference: 'paymentReference',
+      rail: 'SEPA_INSTANT',
     });
   });
 

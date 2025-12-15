@@ -419,6 +419,28 @@ export interface PayoutCreateParams {
    * possible.
    */
   paymentReference?: string;
+
+  /**
+   * The payment rail or blockchain used for the payout
+   */
+  rail?:
+    | 'SEPA_INSTANT'
+    | 'FASTER_PAYMENTS'
+    | 'SEPA'
+    | 'ELIXIR'
+    | 'EXPRESS_ELIXIR'
+    | 'SEK_ACCOUNT_TO_ACCOUNT'
+    | 'SUMCLEARING'
+    | 'STRAKSCLEARING'
+    | 'SWIFT'
+    | 'INTERNAL'
+    | 'TARGET'
+    | 'ETH'
+    | 'ETH-SEPOLIA'
+    | 'SOL'
+    | 'SOL-DEVNET'
+    | 'MATIC'
+    | 'MATIC-AMOY';
 }
 
 export namespace PayoutCreateParams {
