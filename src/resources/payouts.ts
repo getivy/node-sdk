@@ -48,7 +48,7 @@ export interface Payout {
   /**
    * The payout currency
    */
-  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+  currency: 'EUR' | 'GBP';
 
   /**
    * The payout destination
@@ -165,7 +165,7 @@ export interface PayoutRetrieveResponse {
   /**
    * The payout currency
    */
-  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+  currency: 'EUR' | 'GBP';
 
   /**
    * The payout destination
@@ -293,7 +293,7 @@ export namespace PayoutListResponse {
     /**
      * The payout currency
      */
-    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+    currency: 'EUR' | 'GBP';
 
     /**
      * The payout destination
@@ -401,7 +401,7 @@ export interface PayoutCreateParams {
   /**
    * The payout currency
    */
-  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+  currency: 'EUR' | 'GBP';
 
   /**
    * The payout destination
