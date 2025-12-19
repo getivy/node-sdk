@@ -30,9 +30,9 @@ describe('resource fx', () => {
   test.skip('execute: only required params', async () => {
     const responsePromise = client.fx.execute({
       idempotencyKey: 'idempotencyKey',
+      sourceAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       sourceAmount: 'sourceAmount',
-      sourceCurrency: 'EUR',
-      targetCurrency: 'EUR',
+      targetAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -47,9 +47,9 @@ describe('resource fx', () => {
   test.skip('execute: required and optional params', async () => {
     const response = await client.fx.execute({
       idempotencyKey: 'idempotencyKey',
+      sourceAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       sourceAmount: 'sourceAmount',
-      sourceCurrency: 'EUR',
-      targetCurrency: 'EUR',
+      targetAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       metadata: { foo: 'bar' },
     });
   });
