@@ -147,19 +147,19 @@ export interface FxExecuteParams {
   idempotencyKey: string;
 
   /**
+   * The source account id.
+   */
+  sourceAccountId: string;
+
+  /**
    * The amount of source currency to convert.
    */
   sourceAmount: string;
 
   /**
-   * The source currency code.
+   * The target account id.
    */
-  sourceCurrency: 'EUR' | 'GBP' | 'USDC';
-
-  /**
-   * The target currency code.
-   */
-  targetCurrency: 'EUR' | 'GBP' | 'USDC';
+  targetAccountId: string;
 
   /**
    * Additional metadata.
