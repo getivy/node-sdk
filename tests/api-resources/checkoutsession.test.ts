@@ -27,7 +27,14 @@ describe('resource checkoutsession', () => {
   // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.checkoutsession.create({
-      price: { currency: 'EUR', total: 1.01, shipping: 0, subTotal: 0, totalNet: 0, vat: 0 },
+      price: {
+        currency: 'EUR',
+        total: 1.01,
+        shipping: 0,
+        subTotal: 0,
+        totalNet: 0,
+        vat: 0,
+      },
       referenceId: 'referenceId',
       billingAddress: {
         city: '-,}(N{{-ºN\tN',
@@ -41,7 +48,11 @@ describe('resource checkoutsession', () => {
       },
       completeCallbackUrl: 'completeCallbackUrl',
       created: 1,
-      customer: { id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', email: 'dev@stainless.com', phone: 'phone' },
+      customer: {
+        id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+        email: 'dev@stainless.com',
+        phone: 'phone',
+      },
       disableBankSelection: true,
       displayId: 'displayId',
       errorCallbackUrl: 'errorCallbackUrl',
@@ -71,10 +82,26 @@ describe('resource checkoutsession', () => {
         reference: 'reference',
         financialAddress: {
           type: 'iban',
-          bankCode: { accountHolderName: 'x', accountNumber: 'accountNumber', code: 'code' },
-          bban: { accountHolderName: 'x', bban: 'bban', bic: 'bic' },
-          iban: { accountHolderName: 'x', iban: 'iban', bic: 'bic' },
-          sortCode: { accountHolderName: 'x', accountNumber: '095', sortCode: '269125115713' },
+          bankCode: {
+            accountHolderName: 'x',
+            accountNumber: 'accountNumber',
+            code: 'code',
+          },
+          bban: {
+            accountHolderName: 'x',
+            bban: 'bban',
+            bic: 'bic',
+          },
+          iban: {
+            accountHolderName: 'x',
+            iban: 'iban',
+            bic: 'bic',
+          },
+          sortCode: {
+            accountHolderName: 'x',
+            accountNumber: '095',
+            sortCode: '269125115713',
+          },
           wallet: { address: 'address' },
         },
       },

@@ -40,7 +40,11 @@ describe('resource subscription', () => {
 
   // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
-    const response = await client.webhook.subscription.update({ id: {}, events: ['test'], url: 'url' });
+    const response = await client.webhook.subscription.update({
+      id: {},
+      events: ['test'],
+      url: 'url',
+    });
   });
 
   // Prism tests are disabled
