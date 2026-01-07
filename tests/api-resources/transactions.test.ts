@@ -23,6 +23,10 @@ describe('resource transactions', () => {
 
   // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
-    const response = await client.transactions.list({ from: 0, to: 0, afterCursor: 'x' });
+    const response = await client.transactions.list({
+      from: 0,
+      to: 0,
+      afterCursor: 'x',
+    });
   });
 });
