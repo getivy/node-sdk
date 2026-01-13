@@ -80,6 +80,14 @@ describe('resource checkoutsession', () => {
       quoteCallbackUrl: 'quoteCallbackUrl',
       settlementDestination: {
         reference: 'reference',
+        bankAddress: {
+          city: '-,}(N{{-ºN\tN',
+          country: 'AF',
+          line1: '-(№Np){{\rp{:',
+          zipCode: '-p-Np{{{\rp{.',
+          line2: 'line2',
+          region: '/{',
+        },
         financialAddress: {
           type: 'iban',
           bankCode: {
