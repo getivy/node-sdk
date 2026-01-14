@@ -591,6 +591,11 @@ export namespace OrderCreateResponse {
          * The blockchain wallet address
          */
         address: string;
+
+        /**
+         * The blockchain network
+         */
+        blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
       }
     }
   }
@@ -707,6 +712,11 @@ export namespace OrderCreateResponse {
        * The blockchain wallet address
        */
       address: string;
+
+      /**
+       * The blockchain network
+       */
+      blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
     }
   }
 
@@ -766,6 +776,11 @@ export namespace OrderCreateResponse {
        * The blockchain wallet address
        */
       address: string;
+
+      /**
+       * The blockchain network
+       */
+      blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
     }
   }
 
@@ -1736,6 +1751,11 @@ export namespace OrderRetrieveResponse {
          * The blockchain wallet address
          */
         address: string;
+
+        /**
+         * The blockchain network
+         */
+        blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
       }
     }
   }
@@ -1852,6 +1872,11 @@ export namespace OrderRetrieveResponse {
        * The blockchain wallet address
        */
       address: string;
+
+      /**
+       * The blockchain network
+       */
+      blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
     }
   }
 
@@ -1911,6 +1936,11 @@ export namespace OrderRetrieveResponse {
        * The blockchain wallet address
        */
       address: string;
+
+      /**
+       * The blockchain network
+       */
+      blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
     }
   }
 
@@ -2881,6 +2911,11 @@ export namespace OrderExpireResponse {
          * The blockchain wallet address
          */
         address: string;
+
+        /**
+         * The blockchain network
+         */
+        blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
       }
     }
   }
@@ -2997,6 +3032,11 @@ export namespace OrderExpireResponse {
        * The blockchain wallet address
        */
       address: string;
+
+      /**
+       * The blockchain network
+       */
+      blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
     }
   }
 
@@ -3056,6 +3096,11 @@ export namespace OrderExpireResponse {
        * The blockchain wallet address
        */
       address: string;
+
+      /**
+       * The blockchain network
+       */
+      blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
     }
   }
 
