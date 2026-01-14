@@ -142,6 +142,11 @@ export namespace Payout {
        * The blockchain wallet address
        */
       address: string;
+
+      /**
+       * The blockchain network
+       */
+      blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
     }
   }
 }
@@ -259,6 +264,11 @@ export namespace PayoutRetrieveResponse {
        * The blockchain wallet address
        */
       address: string;
+
+      /**
+       * The blockchain network
+       */
+      blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
     }
   }
 }
@@ -387,6 +397,11 @@ export namespace PayoutListResponse {
          * The blockchain wallet address
          */
         address: string;
+
+        /**
+         * The blockchain network
+         */
+        blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
       }
     }
   }
@@ -508,6 +523,11 @@ export namespace PayoutCreateParams {
          * The blockchain wallet address
          */
         address: string;
+
+        /**
+         * The blockchain network
+         */
+        blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
       }
     }
   }
