@@ -105,6 +105,11 @@ export namespace AccountListResponse {
          * The blockchain wallet address
          */
         address: string;
+
+        /**
+         * The blockchain network
+         */
+        blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
       }
     }
   }
