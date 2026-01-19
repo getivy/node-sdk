@@ -239,6 +239,12 @@ export interface TransactionListParams {
   to: number;
 
   /**
+   * Account Id to fetch transactions for. Optional, is not specified - transactions
+   * for the default accounts will be returned
+   */
+  accountId?: string;
+
+  /**
    * Cursor for pagination
    */
   afterCursor?: string;
