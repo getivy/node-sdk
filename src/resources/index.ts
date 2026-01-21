@@ -54,6 +54,7 @@ export {
   type OrderRetrieveParams,
   type OrderExpireParams,
 } from './orders';
+export { Payee, type PayeeVerifyResponse, type PayeeVerifyParams } from './payee';
 export {
   Payouts,
   type Payout,
