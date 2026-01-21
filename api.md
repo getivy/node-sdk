@@ -256,3 +256,13 @@ Methods:
 - <code title="post /api/service/webhook-subscription/list">client.webhook.subscription.<a href="./src/resources/webhook/subscription.ts">list</a>({ ...params }) -> SubscriptionListResponse</code>
 - <code title="post /api/service/webhook-subscription/delete">client.webhook.subscription.<a href="./src/resources/webhook/subscription.ts">delete</a>({ ...params }) -> SubscriptionDeleteResponse</code>
 - <code title="post /api/service/webhook-subscription/ping">client.webhook.subscription.<a href="./src/resources/webhook/subscription.ts">ping</a>({ ...params }) -> SubscriptionPingResponse</code>
+
+# Payee
+
+Types:
+
+- <code><a href="./src/resources/payee.ts">PayeeVerifyResponse</a></code>
+
+Methods:
+
+- <code title="post /api/service/payee/verify">client.payee.<a href="./src/resources/payee.ts">verify</a>({ ...params }) -> PayeeVerifyResponse</code>

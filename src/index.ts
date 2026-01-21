@@ -58,6 +58,7 @@ import {
   OrderRetrieveResponse,
   Orders,
 } from './resources/orders';
+import { Payee, PayeeVerifyParams, PayeeVerifyResponse } from './resources/payee';
 import {
   Payout,
   PayoutCreateParams,
@@ -248,6 +249,7 @@ export class Ivy extends Core.APIClient {
   subaccounts: API.Subaccounts = new API.Subaccounts(this);
   balance: API.Balance = new API.Balance(this);
   webhook: API.Webhook = new API.Webhook(this);
+  payee: API.Payee = new API.Payee(this);
 
   /**
    * Check whether the base URL is set to its default.
@@ -308,6 +310,7 @@ Ivy.Payouts = Payouts;
 Ivy.Subaccounts = Subaccounts;
 Ivy.Balance = Balance;
 Ivy.Webhook = Webhook;
+Ivy.Payee = Payee;
 
 export declare namespace Ivy {
   export type RequestOptions = Core.RequestOptions;
@@ -436,6 +439,12 @@ export declare namespace Ivy {
     Webhook as Webhook,
     type WebhookTriggerResponse as WebhookTriggerResponse,
     type WebhookTriggerParams as WebhookTriggerParams,
+  };
+
+  export {
+    Payee as Payee,
+    type PayeeVerifyResponse as PayeeVerifyResponse,
+    type PayeeVerifyParams as PayeeVerifyParams,
   };
 }
 
