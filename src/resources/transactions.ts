@@ -70,6 +70,18 @@ export namespace TransactionListResponse {
      * Transaction date as unix timestamp
      */
     transactionDate: number;
+
+    /**
+     * Payment process type
+     */
+    paymentProcessType?:
+      | 'deposit'
+      | 'deposit_return'
+      | 'payout'
+      | 'merchant_payout'
+      | 'payment'
+      | 'refund'
+      | 'topup';
   }
 
   export namespace Data {
