@@ -10,8 +10,8 @@ const client = new Ivy({
 
 describe('resource balance', () => {
   // Prism tests are disabled
-  test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.balance.retrieve({ currency: 'EUR' });
+  test.skip('retrieve', async () => {
+    const responsePromise = client.balance.retrieve({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -19,10 +19,5 @@ describe('resource balance', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // Prism tests are disabled
-  test.skip('retrieve: required and optional params', async () => {
-    const response = await client.balance.retrieve({ currency: 'EUR' });
   });
 });

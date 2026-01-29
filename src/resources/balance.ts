@@ -33,15 +33,22 @@ export namespace BalanceRetrieveResponse {
     /**
      * The currency of the balance
      */
-    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK' | 'USDC';
+    currency: 'USD' | 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK' | 'USDC';
   }
 }
 
 export interface BalanceRetrieveParams {
   /**
-   * The currency to retrieve the balance for
+   * The account id to retrieve the balance for. You can find it in the Merchant
+   * Dashboard -> Accounts -> Details. If `currency` is provided it will be ignored.
    */
-  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK' | 'USDC';
+  accountId?: string;
+
+  /**
+   * The currency to retrieve the balance for. Default account balance for that
+   * currency will be retrieved
+   */
+  currency?: 'USD' | 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK' | 'USDC';
 }
 
 export declare namespace Balance {
