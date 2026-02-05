@@ -69,7 +69,6 @@ import {
   Payouts,
 } from './resources/payouts';
 import {
-  Refund,
   RefundCreateParams,
   RefundCreateResponse,
   RefundRetrieveParams,
@@ -404,7 +403,6 @@ export declare namespace Ivy {
 
   export {
     Refunds as Refunds,
-    type Refund as Refund,
     type RefundCreateResponse as RefundCreateResponse,
     type RefundRetrieveResponse as RefundRetrieveResponse,
     type RefundCreateParams as RefundCreateParams,

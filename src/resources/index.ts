@@ -66,7 +66,6 @@ export {
 } from './payouts';
 export {
   Refunds,
-  type Refund,
   type RefundCreateResponse,
   type RefundRetrieveResponse,
   type RefundCreateParams,
