@@ -25,29 +25,6 @@ export class Refunds extends APIResource {
   }
 }
 
-export interface Refund {
-  orderId: string;
-
-  orderStatus:
-    | 'failed'
-    | 'canceled'
-    | 'processing'
-    | 'waiting_for_payment'
-    | 'paid'
-    | 'in_refund'
-    | 'refunded'
-    | 'refund_failed'
-    | 'partially_refunded'
-    | 'in_dispute'
-    | 'disputed'
-    | 'refused'
-    | 'finalizing';
-
-  referenceId: string;
-
-  refundStatus: 'pending' | 'succeeded' | 'failed' | 'requires_action' | 'partially_refunded';
-}
-
 export interface RefundCreateResponse {
   /**
    * The unique Refund id
@@ -144,7 +121,6 @@ export interface RefundRetrieveParams {
 
 export declare namespace Refunds {
   export {
-    type Refund as Refund,
     type RefundCreateResponse as RefundCreateResponse,
     type RefundRetrieveResponse as RefundRetrieveResponse,
     type RefundCreateParams as RefundCreateParams,
