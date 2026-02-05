@@ -184,7 +184,6 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/refunds.ts">Refund</a></code>
 - <code><a href="./src/resources/refunds.ts">RefundCreateResponse</a></code>
 - <code><a href="./src/resources/refunds.ts">RefundRetrieveResponse</a></code>
 
