@@ -184,13 +184,13 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/refunds.ts">Refund</a></code>
 - <code><a href="./src/resources/refunds.ts">RefundCreateResponse</a></code>
-- <code><a href="./src/resources/refunds.ts">RefundRetrieveResponse</a></code>
 
 Methods:
 
 - <code title="post /api/service/refund/create">client.refunds.<a href="./src/resources/refunds.ts">create</a>({ ...params }) -> RefundCreateResponse</code>
-- <code title="post /api/service/refund/retrieve">client.refunds.<a href="./src/resources/refunds.ts">retrieve</a>({ ...params }) -> RefundRetrieveResponse</code>
+- <code title="post /api/service/refund/retrieve">client.refunds.<a href="./src/resources/refunds.ts">retrieve</a>({ ...params }) -> Refund</code>
 
 # Payouts
 
