@@ -2,6 +2,8 @@
 
 set -eux
 
+# Auth and registry for npm (used for npm view and npm publish)
+npm config set registry https://registry.npmjs.org/
 npm config set '//registry.npmjs.org/:_authToken' "$NPM_TOKEN"
 
 yarn build
@@ -58,4 +60,4 @@ else
 fi
 
 # Publish with the appropriate tag
-yarn publish --tag "$TAG"
+npm publish --tag "$TAG"
