@@ -17,15 +17,12 @@ export class Refunds extends APIResource {
   /**
    * Returns refund details and Id of refunded order.
    */
-  retrieve(
-    body: RefundRetrieveParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<RefundRetrieveResponse> {
+  retrieve(body: RefundRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<Refund> {
     return this._client.post('/api/service/refund/retrieve', { body, ...options });
   }
 }
 
-export interface RefundCreateResponse {
+export interface Refund {
   /**
    * The unique Refund id
    */
@@ -57,7 +54,7 @@ export interface RefundCreateResponse {
   transactionId?: string;
 }
 
-export interface RefundRetrieveResponse {
+export interface RefundCreateResponse {
   /**
    * The unique Refund id
    */
@@ -121,8 +118,8 @@ export interface RefundRetrieveParams {
 
 export declare namespace Refunds {
   export {
+    type Refund as Refund,
     type RefundCreateResponse as RefundCreateResponse,
-    type RefundRetrieveResponse as RefundRetrieveResponse,
     type RefundCreateParams as RefundCreateParams,
     type RefundRetrieveParams as RefundRetrieveParams,
   };
