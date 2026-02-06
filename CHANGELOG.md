@@ -1,5 +1,67 @@
 # Changelog
 
+## 1.5.0 (2026-02-06)
+
+Full Changelog: [v1.4.0...v1.5.0](https://github.com/getivy/node-sdk/compare/v1.4.0...v1.5.0)
+
+### Features
+
+* **api:** api update ([880d5c1](https://github.com/getivy/node-sdk/commit/880d5c17b63cb307d5eb8cbbf15305e4e656ec5b))
+* **api:** api update ([c5d2974](https://github.com/getivy/node-sdk/commit/c5d2974f381f95803128f2a827c0c7f8ee540a1e))
+* **api:** api update ([1742fd9](https://github.com/getivy/node-sdk/commit/1742fd9b5cd99e4c8c24d9b49a89bc51978e033a))
+* **api:** api update ([d06430c](https://github.com/getivy/node-sdk/commit/d06430cd7c1686b51773cb27455ed68b4d78d0f4))
+* **api:** api update ([ae4b397](https://github.com/getivy/node-sdk/commit/ae4b3975ec1e22c62f1d48f8817815b1602d3455))
+* **api:** api update ([db132cb](https://github.com/getivy/node-sdk/commit/db132cb9affed4471ef5145904434b7e338b283c))
+* **api:** api update ([284ca71](https://github.com/getivy/node-sdk/commit/284ca7180c832155b65323d771b92b378359cc90))
+* **api:** api update ([87121d2](https://github.com/getivy/node-sdk/commit/87121d2f180cf77094d60dccee6b5f7b38bbe370))
+* **api:** api update ([9162811](https://github.com/getivy/node-sdk/commit/9162811603f36a3a98804c0506b1c0d344105b31))
+* **api:** api update ([2ab5712](https://github.com/getivy/node-sdk/commit/2ab571266d706623a7c1d241042394f659f518fa))
+* **api:** api update ([b6dcf40](https://github.com/getivy/node-sdk/commit/b6dcf40155fcd424a1431e7b47fe7f525bb851ce))
+* **api:** api update ([dd73205](https://github.com/getivy/node-sdk/commit/dd7320581519e61eaae6b1653418566777200dec))
+* **api:** api update ([43cd431](https://github.com/getivy/node-sdk/commit/43cd431f5ef5390cc27bd922321b94f51a5681eb))
+* **api:** api update ([ee8d710](https://github.com/getivy/node-sdk/commit/ee8d7101bafbad17d19cd7e4e56dba1a8244718d))
+* **api:** api update ([301ff0d](https://github.com/getivy/node-sdk/commit/301ff0d0d51d5da5b0f763b03201a77f869b4c26))
+* **api:** api update ([0f6cfea](https://github.com/getivy/node-sdk/commit/0f6cfea5561bca8e46011cc3e373c74fcf233b7c))
+* **api:** api update ([ca7b94a](https://github.com/getivy/node-sdk/commit/ca7b94a73f9ed53e8cf03bc282c5a086a222a322))
+* **api:** api update ([6c211a0](https://github.com/getivy/node-sdk/commit/6c211a0b7233d6391771b806dfa4385395bf633c))
+* **api:** api update ([5b7654f](https://github.com/getivy/node-sdk/commit/5b7654f5ef126bf90db8b01308aa05de258015c0))
+* **api:** api update ([422187e](https://github.com/getivy/node-sdk/commit/422187e7557a1ee18766955e9c9331d32a768897))
+* **api:** api update ([0f740de](https://github.com/getivy/node-sdk/commit/0f740de28dc8cb90aece73726175634504409347))
+* **api:** api update ([e9ec637](https://github.com/getivy/node-sdk/commit/e9ec63725bfa4d6dc754df07f6923804ec23dce3))
+* **api:** api update ([c641bcc](https://github.com/getivy/node-sdk/commit/c641bcc39a599a30885f5df4597a3ba8076cebac))
+* **api:** api update ([3dee463](https://github.com/getivy/node-sdk/commit/3dee46360a14d329a79632bbe178bd7fe0b98ef8))
+* **api:** api update ([9a9e810](https://github.com/getivy/node-sdk/commit/9a9e810cc4cdf0a38d6ade379532319eb8a63aa1))
+* **api:** api update ([836d63d](https://github.com/getivy/node-sdk/commit/836d63d9a1aec57a9a22f5b69ac0315626c874e1))
+
+
+### Bug Fixes
+
+* **mcp:** correct code tool API endpoint ([4e8f1c3](https://github.com/getivy/node-sdk/commit/4e8f1c380578f311afdc2406e79c2c905cf7bd2d))
+* **mcp:** return correct lines on typescript errors ([02f0100](https://github.com/getivy/node-sdk/commit/02f010097c698e6d976b9873b5c6c2e77990b654))
+
+
+### Performance Improvements
+
+* faster formatting ([5a67cec](https://github.com/getivy/node-sdk/commit/5a67ceca58a1fb3be2e70766939b3afe761d861b))
+
+
+### Chores
+
+* break long lines in snippets into multiline ([bcfb20e](https://github.com/getivy/node-sdk/commit/bcfb20e8f45c8387e396f36a51e082fcf00f944e))
+* **ci:** upgrade `actions/github-script` ([0561830](https://github.com/getivy/node-sdk/commit/0561830208467e44240f623974d8de2f50055672))
+* **client:** do not parse responses with empty content-length ([1860454](https://github.com/getivy/node-sdk/commit/18604548a6293b22dd9d9d4b5e380212f7f2cc44))
+* do not install brew dependencies in ./scripts/bootstrap by default ([7f3b4e3](https://github.com/getivy/node-sdk/commit/7f3b4e3863886857ed38ae1e369e9ada21b041f9))
+* **internal:** codegen related update ([a832944](https://github.com/getivy/node-sdk/commit/a8329442d38ee0f6f55d1ba3cd663be3efa92a30))
+* **internal:** codegen related update ([35d29dd](https://github.com/getivy/node-sdk/commit/35d29dd7538ca4ac0428886a6245d8e3c9266760))
+* **internal:** codegen related update ([1b407de](https://github.com/getivy/node-sdk/commit/1b407de06ab136cd4c596e76f967fe8a85a5cafc))
+* **internal:** fix incremental formatting in some cases ([a6abe15](https://github.com/getivy/node-sdk/commit/a6abe15f300abf53d26454bb5c405303e3cb8f95))
+* **internal:** ignore .eslintcache ([ebb4a6f](https://github.com/getivy/node-sdk/commit/ebb4a6f571cdd48e856b1b2cb2c5c917cc8f7c52))
+* **internal:** remove .eslintcache ([b1dc373](https://github.com/getivy/node-sdk/commit/b1dc373d24b96c978d200cd95c0307f705154ec3))
+* **internal:** remove deprecated `compilerOptions.baseUrl` from tsconfig.json ([514243e](https://github.com/getivy/node-sdk/commit/514243ed72275f26b6d01eeb0c66863f6d45c106))
+* **internal:** update `actions/checkout` version ([10a079a](https://github.com/getivy/node-sdk/commit/10a079a0bca322bd64a53952235b0d40c626114b))
+* **internal:** upgrade babel, qs, js-yaml ([3738402](https://github.com/getivy/node-sdk/commit/3738402e89450db504601b8edecae150f2a01fd5))
+* **internal:** use npm pack for build uploads ([4f96129](https://github.com/getivy/node-sdk/commit/4f961293bde4b44db9184fa7dd6347c4aad6de6d))
+
 ## 1.4.0 (2025-09-10)
 
 Full Changelog: [v1.3.0...v1.4.0](https://github.com/getivy/node-sdk/compare/v1.3.0...v1.4.0)
