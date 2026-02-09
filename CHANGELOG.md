@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.1 (2026-02-09)
+
+Full Changelog: [v1.5.0...v1.5.1](https://github.com/getivy/node-sdk/compare/v1.5.0...v1.5.1)
+
+### Bug Fixes
+
+* use npm publish and set registry to fix CI publish 404 ([bba478e](https://github.com/getivy/node-sdk/commit/bba478ec6b4939c08820ab489393481628ac91db))
+
 ## 1.5.0 (2026-02-06)
 
 Full Changelog: [v1.4.0...v1.5.0](https://github.com/getivy/node-sdk/compare/v1.4.0...v1.5.0)
