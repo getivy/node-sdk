@@ -413,14 +413,8 @@ export interface PayoutCreateParams {
    */
   amount: number;
 
-  /**
-   * The payout currency
-   */
   currency: 'EUR' | 'GBP' | 'USDC';
 
-  /**
-   * The payout destination
-   */
   destination: PayoutCreateParams.Destination;
 
   /**
@@ -459,15 +453,16 @@ export interface PayoutCreateParams {
 }
 
 export namespace PayoutCreateParams {
-  /**
-   * The payout destination
-   */
   export interface Destination {
     financialAddress?: Destination.FinancialAddress | null;
 
     orderId?: string;
 
-    type?: 'beneficiary';
+    /**
+     * Beneficiary is a payout to an account owned by the merchant. Customer is a
+     * payout to an external customer account.
+     */
+    type?: 'beneficiary' | 'customer';
   }
 
   export namespace Destination {
