@@ -152,7 +152,7 @@ export interface FxExecuteParams {
   sourceAccountId: string;
 
   /**
-   * The amount of source currency to convert.
+   * The amount of source currency to convert. Minimum: 10
    */
   sourceAmount: string;
 
