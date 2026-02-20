@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource session', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.data.session.create({ referenceId: 'referenceId' });
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource session', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.data.session.create({
       referenceId: 'referenceId',
@@ -39,7 +39,7 @@ describe('resource session', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.data.session.retrieve({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
@@ -51,7 +51,7 @@ describe('resource session', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.data.session.retrieve({ id: 'id' });
   });

@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource beneficiaryPayouts', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create', async () => {
     const responsePromise = client.beneficiaryPayouts.create();
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource beneficiaryPayouts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(client.beneficiaryPayouts.create({ path: '/_stainless_unknown_path' })).rejects.toThrow(
