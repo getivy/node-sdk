@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource transactions', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.transactions.list({ from: 0, to: 0 });
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource transactions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.transactions.list({
       from: 0,

@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource webhook', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('trigger: only required params', async () => {
     const responsePromise = client.webhook.trigger({ id: {} });
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource webhook', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('trigger: required and optional params', async () => {
     const response = await client.webhook.trigger({ id: {} });
   });

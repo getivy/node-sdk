@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource payee', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('verify: only required params', async () => {
     const responsePromise = client.payee.verify({
       payee: {
@@ -26,7 +26,7 @@ describe('resource payee', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('verify: required and optional params', async () => {
     const response = await client.payee.verify({
       payee: {

@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource customers', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create', async () => {
     const responsePromise = client.customers.create({});
     const rawResponse = await responsePromise.asResponse();
@@ -21,7 +21,7 @@ describe('resource customers', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.customers.retrieve({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
@@ -33,12 +33,12 @@ describe('resource customers', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.customers.retrieve({ id: 'id' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.customers.update({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
@@ -50,7 +50,7 @@ describe('resource customers', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.customers.update({
       id: 'id',
@@ -70,7 +70,7 @@ describe('resource customers', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.customers.delete({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
@@ -82,12 +82,12 @@ describe('resource customers', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.customers.delete({ id: 'id' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('search', async () => {
     const responsePromise = client.customers.search({});
     const rawResponse = await responsePromise.asResponse();
