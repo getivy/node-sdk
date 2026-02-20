@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.6.0 (2026-02-20)
+
+Full Changelog: [v1.5.1...v1.6.0](https://github.com/getivy/node-sdk/compare/v1.5.1...v1.6.0)
+
+### Features
+
+* **api:** api update ([4766775](https://github.com/getivy/node-sdk/commit/4766775c580713819b70fa0ff2bf5018bebfabd9))
+* **api:** api update ([c376f76](https://github.com/getivy/node-sdk/commit/c376f7631c8e1f1d9d5e88ff8a93c03a92c3de05))
+* **api:** api update ([fcbb697](https://github.com/getivy/node-sdk/commit/fcbb6979567dfc05093f27d98bbfd77e09ff3fc6))
+
+
+### Chores
+
+* **internal:** remove mock server code ([ab7d917](https://github.com/getivy/node-sdk/commit/ab7d91742c2866971dfc6585bee067a40f21e310))
+* update mock server docs ([61aa1e9](https://github.com/getivy/node-sdk/commit/61aa1e983769b33f55cb01f80cca0ae9032da634))
+
 ## 1.5.1 (2026-02-09)
 
 Full Changelog: [v1.5.0...v1.5.1](https://github.com/getivy/node-sdk/compare/v1.5.0...v1.5.1)
