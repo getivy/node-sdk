@@ -71,6 +71,11 @@ export interface Payout {
   updatedAt: unknown;
 
   /**
+   * Failure details. Only available if the payout failed.
+   */
+  failure?: Payout.Failure;
+
+  /**
    * The payout metadata
    */
   metadata?: { [key: string]: unknown };
@@ -149,6 +154,39 @@ export namespace Payout {
       blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
     }
   }
+
+  /**
+   * Failure details. Only available if the payout failed.
+   */
+  export interface Failure {
+    /**
+     * Failure code. Please refer to the documentation for the list of possible values.
+     */
+    code:
+      | 'account_closed'
+      | 'account_blocked'
+      | 'insufficient_funds'
+      | 'invalid_account_format'
+      | 'invalid_instruction'
+      | 'invalid_amount'
+      | 'invalid_time'
+      | 'duplicate_transaction'
+      | 'system_error'
+      | 'provider_system_error'
+      | 'rejected_by_correspondent_bank'
+      | 'blocked_by_review'
+      | 'unknown';
+
+    /**
+     * Human readable description of the failure.
+     */
+    message: string;
+
+    /**
+     * If true, you can safely retry.
+     */
+    retry: boolean;
+  }
 }
 
 export interface PayoutRetrieveResponse {
@@ -191,6 +229,11 @@ export interface PayoutRetrieveResponse {
    * The payout updated at
    */
   updatedAt: unknown;
+
+  /**
+   * Failure details. Only available if the payout failed.
+   */
+  failure?: PayoutRetrieveResponse.Failure;
 
   /**
    * The payout metadata
@@ -271,6 +314,39 @@ export namespace PayoutRetrieveResponse {
       blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
     }
   }
+
+  /**
+   * Failure details. Only available if the payout failed.
+   */
+  export interface Failure {
+    /**
+     * Failure code. Please refer to the documentation for the list of possible values.
+     */
+    code:
+      | 'account_closed'
+      | 'account_blocked'
+      | 'insufficient_funds'
+      | 'invalid_account_format'
+      | 'invalid_instruction'
+      | 'invalid_amount'
+      | 'invalid_time'
+      | 'duplicate_transaction'
+      | 'system_error'
+      | 'provider_system_error'
+      | 'rejected_by_correspondent_bank'
+      | 'blocked_by_review'
+      | 'unknown';
+
+    /**
+     * Human readable description of the failure.
+     */
+    message: string;
+
+    /**
+     * If true, you can safely retry.
+     */
+    retry: boolean;
+  }
 }
 
 export interface PayoutListResponse {
@@ -324,6 +400,11 @@ export namespace PayoutListResponse {
      * The payout updated at
      */
     updatedAt: unknown;
+
+    /**
+     * Failure details. Only available if the payout failed.
+     */
+    failure?: Item.Failure;
 
     /**
      * The payout metadata
@@ -404,6 +485,39 @@ export namespace PayoutListResponse {
         blockchain: 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
       }
     }
+
+    /**
+     * Failure details. Only available if the payout failed.
+     */
+    export interface Failure {
+      /**
+       * Failure code. Please refer to the documentation for the list of possible values.
+       */
+      code:
+        | 'account_closed'
+        | 'account_blocked'
+        | 'insufficient_funds'
+        | 'invalid_account_format'
+        | 'invalid_instruction'
+        | 'invalid_amount'
+        | 'invalid_time'
+        | 'duplicate_transaction'
+        | 'system_error'
+        | 'provider_system_error'
+        | 'rejected_by_correspondent_bank'
+        | 'blocked_by_review'
+        | 'unknown';
+
+      /**
+       * Human readable description of the failure.
+       */
+      message: string;
+
+      /**
+       * If true, you can safely retry.
+       */
+      retry: boolean;
+    }
   }
 }
 
@@ -413,14 +527,8 @@ export interface PayoutCreateParams {
    */
   amount: number;
 
-  /**
-   * The payout currency
-   */
   currency: 'EUR' | 'GBP' | 'USDC';
 
-  /**
-   * The payout destination
-   */
   destination: PayoutCreateParams.Destination;
 
   /**
@@ -459,15 +567,16 @@ export interface PayoutCreateParams {
 }
 
 export namespace PayoutCreateParams {
-  /**
-   * The payout destination
-   */
   export interface Destination {
     financialAddress?: Destination.FinancialAddress | null;
 
     orderId?: string;
 
-    type?: 'beneficiary';
+    /**
+     * Beneficiary is a payout to an account owned by the merchant. Customer is a
+     * payout to an external customer account.
+     */
+    type?: 'beneficiary' | 'customer';
   }
 
   export namespace Destination {

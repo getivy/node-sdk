@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource payouts', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.payouts.create({
       amount: 1.01,
@@ -25,7 +25,7 @@ describe('resource payouts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.payouts.create({
       amount: 1.01,
@@ -64,7 +64,7 @@ describe('resource payouts', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.payouts.retrieve({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
@@ -76,12 +76,12 @@ describe('resource payouts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.payouts.retrieve({ id: 'id' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.payouts.list({});
     const rawResponse = await responsePromise.asResponse();

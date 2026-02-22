@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource fx', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.fx.retrieve({ fxId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
     const rawResponse = await responsePromise.asResponse();
@@ -21,12 +21,12 @@ describe('resource fx', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.fx.retrieve({ fxId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('execute: only required params', async () => {
     const responsePromise = client.fx.execute({
       idempotencyKey: 'idempotencyKey',
@@ -43,7 +43,7 @@ describe('resource fx', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('execute: required and optional params', async () => {
     const response = await client.fx.execute({
       idempotencyKey: 'idempotencyKey',
@@ -54,7 +54,7 @@ describe('resource fx', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieveRate: only required params', async () => {
     const responsePromise = client.fx.retrieveRate({ sourceCurrency: 'EUR', targetCurrency: 'EUR' });
     const rawResponse = await responsePromise.asResponse();
@@ -66,7 +66,7 @@ describe('resource fx', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieveRate: required and optional params', async () => {
     const response = await client.fx.retrieveRate({
       sourceCurrency: 'EUR',
