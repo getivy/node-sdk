@@ -60,7 +60,7 @@ $ yarn link @getivy/node-sdk
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global @getivy/node-sdk
+$ pnpm link --global @getivy/node-sdk
 ```
 
 ## Running tests
