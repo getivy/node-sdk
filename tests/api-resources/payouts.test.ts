@@ -59,7 +59,7 @@ describe('resource payouts', () => {
         type: 'beneficiary',
       },
       metadata: { foo: 'bar' },
-      paymentReference: 'paymentReference',
+      paymentReference: 'x',
       rail: 'SEPA_INSTANT',
     });
   });
