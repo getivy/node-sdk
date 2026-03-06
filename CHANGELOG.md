@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.6.0 (2026-03-06)
+
+Full Changelog: [v1.5.1...v1.6.0](https://github.com/getivy/node-sdk/compare/v1.5.1...v1.6.0)
+
+### Features
+
+* **api:** api update ([752465d](https://github.com/getivy/node-sdk/commit/752465d7862d9ef0bdcf960a5185470e860be0d0))
+* **api:** api update ([379f934](https://github.com/getivy/node-sdk/commit/379f934271992783e852a50df52426f644939b8b))
+* **api:** api update ([d5aa669](https://github.com/getivy/node-sdk/commit/d5aa66973fbda24a99708a93a3bc2c7e8a0b2656))
+* **api:** api update ([9277f3d](https://github.com/getivy/node-sdk/commit/9277f3d4db675ac76af0a099417bf397efcf1c80))
+* **api:** api update ([c5928bd](https://github.com/getivy/node-sdk/commit/c5928bd550682a9cb8534b53726bb4e8b4244ebc))
+
+
+### Bug Fixes
+
+* **docs/contributing:** correct pnpm link command ([601b0e9](https://github.com/getivy/node-sdk/commit/601b0e9854c373d2bc9e1feaf24f126f8cac0715))
+
+
+### Chores
+
+* **ci:** switch npm publish to trusted publishing (OIDC) ([481dbc6](https://github.com/getivy/node-sdk/commit/481dbc67fb2bbfc3a95fbc46d4ec6d300e2f3be2))
+* **internal:** codegen related update ([9e090c9](https://github.com/getivy/node-sdk/commit/9e090c9f41f3a6226b2099ef4344eeb643c13cf6))
+* **internal:** move stringifyQuery implementation to internal function ([89026da](https://github.com/getivy/node-sdk/commit/89026da07ff993cc857d05c77bb0c6125ddf2cd3))
+* **internal:** remove mock server code ([8c5c8ef](https://github.com/getivy/node-sdk/commit/8c5c8efece498cb12be2a5d5b23525d0809766c4))
+* update mock server docs ([ea0302c](https://github.com/getivy/node-sdk/commit/ea0302c4ad624bef738cd0e4cd1bd38ffe6464ae))
+
 ## 1.5.1 (2026-02-09)
 
 Full Changelog: [v1.5.0...v1.5.1](https://github.com/getivy/node-sdk/compare/v1.5.0...v1.5.1)
