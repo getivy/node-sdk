@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource consent', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.data.consent.retrieve({ sessionId: 'sessionId' });
     const rawResponse = await responsePromise.asResponse();
@@ -21,12 +21,12 @@ describe('resource consent', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.data.consent.retrieve({ sessionId: 'sessionId' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('revoke: only required params', async () => {
     const responsePromise = client.data.consent.revoke({ sessionId: 'sessionId' });
     const rawResponse = await responsePromise.asResponse();
@@ -38,7 +38,7 @@ describe('resource consent', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('revoke: required and optional params', async () => {
     const response = await client.data.consent.revoke({ sessionId: 'sessionId' });
   });

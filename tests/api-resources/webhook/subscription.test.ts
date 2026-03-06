@@ -9,7 +9,7 @@ const client = new Ivy({
 });
 
 describe('resource subscription', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.webhook.subscription.create({ url: 'url' });
     const rawResponse = await responsePromise.asResponse();
@@ -21,12 +21,12 @@ describe('resource subscription', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.webhook.subscription.create({ url: 'url', events: ['test'] });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.webhook.subscription.update({ id: {} });
     const rawResponse = await responsePromise.asResponse();
@@ -38,7 +38,7 @@ describe('resource subscription', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.webhook.subscription.update({
       id: {},
@@ -47,7 +47,7 @@ describe('resource subscription', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.webhook.subscription.list({});
     const rawResponse = await responsePromise.asResponse();
@@ -59,7 +59,7 @@ describe('resource subscription', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.webhook.subscription.delete({ id: {} });
     const rawResponse = await responsePromise.asResponse();
@@ -71,12 +71,12 @@ describe('resource subscription', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.webhook.subscription.delete({ id: {} });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('ping: only required params', async () => {
     const responsePromise = client.webhook.subscription.ping({ id: {} });
     const rawResponse = await responsePromise.asResponse();
@@ -88,7 +88,7 @@ describe('resource subscription', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('ping: required and optional params', async () => {
     const response = await client.webhook.subscription.ping({ id: {} });
   });

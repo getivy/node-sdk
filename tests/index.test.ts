@@ -250,6 +250,16 @@ describe('instantiate client', () => {
   });
 });
 
+describe('idempotency', () => {
+  test.skip('key can be set per-request', async () => {
+    const client = new Ivy({
+      baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+      apiKey: 'My API Key',
+    });
+    await client.banks.retrieve({ id: 'id' }, { idempotencyKey: 'my-idempotency-key' });
+  });
+});
+
 describe('request building', () => {
   const client = new Ivy({ apiKey: 'My API Key' });
 

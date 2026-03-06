@@ -142,17 +142,12 @@ export interface FxRetrieveParams {
 
 export interface FxExecuteParams {
   /**
-   * Idempotency key for the request.
-   */
-  idempotencyKey: string;
-
-  /**
    * The source account id.
    */
   sourceAccountId: string;
 
   /**
-   * The amount of source currency to convert.
+   * The amount of source currency to convert. Minimum: 10
    */
   sourceAmount: string;
 
@@ -160,6 +155,11 @@ export interface FxExecuteParams {
    * The target account id.
    */
   targetAccountId: string;
+
+  /**
+   * Deprecated: use the Idempotency-Key request header instead.
+   */
+  idempotencyKey?: string;
 
   /**
    * Additional metadata.
