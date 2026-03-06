@@ -29,7 +29,6 @@ describe('resource fx', () => {
   // Mock server tests are disabled
   test.skip('execute: only required params', async () => {
     const responsePromise = client.fx.execute({
-      idempotencyKey: 'idempotencyKey',
       sourceAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       sourceAmount: 'sourceAmount',
       targetAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -46,10 +45,10 @@ describe('resource fx', () => {
   // Mock server tests are disabled
   test.skip('execute: required and optional params', async () => {
     const response = await client.fx.execute({
-      idempotencyKey: 'idempotencyKey',
       sourceAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
       sourceAmount: 'sourceAmount',
       targetAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+      idempotencyKey: 'idempotencyKey',
       metadata: { foo: 'bar' },
     });
   });
