@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.6.1 (2026-03-07)
+
+Full Changelog: [v1.6.0...v1.6.1](https://github.com/getivy/node-sdk/compare/v1.6.0...v1.6.1)
+
+### Bug Fixes
+
+* **client:** preserve URL params already embedded in path ([6951533](https://github.com/getivy/node-sdk/commit/695153356afe6c8865744b095c782da4c275a099))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([d279b7a](https://github.com/getivy/node-sdk/commit/d279b7a8c3063ff0980a73fef308a8434c8ff732))
+
 ## 1.6.0 (2026-03-06)
 
 Full Changelog: [v1.5.1...v1.6.0](https://github.com/getivy/node-sdk/compare/v1.5.1...v1.6.0)
