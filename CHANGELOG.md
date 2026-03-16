@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.7.0 (2026-03-16)
+
+Full Changelog: [v1.6.1...v1.7.0](https://github.com/getivy/node-sdk/compare/v1.6.1...v1.7.0)
+
+### Features
+
+* **api:** api update ([4ee8bd4](https://github.com/getivy/node-sdk/commit/4ee8bd498bb6dd5b556e8203fd02bf96812716fc))
+
 ## 1.6.1 (2026-03-07)
 
 Full Changelog: [v1.6.0...v1.6.1](https://github.com/getivy/node-sdk/compare/v1.6.0...v1.6.1)
