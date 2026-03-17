@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.7.1 (2026-03-17)
+
+Full Changelog: [v1.7.0...v1.7.1](https://github.com/getivy/node-sdk/compare/v1.7.0...v1.7.1)
+
+### Chores
+
+* **internal:** tweak CI branches ([76e5516](https://github.com/getivy/node-sdk/commit/76e5516100f02beb04ce1c5bf76327275764caec))
+
 ## 1.7.0 (2026-03-16)
 
 Full Changelog: [v1.6.1...v1.7.0](https://github.com/getivy/node-sdk/compare/v1.6.1...v1.7.0)
