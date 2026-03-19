@@ -1,7 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Orders extends APIResource {
   /**
@@ -11,7 +12,7 @@ export class Orders extends APIResource {
    * incoming payment. As soon as a payment with the same details arrives, Ivy will
    * update the status of the order.
    */
-  create(body: OrderCreateParams, options?: Core.RequestOptions): Core.APIPromise<OrderCreateResponse> {
+  create(body: OrderCreateParams, options?: RequestOptions): APIPromise<OrderCreateResponse> {
     return this._client.post('/api/service/order/create', { body, ...options });
   }
 
@@ -20,14 +21,14 @@ export class Orders extends APIResource {
    * internal Ivy order id or the `referenceId` you specified when creating a
    * Checkout Session to the `id` field.
    */
-  retrieve(body: OrderRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<OrderRetrieveResponse> {
+  retrieve(body: OrderRetrieveParams, options?: RequestOptions): APIPromise<OrderRetrieveResponse> {
     return this._client.post('/api/service/order/details', { body, ...options });
   }
 
   /**
    * Manually expire an order before its natural expiration time.
    */
-  expire(body: OrderExpireParams, options?: Core.RequestOptions): Core.APIPromise<OrderExpireResponse> {
+  expire(body: OrderExpireParams, options?: RequestOptions): APIPromise<OrderExpireResponse> {
     return this._client.post('/api/service/order/expire', { body, ...options });
   }
 }

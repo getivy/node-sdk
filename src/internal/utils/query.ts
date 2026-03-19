@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { IvyError } from '../../error';
+import { IvyError } from '../../core/error';
 
 /**
  * Basic re-implementation of `qs.stringify` for primitive types.

@@ -1,13 +1,14 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
+import { APIResource } from '../../core/resource';
+import { APIPromise } from '../../core/api-promise';
+import { RequestOptions } from '../../internal/request-options';
 
 export class Accounts extends APIResource {
   /**
    * Retrieves the list of accounts for a given data session.
    */
-  list(body: AccountListParams, options?: Core.RequestOptions): Core.APIPromise<AccountListResponse> {
+  list(body: AccountListParams, options?: RequestOptions): APIPromise<AccountListResponse> {
     return this._client.post('/api/service/data/accounts/list', { body, ...options });
   }
 }

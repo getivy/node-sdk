@@ -1,45 +1,43 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Customers extends APIResource {
   /**
    * Create a new Customer representing your Customers. You can use the Customer to
    * simplify the checkout process for returning journeys.
    */
-  create(body: CustomerCreateParams, options?: Core.RequestOptions): Core.APIPromise<CustomerCreateResponse> {
+  create(body: CustomerCreateParams, options?: RequestOptions): APIPromise<CustomerCreateResponse> {
     return this._client.post('/api/service/customer/create', { body, ...options });
   }
 
   /**
    * Retrieve a Customer Object by its id.
    */
-  retrieve(
-    body: CustomerRetrieveParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<CustomerRetrieveResponse> {
+  retrieve(body: CustomerRetrieveParams, options?: RequestOptions): APIPromise<CustomerRetrieveResponse> {
     return this._client.post('/api/service/customer/retrieve', { body, ...options });
   }
 
   /**
    * Update the Customer details
    */
-  update(body: CustomerUpdateParams, options?: Core.RequestOptions): Core.APIPromise<CustomerUpdateResponse> {
+  update(body: CustomerUpdateParams, options?: RequestOptions): APIPromise<CustomerUpdateResponse> {
     return this._client.post('/api/service/customer/update', { body, ...options });
   }
 
   /**
    * Delete a Customer by wiping personal data and marking the customer as deleted.
    */
-  delete(body: CustomerDeleteParams, options?: Core.RequestOptions): Core.APIPromise<CustomerDeleteResponse> {
+  delete(body: CustomerDeleteParams, options?: RequestOptions): APIPromise<CustomerDeleteResponse> {
     return this._client.post('/api/service/customer/delete', { body, ...options });
   }
 
   /**
    * Search for customers you have previously created using filters, e.g. by email.
    */
-  search(body: CustomerSearchParams, options?: Core.RequestOptions): Core.APIPromise<CustomerSearchResponse> {
+  search(body: CustomerSearchParams, options?: RequestOptions): APIPromise<CustomerSearchResponse> {
     return this._client.post('/api/service/customer/search', { body, ...options });
   }
 }

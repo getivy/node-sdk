@@ -1,7 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Checkoutsession extends APIResource {
   /**
@@ -11,8 +12,8 @@ export class Checkoutsession extends APIResource {
    */
   create(
     body: CheckoutsessionCreateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<CheckoutsessionCreateResponse> {
+    options?: RequestOptions,
+  ): APIPromise<CheckoutsessionCreateResponse> {
     return this._client.post('/api/service/checkout/session/create', { body, ...options });
   }
 
@@ -21,8 +22,8 @@ export class Checkoutsession extends APIResource {
    */
   retrieve(
     body: CheckoutsessionRetrieveParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<CheckoutsessionRetrieveResponse> {
+    options?: RequestOptions,
+  ): APIPromise<CheckoutsessionRetrieveResponse> {
     return this._client.post('/api/service/checkout/session/details', { body, ...options });
   }
 
@@ -32,8 +33,8 @@ export class Checkoutsession extends APIResource {
    */
   expire(
     body: CheckoutsessionExpireParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<CheckoutsessionExpireResponse> {
+    options?: RequestOptions,
+  ): APIPromise<CheckoutsessionExpireResponse> {
     return this._client.post('/api/service/checkout/session/expire', { body, ...options });
   }
 }

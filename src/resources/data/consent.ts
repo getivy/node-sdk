@@ -1,23 +1,21 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
+import { APIResource } from '../../core/resource';
+import { APIPromise } from '../../core/api-promise';
+import { RequestOptions } from '../../internal/request-options';
 
 export class Consent extends APIResource {
   /**
    * Retrieves the details of a consent by session ID.
    */
-  retrieve(
-    body: ConsentRetrieveParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ConsentRetrieveResponse> {
+  retrieve(body: ConsentRetrieveParams, options?: RequestOptions): APIPromise<ConsentRetrieveResponse> {
     return this._client.post('/api/service/data/consent/details', { body, ...options });
   }
 
   /**
    * Revokes a consent by session ID.
    */
-  revoke(body: ConsentRevokeParams, options?: Core.RequestOptions): Core.APIPromise<ConsentRevokeResponse> {
+  revoke(body: ConsentRevokeParams, options?: RequestOptions): APIPromise<ConsentRevokeResponse> {
     return this._client.post('/api/service/data/consent/revoke', { body, ...options });
   }
 }

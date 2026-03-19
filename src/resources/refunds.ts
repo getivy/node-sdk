@@ -1,7 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Refunds extends APIResource {
   /**
@@ -10,14 +11,14 @@ export class Refunds extends APIResource {
    * checkout creation. If the refund should only be partial, you can specifiy this
    * with the `amount` parameter.
    */
-  create(body: RefundCreateParams, options?: Core.RequestOptions): Core.APIPromise<RefundCreateResponse> {
+  create(body: RefundCreateParams, options?: RequestOptions): APIPromise<RefundCreateResponse> {
     return this._client.post('/api/service/refund/create', { body, ...options });
   }
 
   /**
    * Returns refund details and Id of refunded order.
    */
-  retrieve(body: RefundRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<Refund> {
+  retrieve(body: RefundRetrieveParams, options?: RequestOptions): APIPromise<Refund> {
     return this._client.post('/api/service/refund/retrieve', { body, ...options });
   }
 }

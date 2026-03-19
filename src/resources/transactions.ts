@@ -1,13 +1,14 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Transactions extends APIResource {
   /**
    * Retrieve a paginated list of transactions for the specified time period
    */
-  list(body: TransactionListParams, options?: Core.RequestOptions): Core.APIPromise<TransactionListResponse> {
+  list(body: TransactionListParams, options?: RequestOptions): APIPromise<TransactionListResponse> {
     return this._client.post('/api/service/transaction/list', { body, ...options });
   }
 }

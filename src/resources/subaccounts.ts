@@ -1,24 +1,22 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Subaccounts extends APIResource {
   /**
    * Create a Subaccount which can be used to reconcile orders, refunds and payouts
    * more easily.
    */
-  create(
-    body: SubaccountCreateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<SubaccountCreateResponse> {
+  create(body: SubaccountCreateParams, options?: RequestOptions): APIPromise<SubaccountCreateResponse> {
     return this._client.post('/api/service/subaccount/create', { body, ...options });
   }
 
   /**
    * Retrieve a Subaccount by id.
    */
-  retrieve(body: SubaccountRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<Subaccount> {
+  retrieve(body: SubaccountRetrieveParams, options?: RequestOptions): APIPromise<Subaccount> {
     return this._client.post('/api/service/subaccount/retrieve', { body, ...options });
   }
 }

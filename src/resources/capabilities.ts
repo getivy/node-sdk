@@ -1,17 +1,15 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Capabilities extends APIResource {
   /**
    * Retrieve the capabilities of your Ivy account. The capabilities are broken down
    * by market and by product.
    */
-  retrieve(
-    body: CapabilityRetrieveParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<CapabilityRetrieveResponse> {
+  retrieve(body: CapabilityRetrieveParams, options?: RequestOptions): APIPromise<CapabilityRetrieveResponse> {
     return this._client.post('/api/service/merchant/capabilities/details', { body, ...options });
   }
 }

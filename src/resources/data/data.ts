@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
+import { APIResource } from '../../core/resource';
 import * as AccountsAPI from './accounts';
 import { AccountListParams, AccountListResponse, Accounts } from './accounts';
 import * as BalancesAPI from './balances';

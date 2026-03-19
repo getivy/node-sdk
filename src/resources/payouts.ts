@@ -1,30 +1,28 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Payouts extends APIResource {
   /**
    * Create a payout for a merchant.
    */
-  create(body: PayoutCreateParams, options?: Core.RequestOptions): Core.APIPromise<Payout> {
+  create(body: PayoutCreateParams, options?: RequestOptions): APIPromise<Payout> {
     return this._client.post('/api/service/payout/create', { body, ...options });
   }
 
   /**
    * Retrieve a payout object by id.
    */
-  retrieve(
-    body: PayoutRetrieveParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<PayoutRetrieveResponse> {
+  retrieve(body: PayoutRetrieveParams, options?: RequestOptions): APIPromise<PayoutRetrieveResponse> {
     return this._client.post('/api/service/payout/retrieve', { body, ...options });
   }
 
   /**
    * List payouts for a merchant.
    */
-  list(body: PayoutListParams, options?: Core.RequestOptions): Core.APIPromise<PayoutListResponse> {
+  list(body: PayoutListParams, options?: RequestOptions): APIPromise<PayoutListResponse> {
     return this._client.post('/api/service/payout/list', { body, ...options });
   }
 }

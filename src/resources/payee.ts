@@ -1,7 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Payee extends APIResource {
   /**
@@ -22,7 +23,7 @@ export class Payee extends APIResource {
    * - `not_available`: Verification not possible (e.g., bank unreachable, timeout,
    *   unsupported)
    */
-  verify(body: PayeeVerifyParams, options?: Core.RequestOptions): Core.APIPromise<PayeeVerifyResponse> {
+  verify(body: PayeeVerifyParams, options?: RequestOptions): APIPromise<PayeeVerifyResponse> {
     return this._client.post('/api/service/payee/verify', { body, ...options });
   }
 }

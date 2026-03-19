@@ -1,20 +1,21 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Fx extends APIResource {
   /**
    * Retrieve the details of a past fx transfer using the fxId.
    */
-  retrieve(body: FxRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<FxRetrieveResponse> {
+  retrieve(body: FxRetrieveParams, options?: RequestOptions): APIPromise<FxRetrieveResponse> {
     return this._client.post('/api/service/fx/retrieve', { body, ...options });
   }
 
   /**
    * Execute a standalone foreign exchange transaction.
    */
-  execute(body: FxExecuteParams, options?: Core.RequestOptions): Core.APIPromise<FxExecuteResponse> {
+  execute(body: FxExecuteParams, options?: RequestOptions): APIPromise<FxExecuteResponse> {
     return this._client.post('/api/service/fx/execute', { body, ...options });
   }
 
@@ -22,10 +23,7 @@ export class Fx extends APIResource {
    * Retrieve the current exchange rate for a given currency pair. The rate is not
    * guaranteed for any following transactions.
    */
-  retrieveRate(
-    body: FxRetrieveRateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<FxRetrieveRateResponse> {
+  retrieveRate(body: FxRetrieveRateParams, options?: RequestOptions): APIPromise<FxRetrieveRateResponse> {
     return this._client.post('/api/service/fx/retrieve-rate', { body, ...options });
   }
 }

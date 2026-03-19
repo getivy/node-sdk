@@ -1,7 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
+import { APIResource } from '../../core/resource';
 import * as SubscriptionAPI from './subscription';
 import {
   Subscription,
@@ -16,6 +15,8 @@ import {
   SubscriptionUpdateParams,
   SubscriptionUpdateResponse,
 } from './subscription';
+import { APIPromise } from '../../core/api-promise';
+import { RequestOptions } from '../../internal/request-options';
 
 export class Webhook extends APIResource {
   subscription: SubscriptionAPI.Subscription = new SubscriptionAPI.Subscription(this._client);
@@ -23,10 +24,7 @@ export class Webhook extends APIResource {
   /**
    * This endpoint allows you to trigger a specific webhook by its ID.
    */
-  trigger(
-    body: WebhookTriggerParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<WebhookTriggerResponse> {
+  trigger(body: WebhookTriggerParams, options?: RequestOptions): APIPromise<WebhookTriggerResponse> {
     return this._client.post('/api/service/webhook/trigger', { body, ...options });
   }
 }

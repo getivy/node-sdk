@@ -1,21 +1,22 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Banks extends APIResource {
   /**
    * Retrieve a bank object by its id. The id is a unique identifier of the bank
    * within Ivy.
    */
-  retrieve(body: BankRetrieveParams, options?: Core.RequestOptions): Core.APIPromise<BankRetrieveResponse> {
+  retrieve(body: BankRetrieveParams, options?: RequestOptions): APIPromise<BankRetrieveResponse> {
     return this._client.post('/api/service/banks/details', { body, ...options });
   }
 
   /**
    * Get a list of banks. You can filter by group, capability and market.
    */
-  list(body: BankListParams, options?: Core.RequestOptions): Core.APIPromise<BankListResponse> {
+  list(body: BankListParams, options?: RequestOptions): APIPromise<BankListResponse> {
     return this._client.post('/api/service/banks/list', { body, ...options });
   }
 
@@ -24,7 +25,7 @@ export class Banks extends APIResource {
    * is empty (""), a default list of banks is returned. On top, you can filter
    * results by group, capability and market.
    */
-  search(body: BankSearchParams, options?: Core.RequestOptions): Core.APIPromise<BankSearchResponse> {
+  search(body: BankSearchParams, options?: RequestOptions): APIPromise<BankSearchResponse> {
     return this._client.post('/api/service/banks/search', { body, ...options });
   }
 }

@@ -1,16 +1,14 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Deposits extends APIResource {
   /**
    * Retrieves a deposit by its ID.
    */
-  retrieve(
-    body: DepositRetrieveParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<DepositRetrieveResponse> {
+  retrieve(body: DepositRetrieveParams, options?: RequestOptions): APIPromise<DepositRetrieveResponse> {
     return this._client.post('/api/service/deposit/retrieve', { body, ...options });
   }
 }
