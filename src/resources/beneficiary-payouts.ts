@@ -1,7 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class BeneficiaryPayouts extends APIResource {
   /**
@@ -9,7 +10,7 @@ export class BeneficiaryPayouts extends APIResource {
    * bank account or wallet. If you want to handle payouts in a more dynamic and
    * granular way, please use the POST /payout/create endpoint.
    */
-  create(options?: Core.RequestOptions): Core.APIPromise<BeneficiaryPayoutCreateResponse> {
+  create(options?: RequestOptions): APIPromise<BeneficiaryPayoutCreateResponse> {
     return this._client.post('/api/service/beneficiary-payout/create', options);
   }
 }

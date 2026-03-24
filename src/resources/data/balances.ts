@@ -1,13 +1,14 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
+import { APIResource } from '../../core/resource';
+import { APIPromise } from '../../core/api-promise';
+import { RequestOptions } from '../../internal/request-options';
 
 export class Balances extends APIResource {
   /**
    * Retrieves the list of account balances for a given data session.
    */
-  list(body: BalanceListParams, options?: Core.RequestOptions): Core.APIPromise<BalanceListResponse> {
+  list(body: BalanceListParams, options?: RequestOptions): APIPromise<BalanceListResponse> {
     return this._client.post('/api/service/data/account-balances/list', { body, ...options });
   }
 }

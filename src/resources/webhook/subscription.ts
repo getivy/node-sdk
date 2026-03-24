@@ -1,17 +1,15 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
+import { APIResource } from '../../core/resource';
+import { APIPromise } from '../../core/api-promise';
+import { RequestOptions } from '../../internal/request-options';
 
 export class Subscription extends APIResource {
   /**
    * Creates a webhook subscription that sends various events from Ivy to a specified
    * url. There can be multiple subscriptions per app.
    */
-  create(
-    body: SubscriptionCreateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<SubscriptionCreateResponse> {
+  create(body: SubscriptionCreateParams, options?: RequestOptions): APIPromise<SubscriptionCreateResponse> {
     return this._client.post('/api/service/webhook-subscription/create', { body, ...options });
   }
 
@@ -19,10 +17,7 @@ export class Subscription extends APIResource {
    * Updates the url or subcribed to events for a webhook subscription. This can be
    * used via the app or via the API by providing an API key.
    */
-  update(
-    body: SubscriptionUpdateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<SubscriptionUpdateResponse> {
+  update(body: SubscriptionUpdateParams, options?: RequestOptions): APIPromise<SubscriptionUpdateResponse> {
     return this._client.post('/api/service/webhook-subscription/update', { body, ...options });
   }
 
@@ -30,30 +25,21 @@ export class Subscription extends APIResource {
    * Lists all webhook subscriptions that are registered for the merchant. The
    * results are paginated and provided in chronological order.
    */
-  list(
-    body: SubscriptionListParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<SubscriptionListResponse> {
+  list(body: SubscriptionListParams, options?: RequestOptions): APIPromise<SubscriptionListResponse> {
     return this._client.post('/api/service/webhook-subscription/list', { body, ...options });
   }
 
   /**
    * Deletes a webhook subscription.
    */
-  delete(
-    body: SubscriptionDeleteParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<SubscriptionDeleteResponse> {
+  delete(body: SubscriptionDeleteParams, options?: RequestOptions): APIPromise<SubscriptionDeleteResponse> {
     return this._client.post('/api/service/webhook-subscription/delete', { body, ...options });
   }
 
   /**
    * Sends a test ping to verify webhook subscription endpoint connectivity.
    */
-  ping(
-    body: SubscriptionPingParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<SubscriptionPingResponse> {
+  ping(body: SubscriptionPingParams, options?: RequestOptions): APIPromise<SubscriptionPingResponse> {
     return this._client.post('/api/service/webhook-subscription/ping', { body, ...options });
   }
 }

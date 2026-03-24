@@ -1,23 +1,21 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
+import { APIResource } from '../../core/resource';
+import { APIPromise } from '../../core/api-promise';
+import { RequestOptions } from '../../internal/request-options';
 
 export class Session extends APIResource {
   /**
    * Creates a data session for the merchant corresponding to the API key.
    */
-  create(body: SessionCreateParams, options?: Core.RequestOptions): Core.APIPromise<SessionCreateResponse> {
+  create(body: SessionCreateParams, options?: RequestOptions): APIPromise<SessionCreateResponse> {
     return this._client.post('/api/service/data/session/create', { body, ...options });
   }
 
   /**
    * Retrieves the details of a data session by its ID.
    */
-  retrieve(
-    body: SessionRetrieveParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<SessionRetrieveResponse> {
+  retrieve(body: SessionRetrieveParams, options?: RequestOptions): APIPromise<SessionRetrieveResponse> {
     return this._client.post('/api/service/data/session/details', { body, ...options });
   }
 }

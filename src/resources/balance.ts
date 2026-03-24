@@ -1,17 +1,15 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../core/resource';
+import { APIPromise } from '../core/api-promise';
+import { RequestOptions } from '../internal/request-options';
 
 export class Balance extends APIResource {
   /**
    * Retrieve the balance of your Ivy account. The balance is the money currently
    * available on your Ivy account. It is broken down by currency.
    */
-  retrieve(
-    body: BalanceRetrieveParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<BalanceRetrieveResponse> {
+  retrieve(body: BalanceRetrieveParams, options?: RequestOptions): APIPromise<BalanceRetrieveResponse> {
     return this._client.post('/api/service/balance/retrieve', { body, ...options });
   }
 }

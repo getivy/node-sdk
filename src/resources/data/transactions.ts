@@ -1,14 +1,15 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import * as Core from '../../core';
+import { APIResource } from '../../core/resource';
+import { APIPromise } from '../../core/api-promise';
+import { RequestOptions } from '../../internal/request-options';
 
 export class Transactions extends APIResource {
   /**
    * Retrieves the list of transactions for a given data session. Returns
    * transactions from the last 3 months.
    */
-  list(body: TransactionListParams, options?: Core.RequestOptions): Core.APIPromise<TransactionListResponse> {
+  list(body: TransactionListParams, options?: RequestOptions): APIPromise<TransactionListResponse> {
     return this._client.post('/api/service/data/transactions/list', { body, ...options });
   }
 }
