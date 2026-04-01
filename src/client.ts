@@ -102,7 +102,6 @@ import {
   Subaccounts,
 } from './resources/subaccounts';
 import { TransactionListParams, TransactionListResponse, Transactions } from './resources/transactions';
-import { Data } from './resources/data/data';
 import { Webhook, WebhookTriggerParams, WebhookTriggerResponse } from './resources/webhook/webhook';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
@@ -831,7 +830,6 @@ export class Ivy {
 
   banks: API.Banks = new API.Banks(this);
   checkoutsession: API.Checkoutsession = new API.Checkoutsession(this);
-  data: API.Data = new API.Data(this);
   customers: API.Customers = new API.Customers(this);
   orders: API.Orders = new API.Orders(this);
   deposits: API.Deposits = new API.Deposits(this);
@@ -850,7 +848,6 @@ export class Ivy {
 
 Ivy.Banks = Banks;
 Ivy.Checkoutsession = Checkoutsession;
-Ivy.Data = Data;
 Ivy.Customers = Customers;
 Ivy.Orders = Orders;
 Ivy.Deposits = Deposits;
@@ -888,8 +885,6 @@ export declare namespace Ivy {
     type CheckoutsessionRetrieveParams as CheckoutsessionRetrieveParams,
     type CheckoutsessionExpireParams as CheckoutsessionExpireParams,
   };
-
-  export { Data as Data };
 
   export {
     Customers as Customers,

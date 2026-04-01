@@ -47,6 +47,8 @@ export class Subscription extends APIResource {
 export interface SubscriptionCreateResponse {
   id: unknown;
 
+  apiSurface: 'legacy' | 'v1';
+
   createdAt: unknown;
 
   events: Array<
@@ -95,6 +97,8 @@ export interface SubscriptionCreateResponse {
 
 export interface SubscriptionUpdateResponse {
   id: unknown;
+
+  apiSurface: 'legacy' | 'v1';
 
   createdAt: unknown;
 
@@ -167,6 +171,8 @@ export interface SubscriptionListResponse {
 export namespace SubscriptionListResponse {
   export interface Item {
     id: unknown;
+
+    apiSurface: 'legacy' | 'v1';
 
     createdAt: unknown;
 
