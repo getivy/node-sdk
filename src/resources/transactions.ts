@@ -73,6 +73,12 @@ export namespace TransactionListResponse {
     transactionDate: number;
 
     /**
+     * Identifier of the associated payment process (e.g. deposit, payout, refund). Use
+     * together with paymentProcessType for reconciliation
+     */
+    paymentProcessId?: string;
+
+    /**
      * Payment process type
      */
     paymentProcessType?:
