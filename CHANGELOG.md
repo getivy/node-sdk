@@ -1,5 +1,24 @@
 # Changelog
 
+## 2.1.0 (2026-04-01)
+
+Full Changelog: [v2.0.0...v2.1.0](https://github.com/getivy/node-sdk/compare/v2.0.0...v2.1.0)
+
+### Features
+
+* **api:** api update ([afadd0c](https://github.com/getivy/node-sdk/commit/afadd0c16915cdd9d4764c101a2e9e9de8e9be8b))
+* **api:** api update ([5b3be30](https://github.com/getivy/node-sdk/commit/5b3be30c80e0b1796bb39ea6f6909a7cc9c48776))
+
+
+### Bug Fixes
+
+* **internal:** gitignore generated `oidc` dir ([21f2856](https://github.com/getivy/node-sdk/commit/21f28567d688e6ce0dddf390e6646069867dd8f9))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([23f0099](https://github.com/getivy/node-sdk/commit/23f00991f129c379b87261f8d49858ff992b68ef))
+
 ## 2.0.0 (2026-03-24)
 
 Full Changelog: [v0.0.1...v2.0.0](https://github.com/getivy/node-sdk/compare/v0.0.1...v2.0.0)
