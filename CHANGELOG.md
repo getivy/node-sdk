@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.2.0 (2026-04-13)
+
+Full Changelog: [v2.1.0...v2.2.0](https://github.com/getivy/node-sdk/compare/v2.1.0...v2.2.0)
+
+### Features
+
+* **api:** api update ([13fc6f2](https://github.com/getivy/node-sdk/commit/13fc6f234ecab6c1873bc2c4ef8bf124fcd7f25d))
+
+
+### Chores
+
+* **internal:** codegen related update ([e7ed935](https://github.com/getivy/node-sdk/commit/e7ed9352bbc79d3087c46adf5b1a98c3fb2044b2))
+* **internal:** codegen related update ([ad2d891](https://github.com/getivy/node-sdk/commit/ad2d89194642aba08ca978120a8c49150a94c639))
+
 ## 2.1.0 (2026-04-01)
 
 Full Changelog: [v2.0.0...v2.1.0](https://github.com/getivy/node-sdk/compare/v2.0.0...v2.1.0)
