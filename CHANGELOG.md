@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.2.1 (2026-04-23)
+
+Full Changelog: [v2.2.0...v2.2.1](https://github.com/getivy/node-sdk/compare/v2.2.0...v2.2.1)
+
+### Chores
+
+* **internal:** more robust bootstrap script ([e8c98c5](https://github.com/getivy/node-sdk/commit/e8c98c5dea103d221140a13bd06a9e887388a2ac))
+
 ## 2.2.0 (2026-04-13)
 
 Full Changelog: [v2.1.0...v2.2.0](https://github.com/getivy/node-sdk/compare/v2.1.0...v2.2.0)
