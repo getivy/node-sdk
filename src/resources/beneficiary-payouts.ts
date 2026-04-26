@@ -18,8 +18,7 @@ export class BeneficiaryPayouts extends APIResource {
 /**
  * Array of Beneficiary Payouts
  */
-export type BeneficiaryPayoutCreateResponse =
-  Array<BeneficiaryPayoutCreateResponse.BeneficiaryPayoutCreateResponseItem>;
+export type BeneficiaryPayoutCreateResponse = Array<BeneficiaryPayoutCreateResponse.BeneficiaryPayoutCreateResponseItem>
 
 export namespace BeneficiaryPayoutCreateResponse {
   export interface BeneficiaryPayoutCreateResponseItem {
@@ -77,5 +76,7 @@ export namespace BeneficiaryPayoutCreateResponse {
 }
 
 export declare namespace BeneficiaryPayouts {
-  export { type BeneficiaryPayoutCreateResponse as BeneficiaryPayoutCreateResponse };
+  export {
+    type BeneficiaryPayoutCreateResponse as BeneficiaryPayoutCreateResponse
+  };
 }

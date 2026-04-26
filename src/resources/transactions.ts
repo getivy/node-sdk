@@ -81,14 +81,7 @@ export namespace TransactionListResponse {
     /**
      * Payment process type
      */
-    paymentProcessType?:
-      | 'deposit'
-      | 'deposit_return'
-      | 'payout'
-      | 'merchant_payout'
-      | 'payment'
-      | 'refund'
-      | 'topup';
+    paymentProcessType?: 'deposit' | 'deposit_return' | 'payout' | 'merchant_payout' | 'payment' | 'refund' | 'topup';
   }
 
   export namespace Data {
@@ -272,6 +265,6 @@ export interface TransactionListParams {
 export declare namespace Transactions {
   export {
     type TransactionListResponse as TransactionListResponse,
-    type TransactionListParams as TransactionListParams,
+    type TransactionListParams as TransactionListParams
   };
 }
