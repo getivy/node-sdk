@@ -2,19 +2,7 @@
 
 import { APIResource } from '../../core/resource';
 import * as SubscriptionAPI from './subscription';
-import {
-  Subscription,
-  SubscriptionCreateParams,
-  SubscriptionCreateResponse,
-  SubscriptionDeleteParams,
-  SubscriptionDeleteResponse,
-  SubscriptionListParams,
-  SubscriptionListResponse,
-  SubscriptionPingParams,
-  SubscriptionPingResponse,
-  SubscriptionUpdateParams,
-  SubscriptionUpdateResponse,
-} from './subscription';
+import { Subscription, SubscriptionCreateParams, SubscriptionCreateResponse, SubscriptionDeleteParams, SubscriptionDeleteResponse, SubscriptionListParams, SubscriptionListResponse, SubscriptionPingParams, SubscriptionPingResponse, SubscriptionUpdateParams, SubscriptionUpdateResponse } from './subscription';
 import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 
@@ -48,7 +36,7 @@ Webhook.Subscription = Subscription;
 export declare namespace Webhook {
   export {
     type WebhookTriggerResponse as WebhookTriggerResponse,
-    type WebhookTriggerParams as WebhookTriggerParams,
+    type WebhookTriggerParams as WebhookTriggerParams
   };
 
   export {
@@ -62,6 +50,6 @@ export declare namespace Webhook {
     type SubscriptionUpdateParams as SubscriptionUpdateParams,
     type SubscriptionListParams as SubscriptionListParams,
     type SubscriptionDeleteParams as SubscriptionDeleteParams,
-    type SubscriptionPingParams as SubscriptionPingParams,
+    type SubscriptionPingParams as SubscriptionPingParams
   };
 }

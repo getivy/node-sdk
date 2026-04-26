@@ -2,10 +2,7 @@
 
 import Ivy from '@getivy/node-sdk';
 
-const client = new Ivy({
-  apiKey: 'My API Key',
-  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
-});
+const client = new Ivy({ apiKey: 'My API Key', baseURL: process.env["TEST_API_BASE_URL"] ?? 'http://127.0.0.1:4010' });
 
 describe('resource fx', () => {
   // Mock server tests are disabled
@@ -28,10 +25,10 @@ describe('resource fx', () => {
   // Mock server tests are disabled
   test.skip('execute: only required params', async () => {
     const responsePromise = client.fx.execute({
-      sourceAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      sourceAmount: 'sourceAmount',
-      targetAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-    });
+    sourceAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+    sourceAmount: 'sourceAmount',
+    targetAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+  });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -44,12 +41,12 @@ describe('resource fx', () => {
   // Mock server tests are disabled
   test.skip('execute: required and optional params', async () => {
     const response = await client.fx.execute({
-      sourceAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      sourceAmount: 'sourceAmount',
-      targetAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      idempotencyKey: 'idempotencyKey',
-      metadata: { foo: 'bar' },
-    });
+    sourceAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+    sourceAmount: 'sourceAmount',
+    targetAccountId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+    idempotencyKey: 'idempotencyKey',
+    metadata: { foo: 'bar' },
+  });
   });
 
   // Mock server tests are disabled
@@ -67,9 +64,9 @@ describe('resource fx', () => {
   // Mock server tests are disabled
   test.skip('retrieveRate: required and optional params', async () => {
     const response = await client.fx.retrieveRate({
-      sourceCurrency: 'EUR',
-      targetCurrency: 'EUR',
-      sourceAmount: 'sourceAmount',
-    });
+    sourceCurrency: 'EUR',
+    targetCurrency: 'EUR',
+    sourceAmount: 'sourceAmount',
+  });
   });
 });

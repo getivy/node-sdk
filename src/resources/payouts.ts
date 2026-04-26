@@ -160,21 +160,7 @@ export namespace Payout {
     /**
      * Failure code. Please refer to the documentation for the list of possible values.
      */
-    code:
-      | 'account_closed'
-      | 'account_blocked'
-      | 'insufficient_funds'
-      | 'invalid_account_format'
-      | 'invalid_instruction'
-      | 'invalid_amount'
-      | 'invalid_time'
-      | 'duplicate_transaction'
-      | 'payee_verification_failed'
-      | 'system_error'
-      | 'provider_system_error'
-      | 'rejected_by_correspondent_bank'
-      | 'blocked_by_review'
-      | 'unknown';
+    code: 'account_closed' | 'account_blocked' | 'insufficient_funds' | 'invalid_account_format' | 'invalid_instruction' | 'invalid_amount' | 'invalid_time' | 'duplicate_transaction' | 'payee_verification_failed' | 'system_error' | 'provider_system_error' | 'rejected_by_correspondent_bank' | 'blocked_by_review' | 'unknown';
 
     /**
      * Human readable description of the failure.
@@ -321,21 +307,7 @@ export namespace PayoutRetrieveResponse {
     /**
      * Failure code. Please refer to the documentation for the list of possible values.
      */
-    code:
-      | 'account_closed'
-      | 'account_blocked'
-      | 'insufficient_funds'
-      | 'invalid_account_format'
-      | 'invalid_instruction'
-      | 'invalid_amount'
-      | 'invalid_time'
-      | 'duplicate_transaction'
-      | 'payee_verification_failed'
-      | 'system_error'
-      | 'provider_system_error'
-      | 'rejected_by_correspondent_bank'
-      | 'blocked_by_review'
-      | 'unknown';
+    code: 'account_closed' | 'account_blocked' | 'insufficient_funds' | 'invalid_account_format' | 'invalid_instruction' | 'invalid_amount' | 'invalid_time' | 'duplicate_transaction' | 'payee_verification_failed' | 'system_error' | 'provider_system_error' | 'rejected_by_correspondent_bank' | 'blocked_by_review' | 'unknown';
 
     /**
      * Human readable description of the failure.
@@ -493,21 +465,7 @@ export namespace PayoutListResponse {
       /**
        * Failure code. Please refer to the documentation for the list of possible values.
        */
-      code:
-        | 'account_closed'
-        | 'account_blocked'
-        | 'insufficient_funds'
-        | 'invalid_account_format'
-        | 'invalid_instruction'
-        | 'invalid_amount'
-        | 'invalid_time'
-        | 'duplicate_transaction'
-        | 'payee_verification_failed'
-        | 'system_error'
-        | 'provider_system_error'
-        | 'rejected_by_correspondent_bank'
-        | 'blocked_by_review'
-        | 'unknown';
+      code: 'account_closed' | 'account_blocked' | 'insufficient_funds' | 'invalid_account_format' | 'invalid_instruction' | 'invalid_amount' | 'invalid_time' | 'duplicate_transaction' | 'payee_verification_failed' | 'system_error' | 'provider_system_error' | 'rejected_by_correspondent_bank' | 'blocked_by_review' | 'unknown';
 
       /**
        * Human readable description of the failure.
@@ -547,24 +505,7 @@ export interface PayoutCreateParams {
   /**
    * The payment rail or blockchain used for the payout
    */
-  rail?:
-    | 'SEPA_INSTANT'
-    | 'FASTER_PAYMENTS'
-    | 'SEPA'
-    | 'ELIXIR'
-    | 'EXPRESS_ELIXIR'
-    | 'SEK_ACCOUNT_TO_ACCOUNT'
-    | 'SUMCLEARING'
-    | 'STRAKSCLEARING'
-    | 'SWIFT'
-    | 'INTERNAL'
-    | 'TARGET'
-    | 'ETH'
-    | 'ETH-SEPOLIA'
-    | 'SOL'
-    | 'SOL-DEVNET'
-    | 'MATIC'
-    | 'MATIC-AMOY';
+  rail?: 'SEPA_INSTANT' | 'FASTER_PAYMENTS' | 'SEPA' | 'ELIXIR' | 'EXPRESS_ELIXIR' | 'SEK_ACCOUNT_TO_ACCOUNT' | 'SUMCLEARING' | 'STRAKSCLEARING' | 'SWIFT' | 'INTERNAL' | 'TARGET' | 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
 }
 
 export namespace PayoutCreateParams {
@@ -665,6 +606,6 @@ export declare namespace Payouts {
     type PayoutListResponse as PayoutListResponse,
     type PayoutCreateParams as PayoutCreateParams,
     type PayoutRetrieveParams as PayoutRetrieveParams,
-    type PayoutListParams as PayoutListParams,
+    type PayoutListParams as PayoutListParams
   };
 }

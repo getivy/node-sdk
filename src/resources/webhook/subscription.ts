@@ -49,40 +49,7 @@ export interface SubscriptionCreateResponse {
 
   createdAt: unknown;
 
-  events: Array<
-    | 'test'
-    | 'merchant_updated'
-    | 'merchant_app_updated'
-    | 'order_created'
-    | 'order_updated'
-    | 'refund_succeeded'
-    | 'refund_failed'
-    | 'refund.initiated'
-    | 'refund.succeeded'
-    | 'refund.failed'
-    | 'payout_report_requested'
-    | 'data_session_completed'
-    | 'checkout_session_created'
-    | 'checkout_session_updated'
-    | 'checkout_session_expired'
-    | 'checkout_session_completed'
-    | 'payout_created'
-    | 'payout_updated'
-    | 'user_payout.initiated'
-    | 'user_payout.failed'
-    | 'user_payout.paid'
-    | 'payout.initiated'
-    | 'payout.failed'
-    | 'payout.paid'
-    | 'deposit.received'
-    | 'return.initiated'
-    | 'return.succeeded'
-    | 'return.failed'
-    | 'return.returned'
-    | 'fx.initiated'
-    | 'fx.succeeded'
-    | 'fx.failed'
-  >;
+  events: Array<'test' | 'merchant_updated' | 'merchant_app_updated' | 'order_created' | 'order_updated' | 'refund_succeeded' | 'refund_failed' | 'refund.initiated' | 'refund.succeeded' | 'refund.failed' | 'payout_report_requested' | 'data_session_completed' | 'checkout_session_created' | 'checkout_session_updated' | 'checkout_session_expired' | 'checkout_session_completed' | 'payout_created' | 'payout_updated' | 'user_payout.initiated' | 'user_payout.failed' | 'user_payout.paid' | 'payout.initiated' | 'payout.failed' | 'payout.paid' | 'deposit.received' | 'return.initiated' | 'return.succeeded' | 'return.failed' | 'return.returned' | 'fx.initiated' | 'fx.succeeded' | 'fx.failed'>;
 
   merchant: unknown;
 
@@ -98,40 +65,7 @@ export interface SubscriptionUpdateResponse {
 
   createdAt: unknown;
 
-  events: Array<
-    | 'test'
-    | 'merchant_updated'
-    | 'merchant_app_updated'
-    | 'order_created'
-    | 'order_updated'
-    | 'refund_succeeded'
-    | 'refund_failed'
-    | 'refund.initiated'
-    | 'refund.succeeded'
-    | 'refund.failed'
-    | 'payout_report_requested'
-    | 'data_session_completed'
-    | 'checkout_session_created'
-    | 'checkout_session_updated'
-    | 'checkout_session_expired'
-    | 'checkout_session_completed'
-    | 'payout_created'
-    | 'payout_updated'
-    | 'user_payout.initiated'
-    | 'user_payout.failed'
-    | 'user_payout.paid'
-    | 'payout.initiated'
-    | 'payout.failed'
-    | 'payout.paid'
-    | 'deposit.received'
-    | 'return.initiated'
-    | 'return.succeeded'
-    | 'return.failed'
-    | 'return.returned'
-    | 'fx.initiated'
-    | 'fx.succeeded'
-    | 'fx.failed'
-  >;
+  events: Array<'test' | 'merchant_updated' | 'merchant_app_updated' | 'order_created' | 'order_updated' | 'refund_succeeded' | 'refund_failed' | 'refund.initiated' | 'refund.succeeded' | 'refund.failed' | 'payout_report_requested' | 'data_session_completed' | 'checkout_session_created' | 'checkout_session_updated' | 'checkout_session_expired' | 'checkout_session_completed' | 'payout_created' | 'payout_updated' | 'user_payout.initiated' | 'user_payout.failed' | 'user_payout.paid' | 'payout.initiated' | 'payout.failed' | 'payout.paid' | 'deposit.received' | 'return.initiated' | 'return.succeeded' | 'return.failed' | 'return.returned' | 'fx.initiated' | 'fx.succeeded' | 'fx.failed'>;
 
   merchant: unknown;
 
@@ -170,40 +104,7 @@ export namespace SubscriptionListResponse {
 
     createdAt: unknown;
 
-    events: Array<
-      | 'test'
-      | 'merchant_updated'
-      | 'merchant_app_updated'
-      | 'order_created'
-      | 'order_updated'
-      | 'refund_succeeded'
-      | 'refund_failed'
-      | 'refund.initiated'
-      | 'refund.succeeded'
-      | 'refund.failed'
-      | 'payout_report_requested'
-      | 'data_session_completed'
-      | 'checkout_session_created'
-      | 'checkout_session_updated'
-      | 'checkout_session_expired'
-      | 'checkout_session_completed'
-      | 'payout_created'
-      | 'payout_updated'
-      | 'user_payout.initiated'
-      | 'user_payout.failed'
-      | 'user_payout.paid'
-      | 'payout.initiated'
-      | 'payout.failed'
-      | 'payout.paid'
-      | 'deposit.received'
-      | 'return.initiated'
-      | 'return.succeeded'
-      | 'return.failed'
-      | 'return.returned'
-      | 'fx.initiated'
-      | 'fx.succeeded'
-      | 'fx.failed'
-    >;
+    events: Array<'test' | 'merchant_updated' | 'merchant_app_updated' | 'order_created' | 'order_updated' | 'refund_succeeded' | 'refund_failed' | 'refund.initiated' | 'refund.succeeded' | 'refund.failed' | 'payout_report_requested' | 'data_session_completed' | 'checkout_session_created' | 'checkout_session_updated' | 'checkout_session_expired' | 'checkout_session_completed' | 'payout_created' | 'payout_updated' | 'user_payout.initiated' | 'user_payout.failed' | 'user_payout.paid' | 'payout.initiated' | 'payout.failed' | 'payout.paid' | 'deposit.received' | 'return.initiated' | 'return.succeeded' | 'return.failed' | 'return.returned' | 'fx.initiated' | 'fx.succeeded' | 'fx.failed'>;
 
     merchant: unknown;
 
@@ -258,40 +159,7 @@ export interface SubscriptionCreateParams {
   /**
    * The events to subscribe the url to.
    */
-  events?: Array<
-    | 'test'
-    | 'merchant_updated'
-    | 'merchant_app_updated'
-    | 'order_created'
-    | 'order_updated'
-    | 'refund_succeeded'
-    | 'refund_failed'
-    | 'refund.initiated'
-    | 'refund.succeeded'
-    | 'refund.failed'
-    | 'payout_report_requested'
-    | 'data_session_completed'
-    | 'checkout_session_created'
-    | 'checkout_session_updated'
-    | 'checkout_session_expired'
-    | 'checkout_session_completed'
-    | 'payout_created'
-    | 'payout_updated'
-    | 'user_payout.initiated'
-    | 'user_payout.failed'
-    | 'user_payout.paid'
-    | 'payout.initiated'
-    | 'payout.failed'
-    | 'payout.paid'
-    | 'deposit.received'
-    | 'return.initiated'
-    | 'return.succeeded'
-    | 'return.failed'
-    | 'return.returned'
-    | 'fx.initiated'
-    | 'fx.succeeded'
-    | 'fx.failed'
-  >;
+  events?: Array<'test' | 'merchant_updated' | 'merchant_app_updated' | 'order_created' | 'order_updated' | 'refund_succeeded' | 'refund_failed' | 'refund.initiated' | 'refund.succeeded' | 'refund.failed' | 'payout_report_requested' | 'data_session_completed' | 'checkout_session_created' | 'checkout_session_updated' | 'checkout_session_expired' | 'checkout_session_completed' | 'payout_created' | 'payout_updated' | 'user_payout.initiated' | 'user_payout.failed' | 'user_payout.paid' | 'payout.initiated' | 'payout.failed' | 'payout.paid' | 'deposit.received' | 'return.initiated' | 'return.succeeded' | 'return.failed' | 'return.returned' | 'fx.initiated' | 'fx.succeeded' | 'fx.failed'>;
 }
 
 export interface SubscriptionUpdateParams {
@@ -303,40 +171,7 @@ export interface SubscriptionUpdateParams {
   /**
    * The new events to subscribe the url to
    */
-  events?: Array<
-    | 'test'
-    | 'merchant_updated'
-    | 'merchant_app_updated'
-    | 'order_created'
-    | 'order_updated'
-    | 'refund_succeeded'
-    | 'refund_failed'
-    | 'refund.initiated'
-    | 'refund.succeeded'
-    | 'refund.failed'
-    | 'payout_report_requested'
-    | 'data_session_completed'
-    | 'checkout_session_created'
-    | 'checkout_session_updated'
-    | 'checkout_session_expired'
-    | 'checkout_session_completed'
-    | 'payout_created'
-    | 'payout_updated'
-    | 'user_payout.initiated'
-    | 'user_payout.failed'
-    | 'user_payout.paid'
-    | 'payout.initiated'
-    | 'payout.failed'
-    | 'payout.paid'
-    | 'deposit.received'
-    | 'return.initiated'
-    | 'return.succeeded'
-    | 'return.failed'
-    | 'return.returned'
-    | 'fx.initiated'
-    | 'fx.succeeded'
-    | 'fx.failed'
-  >;
+  events?: Array<'test' | 'merchant_updated' | 'merchant_app_updated' | 'order_created' | 'order_updated' | 'refund_succeeded' | 'refund_failed' | 'refund.initiated' | 'refund.succeeded' | 'refund.failed' | 'payout_report_requested' | 'data_session_completed' | 'checkout_session_created' | 'checkout_session_updated' | 'checkout_session_expired' | 'checkout_session_completed' | 'payout_created' | 'payout_updated' | 'user_payout.initiated' | 'user_payout.failed' | 'user_payout.paid' | 'payout.initiated' | 'payout.failed' | 'payout.paid' | 'deposit.received' | 'return.initiated' | 'return.succeeded' | 'return.failed' | 'return.returned' | 'fx.initiated' | 'fx.succeeded' | 'fx.failed'>;
 
   /**
    * The new endpoint where webhook events are sent
@@ -381,6 +216,6 @@ export declare namespace Subscription {
     type SubscriptionUpdateParams as SubscriptionUpdateParams,
     type SubscriptionListParams as SubscriptionListParams,
     type SubscriptionDeleteParams as SubscriptionDeleteParams,
-    type SubscriptionPingParams as SubscriptionPingParams,
+    type SubscriptionPingParams as SubscriptionPingParams
   };
 }

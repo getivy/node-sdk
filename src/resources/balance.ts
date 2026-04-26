@@ -52,6 +52,6 @@ export interface BalanceRetrieveParams {
 export declare namespace Balance {
   export {
     type BalanceRetrieveResponse as BalanceRetrieveResponse,
-    type BalanceRetrieveParams as BalanceRetrieveParams,
+    type BalanceRetrieveParams as BalanceRetrieveParams
   };
 }
