@@ -64,24 +64,7 @@ export interface DepositRetrieveResponse {
   /**
    * The payment rail or blockchain used for the deposit
    */
-  rail?:
-    | 'sepa_instant'
-    | 'faster_payments'
-    | 'sepa'
-    | 'elixir'
-    | 'express_elixir'
-    | 'sek_account_to_account'
-    | 'sumclearing'
-    | 'straksclearing'
-    | 'swift'
-    | 'internal'
-    | 'target'
-    | 'ETH'
-    | 'ETH-SEPOLIA'
-    | 'SOL'
-    | 'SOL-DEVNET'
-    | 'MATIC'
-    | 'MATIC-AMOY';
+  rail?: 'sepa_instant' | 'faster_payments' | 'sepa' | 'elixir' | 'express_elixir' | 'sek_account_to_account' | 'sumclearing' | 'straksclearing' | 'swift' | 'internal' | 'target' | 'ETH' | 'ETH-SEPOLIA' | 'SOL' | 'SOL-DEVNET' | 'MATIC' | 'MATIC-AMOY';
 
   /**
    * The transaction hash for crypto deposits
@@ -274,6 +257,6 @@ export interface DepositRetrieveParams {
 export declare namespace Deposits {
   export {
     type DepositRetrieveResponse as DepositRetrieveResponse,
-    type DepositRetrieveParams as DepositRetrieveParams,
+    type DepositRetrieveParams as DepositRetrieveParams
   };
 }

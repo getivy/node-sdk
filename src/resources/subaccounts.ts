@@ -88,6 +88,6 @@ export declare namespace Subaccounts {
     type Subaccount as Subaccount,
     type SubaccountCreateResponse as SubaccountCreateResponse,
     type SubaccountCreateParams as SubaccountCreateParams,
-    type SubaccountRetrieveParams as SubaccountRetrieveParams,
+    type SubaccountRetrieveParams as SubaccountRetrieveParams
   };
 }

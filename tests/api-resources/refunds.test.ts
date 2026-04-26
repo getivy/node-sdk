@@ -2,10 +2,7 @@
 
 import Ivy from '@getivy/node-sdk';
 
-const client = new Ivy({
-  apiKey: 'My API Key',
-  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
-});
+const client = new Ivy({ apiKey: 'My API Key', baseURL: process.env["TEST_API_BASE_URL"] ?? 'http://127.0.0.1:4010' });
 
 describe('resource refunds', () => {
   // Mock server tests are disabled
@@ -23,11 +20,11 @@ describe('resource refunds', () => {
   // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.refunds.create({
-      amount: 0,
-      bankStatementReference: 'bankStatementReference',
-      orderId: 'orderId',
-      referenceId: 'referenceId',
-    });
+    amount: 0,
+    bankStatementReference: 'bankStatementReference',
+    orderId: 'orderId',
+    referenceId: 'referenceId',
+  });
   });
 
   // Mock server tests are disabled
