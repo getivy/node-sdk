@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.3.0 (2026-04-28)
+
+Full Changelog: [v2.2.1...v2.3.0](https://github.com/getivy/node-sdk/compare/v2.2.1...v2.3.0)
+
+### Features
+
+* support setting headers via env ([12d602c](https://github.com/getivy/node-sdk/commit/12d602c8e2e3149ab880f3e087f04abce8047833))
+
+
+### Chores
+
+* **formatter:** run prettier and eslint separately ([33bf5d9](https://github.com/getivy/node-sdk/commit/33bf5d9129c47cee6fb94639272c7617afc5026f))
+* **internal:** codegen related update ([4ae7ed3](https://github.com/getivy/node-sdk/commit/4ae7ed39fe4ab5157f9c66317a13c25ee556fada))
+
 ## 2.2.1 (2026-04-23)
 
 Full Changelog: [v2.2.0...v2.2.1](https://github.com/getivy/node-sdk/compare/v2.2.0...v2.2.1)
