@@ -2,7 +2,10 @@
 
 import Ivy from '@getivy/node-sdk';
 
-const client = new Ivy({ apiKey: 'My API Key', baseURL: process.env["TEST_API_BASE_URL"] ?? 'http://127.0.0.1:4010' });
+const client = new Ivy({
+  apiKey: 'My API Key',
+  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+});
 
 describe('resource customers', () => {
   // Mock server tests are disabled
@@ -49,21 +52,21 @@ describe('resource customers', () => {
   // Mock server tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.customers.update({
-    id: 'id',
-    address: {
-    country: 'AF',
-    city: 'city',
-    line1: 'line1',
-    line2: 'line2',
-    region: '02',
-    zipCode: 'zipCode',
-  },
-    dateOfBirth: 'dateOfBirth',
-    email: 'email',
-    fullName: 'fullName',
-    metadata: { foo: 'bar' },
-    phone: 'phone',
-  });
+      id: 'id',
+      address: {
+        country: 'AF',
+        city: 'city',
+        line1: 'line1',
+        line2: 'line2',
+        region: '02',
+        zipCode: 'zipCode',
+      },
+      dateOfBirth: 'dateOfBirth',
+      email: 'email',
+      fullName: 'fullName',
+      metadata: { foo: 'bar' },
+      phone: 'phone',
+    });
   });
 
   // Mock server tests are disabled

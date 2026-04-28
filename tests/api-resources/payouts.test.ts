@@ -2,16 +2,19 @@
 
 import Ivy from '@getivy/node-sdk';
 
-const client = new Ivy({ apiKey: 'My API Key', baseURL: process.env["TEST_API_BASE_URL"] ?? 'http://127.0.0.1:4010' });
+const client = new Ivy({
+  apiKey: 'My API Key',
+  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+});
 
 describe('resource payouts', () => {
   // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.payouts.create({
-    amount: 1.01,
-    currency: 'EUR',
-    destination: {},
-  });
+      amount: 1.01,
+      currency: 'EUR',
+      destination: {},
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -24,40 +27,40 @@ describe('resource payouts', () => {
   // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.payouts.create({
-    amount: 1.01,
-    currency: 'EUR',
-    destination: {
-    financialAddress: {
-    type: 'iban',
-    bankCode: {
-    accountHolderName: 'x',
-    accountNumber: 'accountNumber',
-    code: 'code',
-  },
-    bban: {
-    accountHolderName: 'x',
-    bban: 'bban',
-    bic: 'bic',
-  },
-    iban: {
-    accountHolderName: 'x',
-    iban: 'iban',
-    bic: 'bic',
-  },
-    sortCode: {
-    accountHolderName: 'x',
-    accountNumber: '095',
-    sortCode: '269125115713',
-  },
-    wallet: { address: 'address', blockchain: 'ETH' },
-  },
-    orderId: 'orderId',
-    type: 'beneficiary',
-  },
-    metadata: { foo: 'bar' },
-    paymentReference: 'x',
-    rail: 'SEPA_INSTANT',
-  });
+      amount: 1.01,
+      currency: 'EUR',
+      destination: {
+        financialAddress: {
+          type: 'iban',
+          bankCode: {
+            accountHolderName: 'x',
+            accountNumber: 'accountNumber',
+            code: 'code',
+          },
+          bban: {
+            accountHolderName: 'x',
+            bban: 'bban',
+            bic: 'bic',
+          },
+          iban: {
+            accountHolderName: 'x',
+            iban: 'iban',
+            bic: 'bic',
+          },
+          sortCode: {
+            accountHolderName: 'x',
+            accountNumber: '095',
+            sortCode: '269125115713',
+          },
+          wallet: { address: 'address', blockchain: 'ETH' },
+        },
+        orderId: 'orderId',
+        type: 'beneficiary',
+      },
+      metadata: { foo: 'bar' },
+      paymentReference: 'x',
+      rail: 'SEPA_INSTANT',
+    });
   });
 
   // Mock server tests are disabled

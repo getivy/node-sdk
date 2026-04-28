@@ -122,6 +122,6 @@ export declare namespace Refunds {
     type Refund as Refund,
     type RefundCreateResponse as RefundCreateResponse,
     type RefundCreateParams as RefundCreateParams,
-    type RefundRetrieveParams as RefundRetrieveParams
+    type RefundRetrieveParams as RefundRetrieveParams,
   };
 }

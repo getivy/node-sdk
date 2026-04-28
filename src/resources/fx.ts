@@ -190,6 +190,6 @@ export declare namespace Fx {
     type FxRetrieveRateResponse as FxRetrieveRateResponse,
     type FxRetrieveParams as FxRetrieveParams,
     type FxExecuteParams as FxExecuteParams,
-    type FxRetrieveRateParams as FxRetrieveRateParams
+    type FxRetrieveRateParams as FxRetrieveRateParams,
   };
 }

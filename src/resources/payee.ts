@@ -60,8 +60,5 @@ export namespace PayeeVerifyParams {
 }
 
 export declare namespace Payee {
-  export {
-    type PayeeVerifyResponse as PayeeVerifyResponse,
-    type PayeeVerifyParams as PayeeVerifyParams
-  };
+  export { type PayeeVerifyResponse as PayeeVerifyResponse, type PayeeVerifyParams as PayeeVerifyParams };
 }
