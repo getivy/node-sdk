@@ -133,6 +133,6 @@ export declare namespace Returns {
     type ReturnCreateResponse as ReturnCreateResponse,
     type ReturnRetrieveResponse as ReturnRetrieveResponse,
     type ReturnCreateParams as ReturnCreateParams,
-    type ReturnRetrieveParams as ReturnRetrieveParams
+    type ReturnRetrieveParams as ReturnRetrieveParams,
   };
 }
