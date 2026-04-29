@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.4.0 (2026-04-29)
+
+Full Changelog: [v2.3.0...v2.4.0](https://github.com/getivy/node-sdk/compare/v2.3.0...v2.4.0)
+
+### Features
+
+* **api:** api update ([f2fe69f](https://github.com/getivy/node-sdk/commit/f2fe69fd91724f6a80ca897ef106927fd8f3c380))
+
+
+### Chores
+
+* **format:** run eslint and prettier separately ([6c596c8](https://github.com/getivy/node-sdk/commit/6c596c8296f14a2430cfe87d6b85ac425917d66d))
+
 ## 2.3.0 (2026-04-28)
 
 Full Changelog: [v2.2.1...v2.3.0](https://github.com/getivy/node-sdk/compare/v2.2.1...v2.3.0)

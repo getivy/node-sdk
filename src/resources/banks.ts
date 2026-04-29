@@ -36,7 +36,7 @@ export interface BankRetrieveResponse {
    */
   id: string;
 
-  currencies: Array<'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK'>;
+  currencies: Array<'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK'>;
 
   /**
    * Whether the bank is a default bank.
@@ -370,7 +370,7 @@ export namespace BankListResponse {
      */
     id: string;
 
-    currencies: Array<'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK'>;
+    currencies: Array<'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK'>;
 
     /**
      * Whether the bank is a default bank.
@@ -705,7 +705,7 @@ export namespace BankSearchResponse {
      */
     id: string;
 
-    currencies: Array<'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK'>;
+    currencies: Array<'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK'>;
 
     /**
      * Whether the bank is a default bank.
@@ -1028,7 +1028,7 @@ export interface BankListParams {
   /**
    * ISO 4217 currency code. Filter banks with provided currency only.
    */
-  currency?: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+  currency?: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
    * If provided the list will show banks in this group only. Groups are e.g.
@@ -1317,7 +1317,7 @@ export interface BankSearchParams {
   /**
    * ISO 4217 currency code. Filter banks with provided currency only.
    */
-  currency?: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+  currency?: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
    * If provided the list will show banks in this group only. Groups are e.g.

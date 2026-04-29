@@ -42,7 +42,7 @@ export namespace BeneficiaryPayoutCreateResponse {
      * The currency of the balance which was settled to the beneficiary bank account or
      * wallet.
      */
-    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+    currency: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
     /**
      * Description of the payout
