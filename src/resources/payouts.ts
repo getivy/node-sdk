@@ -94,7 +94,7 @@ export namespace Payout {
    * The payout destination
    */
   export interface Destination {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
     bankCode?: Destination.BankCode;
 
@@ -255,7 +255,7 @@ export namespace PayoutRetrieveResponse {
    * The payout destination
    */
   export interface Destination {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
     bankCode?: Destination.BankCode;
 
@@ -427,7 +427,7 @@ export namespace PayoutListResponse {
      * The payout destination
      */
     export interface Destination {
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
       bankCode?: Destination.BankCode;
 
@@ -582,7 +582,7 @@ export namespace PayoutCreateParams {
 
   export namespace Destination {
     export interface FinancialAddress {
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
       bankCode?: FinancialAddress.BankCode;
 

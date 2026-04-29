@@ -37,7 +37,7 @@ export interface Refund {
   /**
    * Refund's currency.
    */
-  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+  currency: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
    * The id of the refunded order
@@ -69,7 +69,7 @@ export interface RefundCreateResponse {
   /**
    * Refund's currency.
    */
-  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+  currency: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
    * The id of the refunded order

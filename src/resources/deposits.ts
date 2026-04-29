@@ -27,7 +27,7 @@ export interface DepositRetrieveResponse {
   /**
    * The currency of the deposit
    */
-  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK' | 'USDC';
+  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK' | 'USD' | 'USDC';
 
   /**
    * The payee account identifier
@@ -94,7 +94,7 @@ export namespace DepositRetrieveResponse {
    * The payee account identifier
    */
   export interface Payee {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
     bankCode?: Payee.BankCode;
 
@@ -157,7 +157,7 @@ export namespace DepositRetrieveResponse {
    * The payer account identifier
    */
   export interface Payer {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
     bankCode?: Payer.BankCode;
 
@@ -235,7 +235,7 @@ export namespace DepositRetrieveResponse {
     /**
      * The currency of the return
      */
-    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK' | 'USDC';
+    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK' | 'USD' | 'USDC';
 
     /**
      * The ID of the associated deposit

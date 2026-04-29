@@ -238,7 +238,7 @@ export namespace OrderCreateResponse {
    * The price object. All values in decimals, e.g. 0.13 for 13 cents.
    */
   export interface Price {
-    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+    currency: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
     total: number;
 
@@ -540,7 +540,7 @@ export namespace OrderCreateResponse {
 
   export namespace Destination {
     export interface BankAccount {
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
       bankCode?: BankAccount.BankCode;
 
@@ -661,7 +661,7 @@ export namespace OrderCreateResponse {
    * when requested via order/details and therefore requires authentication.
    */
   export interface MerchantFinancialAddress {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
     bankCode?: MerchantFinancialAddress.BankCode;
 
@@ -727,7 +727,7 @@ export namespace OrderCreateResponse {
    * after successful PIS flow.
    */
   export interface PayerFinancialAddress {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
     bankCode?: PayerFinancialAddress.BankCode;
 
@@ -1403,7 +1403,7 @@ export namespace OrderRetrieveResponse {
    * The price object. All values in decimals, e.g. 0.13 for 13 cents.
    */
   export interface Price {
-    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+    currency: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
     total: number;
 
@@ -1705,7 +1705,7 @@ export namespace OrderRetrieveResponse {
 
   export namespace Destination {
     export interface BankAccount {
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
       bankCode?: BankAccount.BankCode;
 
@@ -1826,7 +1826,7 @@ export namespace OrderRetrieveResponse {
    * when requested via order/details and therefore requires authentication.
    */
   export interface MerchantFinancialAddress {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
     bankCode?: MerchantFinancialAddress.BankCode;
 
@@ -1892,7 +1892,7 @@ export namespace OrderRetrieveResponse {
    * after successful PIS flow.
    */
   export interface PayerFinancialAddress {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
     bankCode?: PayerFinancialAddress.BankCode;
 
@@ -2568,7 +2568,7 @@ export namespace OrderExpireResponse {
    * The price object. All values in decimals, e.g. 0.13 for 13 cents.
    */
   export interface Price {
-    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+    currency: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
     total: number;
 
@@ -2870,7 +2870,7 @@ export namespace OrderExpireResponse {
 
   export namespace Destination {
     export interface BankAccount {
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
       bankCode?: BankAccount.BankCode;
 
@@ -2991,7 +2991,7 @@ export namespace OrderExpireResponse {
    * when requested via order/details and therefore requires authentication.
    */
   export interface MerchantFinancialAddress {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
     bankCode?: MerchantFinancialAddress.BankCode;
 
@@ -3057,7 +3057,7 @@ export namespace OrderExpireResponse {
    * after successful PIS flow.
    */
   export interface PayerFinancialAddress {
-    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+    type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
     bankCode?: PayerFinancialAddress.BankCode;
 
@@ -3537,7 +3537,7 @@ export interface OrderCreateParams {
   /**
    * The currency code of the order
    */
-  currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+  currency: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
   /**
    * The merchant's unique reference ID for the order

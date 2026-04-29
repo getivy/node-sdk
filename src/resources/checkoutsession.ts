@@ -966,7 +966,7 @@ export namespace CheckoutsessionCreateResponse {
   }
 
   export interface Price {
-    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+    currency: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
     total: number;
 
@@ -2455,7 +2455,7 @@ export namespace CheckoutsessionRetrieveResponse {
   }
 
   export interface Price {
-    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+    currency: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
     total: number;
 
@@ -3944,7 +3944,7 @@ export namespace CheckoutsessionExpireResponse {
   }
 
   export interface Price {
-    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+    currency: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
     total: number;
 
@@ -4869,7 +4869,7 @@ export namespace CheckoutsessionCreateParams {
    * Price of the checkout session
    */
   export interface Price {
-    currency: 'EUR' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
+    currency: 'EUR' | 'USD' | 'GBP' | 'PLN' | 'SEK' | 'DKK';
 
     total: number;
 
@@ -5511,7 +5511,7 @@ export namespace CheckoutsessionCreateParams {
     }
 
     export interface FinancialAddress {
-      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet';
+      type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
       bankCode?: FinancialAddress.BankCode;
 
