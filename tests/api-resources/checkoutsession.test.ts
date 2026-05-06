@@ -89,6 +89,11 @@ describe('resource checkoutsession', () => {
         },
         financialAddress: {
           type: 'iban',
+          aba: {
+            accountHolderName: 'x',
+            accountNumber: '269125115713',
+            routingNumber: '269125115713',
+          },
           bankCode: {
             accountHolderName: 'x',
             accountNumber: 'accountNumber',

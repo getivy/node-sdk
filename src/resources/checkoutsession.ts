@@ -5513,6 +5513,8 @@ export namespace CheckoutsessionCreateParams {
     export interface FinancialAddress {
       type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+      aba?: FinancialAddress.Aba;
+
       bankCode?: FinancialAddress.BankCode;
 
       bban?: FinancialAddress.Bban;
@@ -5525,6 +5527,14 @@ export namespace CheckoutsessionCreateParams {
     }
 
     export namespace FinancialAddress {
+      export interface Aba {
+        accountHolderName: string;
+
+        accountNumber: string;
+
+        routingNumber: string;
+      }
+
       export interface BankCode {
         accountHolderName: string;
 
