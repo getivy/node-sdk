@@ -542,6 +542,8 @@ export namespace OrderCreateResponse {
     export interface BankAccount {
       type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+      aba?: BankAccount.Aba;
+
       bankCode?: BankAccount.BankCode;
 
       bban?: BankAccount.Bban;
@@ -556,6 +558,14 @@ export namespace OrderCreateResponse {
     }
 
     export namespace BankAccount {
+      export interface Aba {
+        accountHolderName: string;
+
+        accountNumber: string;
+
+        routingNumber: string;
+      }
+
       export interface BankCode {
         accountHolderName: string;
 
@@ -663,6 +673,8 @@ export namespace OrderCreateResponse {
   export interface MerchantFinancialAddress {
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+    aba?: MerchantFinancialAddress.Aba;
+
     bankCode?: MerchantFinancialAddress.BankCode;
 
     bban?: MerchantFinancialAddress.Bban;
@@ -677,6 +689,14 @@ export namespace OrderCreateResponse {
   }
 
   export namespace MerchantFinancialAddress {
+    export interface Aba {
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      routingNumber: string;
+    }
+
     export interface BankCode {
       accountHolderName: string;
 
@@ -729,6 +749,8 @@ export namespace OrderCreateResponse {
   export interface PayerFinancialAddress {
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+    aba?: PayerFinancialAddress.Aba;
+
     bankCode?: PayerFinancialAddress.BankCode;
 
     bban?: PayerFinancialAddress.Bban;
@@ -741,6 +763,14 @@ export namespace OrderCreateResponse {
   }
 
   export namespace PayerFinancialAddress {
+    export interface Aba {
+      accountNumber: string;
+
+      routingNumber: string;
+
+      accountHolderName?: string;
+    }
+
     export interface BankCode {
       accountNumber: string;
 
@@ -1707,6 +1737,8 @@ export namespace OrderRetrieveResponse {
     export interface BankAccount {
       type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+      aba?: BankAccount.Aba;
+
       bankCode?: BankAccount.BankCode;
 
       bban?: BankAccount.Bban;
@@ -1721,6 +1753,14 @@ export namespace OrderRetrieveResponse {
     }
 
     export namespace BankAccount {
+      export interface Aba {
+        accountHolderName: string;
+
+        accountNumber: string;
+
+        routingNumber: string;
+      }
+
       export interface BankCode {
         accountHolderName: string;
 
@@ -1828,6 +1868,8 @@ export namespace OrderRetrieveResponse {
   export interface MerchantFinancialAddress {
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+    aba?: MerchantFinancialAddress.Aba;
+
     bankCode?: MerchantFinancialAddress.BankCode;
 
     bban?: MerchantFinancialAddress.Bban;
@@ -1842,6 +1884,14 @@ export namespace OrderRetrieveResponse {
   }
 
   export namespace MerchantFinancialAddress {
+    export interface Aba {
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      routingNumber: string;
+    }
+
     export interface BankCode {
       accountHolderName: string;
 
@@ -1894,6 +1944,8 @@ export namespace OrderRetrieveResponse {
   export interface PayerFinancialAddress {
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+    aba?: PayerFinancialAddress.Aba;
+
     bankCode?: PayerFinancialAddress.BankCode;
 
     bban?: PayerFinancialAddress.Bban;
@@ -1906,6 +1958,14 @@ export namespace OrderRetrieveResponse {
   }
 
   export namespace PayerFinancialAddress {
+    export interface Aba {
+      accountNumber: string;
+
+      routingNumber: string;
+
+      accountHolderName?: string;
+    }
+
     export interface BankCode {
       accountNumber: string;
 
@@ -2872,6 +2932,8 @@ export namespace OrderExpireResponse {
     export interface BankAccount {
       type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+      aba?: BankAccount.Aba;
+
       bankCode?: BankAccount.BankCode;
 
       bban?: BankAccount.Bban;
@@ -2886,6 +2948,14 @@ export namespace OrderExpireResponse {
     }
 
     export namespace BankAccount {
+      export interface Aba {
+        accountHolderName: string;
+
+        accountNumber: string;
+
+        routingNumber: string;
+      }
+
       export interface BankCode {
         accountHolderName: string;
 
@@ -2993,6 +3063,8 @@ export namespace OrderExpireResponse {
   export interface MerchantFinancialAddress {
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+    aba?: MerchantFinancialAddress.Aba;
+
     bankCode?: MerchantFinancialAddress.BankCode;
 
     bban?: MerchantFinancialAddress.Bban;
@@ -3007,6 +3079,14 @@ export namespace OrderExpireResponse {
   }
 
   export namespace MerchantFinancialAddress {
+    export interface Aba {
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      routingNumber: string;
+    }
+
     export interface BankCode {
       accountHolderName: string;
 
@@ -3059,6 +3139,8 @@ export namespace OrderExpireResponse {
   export interface PayerFinancialAddress {
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+    aba?: PayerFinancialAddress.Aba;
+
     bankCode?: PayerFinancialAddress.BankCode;
 
     bban?: PayerFinancialAddress.Bban;
@@ -3071,6 +3153,14 @@ export namespace OrderExpireResponse {
   }
 
   export namespace PayerFinancialAddress {
+    export interface Aba {
+      accountNumber: string;
+
+      routingNumber: string;
+
+      accountHolderName?: string;
+    }
+
     export interface BankCode {
       accountNumber: string;
 

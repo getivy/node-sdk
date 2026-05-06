@@ -96,6 +96,8 @@ export namespace Payout {
   export interface Destination {
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+    aba?: Destination.Aba;
+
     bankCode?: Destination.BankCode;
 
     bban?: Destination.Bban;
@@ -108,6 +110,14 @@ export namespace Payout {
   }
 
   export namespace Destination {
+    export interface Aba {
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      routingNumber: string;
+    }
+
     export interface BankCode {
       accountHolderName: string;
 
@@ -257,6 +267,8 @@ export namespace PayoutRetrieveResponse {
   export interface Destination {
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+    aba?: Destination.Aba;
+
     bankCode?: Destination.BankCode;
 
     bban?: Destination.Bban;
@@ -269,6 +281,14 @@ export namespace PayoutRetrieveResponse {
   }
 
   export namespace Destination {
+    export interface Aba {
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      routingNumber: string;
+    }
+
     export interface BankCode {
       accountHolderName: string;
 
@@ -429,6 +449,8 @@ export namespace PayoutListResponse {
     export interface Destination {
       type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+      aba?: Destination.Aba;
+
       bankCode?: Destination.BankCode;
 
       bban?: Destination.Bban;
@@ -441,6 +463,14 @@ export namespace PayoutListResponse {
     }
 
     export namespace Destination {
+      export interface Aba {
+        accountHolderName: string;
+
+        accountNumber: string;
+
+        routingNumber: string;
+      }
+
       export interface BankCode {
         accountHolderName: string;
 
@@ -584,6 +614,8 @@ export namespace PayoutCreateParams {
     export interface FinancialAddress {
       type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+      aba?: FinancialAddress.Aba;
+
       bankCode?: FinancialAddress.BankCode;
 
       bban?: FinancialAddress.Bban;
@@ -596,6 +628,14 @@ export namespace PayoutCreateParams {
     }
 
     export namespace FinancialAddress {
+      export interface Aba {
+        accountHolderName: string;
+
+        accountNumber: string;
+
+        routingNumber: string;
+      }
+
       export interface BankCode {
         accountHolderName: string;
 

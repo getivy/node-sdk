@@ -96,6 +96,8 @@ export namespace DepositRetrieveResponse {
   export interface Payee {
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+    aba?: Payee.Aba;
+
     bankCode?: Payee.BankCode;
 
     bban?: Payee.Bban;
@@ -108,6 +110,14 @@ export namespace DepositRetrieveResponse {
   }
 
   export namespace Payee {
+    export interface Aba {
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      routingNumber: string;
+    }
+
     export interface BankCode {
       accountHolderName: string;
 
@@ -159,6 +169,8 @@ export namespace DepositRetrieveResponse {
   export interface Payer {
     type: 'iban' | 'sort_code' | 'bank_code' | 'bban' | 'wallet' | 'aba';
 
+    aba?: Payer.Aba;
+
     bankCode?: Payer.BankCode;
 
     bban?: Payer.Bban;
@@ -171,6 +183,14 @@ export namespace DepositRetrieveResponse {
   }
 
   export namespace Payer {
+    export interface Aba {
+      accountHolderName: string;
+
+      accountNumber: string;
+
+      routingNumber: string;
+    }
+
     export interface BankCode {
       accountHolderName: string;
 
