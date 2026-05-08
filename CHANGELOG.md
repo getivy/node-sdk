@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.5.1 (2026-05-08)
+
+Full Changelog: [v2.5.0...v2.5.1](https://github.com/getivy/node-sdk/compare/v2.5.0...v2.5.1)
+
+### Chores
+
+* redact api-key headers in debug logs ([fe1c41c](https://github.com/getivy/node-sdk/commit/fe1c41cd83ae5996d8a9a6f240e709db8e4f42ca))
+
 ## 2.5.0 (2026-05-06)
 
 Full Changelog: [v2.4.0...v2.5.0](https://github.com/getivy/node-sdk/compare/v2.4.0...v2.5.0)
