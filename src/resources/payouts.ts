@@ -46,7 +46,7 @@ export interface Payout {
   /**
    * The payout currency
    */
-  currency: 'EUR' | 'GBP' | 'USDC';
+  currency: 'EUR' | 'GBP' | 'USDC' | 'USD';
 
   /**
    * The payout destination
@@ -217,7 +217,7 @@ export interface PayoutRetrieveResponse {
   /**
    * The payout currency
    */
-  currency: 'EUR' | 'GBP' | 'USDC';
+  currency: 'EUR' | 'GBP' | 'USDC' | 'USD';
 
   /**
    * The payout destination
@@ -399,7 +399,7 @@ export namespace PayoutListResponse {
     /**
      * The payout currency
      */
-    currency: 'EUR' | 'GBP' | 'USDC';
+    currency: 'EUR' | 'GBP' | 'USDC' | 'USD';
 
     /**
      * The payout destination
@@ -558,7 +558,7 @@ export interface PayoutCreateParams {
    */
   amount: number;
 
-  currency: 'EUR' | 'GBP' | 'USDC';
+  currency: 'EUR' | 'GBP' | 'USDC' | 'USD';
 
   destination: PayoutCreateParams.Destination;
 
