@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.6.0 (2026-05-13)
+
+Full Changelog: [v2.5.1...v2.6.0](https://github.com/getivy/node-sdk/compare/v2.5.1...v2.6.0)
+
+### Features
+
+* **api:** api update ([e312f58](https://github.com/getivy/node-sdk/commit/e312f5800768aade9dc96b21011d9e532860db37))
+
 ## 2.5.1 (2026-05-08)
 
 Full Changelog: [v2.5.0...v2.5.1](https://github.com/getivy/node-sdk/compare/v2.5.0...v2.5.1)
