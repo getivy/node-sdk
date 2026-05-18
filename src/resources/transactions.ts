@@ -90,8 +90,7 @@ export namespace TransactionListResponse {
       | 'refund'
       | 'fxQuote'
       | 'payoutv2'
-      | 'merchantBeneficiaryCryptoWalletVerification'
-      | 'merchantCryptoWalletTestDeposit'
+      | 'walletVerification'
       | 'topup';
   }
 
