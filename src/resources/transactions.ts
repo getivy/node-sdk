@@ -88,6 +88,9 @@ export namespace TransactionListResponse {
       | 'merchant_payout'
       | 'payment'
       | 'refund'
+      | 'fxQuote'
+      | 'payoutv2'
+      | 'walletVerification'
       | 'topup';
   }
 

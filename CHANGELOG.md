@@ -1,5 +1,24 @@
 # Changelog
 
+## 2.7.0 (2026-05-19)
+
+Full Changelog: [v2.6.0...v2.7.0](https://github.com/getivy/node-sdk/compare/v2.6.0...v2.7.0)
+
+### Features
+
+* **api:** api update ([5e61848](https://github.com/getivy/node-sdk/commit/5e61848ff7a4513276c67ebfff450fe59c5385ef))
+* **api:** api update ([3c131be](https://github.com/getivy/node-sdk/commit/3c131bed74a89bd8ba3f9ce2cd7076c142055e4d))
+
+
+### Bug Fixes
+
+* **typescript:** upgrade tsc-multi so that it works with Node 26 ([3aae0e6](https://github.com/getivy/node-sdk/commit/3aae0e6a35b8bb1eac2b0a98f27408ad608dab4e))
+
+
+### Chores
+
+* **tests:** remove redundant File import ([6ce9a5c](https://github.com/getivy/node-sdk/commit/6ce9a5ca7fe2feed9401f66584185149ae774a57))
+
 ## 2.6.0 (2026-05-13)
 
 Full Changelog: [v2.5.1...v2.6.0](https://github.com/getivy/node-sdk/compare/v2.5.1...v2.6.0)
